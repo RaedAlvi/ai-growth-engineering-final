@@ -1,0 +1,798 @@
+<section><h2 id="metrics">Product Metrics &amp; the Product Teardown <span class="badge in">IN SCOPE</span></h2>
+
+<p>A <strong>metric</strong> is just a number you measure on a regular basis so you can tell whether something is getting better or worse. In product management, metrics are how a Product Manager (PM, the person who decides what a product does and how it reaches customers) answers the single most important question in this whole course: <em>"How do you know if your product is good?"</em> You cannot improve what you do not measure, so this section is a clean reference to every metric in the reading, each explained in plain English, with its formula where one exists and one fintech (financial-technology, software for banking and money) example. Read it once for understanding, then use the big table at the end to revise.</p>
+
+<div class="callout"><strong>Key term. KPI.</strong> KPI stands for Key Performance Indicator. It is a metric you have chosen as one of the few that matter most for your goal. Every KPI is a metric, but not every metric is important enough to be a KPI. When the reading says DAU "can be a revenue-generating activity or any other engagement KPI", it means you pick which user action counts as "active".</div>
+
+<div class="callout"><strong>Key term. Cohort.</strong> A cohort is a group of users who share a starting point in time, usually the month or week they signed up. "The January cohort" means everyone who joined in January. Cohorts let you compare apples to apples: you watch how the January joiners behave over time separately from the February joiners, instead of mixing everyone together. Several metrics below are measured "by cohort".</div>
+
+<h3 id="metrics-acquisition">Acquisition metrics: what does a customer cost to get?</h3>
+
+<div class="concept"><h3>Customer Acquisition Cost (CAC)</h3>
+<p><strong>Plain English.</strong> The total cost of acquiring one new customer. You add up everything you spent to win customers (advertising, sales salaries, referral bonuses, marketing tools) over a period, then divide by the number of new customers you actually got.</p>
+<p><strong>Formula.</strong> CAC = Total acquisition spend in a period / Number of new customers acquired in that period.</p>
+<p><strong>Fintech example.</strong> A digital wallet spends 5,000,000 PKR on ads and field agents in a month and signs up 10,000 new wallet users. CAC = 5,000,000 / 10,000 = 500 PKR per new user. If the average user is worth less than 500 PKR to the business, the company is losing money on every sign-up.</p></div>
+
+<div class="concept"><h3>CAC by Source</h3>
+<p><strong>Plain English.</strong> The same CAC, but broken down per marketing channel (each route by which a customer found you: TikTok ads, Google search, referrals, retail agents). It tells you which channel is cheap and which is expensive, so you spend more on the efficient ones.</p>
+<p><strong>Formula.</strong> CAC for a source = Spend on that source / New customers from that source.</p>
+<p><strong>Fintech example.</strong> The wallet spent 2,000,000 PKR on TikTok (4,000 users, CAC = 500) and 3,000,000 PKR on retail agents (6,000 users, CAC = 500). If next month TikTok's CAC jumps to 900 while agents stay at 500, you shift budget to agents.</p></div>
+
+<div class="concept"><h3>Conversion Rate, and Conversion Rate by Source</h3>
+<p><strong>Plain English.</strong> Conversion Rate is the percentage of people who take a desired action (turning from a mere visitor into a customer, or completing any other key goal you set, like making a first deposit). Conversion Rate by Source splits that same percentage by channel, showing which channel sends visitors that actually convert, not just visitors who bounce.</p>
+<p><strong>Formula.</strong> Conversion Rate = (Number who took the desired action / Number of people who had the chance to) x 100.</p>
+<p><strong>Fintech example.</strong> 50,000 people open the wallet's sign-up page; 8,000 finish and fund the account. Conversion Rate = 8,000 / 50,000 = 16%. If Google visitors convert at 22% but TikTok visitors convert at 9%, Google sends higher-intent traffic even if TikTok sends more raw clicks.</p></div>
+
+<div class="concept"><h3>Onboarding Completion Rate by Cohort</h3>
+<p><strong>Plain English.</strong> Onboarding is the first-time setup a new user goes through (verify identity, link a bank, make a first transaction). This metric is the percentage of a given cohort who finish that setup. Tracking it by cohort shows whether changes you made to onboarding actually helped newer joiners.</p>
+<p><strong>Formula.</strong> Onboarding Completion Rate = (Users in the cohort who completed onboarding / Total users in the cohort) x 100.</p>
+<p><strong>Fintech example.</strong> Of 1,000 users in the March cohort, 620 finished KYC (Know Your Customer, the legal identity check) and made a first transaction. Rate = 62%. After you simplify the KYC screen, the April cohort hits 78%, proving the fix worked.</p></div>
+
+<h3 id="metrics-engagement">Engagement metrics: how much are people using it?</h3>
+
+<div class="concept"><h3>Daily Active Users (DAU) and Monthly Active Users (MAU)</h3>
+<p><strong>Plain English.</strong> DAU is the number of unique users who engage with the product on a given day; MAU is the number of unique users who engage at least once in a month. "Unique" means each person is counted once no matter how many times they open the app. You decide what "active" means (opening the app, or a revenue action like a payment).</p>
+<p><strong>Formula.</strong> These are counts, not ratios: DAU = count of distinct users active that day; MAU = count of distinct users active that month.</p>
+<p><strong>Fintech example.</strong> A payments app has 200,000 people who make or receive at least one payment on Monday (DAU = 200,000) and 1,000,000 distinct people who transact at least once in the month (MAU = 1,000,000).</p></div>
+
+<div class="concept"><h3>Stickiness Ratio (= DAU / MAU)</h3>
+<p><strong>Plain English.</strong> Stickiness measures how often your monthly users come back within the month, which signals how much the product has become a habit. It is defined as DAU divided by MAU. A high ratio means the average monthly user shows up on many days; a low ratio means they visit once a month and forget you.</p>
+<p><strong>Formula.</strong> Stickiness = DAU / MAU (often shown as a percentage). A common reading: a ratio of 0.20 means the average user is active on about 6 of 30 days.</p>
+<p><strong>Fintech example.</strong> DAU = 200,000 and MAU = 1,000,000, so Stickiness = 200,000 / 1,000,000 = 0.20 = 20%. A daily-use app like a wallet wants this high; a once-a-month bill app naturally runs lower.</p></div>
+
+<div class="concept"><h3>Session Duration and Frequency</h3>
+<p><strong>Plain English.</strong> A "session" is one continuous visit to the app. Session Duration is the average length of a session; Session Frequency is how often sessions happen (sessions per user per day or week). Together they describe whether people dip in briefly and often, or stay long but rarely.</p>
+<p><strong>Formula.</strong> Average Session Duration = Total time across all sessions / Number of sessions. Frequency = Number of sessions / Number of users (over a period).</p>
+<p><strong>Fintech example.</strong> A budgeting app sees average sessions of 3 minutes, 5 times a week. A short, frequent pattern is healthy for a check-your-balance product; a tax-filing app would instead see long but rare sessions.</p></div>
+
+<div class="concept"><h3>User Actions per Session</h3>
+<p><strong>Plain English.</strong> The average number of meaningful actions a user takes in one session (taps, transfers, screens viewed). It shows depth of engagement: are people doing a lot once they are in, or opening and leaving?</p>
+<p><strong>Formula.</strong> User Actions per Session = Total actions / Total sessions.</p>
+<p><strong>Fintech example.</strong> In one session a wallet user checks balance, pays a bill, and sends money to a friend = 3 actions. If the average is 1.1 actions per session, most people open the app and bounce, a warning sign.</p></div>
+
+<h3 id="metrics-feature">Feature metrics: is the new thing being used and loved?</h3>
+
+<div class="concept"><h3>Feature Adoption Rate</h3>
+<p><strong>Plain English.</strong> The percentage of users who start using a new feature within a set time after it launches. It tells you whether a feature you built was worth building.</p>
+<p><strong>Formula.</strong> Feature Adoption Rate = (Users who used the feature / Total eligible users) x 100, within a chosen window.</p>
+<p><strong>Fintech example.</strong> The wallet launches "split a bill with friends". In 30 days, 90,000 of 1,000,000 users try it. Adoption = 9%. Low adoption may mean it is hard to find or solves a problem few users have.</p></div>
+
+<div class="concept"><h3>Feature Fit Index (FFI)</h3>
+<p><strong>Plain English.</strong> The percentage of users who say they would be <em>disappointed</em> if a particular feature were removed. It measures how essential a feature feels, not just whether it gets clicked. A feature can have low adoption yet very high FFI among the few who rely on it (and vice versa).</p>
+<p><strong>Formula.</strong> FFI = (Users who would be disappointed if the feature were removed / Users surveyed) x 100. You collect this with a survey question: "How would you feel if you could no longer use [feature]?"</p>
+<p><strong>Fintech example.</strong> You survey users of the auto-savings feature; 68% say they would be "very disappointed" if it disappeared. FFI = 68%, a strong sign the feature is core and should be protected and promoted.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Do not confuse Feature Adoption Rate with Feature Fit Index. Adoption = how many people <em>started using</em> it. FFI = how many would be <em>disappointed if it were removed</em>. A feature can have high adoption but low FFI (people click it but would not miss it), or low adoption but high FFI (a small group depends on it heavily). Both numbers together tell the real story.</div>
+
+<h3 id="metrics-retention">Retention and churn: do people stay?</h3>
+
+<div class="concept"><h3>Churn Rate</h3>
+<p><strong>Plain English.</strong> The percentage of customers who stop using the product (or cancel their subscription) over a given period. High churn means you are filling a leaky bucket: you keep pouring in new users but they drain out the bottom.</p>
+<p><strong>Formula.</strong> Churn Rate = (Customers lost during the period / Customers at the start of the period) x 100.</p>
+<p><strong>Fintech example.</strong> A lending app starts the month with 50,000 active borrowers and 2,500 stop using it. Monthly churn = 2,500 / 50,000 = 5%.</p></div>
+
+<div class="concept"><h3>Retention Rate</h3>
+<p><strong>Plain English.</strong> The mirror image of churn: the percentage of customers who keep using the product over a period. Retention + Churn = 100% for the same group and period.</p>
+<p><strong>Formula.</strong> Retention Rate = (Customers still active at the end / Customers at the start) x 100. In the example above, retention = 95%.</p>
+<p><strong>Fintech example.</strong> If 95% of a month's borrowers are still active at month-end, monthly retention is 95%. Small differences compound: 95% monthly retention keeps about 54% of users after a year, while 90% keeps only about 28%.</p></div>
+
+<div class="concept"><h3>Cohort Retention</h3>
+<p><strong>Plain English.</strong> Retention measured separately for each cohort, tracked over time. You line up "% of the January cohort still active in month 1, month 2, month 3..." so you can see exactly when users drop off and whether newer cohorts retain better than older ones.</p>
+<p><strong>Formula.</strong> For cohort C in period n: Cohort Retention = (Members of C active in period n / Original size of C) x 100.</p>
+<p><strong>Fintech example.</strong> The January wallet cohort: 100% in month 0, 70% in month 1, 55% in month 2. If the April cohort holds 65% in month 2 after a redesign, retention is improving.</p></div>
+
+<h3 id="metrics-revenue">Revenue metrics: how much money does it make?</h3>
+
+<div class="concept"><h3>Monthly Recurring Revenue (MRR) and Annual Recurring Revenue (ARR)</h3>
+<p><strong>Plain English.</strong> "Recurring" revenue is predictable, repeating income, typically from subscriptions. MRR is the total expected revenue from all active subscriptions in a month; ARR is the same idea over a year, used for long-term planning.</p>
+<p><strong>Formula.</strong> MRR = Sum of all active monthly subscription fees. ARR = MRR x 12 (or the sum of annual contract values).</p>
+<p><strong>Fintech example.</strong> A premium-banking tier has 10,000 subscribers paying 300 PKR/month. MRR = 10,000 x 300 = 3,000,000 PKR. ARR = 3,000,000 x 12 = 36,000,000 PKR.</p></div>
+
+<div class="concept"><h3>Reactivation MRR</h3>
+<p><strong>Plain English.</strong> The monthly recurring revenue you win back from customers who had churned (left) and then came back. It isolates the money generated specifically by win-back efforts, separate from brand-new customers.</p>
+<p><strong>Formula.</strong> Reactivation MRR = Sum of monthly fees from previously churned customers who reactivated this period.</p>
+<p><strong>Fintech example.</strong> 500 lapsed premium users return after a "come back, first month half price" campaign and resume paying 300 PKR/month. Reactivation MRR = 500 x 300 = 150,000 PKR.</p></div>
+
+<div class="concept"><h3>Average Revenue Per User (ARPU) and Average Revenue Per Active User (ARPAU)</h3>
+<p><strong>Plain English.</strong> ARPU is the average revenue per user over a period, dividing by <em>all</em> users (including dormant ones). ARPAU divides the same revenue by <em>active</em> users only. ARPAU is always higher than ARPU when you have dormant users, because the denominator is smaller. The gap between them tells you how much dead weight (inactive sign-ups) is dragging down your average.</p>
+<p><strong>Formula.</strong> ARPU = Total revenue in period / Total users. ARPAU = Total revenue in period / Active users in period.</p>
+<p><strong>Fintech example.</strong> Revenue this month = 10,000,000 PKR. Total users = 1,000,000, but only 600,000 were active (MAU). ARPU = 10,000,000 / 1,000,000 = 10 PKR. ARPAU = 10,000,000 / 600,000 = 16.67 PKR. The active users are each worth far more than the all-user average suggests.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> ARPU divides by ALL users; ARPAU divides by ACTIVE users only. Because active users are fewer, <strong>ARPAU is the larger number</strong>. If a question gives you total revenue, total users, and active users, make sure you pick the right denominator. Mixing them up is a classic mistake.</div>
+
+<div class="concept"><h3>Customer Lifetime Value (CLTV, also LTV)</h3>
+<p><strong>Plain English.</strong> The total revenue you expect from one customer across the entire time they stay with you. It answers "how much is a customer worth in total?" You compare it against CAC: if it costs more to acquire a customer than they are ever worth, the business does not work.</p>
+<p><strong>Formula (simple version).</strong> CLTV = ARPU x average customer lifetime, and the average lifetime (in the same time units as ARPU) = 1 / churn rate. So CLTV = ARPU / churn rate.</p>
+<p><strong>Why lifetime = 1 / churn.</strong> If 5% of customers leave each month (churn = 0.05), the average customer stays 1 / 0.05 = 20 months. The smaller the churn, the longer they stay.</p>
+<p><strong>Fintech example.</strong> Monthly ARPU = 10 PKR and monthly churn = 5% (0.05). Average lifetime = 1 / 0.05 = 20 months. CLTV = 10 x 20 = 200 PKR. If CAC is 500 PKR, you lose money; you must either cut CAC, raise ARPU, or reduce churn.</p></div>
+
+<div class="callout"><strong>Key term. The CAC-to-LTV relationship.</strong> A healthy business has CLTV comfortably above CAC (a common rule of thumb is LTV at least 3x CAC). "CAC payback period" is a related idea: how many months of ARPU it takes to earn back the CAC. CAC payback = CAC / ARPU per month. With CAC = 500 and monthly ARPU = 10, payback = 50 months, which is far too long.</div>
+
+<h3 id="metrics-referral">Referral, satisfaction, and support metrics</h3>
+
+<div class="concept"><h3>Referral Rate and Member-get-Member (MGM)</h3>
+<p><strong>Plain English.</strong> Referral Rate is the percentage of users who refer the product to new people. MGM (Member-get-Member) is a specific kind of referral campaign where <em>both</em> the referrer (existing member) and the referee (the friend they bring) receive a reward, so both sides are motivated. MGM is a cheap acquisition channel because your own happy users do the marketing.</p>
+<p><strong>Formula.</strong> Referral Rate = (Users who referred at least one person / Total users) x 100.</p>
+<p><strong>Fintech example.</strong> The wallet offers "invite a friend, you both get 200 PKR once they make a first payment". 120,000 of 1,000,000 users send at least one invite, so Referral Rate = 12%. Because the reward only pays out on a funded first payment, the CAC stays controlled.</p></div>
+
+<div class="concept"><h3>Net Promoter Score (NPS)</h3>
+<p><strong>Plain English.</strong> NPS measures loyalty by asking one question: "On a scale of 0 to 10, how likely are you to recommend us to a friend?" Respondents are grouped as <strong>Promoters</strong> (9 to 10, loyal fans), <strong>Passives</strong> (7 to 8, satisfied but unenthusiastic), and <strong>Detractors</strong> (0 to 6, unhappy and may spread bad word of mouth). NPS is the percentage of Promoters minus the percentage of Detractors. Passives are counted in the total but cancel out of the subtraction.</p>
+<p><strong>Formula.</strong> NPS = % Promoters minus % Detractors. The result ranges from minus 100 (everyone a detractor) to plus 100 (everyone a promoter). Anything positive means more fans than critics.</p>
+<p><strong>Fintech example.</strong> Of 1,000 surveyed wallet users: 500 are promoters (50%), 300 passives (30%), 200 detractors (20%). NPS = 50 minus 20 = +30. Decent, but you want to convert passives into promoters to push higher.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> NPS uses a 0 to 10 scale, but the buckets are uneven: 9-10 promoters, 7-8 passives, 0-6 detractors. A "6" is a detractor, not a passive. And the formula ignores passives in the subtraction (they only affect the percentages). NPS can be negative.</div>
+
+<div class="concept"><h3>Customer Satisfaction Score (CSAT)</h3>
+<p><strong>Plain English.</strong> A direct feedback score reflecting how satisfied customers are with the product or a specific interaction (often asked right after an event, like "How satisfied were you with this transaction?" on a 1 to 5 scale). Unlike NPS, which measures loyalty and likelihood to recommend, CSAT measures immediate satisfaction with a specific thing.</p>
+<p><strong>Formula.</strong> CSAT = (Number of satisfied responses, for example 4s and 5s on a 5-point scale / Total responses) x 100.</p>
+<p><strong>Fintech example.</strong> After a support chat, 850 of 1,000 users rate it 4 or 5 out of 5. CSAT = 85%.</p></div>
+
+<div class="concept"><h3>Number of Support Tickets</h3>
+<p><strong>Plain English.</strong> The raw volume of customer support requests raised over a period. A rising count flags areas that confuse or frustrate users (and points to where the product needs fixing). It is also a cost driver, since each ticket takes staff time.</p>
+<p><strong>Formula.</strong> A simple count: number of tickets opened in the period. Useful derived views: tickets per 1,000 users, or tickets by category.</p>
+<p><strong>Fintech example.</strong> After a new login screen ships, "cannot log in" tickets jump from 300 to 1,200 a week. The spike tells you the redesign broke something, even before other metrics react.</p></div>
+
+<h3 id="metrics-table">The full metrics reference table</h3>
+
+<table class="cmp">
+<thead>
+<tr><th>Metric (acronym)</th><th>Plain-English meaning</th><th>Formula</th><th>Fintech example</th></tr>
+</thead>
+<tbody>
+<tr><td>CAC (Customer Acquisition Cost)</td><td>Total cost to acquire one new customer</td><td>Acquisition spend / new customers</td><td>5,000,000 / 10,000 = 500 PKR per user</td></tr>
+<tr><td>CAC by Source</td><td>CAC split per marketing channel</td><td>Spend on source / new customers from source</td><td>TikTok 500, agents 500; shift if one rises</td></tr>
+<tr><td>Conversion Rate</td><td>% of visitors who take the desired action</td><td>(Converted / total visitors) x 100</td><td>8,000 / 50,000 = 16%</td></tr>
+<tr><td>Conversion Rate by Source</td><td>Conversion split per channel</td><td>(Converted from source / visitors from source) x 100</td><td>Google 22% vs TikTok 9%</td></tr>
+<tr><td>Onboarding Completion Rate by Cohort</td><td>% of a cohort that finishes setup</td><td>(Cohort completers / cohort size) x 100</td><td>620 / 1,000 = 62%</td></tr>
+<tr><td>DAU</td><td>Unique users active in a day</td><td>Count of distinct daily users</td><td>200,000 transact Monday</td></tr>
+<tr><td>MAU</td><td>Unique users active in a month</td><td>Count of distinct monthly users</td><td>1,000,000 transact in month</td></tr>
+<tr><td>Stickiness Ratio</td><td>How often monthly users return (habit)</td><td>DAU / MAU</td><td>200,000 / 1,000,000 = 20%</td></tr>
+<tr><td>Session Duration &amp; Frequency</td><td>Avg session length, and how often sessions happen</td><td>Total time / sessions; sessions / users</td><td>3 min, 5x/week</td></tr>
+<tr><td>User Actions per Session</td><td>Avg meaningful actions per visit</td><td>Total actions / total sessions</td><td>Balance + bill + transfer = 3</td></tr>
+<tr><td>Feature Adoption Rate</td><td>% who start using a new feature in a window</td><td>(Feature users / eligible users) x 100</td><td>90,000 / 1,000,000 = 9%</td></tr>
+<tr><td>FFI (Feature Fit Index)</td><td>% who would be disappointed if a feature were removed</td><td>(Would-be-disappointed / surveyed) x 100</td><td>68% miss auto-savings</td></tr>
+<tr><td>Churn Rate</td><td>% who stop using over a period</td><td>(Lost / starting count) x 100</td><td>2,500 / 50,000 = 5%/month</td></tr>
+<tr><td>Retention Rate</td><td>% who keep using over a period</td><td>(Still active / starting count) x 100</td><td>95%/month</td></tr>
+<tr><td>Cohort Retention</td><td>Retention tracked per cohort over time</td><td>(Cohort active in period n / cohort size) x 100</td><td>Jan: 100% to 70% to 55%</td></tr>
+<tr><td>MRR (Monthly Recurring Revenue)</td><td>Expected monthly subscription revenue</td><td>Sum of active monthly fees</td><td>10,000 x 300 = 3,000,000 PKR</td></tr>
+<tr><td>ARR (Annual Recurring Revenue)</td><td>Expected yearly subscription revenue</td><td>MRR x 12</td><td>3,000,000 x 12 = 36,000,000 PKR</td></tr>
+<tr><td>Reactivation MRR</td><td>MRR won back from churned-then-returned users</td><td>Sum of fees from reactivated users</td><td>500 x 300 = 150,000 PKR</td></tr>
+<tr><td>ARPU (Avg Revenue Per User)</td><td>Avg revenue across ALL users</td><td>Total revenue / total users</td><td>10,000,000 / 1,000,000 = 10 PKR</td></tr>
+<tr><td>ARPAU (Avg Revenue Per Active User)</td><td>Avg revenue across ACTIVE users only (higher than ARPU)</td><td>Total revenue / active users</td><td>10,000,000 / 600,000 = 16.67 PKR</td></tr>
+<tr><td>CLTV / LTV (Customer Lifetime Value)</td><td>Total revenue expected from one customer over their life</td><td>ARPU x lifetime; lifetime = 1 / churn</td><td>10 x (1/0.05) = 10 x 20 = 200 PKR</td></tr>
+<tr><td>Referral Rate</td><td>% of users who refer others</td><td>(Referrers / total users) x 100</td><td>120,000 / 1,000,000 = 12%</td></tr>
+<tr><td>MGM (Member-get-Member)</td><td>Referral where referrer AND referee both get rewarded</td><td>(Campaign design, tracked via Referral Rate)</td><td>Both get 200 PKR on funded first payment</td></tr>
+<tr><td>NPS (Net Promoter Score)</td><td>Loyalty: promoters minus detractors (scale minus 100 to +100)</td><td>% Promoters (9-10) minus % Detractors (0-6)</td><td>50% minus 20% = +30</td></tr>
+<tr><td>CSAT (Customer Satisfaction Score)</td><td>Direct satisfaction with a product or interaction</td><td>(Satisfied responses / total) x 100</td><td>850 / 1,000 = 85%</td></tr>
+<tr><td>Number of Support Tickets</td><td>Volume of support requests (flags problems and cost)</td><td>Count of tickets in period</td><td>300 to 1,200/week after bad redesign</td></tr>
+</tbody>
+</table>
+
+<h3 id="metrics-teardown">The Product Teardown</h3>
+
+<div class="concept"><h3>What a Product Teardown is</h3>
+<p>A <strong>Product Teardown</strong> is an in-depth analysis of a product's components, features, design, and strategy. Product managers and teams examine a product (their own or a competitor's) to uncover insights that reveal its strengths, weaknesses, and opportunities for enhancement and optimization. Think of it as taking the product apart piece by piece, like a mechanic stripping an engine, to understand exactly how and why it works (or fails). It is the structured way to answer "how do you know if your product is good?" for any product, not just by numbers but by reasoning through every dimension.</p></div>
+
+<p>The reading groups teardowns into <strong>four families</strong>, each with its own sub-types. Memorize the four families and what lives under each.</p>
+
+<table class="cmp">
+<thead>
+<tr><th>Family</th><th>Sub-type</th><th>What it examines</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="4"><strong>1. User Experience &amp; Engagement</strong></td><td>UX Teardown</td><td>Usability, design, and the interaction flow</td></tr>
+<tr><td>Onboarding Teardown</td><td>First-time user experience and adoption friction</td></tr>
+<tr><td>Conversion Teardown</td><td>Effectiveness of the conversion funnels</td></tr>
+<tr><td>Accessibility &amp; Inclusivity Teardown</td><td>Usability for diverse users (disabilities, languages, low-end devices)</td></tr>
+<tr><td rowspan="4"><strong>2. Business &amp; Growth Strategy</strong></td><td>Business Model &amp; Pricing Teardown</td><td>How the product generates revenue</td></tr>
+<tr><td>Growth &amp; Acquisition Teardown</td><td>Strategies used to attract users</td></tr>
+<tr><td>Customer Support &amp; Retention Teardown</td><td>Engagement and loyalty strategies</td></tr>
+<tr><td>Competitive Analysis Teardown</td><td>Strengths and weaknesses versus competitors</td></tr>
+<tr><td rowspan="3"><strong>3. Product Functionality &amp; Technical Aspects</strong></td><td>Feature-specific Teardown</td><td>Deep dive into one particular feature's effectiveness</td></tr>
+<tr><td>Technical &amp; Architectural Teardown</td><td>Infrastructure, scalability, and performance</td></tr>
+<tr><td>Security &amp; Performance Teardown</td><td>Security measures and system performance</td></tr>
+<tr><td><strong>4. Retrospective &amp; Evolution</strong></td><td>Retrospective Teardown</td><td>Reviews past iterations of the product and their impact</td></tr>
+</tbody>
+</table>
+
+<div class="callout"><strong>How this ties to the course theme.</strong> The whole point of metrics and teardowns is to answer the course's recurring second question: <em>"How do you know if your product is good?"</em> Metrics give you the numeric evidence (is engagement up, is churn down, is CLTV above CAC?). The teardown gives you the structured reasoning (is the onboarding smooth, is the pricing sound, is it secure, how does it beat competitors?). A strong PM uses both: numbers to know <em>what</em> is happening, and a teardown to understand <em>why</em> and what to fix. If you cannot point to the metrics that prove your product is good, and cannot tear it down to explain its strengths and gaps, then you do not actually know whether it is good.</p></div>
+
+<h3 id="metrics-exam">Likely exam questions</h3>
+
+<h4>Multiple-choice (answers and rationale)</h4>
+
+<div class="mcq"><p class="stem">1. A wallet app has DAU = 150,000 and MAU = 600,000. What is its Stickiness Ratio, and what does it mean?</p>
+<ol class="opts" type="A"><li>4.0; the average user visits 4 times a day</li><li>0.25 (25%); the average monthly user is active on about 1 in 4 days</li><li>0.75; three quarters of users churn</li><li>Cannot be computed without revenue</li></ol>
+<p class="ans">Answer: B. Stickiness = DAU / MAU = 150,000 / 600,000 = 0.25 = 25%. It means the typical monthly user shows up on roughly a quarter of the days, a sign of habit strength.</p></div>
+
+<div class="mcq"><p class="stem">2. Total revenue this month is 4,000,000 PKR. There are 800,000 total users but only 500,000 active users. Which statement is correct?</p>
+<ol class="opts" type="A"><li>ARPU = 8 PKR and ARPAU = 5 PKR</li><li>ARPU = 5 PKR and ARPAU = 8 PKR</li><li>ARPU and ARPAU are both 5 PKR</li><li>ARPAU is always smaller than ARPU</li></ol>
+<p class="ans">Answer: B. ARPU = 4,000,000 / 800,000 = 5 PKR (all users). ARPAU = 4,000,000 / 500,000 = 8 PKR (active users only). ARPAU is larger because the denominator is smaller.</p></div>
+
+<div class="mcq"><p class="stem">3. A survey asks "How would you feel if you could no longer use the bill-split feature?" and 72% say "very disappointed". Which metric is this?</p>
+<ol class="opts" type="A"><li>Feature Adoption Rate</li><li>Conversion Rate</li><li>Feature Fit Index (FFI)</li><li>CSAT</li></ol>
+<p class="ans">Answer: C. FFI is the percentage who would be disappointed if a feature were removed. Adoption (A) measures how many started using it, which is a different question.</p></div>
+
+<div class="mcq"><p class="stem">4. In an NPS survey of 1,000 users: 400 promoters, 400 passives, 200 detractors. What is the NPS?</p>
+<ol class="opts" type="A"><li>+60</li><li>+40</li><li>+20</li><li>+80</li></ol>
+<p class="ans">Answer: C. NPS = % Promoters minus % Detractors = 40% minus 20% = +20. Passives (40%) are not subtracted; they only count toward the total.</p></div>
+
+<div class="mcq"><p class="stem">5. A lending app starts the month with 40,000 borrowers and loses 1,600. What are the monthly churn and retention rates?</p>
+<ol class="opts" type="A"><li>Churn 4%, retention 96%</li><li>Churn 16%, retention 84%</li><li>Churn 96%, retention 4%</li><li>Churn 40%, retention 60%</li></ol>
+<p class="ans">Answer: A. Churn = 1,600 / 40,000 = 4%. Retention = 100% minus 4% = 96% (or 38,400 / 40,000).</p></div>
+
+<div class="mcq"><p class="stem">6. Monthly ARPU is 12 PKR and monthly churn is 4%. Using the simple model, what is CLTV?</p>
+<ol class="opts" type="A"><li>48 PKR</li><li>300 PKR</li><li>3 PKR</li><li>1,200 PKR</li></ol>
+<p class="ans">Answer: B. Average lifetime = 1 / churn = 1 / 0.04 = 25 months. CLTV = ARPU x lifetime = 12 x 25 = 300 PKR.</p></div>
+
+<div class="mcq"><p class="stem">7. Which referral design is specifically a Member-get-Member (MGM) campaign?</p>
+<ol class="opts" type="A"><li>Only the new user gets a bonus</li><li>Only the existing user gets a bonus</li><li>Both the referrer and the referee receive a reward</li><li>Nobody is rewarded; it is organic word of mouth</li></ol>
+<p class="ans">Answer: C. MGM means the referrer (existing member) and the referee (the friend) both get the benefit, which motivates both sides.</p></div>
+
+<div class="mcq"><p class="stem">8. A "Technical and Architectural Teardown" belongs to which teardown family?</p>
+<ol class="opts" type="A"><li>User Experience &amp; Engagement</li><li>Business &amp; Growth Strategy</li><li>Product Functionality &amp; Technical Aspects</li><li>Retrospective &amp; Evolution</li></ol>
+<p class="ans">Answer: C. It sits under Product Functionality &amp; Technical Aspects, alongside Feature-specific and Security &amp; Performance teardowns.</p></div>
+
+<div class="mcq"><p class="stem">9. You spent 3,000,000 PKR and acquired 5,000 customers, whose monthly ARPU is 20 PKR. What is the CAC, and the CAC payback period?</p>
+<ol class="opts" type="A"><li>CAC 600 PKR; payback 30 months</li><li>CAC 600 PKR; payback 12 months</li><li>CAC 60 PKR; payback 3 months</li><li>CAC 1,500 PKR; payback 75 months</li></ol>
+<p class="ans">Answer: A. CAC = 3,000,000 / 5,000 = 600 PKR. Payback = CAC / monthly ARPU = 600 / 20 = 30 months. A long payback signals acquisition is too expensive relative to revenue.</p></div>
+
+<h4>Long-answer questions</h4>
+
+<div class="qa"><p class="q">Q1. Explain the difference between ARPU and ARPAU, why ARPAU is always at least as large, and what a big gap between them tells a PM.</p>
+<div class="a">A. ARPU (Average Revenue Per User) divides total revenue by every user, including dormant ones who generate nothing. ARPAU (Average Revenue Per Active User) divides the same revenue only by users who were active in the period. Because the active count is smaller than or equal to the total count, ARPAU is always greater than or equal to ARPU. A large gap means a big chunk of the user base is inactive: you have many sign-ups who do nothing, dragging the all-user average down. For a PM this signals an activation or retention problem. The product earns well from the people who actually use it (high ARPAU), but too few users reach that active state (low ARPU), so the fix is to convert dormant users into active ones, not necessarily to raise prices.</div></div>
+
+<div class="qa"><p class="q">Q2. Define a Product Teardown and list the four families with at least one sub-type each. Then explain how teardowns and metrics together answer "how do you know if your product is good?"</p>
+<div class="a">A. A Product Teardown is an in-depth analysis of a product's components, features, design, and strategy, done to reveal strengths, weaknesses, and opportunities for improvement. The four families are: (1) User Experience &amp; Engagement (UX, Onboarding, Conversion, Accessibility &amp; Inclusivity); (2) Business &amp; Growth Strategy (Business Model &amp; Pricing, Growth &amp; Acquisition, Customer Support &amp; Retention, Competitive Analysis); (3) Product Functionality &amp; Technical Aspects (Feature-specific, Technical &amp; Architectural, Security &amp; Performance); and (4) Retrospective &amp; Evolution (Retrospective). Metrics answer the "good?" question with evidence (engagement, churn, CLTV vs CAC, NPS), telling you what is happening. The teardown answers it with structured reasoning across every dimension, telling you why it is happening and where to improve. Used together, the numbers detect a problem and the teardown diagnoses and prioritizes the fix.</div></div>
+
+<div class="qa"><p class="q">Q3. Why can a feature have low Feature Adoption Rate but high Feature Fit Index, and how should a PM treat such a feature?</p>
+<div class="a">A. Adoption counts how many users start using the feature; FFI counts how many would be disappointed if it were removed. A feature used by only a small group (low adoption) can still be essential to that group, so among the people who rely on it the would-be-disappointed share is high (high FFI). An example is an auto-savings rule that only 9% of users set up, but 68% of those who use it say they would be very disappointed to lose it. A PM should not kill such a feature just because adoption looks low. Instead, treat it as a core feature for a valuable segment: protect it, and try to grow adoption (better discovery, clearer onboarding) so more users reach the group that loves it.</div></div>
+
+<h4>Scenario / numeric questions</h4>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N1.</strong> A fintech app reports: total monthly revenue 9,000,000 PKR, total users 1,200,000, active users (MAU) 600,000, DAU 150,000, monthly churn 5%. Compute Stickiness, ARPU, ARPAU, average customer lifetime, and CLTV (using ARPU). Show all arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>STICKINESS = DAU / MAU
+           = 150,000 / 600,000
+           = 0.25  (25%)
+
+ARPU = total revenue / total users
+     = 9,000,000 / 1,200,000
+     = 7.50 PKR
+
+ARPAU = total revenue / active users
+      = 9,000,000 / 600,000
+      = 15.00 PKR   (double ARPU, since only half are active)
+
+AVERAGE LIFETIME = 1 / churn
+                 = 1 / 0.05
+                 = 20 months
+
+CLTV = ARPU x lifetime
+     = 7.50 x 20
+     = 150 PKR</pre></div>
+Stickiness 25%, ARPU 7.50, ARPAU 15.00, lifetime 20 months, CLTV 150 PKR. If you used ARPAU instead (because billing is per active user), CLTV would be 15.00 x 20 = 300 PKR. State which base you use.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N2 (CAC payback and LTV:CAC).</strong> The same app spends 4,500,000 PKR on acquisition and gets 30,000 new users. Using monthly ARPU = 7.50 and CLTV = 150 PKR, compute CAC, the CAC payback period, and the LTV:CAC ratio. Is this healthy?</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>CAC = acquisition spend / new users
+    = 4,500,000 / 30,000
+    = 150 PKR
+
+CAC PAYBACK = CAC / monthly ARPU
+            = 150 / 7.50
+            = 20 months
+
+LTV : CAC = 150 : 150 = 1.0</pre></div>
+CAC is 150 PKR, payback is 20 months, and LTV:CAC is exactly 1.0. This is <strong>not</strong> healthy: the rule of thumb is LTV at least 3x CAC, and here you only just break even over the customer's entire 20-month life, with a very long 20-month payback. The app must cut CAC, raise ARPU, or reduce churn (which lengthens lifetime and raises CLTV).</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N3 (structure a teardown for app X).</strong> You are asked to perform a Product Teardown of a ride-hailing super-app that also added a wallet. Outline which teardown sub-types you would run and one concrete question under each, organized by the four families.</div>
+<div class="sc-a"><strong>Worked answer.</strong> Organize by the four families.
+<ul>
+<li><strong>1. User Experience &amp; Engagement.</strong> UX: is booking a ride and paying from the wallet a smooth single flow? Onboarding: how many steps before a first ride, and where do new users drop off? Conversion: what share of app-openers complete a booking? Accessibility &amp; Inclusivity: does it work on low-end phones and in local languages for low-literacy users?</li>
+<li><strong>2. Business &amp; Growth Strategy.</strong> Business Model &amp; Pricing: how does it make money (ride commission, wallet float, surge), and is pricing sound? Growth &amp; Acquisition: which channels bring riders and drivers, and at what CAC? Customer Support &amp; Retention: how are complaints handled, and what keeps riders loyal? Competitive Analysis: how does it stack up against rival ride and wallet apps?</li>
+<li><strong>3. Product Functionality &amp; Technical Aspects.</strong> Feature-specific: how effective is the new wallet feature (adoption and FFI)? Technical &amp; Architectural: can the backend handle peak-hour surges and scale to new cities? Security &amp; Performance: are payments secure (encryption, fraud checks) and is the app fast under load?</li>
+<li><strong>4. Retrospective &amp; Evolution.</strong> Retrospective: what did past versions get right or wrong (for example, did a previous pricing change increase churn), and what did the team learn?</li>
+</ul>
+A complete answer names the family, the sub-type, and a specific investigative question, showing you can apply the framework, not just recite it.</div>
+</div>
+
+</section>
+
+<section><h2 id="gamification">Gamification Case: FLYG (Financial Literacy for Youth via Gamification) <span class="badge in">IN SCOPE</span></h2>
+
+<p>This section explains a case study called <strong>FLYG: Financial Literacy for Youth via Gamification</strong>. It was a class simulation built by a team of 10 members from 7 different countries across Asia, so it is presented as an illustration of how to design a product for the service industry. We explain it from scratch: what the product is, who it is for, why it exists, how it makes money, and why "gamification" is the engine that makes it work.</p>
+
+<div class="callout"><strong>Key term. Gamification.</strong> Gamification means adding game-like elements (points, levels, avatars, leaderboards, rewards, challenges) to something that is not normally a game, in order to make it more fun and engaging. FLYG applies gamification to financial education, which is normally dry, so that young people actually want to learn about money. The bet is that if learning feels like playing, people come back, form habits, and stick around.</div>
+
+<div class="callout"><strong>Key term. Financial literacy.</strong> Financial literacy is the ability to understand and use money skills: budgeting (planning how to spend income), saving, investing (putting money to work to grow it), and managing loans and debt. The case argues that most youth in Asia have had little or no financial education, so they are "clueless about managing their income and funds". FLYG exists to close that gap.</div>
+
+<h3 id="gam-why">Why this product, and why this segment (youth 15 to 24)</h3>
+
+<div class="concept"><h3>The problem and the opportunity</h3>
+<p>The case targets <strong>youth aged 15 to 24</strong> (the United Nations definition of "youth"). The reasoning, built from a study of 7 Asian countries, has four parts:</p>
+<ul>
+<li><strong>A huge segment.</strong> There are about 1.1 billion youth worldwide aged 15 to 24, and over 60% of the world's youth live in Asia-Pacific. The case cites roughly 718 million youth in Asia. That is an enormous addressable market.</li>
+<li><strong>A real financial-literacy gap.</strong> Mobile and internet access is rising and financial inclusion is improving, but financial <em>literacy</em> is still sorely lacking. Most youth have had no financial education. Urban youth often rely fully on parents to manage money; rural youth face a lack of funds and income opportunities. The per-country evidence is stark (for example, only 9% of Hong Kong teenagers keep a detailed expense record, and 40% of Malaysian millennials spend beyond their means).</li>
+<li><strong>A massive gaming market to ride on.</strong> The global gaming industry was around 72.2 billion USD and projected to reach 174 billion USD by 2021, dominated by Asia-Pacific (China, Japan, South Korea lead). Youth already love games, so meeting them through gaming is natural.</li>
+<li><strong>Low e-wallet penetration = room to grow.</strong> E-wallet (electronic wallet, money stored and spent via an app) penetration was under 50% in the region (Malaysia 40%, Philippines 36%, Thailand 27%, Singapore 26%, others lower). That is huge headroom to bring youth onto a financial platform.</li>
+</ul>
+<p><strong>Key term. Financial inclusion.</strong> Financial inclusion means giving people access to useful, affordable financial services (a bank account, payments, savings, credit, insurance). Many youth, especially rural, are "unbanked" (no bank account) or "underbanked" (very limited access). FLYG aims to pull them into the formal financial system.</p></div>
+
+<div class="callout"><strong>The mission, in one line.</strong> Create financial literacy and set a good foundation for responsible money management, in a format that appeals to Gen Z (born 1997 to 2012) and Millennials (born 1981 to 1996). The solution: teach youth how to manage money and use financial tools through a fun, accessible, and relevant platform.</div>
+
+<h3 id="gam-pillars">The three pillars: PLAY, LEARN, EARN</h3>
+
+<p>FLYG is built on three pillars. The clever design is that the same platform does all three, and your activity in one pillar feeds the others (for example, learning and saving build a credit profile that unlocks real financial services).</p>
+
+<div class="concept"><h3>Pillar 1: PLAY (make it fun and social)</h3>
+<p>The goal is engagement through play and social connection.</p>
+<ul>
+<li><strong>A gamified universe:</strong> the platform is a virtual world with multiple cities, shops, a university, a game arcade, and mini-games you can relate to (for example, learn budgeting in a "math class" mini-game, or stocks and bonds in a "science class").</li>
+<li><strong>Socialization via avatars:</strong> you build an in-app avatar (a digital character that represents you) and connect, communicate, and compete with friends and peers.</li>
+<li><strong>Points-based rewards:</strong> you earn reward points for completing learning modules and hitting financial goals.</li>
+<li><strong>A rewards marketplace:</strong> you spend or swap reward points (or game credits) for physical items such as gadgets and mobile phones, including on installment or BNPL (Buy Now Pay Later, where you receive the item now and pay in pieces over time).</li>
+</ul>
+<p>The two example mini-games in the case are <em>Payback</em> (a scenario game about managing student debt without taking on too much) and <em>Spent</em> (a scenario game about surviving on a low income by budgeting). Scenarios update every quarter so players keep coming back.</p></div>
+
+<div class="concept"><h3>Pillar 2: LEARN (interesting and interactive learning)</h3>
+<ul>
+<li><strong>eLearning and certification:</strong> finance courses offered in partnership with education institutes or financial service providers, with professional certificates from universities or educational bodies.</li>
+<li><strong>Leaderboards:</strong> a ranking board that highlights your achievements and lets you share them with friends and family (social proof drives motivation).</li>
+<li><strong>Relevant, age-tiered syllabus:</strong> content designed by age group, language, and interest (even crypto), delivered as fun games, videos, podcasts, live sessions, quizzes, competitions, and challenges, with free introductory and intermediate courses and rewards for completing them.</li>
+<li><strong>Social inclusion:</strong> crowdfunding, donations, and scholarships for the needy, building a sense of community.</li>
+</ul>
+<p>The learning tiers progress <strong>Basic to Intermediate to Advance to Professional</strong>, ending with a meaningful credit rating score tied to incentives, preparing youth for the real world.</p></div>
+
+<div class="concept"><h3>Pillar 3: EARN (multiple ways to earn income and rewards)</h3>
+<p>The EARN pillar has three named services, each prefixed with a lowercase "e" for electronic:</p>
+<ul>
+<li><strong>eWallet:</strong> offers saving interest, fixed deposits, budgeting tools, and basic or low-risk investing modules, plus the ability to receive and send money to and from bank accounts and via P2P (peer-to-peer, sending money directly person to person).</li>
+<li><strong>eWork:</strong> freelance and online jobs to earn money (tutoring, designing, translating, or chores set by parents).</li>
+<li><strong>eScore:</strong> building a credit profile so that youth can access basic or starter credit services. A credit profile is a record of how reliably you handle money and repay, which lenders use to decide whether to lend to you.</li>
+</ul>
+<p>The unifying idea: activities, savings, and engagement on the platform build a credit profile for the user, which unleashes more advanced financial services over time. PLAY draws them in, LEARN builds skills, EARN turns those skills into income and a credit identity.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Keep the three pillars and their services straight. PLAY = gamified city, avatars, mini-games, and the rewards marketplace. LEARN = eLearning, certification, leaderboards, age-tiered syllabus. EARN = eWallet, eWork, eScore. A common mistake is to put the rewards marketplace under EARN; in this case it sits under PLAY (you spend points there). The three "e" services (eWallet, eWork, eScore) are the EARN pillar.</div>
+
+<h3 id="gam-objectives">The four-tier objectives and gains</h3>
+
+<div class="concept"><h3>What the product is trying to achieve</h3>
+<p>The case frames four objectives that the product delivers against:</p>
+<ul>
+<li><strong>Affordability:</strong> offer the lowest possible rates to obtain rewards, so the proposition stays relevant to every value segment (rich or poor youth).</li>
+<li><strong>Inclusion &amp; Education:</strong> educational and "edutainment" tools, cashback channels, and delivery options help form the digital IDs of users, while encouraging disciplined payment behavior directly and indirectly.</li>
+<li><strong>Credit Risk Data Pipeline:</strong> the platform becomes a goldmine of data for future credit-risk modeling, capturing actual behavior (on-time vs delayed payments, full vs partial vs non-payment). This data lets the company judge who is a safe borrower.</li>
+<li><strong>Bundle Benefits:</strong> a package of perks to attract and retain users: free delivery, free top-ups, free transfers, free e-book vouchers, Member-get-Member discounts, family discounts, mobile-internet discounts, and surprise gifts.</li>
+</ul>
+<p><strong>Key term. Credit-risk modeling.</strong> This is using data about a person's past behavior to predict how likely they are to repay a loan. FLYG's edge is that even before a user borrows, their saving, learning, and payment activity quietly builds the data needed to assess that risk, which is valuable to lenders and to FLYG itself.</p></div>
+
+<h3 id="gam-business">The business model: how FLYG makes money</h3>
+
+<div class="concept"><h3>Four revenue and cost components</h3>
+<ul>
+<li><strong>Freemium.</strong> Freemium = "free" plus "premium": the core product is free to attract a large user base, and you charge for premium extras. In FLYG: unlock features with a subscription (with starting gifts and reward points on QR-code-led subscriptions), offer multiple subscription tiers for all levels of affordability, and charge pay-per-use for special financial classes, certification, or personal coaching.</li>
+<li><strong>Strategic Partnerships.</strong> Collaborate across the financial ecosystem (financial institutions, digital banks, e-wallet players, any fintech, universities, job portals) that want access to this youth user group. Revenue is shared from certification by education institutes, e-commerce providers, loan interest, job portals, and advertisement. NGO (Non-Governmental Organization, a non-profit body) grants, sponsorships, and scholarships fund the social-contribution side.</li>
+<li><strong>Interest from Trust Account.</strong> Earn interest from the balances held in user wallets and savings accounts. Interest earned from this trust account can be plowed back to help underserved communities on the platform.</li>
+<li><strong>Cost Structure.</strong> The costs to run it: platform dev-ops, IT infrastructure (including a Data Warehouse, a DWH, a big store of data for analytics, plus servers and hardware), proprietary software licenses, human resources (staff payroll), operational running costs and bills, facilities (office and equipment), marketing, research and consulting, insurance, and taxes.</li>
+</ul>
+<p><strong>Key term. Freemium (memorize).</strong> A model where the basic product is free to build a large audience, and a smaller fraction of users pay for premium features. It works well for digital products because the cost of serving one extra free user is tiny, so you can afford many free users while monetizing the few who upgrade.</p></div>
+
+<h3 id="gam-competitive">Competitive analysis: why no one else does this</h3>
+
+<div class="concept"><h3>The gap FLYG fills</h3>
+<p>There are many apps targeting youth in Asia, but the case argues they are all <strong>silo in nature</strong> (each does only one thing in its own isolated bucket):</p>
+<ul>
+<li><strong>PLAY rivals:</strong> games like PUBG (over 70 million players) and Roblox (220 million monthly active players) are hugely popular and social, but purely entertainment. Finance-flavored games tend to be monotonous.</li>
+<li><strong>LEARN rivals:</strong> educational sites like Udemy, LinkedIn Learning, and Coursera are limited in social interaction and focus only on learning.</li>
+<li><strong>EARN rivals:</strong> UOB's TMRW app has gamification but limited to banking only; e-wallets are mass-market and skewed toward payments; standalone apps offer freelance jobs, financial planning, or robo-advisors separately.</li>
+</ul>
+<p>Crucially, <strong>none combines all three with a marketplace powered by reward points</strong>, and their construct does not appeal to Gen Z and Millennials. FLYG's differentiation is the integrated PLAY + LEARN + EARN experience with a rewards marketplace, which no single competitor offers.</p></div>
+
+<div class="callout"><strong>Why integration is the moat.</strong> A "moat" is a durable competitive advantage that protects you from rivals. FLYG's moat is that the three pillars reinforce each other: playing earns points, learning builds skills and a credit score, earning turns skills into income, and the credit data from all of it unlocks financial services. A pure game, a pure course site, or a pure wallet cannot replicate this loop, because they only own one piece.</div>
+
+<h3 id="gam-gtm">Go-to-market strategy</h3>
+
+<div class="concept"><h3>How FLYG reaches youth</h3>
+<p><strong>Key term. Go-to-market (GTM).</strong> Your plan for how you will reach customers and get them to adopt the product (which channels, messages, and tactics).</p>
+<ul>
+<li><strong>Mobile-first and social-media-led:</strong> since the audience lives on their phones, social media is the key channel: Instagram, YouTube, Facebook, TikTok, Snapchat, Discord, Tumblr.</li>
+<li><strong>Micro-influencers and ambassadors:</strong> work with smaller, trusted online personalities (micro-influencers) and brand ambassadors who feel authentic to youth, rather than only expensive celebrities.</li>
+<li><strong>FOMO and lifestyle tone:</strong> messaging is Authentic, Lifestyle-focused, and built to create FOMO (Fear Of Missing Out, the anxiety that others are enjoying something you are not, which pushes people to join). Focus on lifestyle, social, and experience, not on dry finance.</li>
+<li><strong>Omni-channel marketing:</strong> "omni-channel" means a consistent presence across every channel at once: social media, content marketing, SEO and SEM (Search Engine Optimization and Search Engine Marketing, ranking and advertising on search engines), digital ads, email, and partner-led BTL campaigns.</li>
+</ul>
+<p>The funnel goals progress: <strong>Downloads to Registration to Interact to Transact</strong> (get them to install, sign up, engage, and finally transact, which is where money is made).</p></div>
+
+<h3 id="gam-risks">Regulations, risks, and challenges</h3>
+
+<div class="concept"><h3>Why a youth fintech super-app is hard to launch</h3>
+<p>Targeting minors with money across many countries creates serious constraints:</p>
+<ul>
+<li><strong>ID availability and KYC.</strong> KYC (Know Your Customer) is the legal duty to verify a customer's identity before onboarding. ID-card issuance ages range from birth to 18 across countries, so a youth may not have an ID to verify, blocking proper onboarding.</li>
+<li><strong>Bank-account age limits and parental consent.</strong> Opening a bank account may require parental consent, and in some countries accounts are only available at 17 and above. This creates disparity: the product cannot fully include the youngest youth, undermining the inclusion goal.</li>
+<li><strong>SIM-card age limits.</strong> Many telcos allow SIM registration only for those over 17 (in Pakistan the minimum is 18), so younger users must rely on a parent's supplementary SIM. Smartphone and internet penetration sits around 80 to 85% in most countries.</li>
+<li><strong>Minimum working age.</strong> The legal age to work averages around 15 (with limits on hours and type of work), which constrains the eWork earning feature for the youngest users.</li>
+<li><strong>Cross-border regulation.</strong> A financial super-app across borders must comply with many regulatory regimes that differ country to country.</li>
+<li><strong>Cultural and religious barriers.</strong> Rural youth (especially females in South Asia) may not have mobile or internet connections in their own names or be allowed social media. Muslim-majority countries prefer Shariah-compliant financial services (Shariah = Islamic law, which forbids interest-based and gambling products), so FLYG must avoid gambling and offer compliant finance.</li>
+</ul></div>
+
+<h3 id="gam-system">The end-to-end system stages and the football analogy</h3>
+
+<div class="concept"><h3>The six stages a user (and the product) moves through</h3>
+<p>The case describes an end-to-end system. The six operational stages are:</p>
+<ol>
+<li><strong>Customer Acquisition:</strong> reaching and signing up users via omni-channel interfacing and marketing responses (ATL/BTL/other campaigns). (ATL = Above The Line, broad mass-media advertising; BTL = Below The Line, targeted direct channels and partnerships.)</li>
+<li><strong>Eligibility Assessment:</strong> checking criteria (age, SIM, digital and photo IDs, parental access) and running fraud detection (identity checks, catching repeat offenders).</li>
+<li><strong>Locking &amp; Delivery:</strong> for marketplace purchases, managing supply chain, stock, and delivery (and "locking" the product or installment plan to the user).</li>
+<li><strong>Collection Management:</strong> collecting installment payments, with an evolving strategy (pricing, rewards, regulatory) and a collection strategy (in-house or outsourced), plus efficiency measures (delinquency plans for late payers, contact prioritization). "Delinquency" means falling behind on payments.</li>
+<li><strong>Customer Experience / Value Management (CVM):</strong> measuring satisfaction via surveys and NPS, and running campaigns (cross-sell, up-sell, top-up, MGM). CVM means actively managing the value a customer gets and gives over their lifetime.</li>
+<li><strong>Analytics &amp; Risk Pipeline:</strong> monitoring, data collection, and analytics that feed the credit-risk models (the goldmine of behavioral data).</li>
+</ol>
+<p><strong>Key term. Cross-sell vs up-sell.</strong> Cross-sell = offering a different, complementary product (a user with a wallet is offered insurance). Up-sell = offering a bigger or premium version of what they already have (moving from a free tier to a paid subscription).</p></div>
+
+<div class="callout"><strong>The football-team analogy (likely exam line).</strong> The case compares the six stages to a football (soccer) team: "until and unless all players multi-touch and team-play, getting a goal is impossible." The point is that no single stage can succeed alone. Acquisition without eligibility checks brings fraud; delivery without collection loses money; analytics without acquisition has no data. Only when every stage passes the ball to the next (team play) does the product "score a goal" (a satisfied, paying, low-risk customer). It is a vivid way to argue that the system must work end-to-end, not in isolated parts.</div>
+
+<div class="concept"><h3>Per-country appendix (low yield, one sentence)</h3>
+<p>The appendix compiles one researcher's country profile each for Indonesia, Philippines, Malaysia, Pakistan, South Korea, Thailand, and Vietnam, showing that across all seven the same pattern holds: rising connectivity but weak youth financial literacy, varied bank-account and SIM age rules, and cultural or infrastructure barriers, which together justify a single gamified, inclusive platform.</p></div>
+
+<h3 id="gam-why-works">Why gamification works for engagement and habit formation</h3>
+
+<div class="callout"><strong>The core insight.</strong> Financial education is normally boring, so people avoid it and never build the habit. Gamification fixes this with well-known behavioral hooks: (1) <strong>points and rewards</strong> give instant positive feedback, which trains people to repeat the behavior; (2) <strong>levels and progression</strong> (Basic to Professional) create a sense of advancement that pulls users forward; (3) <strong>leaderboards and avatars</strong> add social competition and identity, so learning becomes something you show off; (4) <strong>fresh content</strong> (scenarios that update quarterly) gives a reason to return; and (5) <strong>real rewards</strong> (the marketplace, top-100 prizes) connect virtual effort to tangible payoff. The result is a habit loop: a cue (notification or challenge), a routine (play or learn), and a reward (points, status, prizes), repeated until managing money becomes second nature. That habit is exactly what a financial-literacy product needs, because literacy comes from repeated practice, not a one-time lecture.</div>
+
+<h3 id="gam-exam">Likely exam questions</h3>
+
+<h4>Multiple-choice (answers and rationale)</h4>
+
+<div class="mcq"><p class="stem">1. What does FLYG stand for, and who is the target segment?</p>
+<ol class="opts" type="A"><li>Financial Loans for Young Graduates; ages 25 to 34</li><li>Financial Literacy for Youth via Gamification; ages 15 to 24</li><li>Fun Learning Yields Growth; children under 12</li><li>Fintech League for Youth Gaming; ages 18 to 30</li></ol>
+<p class="ans">Answer: B. FLYG = Financial Literacy for Youth via Gamification, targeting youth aged 15 to 24 (the UN definition of youth).</p></div>
+
+<div class="mcq"><p class="stem">2. Which service belongs to the EARN pillar?</p>
+<ol class="opts" type="A"><li>The rewards marketplace</li><li>Avatars and mini-games</li><li>eScore (building a credit profile)</li><li>Leaderboards</li></ol>
+<p class="ans">Answer: C. EARN comprises eWallet, eWork, and eScore. The marketplace and avatars are PLAY; leaderboards are LEARN.</p></div>
+
+<div class="mcq"><p class="stem">3. In FLYG's business model, "Freemium" means:</p>
+<ol class="opts" type="A"><li>Everything is free forever</li><li>The basic product is free to attract a large base, with paid premium features and subscriptions</li><li>Only premium users may register</li><li>Revenue comes solely from advertising</li></ol>
+<p class="ans">Answer: B. Freemium offers a free core to build scale and charges for premium extras (subscriptions, special classes, certification, coaching).</p></div>
+
+<div class="mcq"><p class="stem">4. According to the competitive analysis, what is the key gap FLYG fills that rivals do not?</p>
+<ol class="opts" type="A"><li>It is the only mobile app for youth</li><li>It is cheaper than every competitor</li><li>It integrates PLAY, LEARN, and EARN with a reward-points marketplace, whereas rivals are silo (only one of gaming, education, or finance)</li><li>It avoids social media entirely</li></ol>
+<p class="ans">Answer: C. Rivals are silo (PUBG/Roblox are pure play, Coursera is pure learn, e-wallets are pure finance). None combines all three with a rewards marketplace.</p></div>
+
+<div class="mcq"><p class="stem">5. The football-team analogy in the end-to-end system is used to argue that:</p>
+<ol class="opts" type="A"><li>Marketing is the only stage that matters</li><li>No single stage succeeds alone; all six stages must work together (team play) to "score a goal"</li><li>The product should include a football game</li><li>Collections should be outsourced</li></ol>
+<p class="ans">Answer: B. Like a team that needs every player to pass the ball, the six stages (Acquisition, Eligibility, Locking &amp; Delivery, Collection, CVM, Analytics) must all coordinate or the product cannot score (win a satisfied, paying, low-risk customer).</p></div>
+
+<div class="mcq"><p class="stem">6. Which is a genuine regulatory or cultural risk the case raises for FLYG?</p>
+<ol class="opts" type="A"><li>Youth dislike mobile phones</li><li>Bank accounts and SIMs often have minimum age limits, KYC needs an ID many youth lack, and Muslim-majority markets require Shariah-compliant, gambling-free services</li><li>There is no gaming market in Asia</li><li>E-wallet penetration is already 100%</li></ol>
+<p class="ans">Answer: B. The case lists ID/KYC availability, bank-account and SIM age limits, parental consent, cross-border regulation, and cultural/Shariah constraints as core challenges.</p></div>
+
+<div class="mcq"><p class="stem">7. Which of these is a reason the youth segment is attractive, per the case?</p>
+<ol class="opts" type="A"><li>Youth have the highest incomes in Asia</li><li>Roughly 718 million youth in Asia, a large gaming market, a real financial-literacy gap, and sub-50% e-wallet penetration (room to grow)</li><li>Youth never use social media</li><li>There is no financial-literacy gap among youth</li></ol>
+<p class="ans">Answer: B. The opportunity rests on segment size, the gaming market, the literacy gap, and low e-wallet penetration.</p></div>
+
+<div class="mcq"><p class="stem">8. In the four-tier objectives, which one describes turning user behavior into a "goldmine of data" for predicting repayment?</p>
+<ol class="opts" type="A"><li>Affordability</li><li>Bundle Benefits</li><li>Credit Risk Data Pipeline</li><li>Inclusion &amp; Education</li></ol>
+<p class="ans">Answer: C. The Credit Risk Data Pipeline captures actual payment behavior (on-time/delayed, full/partial/non-payment) to feed future credit-risk modeling.</p></div>
+
+<h4>Long-answer questions</h4>
+
+<div class="qa"><p class="q">Q1. Explain FLYG's three pillars (PLAY, LEARN, EARN), giving concrete examples of each, and explain how they reinforce one another into a single integrated product.</p>
+<div class="a">A. <strong>PLAY</strong> makes the platform fun and social: a gamified universe of cities and mini-games (such as Payback on student debt and Spent on low-income budgeting), in-app avatars and friends, points-based rewards for completing modules, and a marketplace to swap points for gadgets (including BNPL). <strong>LEARN</strong> makes education interactive: eLearning with university certification, leaderboards to share achievements, an age-tiered syllabus across formats (videos, quizzes, challenges) with free intro courses, and social inclusion via scholarships and crowdfunding. <strong>EARN</strong> provides income and a financial identity through three services: eWallet (saving, deposits, budgeting, low-risk investing, send/receive money), eWork (freelance and online jobs), and eScore (building a credit profile). They reinforce each other in a loop: PLAY pulls youth in and rewards engagement; LEARN builds real money skills and progresses them from Basic to Professional; EARN converts skills into income; and the saving, learning, and payment activity across all three builds a credit profile (eScore) that unlocks more advanced financial services. No silo competitor (pure game, pure course site, or pure wallet) can copy this loop, which is FLYG's competitive moat.</div></div>
+
+<div class="qa"><p class="q">Q2. Describe FLYG's business model and explain why freemium and the trust-account interest are well suited to a youth audience with low and varied incomes.</p>
+<div class="a">A. The model has four parts. <strong>Freemium</strong> keeps the core free to build a large youth base, then earns from premium subscriptions (with QR-code starter gifts and reward points), multiple affordability tiers, and pay-per-use classes, certification, and coaching. <strong>Strategic Partnerships</strong> earn shared revenue from education institutes, e-commerce, loan interest, job portals, and advertising, plus NGO grants for social work, by selling access to the youth user group. <strong>Interest from the Trust Account</strong> earns on the balances held in user wallets and savings, and can be plowed back into underserved communities. The <strong>Cost Structure</strong> covers dev-ops, IT infrastructure and data warehouse, licenses, staff, operations, facilities, marketing, research, insurance, and taxes. Freemium fits a low-and-varied-income youth audience because most cannot or will not pay upfront, so a free core maximizes reach, while the small paying minority and the multiple low-priced tiers capture revenue without excluding anyone. Trust-account interest fits because it earns money from balances youth already hold (even tiny savings), so the platform profits even from users who never buy a premium subscription, and the proceeds can subsidize the underserved, advancing the inclusion mission.</div></div>
+
+<div class="qa"><p class="q">Q3. Why does gamification work for engagement and habit formation, and why is it especially appropriate for teaching financial literacy to youth?</p>
+<div class="a">A. Gamification works because it uses behavioral hooks that drive repeat behavior: points and rewards give instant positive feedback; levels and progression create a pull to advance; leaderboards and avatars add social competition and identity; fresh content (quarterly scenario updates) gives a reason to return; and real rewards (the marketplace, top-100 prizes) tie virtual effort to tangible payoff. Together these form a habit loop of cue, routine, and reward, repeated until the behavior becomes automatic. This is especially appropriate for financial literacy among youth for three reasons. First, financial education is normally dry, so youth avoid it; gamification removes the boredom barrier. Second, literacy is built by repeated practice, not a single lecture, and habit loops produce exactly that repetition. Third, the audience (Gen Z and Millennials) already lives in games and social media, so meeting them through play, avatars, and social sharing is the natural way to reach and retain them. The result is that managing money becomes a habit formed through enjoyable, repeated practice.</div></div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario.</strong> A regulator in a Muslim-majority country with a SIM-registration minimum age of 18 reviews FLYG. Identify the specific risks the case would flag and how FLYG should adapt the product to launch there responsibly.</div>
+<div class="sc-a"><strong>Worked answer.</strong> The case flags several risks that all apply here. (1) <strong>SIM and onboarding:</strong> with a minimum SIM age of 18, users aged 15 to 17 cannot register a SIM in their own name, so FLYG must support a parent's supplementary SIM and parental-consent onboarding. (2) <strong>KYC and ID:</strong> verifying identity (KYC) requires an ID that younger youth may lack, so FLYG needs a sponsor or guardian's photo ID and mobile number to onboard minors. (3) <strong>Bank-account age limits and parental consent:</strong> account access may need a guardian, so the product should let a parent's account link to the youth's, with payments routed via the guardian where required. (4) <strong>Shariah compliance:</strong> in a Muslim-majority market FLYG must offer Shariah-compliant financial services and remove anything resembling gambling, including no gambling-style mini-games, and use interest-free or compliant savings and credit structures. (5) <strong>Cultural barriers:</strong> some youth (especially rural females) may not have devices in their own names or social-media access, so FLYG should allow guardian-linked accounts and offline-friendly access. Adapting in these ways lets FLYG honor its inclusion mission while satisfying the regulator.</div>
+</div>
+
+</section>
+
+<section><h2 id="designlab">Design-Your-Own-Products Lab + the Wage Boost Sample <span class="badge in">IN SCOPE</span></h2>
+
+<p>This is the running project of the course. Across several weeks you design your own financial product, building it up piece by piece using the frameworks taught in class. This section explains the lab brief, the two questions that run through everything, the 9-part tear-down you must deliver, the full financial model worked line by line (a likely numeric exam question), and the provided sample answer called Wage Boost.</p>
+
+<h3 id="dl-brief">The lab brief</h3>
+
+<div class="concept"><h3>What you are asked to design</h3>
+<p>The instructions (from the "Designing Your Own Products" worksheet) are:</p>
+<ol>
+<li>Think about the Pakistani financial-services market and the dynamics of the country.</li>
+<li>To encourage <strong>financial inclusion for daily wage earners</strong>, design an <strong>investment-based product</strong> where the investment must stay for <strong>30 days to be eligible for a return</strong>. (A daily wage earner is someone paid by the day, like a laborer, with irregular income and usually no bank account.)</li>
+<li>Design <strong>three variants</strong> for this segment: <strong>Basic, Intermediate, and Advance</strong>, each with a <em>different eligibility criterion</em> (a different rule for who qualifies or how long the money must stay).</li>
+<li>The <strong>primary leg of profitability</strong> is based on your organization <em>re-investing the customers' invested amount</em>. Your organization earns an <em>annual</em> profit from that re-investment, while the customer earns a <em>monthly</em> profit.</li>
+<li>The <strong>secondary and onward profits</strong> (for both the organization and the customers) come from innovations and partnership models.</li>
+</ol>
+<p><strong>Key term. Investment-based product, and the "leg" of profitability.</strong> An investment-based product takes money from customers, puts it to work to grow it, and shares the gains. A "leg" of profitability is one source of profit. The <em>primary leg</em> here is re-investment: customers deposit money, the organization invests that pooled money elsewhere at a higher annual return, pays the customer a smaller monthly profit, and keeps the spread (the difference). Secondary legs are extra income streams from partnerships and new features.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Note the mismatch in time units: the organization's return is quoted <em>annually</em> but the customer's profit is paid <em>monthly</em>. In the model below you will repeatedly divide annual rates by 12 to get the monthly per-subscriber figures. Forgetting the "/ 12" is the single most common arithmetic error in this model.</div>
+
+<h3 id="dl-twoq">The two guiding questions (very likely exam question)</h3>
+
+<div class="callout"><strong>The two questions that run through the whole course.</strong> The worksheet ends with a note: at each step, pause and design your frameworks while keeping these two questions in mind:
+<ol>
+<li><strong>What product are you building?</strong></li>
+<li><strong>How do you know if your product is good?</strong></li>
+</ol>
+These are not throwaway lines. They are the spine of the entire course. Question 1 forces clarity of definition (who is it for, what does it do, what are the variants and eligibility). Question 2 forces evidence (which metrics, which value delivered, which teardown findings prove it works). Expect to be asked to answer both for your own product or for a given app. A strong answer to Q1 is specific (segment, problem, variants, services). A strong answer to Q2 cites concrete metrics (retention, churn, CLTV vs CAC, NPS, adoption) and the value proposition, not vague claims like "users will love it".</div>
+
+<h3 id="dl-structure">The 9-part product tear-down you must deliver</h3>
+
+<div class="concept"><h3>The required structure</h3>
+<p>Your deliverable must include these nine parts, in order:</p>
+<ol>
+<li><strong>Background &amp; Opportunity Hypothesis.</strong> The context and your bet about an unmet need (a hypothesis is an educated guess you will test). For example: "we believe daily wage earners want short-term investments with quick returns but lack access".</li>
+<li><strong>Problem Statement.</strong> A clear description of the specific problem you are solving for the customer.</li>
+<li><strong>Assumptions.</strong> The things you are taking as true for the plan to work (for example, that users have smartphones, or that a minimum investment threshold is acceptable to them).</li>
+<li><strong>Product Definition &amp; Eligibility.</strong> What the product is and the rules for each of the three variants (Basic, Intermediate, Advance), including eligibility criteria.</li>
+<li><strong>Services Offered with benefits.</strong> The specific features and the benefit each delivers to the customer.</li>
+<li><strong>Target Audience and segments.</strong> Who the customers are, split into segments (for example, street vendors, gig workers, small business owners).</li>
+<li><strong>Value Proposition Canvas (customer journeys).</strong> The mapping of customer needs to the value you offer, linked to the variants in part 4. (See the key term below.)</li>
+<li><strong>Financials.</strong> Cost, pricing, and profitability structures (the numeric model worked below).</li>
+<li><strong>Scale Plans.</strong> How you will grow, initially, followed by a CVM (Customer Value Management) plan in a later week.</li>
+</ol>
+<p><strong>Key term. Value Proposition Canvas.</strong> A simple framework that puts the customer's "jobs" (what they are trying to get done), "pains" (frustrations), and "gains" (desired benefits) on one side, and your product's "pain relievers" and "gain creators" on the other, then checks that the two sides match. A "customer journey" is the step-by-step path a user takes from first hearing about you to becoming a loyal user. <strong>CVM (Customer Value Management)</strong> is the ongoing practice of maximizing the value a customer gives and gets over their lifetime (through cross-sell, up-sell, retention, and win-back).</p></div>
+
+<h3 id="dl-model">The financial model, line by line (likely numeric exam question)</h3>
+
+<p>The worksheet gives a worked profitability illustration for the <strong>Basic tier</strong>. We rebuild it from scratch so you can reproduce or solve a variant in the exam. Every line shows the plain-English meaning, the formula, and the arithmetic for Year 1 and Year 2.</p>
+
+<div class="concept"><h3>The starting inputs (Basic tier)</h3>
+<table class="cmp">
+<thead><tr><th>Input</th><th>Year 1</th><th>Year 2</th></tr></thead>
+<tbody>
+<tr><td>Cohort (number of subscribers)</td><td>34,493</td><td>34,493 (same cohort)</td></tr>
+<tr><td>Invested Amount (total pooled deposits)</td><td>56,972,810</td><td>64,926,182</td></tr>
+<tr><td>Organization's Monthly Share from Re-investment (annual rate)</td><td>13.5%</td><td>15.5%</td></tr>
+<tr><td>Cost of Customer's Monthly Profit (annual rate)</td><td>9%</td><td>11%</td></tr>
+<tr><td>Customer's Monthly Rev from Other Legs (rate on invested)</td><td>11%</td><td>11%</td></tr>
+<tr><td>Platform usage charge (you keep the rest)</td><td>15% (keep 85%)</td><td>15% (keep 85%)</td></tr>
+<tr><td>Monthly costs (deducted from org earnings)</td><td>5% (keep 95%)</td><td>2% (keep 98%)</td></tr>
+<tr><td>Shareholder's share</td><td>18%</td><td>21%</td></tr>
+</tbody>
+</table>
+<p>The <strong>Cohort</strong> is the group of subscribers in the Basic tier (34,493 people). The <strong>Invested Amount</strong> is the total money they have collectively deposited and that stays invested. The rates are the levers that turn deposits into profit for both sides.</p></div>
+
+<div class="concept"><h3>Line 1: Invested per subscriber</h3>
+<p><strong>Plain English.</strong> On average, how much has each subscriber invested? Divide the total invested amount by the number of subscribers.</p>
+<div class="calc"><pre>Invested per subscriber = Invested Amount / Cohort
+
+Year 1: 56,972,810 / 34,493 = 1,651.72
+Year 2: 64,926,182 / 34,493 = 1,882.30
+
+Year-on-year change = (1,882.30 / 1,651.72) - 1
+                    = 0.1396 = +13.96%</pre></div>
+<p>Each subscriber invests about 1,651.72 in Year 1, rising 13.96% to 1,882.30 in Year 2 (the same people invest more as they trust the product).</p></div>
+
+<div class="concept"><h3>Line 2: Organization's monthly share from re-investment (per subscriber)</h3>
+<p><strong>Plain English.</strong> The organization re-invests the pooled money and earns an <em>annual</em> rate (13.5% in Year 1). To find the organization's <em>monthly</em> earning per subscriber, multiply the annual rate by the per-subscriber invested amount, then divide by 12 (to turn an annual figure into a monthly one).</p>
+<div class="calc"><pre>Org monthly share per sub = annual rate x invested-per-sub / 12
+
+Year 1: 0.135 x 1,651.72 / 12 = 18.58
+Year 2: 0.155 x 1,882.30 / 12 = 24.31</pre></div>
+<p>The organization earns about 18.58 per subscriber per month in Year 1, 24.31 in Year 2.</p></div>
+
+<div class="concept"><h3>Line 3: Cost of the customer's monthly profit (per subscriber)</h3>
+<p><strong>Plain English.</strong> This is what it <em>costs the organization</em> to pay the customer their monthly profit. The customer is promised a return at an annual rate (9% in Year 1), so per subscriber per month it is the annual rate times invested-per-sub divided by 12. This is money leaving the organization toward the customer.</p>
+<div class="calc"><pre>Cost of customer monthly profit per sub = annual rate x invested-per-sub / 12
+
+Year 1: 0.09 x 1,651.72 / 12 = 12.39
+Year 2: 0.11 x 1,882.30 / 12 = 17.25</pre></div>
+<p>It costs about 12.39 per subscriber per month in Year 1, 17.25 in Year 2, to pay the customer's profit.</p></div>
+
+<div class="callout"><strong>The spread (why the primary leg is profitable).</strong> The organization earns 18.58 per subscriber (Line 2) but only pays out 12.39 of that as the customer's profit (Line 3) in Year 1. The difference, about 6.19 per subscriber, is the organization's gross margin on the re-investment leg before other legs and costs. This spread between what the money earns and what the customer is paid is the heart of the model.</div>
+
+<div class="concept"><h3>Line 4: Customer's monthly revenue from other legs</h3>
+<p><strong>Plain English.</strong> Beyond the invested-amount profit, the customer also earns from "other legs" (the secondary income from partnerships and innovations), set at 11% of the invested-per-sub amount. Note this rate is applied directly (not divided by 12 in the sheet).</p>
+<div class="calc"><pre>Customer monthly rev from other legs = 11% x invested-per-sub
+
+Year 1: 0.11 x 1,651.72 = 181.69
+Year 2: 0.11 x 1,882.30 = 207.05</pre></div></div>
+
+<div class="concept"><h3>Line 5: Minus platform usage charges (keep 85%)</h3>
+<p><strong>Plain English.</strong> The platform takes a 15% usage charge on the other-legs revenue, so the customer keeps 85% of it. Multiply Line 4 by 0.85.</p>
+<div class="calc"><pre>Other legs after charges = Line 4 x 0.85
+
+Year 1: 181.69 x 0.85 = 154.44
+Year 2: 207.05 x 0.85 = 176.00</pre></div></div>
+
+<div class="concept"><h3>Line 6: What the customer earns (total)</h3>
+<p><strong>Plain English.</strong> The customer's total monthly earning is the other-legs revenue after charges (Line 5) plus the customer's monthly profit from the invested amount (Line 3, which from the customer's side is income).</p>
+<div class="calc"><pre>What customer earns = (other legs after charges) + (customer monthly profit)
+
+Year 1: 154.44 + 12.39 = 166.82
+Year 2: 176.00 + 17.25 = 193.25
+
+Year-on-year change = (193.25 / 166.82) - 1
+                    = 0.1584 = +15.84%</pre></div>
+<p>The customer earns about 166.82 per month in Year 1, growing 15.84% to 193.25 in Year 2.</p></div>
+
+<div class="concept"><h3>Line 7: What the organization earns (after monthly costs)</h3>
+<p><strong>Plain English.</strong> The organization's total monthly earning combines its margin on both legs, scaled to the whole cohort, then reduced by monthly running costs. The margin per subscriber is: (org re-investment share minus customer profit cost) plus (other-legs revenue minus the part the customer keeps). Multiply by the cohort, then keep 95% in Year 1 (5% monthly costs) and 98% in Year 2 (2% monthly costs).</p>
+<div class="calc"><pre>Org earns = [ (Line2 - Line3) + (Line4 - Line5) ] x Cohort x (1 - monthly cost rate)
+
+Year 1 per-sub margin = (18.58 - 12.39) + (181.69 - 154.44)
+                      =  6.19 + 27.25 = 33.45 (approx)
+Year 1 = 33.45 x 34,493 x 0.95  =  1,096,014
+
+Year 2 per-sub margin = (24.31 - 17.25) + (207.05 - 176.00)
+                      =  7.06 + 31.05 = 38.11 (approx)
+Year 2 = 38.11 x 34,493 x 0.98  =  1,288,460
+
+Year-on-year change = (1,288,460 / 1,096,014) - 1
+                    = 0.1756 = +17.56%</pre></div>
+<p>The organization earns about 1,096,014 per month in Year 1 and 1,288,460 in Year 2 (the 0.95 and 0.98 multipliers apply the 5% and 2% monthly costs).</p></div>
+
+<div class="concept"><h3>Line 8: Shareholder share, and the organization's FINAL earnings</h3>
+<p><strong>Plain English.</strong> Shareholders (the owners who funded the company) take a cut: 18% in Year 1, 21% in Year 2. The organization's final earnings are what is left after paying the shareholders.</p>
+<div class="calc"><pre>Shareholder amount = Org earns x shareholder %
+Final earnings    = Org earns - shareholder amount
+
+Year 1: shareholder = 1,096,014 x 0.18 = 197,283
+        final       = 1,096,014 - 197,283 = 898,732
+
+Year 2: shareholder = 1,288,460 x 0.21 = 270,577
+        final       = 1,288,460 - 270,577 = 1,017,883
+
+Year-on-year change in final = (1,017,883 / 898,732) - 1
+                             = 0.1326 = +13.26%</pre></div>
+<p>The organization's final monthly earnings are about 898,732 in Year 1 and 1,017,883 in Year 2.</p></div>
+
+<div class="callout warn"><strong>Exam trap (the Basic to Advance rule of thumb).</strong> The worksheet states: as you move up from Basic to Intermediate to Advance, the number of customers <em>shrinks by roughly half at each step</em>, and the organization-versus-customer margin trade-off also shifts by some percent. So Advance has far fewer subscribers than Basic, but typically a different (often richer) per-subscriber margin. Do not assume the cohort size stays constant across variants; it roughly halves each step up.</div>
+
+<h3 id="dl-wageboost">Wage Boost: the sample answer (for direction only)</h3>
+
+<div class="callout"><strong>Read this first.</strong> Wage Boost is a provided sample project, labelled "for direction only, not covering the entire scope". It shows what a complete answer to the lab looks like. Do not treat it as the full or only answer; use it as a model for structure and depth.</div>
+
+<div class="concept"><h3>What Wage Boost is</h3>
+<p>Wage Boost is a mobile app that empowers <strong>daily wage earners</strong> by combining <strong>micro-lending</strong> (small, easy loans for immediate needs) with <strong>short-term investment</strong> opportunities that give quick returns. Its purpose is to offer quick-return investments, enhance financial inclusion, and provide value-added services for daily sustenance and growth, all through tech-enabled products and partnerships.</p>
+<p>It follows the 9-part structure exactly:</p>
+<ul>
+<li><strong>Background &amp; hypothesis:</strong> daily wage earners face financial challenges due to limited access to traditional banking; the team hypothesizes significant demand for micro-lending and short-term investments with quick returns, and an opportunity to fill the gap with low-entry-barrier products (minimal investment requirements).</li>
+<li><strong>Problem statement:</strong> daily earners face financial exclusion, traditional products are not tailored to low-income workers, and high interest rates plus a lack of flexible short-term options block economic mobility. Wage Boost provides an app-based platform for accessible micro-lending and investment designed for daily earners.</li>
+<li><strong>Assumptions:</strong> users have smartphones and reliable internet; a minimum investment threshold is achievable and acceptable; users are interested in and can understand short-term investing and lending; and quick returns are a primary incentive driving regular engagement.</li>
+<li><strong>Services:</strong> micro-lending with a simplified approval process; short-term investments with quick returns; partnership deals with mobile companies and food chains (installment plans, delivery-job options); educational resources for financial literacy; and an ecosystem for small-business investments.</li>
+<li><strong>Target audience and segments:</strong> primarily daily wage earners needing immediate help and investment; the underserved (small traders, street vendors); gig-economy workers needing flexible solutions; and small business owners wanting low-barrier investment to grow.</li>
+<li><strong>Value Proposition Canvas (customer journey):</strong> reduces financial stress with quick micro-lending and investment returns; saves time by removing physical banking visits and paperwork; provides a seamless, user-friendly interface even for non-tech-savvy users; and creates opportunities for new economic activity and community growth.</li>
+<li><strong>Financials:</strong> per-cohort profitability tables (same structure as the lab model) for each variant.</li>
+<li><strong>Scale-up plan:</strong> a plan to grow the user base over time.</li>
+</ul></div>
+
+<div class="concept"><h3>Wage Boost's four variants and their eligibility</h3>
+<p>Wage Boost uses <strong>four</strong> variants (the lab asked for three; the sample adds a premium "Elite" tier). The defining difference is how long the investment must stay locked to be eligible for a return:</p>
+<table class="cmp">
+<thead><tr><th>Variant</th><th>Eligibility (lock period)</th><th>Who it is for and key features</th></tr></thead>
+<tbody>
+<tr><td><strong>Basic</strong></td><td><strong>30 days</strong> investment for profit</td><td>New users or limited resources. Small loans at low interest, basic financial education, a savings account, transaction tracking, and curated low-risk investments.</td></tr>
+<tr><td><strong>Intermediate</strong></td><td><strong>60 days</strong> to be eligible</td><td>Users comfortable with basics. Higher loan limits, a wider range of investments by risk, financial-planning tools and calculators, and credit-score monitoring.</td></tr>
+<tr><td><strong>Advanced</strong></td><td><strong>4 months</strong> to be eligible</td><td>Strong personal-finance understanding. Higher loan amounts and lower rates, broader (including higher-risk, higher-reward) investments, and access to financial advisors.</td></tr>
+<tr><td><strong>Elite</strong></td><td><strong>6 months</strong> to be eligible</td><td>Experienced users with a strong track record. Premium features (priority support, exclusive opportunities, seminars), ultra-low loan rates and highest savings rates, and a dedicated financial advisor.</td></tr>
+</tbody>
+</table>
+<p>Notice the pattern: as the variant gets more advanced, the lock period lengthens (30 days, 60 days, 4 months, 6 months) and the customer earns better terms in exchange for committing money longer. This mirrors the lab's instruction that each variant has a different eligibility criterion.</p></div>
+
+<div class="concept"><h3>Wage Boost's acquisition strategy: ATL and BTL</h3>
+<p>Wage Boost splits its upsell and acquisition into two classic marketing categories:</p>
+<ul>
+<li><strong>Above-the-Line (ATL), to create app awareness:</strong> broad mass-media tactics. Wage Boost uses TikTok (primary mass platform), digital advertising via in-app pop-up notifications, and promotional text (SMS) messages. ATL casts a wide net to build awareness.</li>
+<li><strong>Below-the-Line (BTL), distribution channels and partnerships:</strong> targeted, direct tactics. Wage Boost uses retailers and growth partners, and a collaboration with <strong>Akhuwat</strong> (a well-known interest-free microfinance organization in Pakistan). BTL reaches specific audiences through trusted intermediaries.</li>
+</ul>
+<p><strong>Key term. ATL vs BTL.</strong> Above-the-Line is mass, untargeted advertising for broad awareness (TV, radio, mass social media). Below-the-Line is targeted, direct activity aimed at specific customers (retail partnerships, direct distribution, on-ground collaboration). Wage Boost's Akhuwat partnership is a smart BTL move because Akhuwat already has trust and reach among exactly the low-income segment Wage Boost targets.</p></div>
+
+<div class="callout"><strong>What Wage Boost teaches you about a complete answer.</strong> A full lab submission is not just a product idea. Wage Boost shows the expected depth: a clear hypothesis and problem statement, explicit assumptions, well-defined variants with distinct eligibility, a services list tied to benefits, named target segments, a value proposition canvas describing the customer journey, per-cohort financials, a scale-up plan, and a concrete acquisition plan split into ATL and BTL. It even states what it did <em>not</em> cover (long-term investment strategies, insurance, broader savings) and how it could improve (more personalization, more user education), which is exactly the kind of honest scoping a strong submission includes.</div>
+
+<h3 id="dl-exam">Likely exam questions</h3>
+
+<h4>Multiple-choice (answers and rationale)</h4>
+
+<div class="mcq"><p class="stem">1. In the design lab, what is the PRIMARY leg of profitability for the organization?</p>
+<ol class="opts" type="A"><li>Charging customers a monthly subscription</li><li>The organization re-investing the customers' invested amount, earning an annual return while paying the customer a monthly profit</li><li>Selling user data</li><li>Advertising revenue only</li></ol>
+<p class="ans">Answer: B. The brief states the primary leg is the re-investment of the invested amount by the organization (annual profit to the org, monthly profit to the customer). Secondary legs come from innovations and partnerships.</p></div>
+
+<div class="mcq"><p class="stem">2. What are the TWO guiding questions that run through the entire course?</p>
+<ol class="opts" type="A"><li>"How much money will it make?" and "Who is the CEO?"</li><li>"What product are you building?" and "How do you know if your product is good?"</li><li>"Is it legal?" and "Is it cheap?"</li><li>"What is the logo?" and "What is the slogan?"</li></ol>
+<p class="ans">Answer: B. These two questions are explicitly stated on the worksheet and frame every step of the design process.</p></div>
+
+<div class="mcq"><p class="stem">3. In the lab's Basic-tier model, with Invested Amount 56,972,810 and Cohort 34,493, what is the invested per subscriber (Year 1)?</p>
+<ol class="opts" type="A"><li>About 165.17</li><li>About 1,651.72</li><li>About 16,517</li><li>About 5,697</li></ol>
+<p class="ans">Answer: B. 56,972,810 / 34,493 = 1,651.72. (Divide total invested by number of subscribers.)</p></div>
+
+<div class="mcq"><p class="stem">4. To convert the organization's annual re-investment rate into a monthly per-subscriber figure, you must:</p>
+<ol class="opts" type="A"><li>Multiply the annual rate by 12</li><li>Multiply the annual rate by invested-per-sub, then divide by 12</li><li>Add the rate to the invested amount</li><li>Divide the cohort by 12</li></ol>
+<p class="ans">Answer: B. Org monthly share per sub = annual rate x invested-per-sub / 12. The "/ 12" turns an annual rate into a monthly amount. Forgetting it is the model's classic error.</p></div>
+
+<div class="mcq"><p class="stem">5. According to the worksheet's rule of thumb, what happens as you move Basic to Intermediate to Advance?</p>
+<ol class="opts" type="A"><li>The cohort doubles at each step</li><li>The cohort roughly halves at each step, and the org-vs-customer margin trade-off shifts by some percent</li><li>Nothing changes across variants</li><li>The eligibility period gets shorter</li></ol>
+<p class="ans">Answer: B. The note says customer count shrinks by about half each step up, while the margin trade-off shifts by some percent.</p></div>
+
+<div class="mcq"><p class="stem">6. Wage Boost is best described as:</p>
+<ol class="opts" type="A"><li>A gaming app for teenagers</li><li>A micro-lending plus short-term investment app for daily wage earners</li><li>A stock-trading platform for institutions</li><li>A social media network</li></ol>
+<p class="ans">Answer: B. Wage Boost combines micro-lending and short-term investment for daily wage earners, the sample answer to the lab.</p></div>
+
+<div class="mcq"><p class="stem">7. Match Wage Boost's variants to their eligibility (lock) periods.</p>
+<ol class="opts" type="A"><li>Basic 6 months, Elite 30 days</li><li>Basic 30 days, Intermediate 60 days, Advanced 4 months, Elite 6 months</li><li>All variants 30 days</li><li>Basic 4 months, Advanced 30 days</li></ol>
+<p class="ans">Answer: B. The lock period lengthens with the tier: Basic 30 days, Intermediate 60 days, Advanced 4 months, Elite 6 months.</p></div>
+
+<div class="mcq"><p class="stem">8. In Wage Boost's acquisition plan, collaborating with Akhuwat and using retailers is an example of:</p>
+<ol class="opts" type="A"><li>Above-the-Line (mass awareness)</li><li>Below-the-Line (targeted distribution and partnerships)</li><li>A pricing strategy</li><li>A cost structure item</li></ol>
+<p class="ans">Answer: B. Retailers, growth partners, and the Akhuwat collaboration are Below-the-Line (BTL). TikTok, in-app ads, and promo SMS are the Above-the-Line (ATL) tactics.</p></div>
+
+<h4>Long-answer questions</h4>
+
+<div class="qa"><p class="q">Q1. State the lab brief in full: the segment, the core product constraint, the three variants, and how the primary and secondary profit legs work.</p>
+<div class="a">A. The brief is to design, for the Pakistani market, an investment-based product that drives financial inclusion for daily wage earners. The core constraint is that an investment must stay for 30 days to be eligible for a return. You must design three variants (Basic, Intermediate, Advance), each with a different eligibility criterion. The primary leg of profitability is the organization re-investing the customers' pooled invested amount: the organization earns an annual return on that re-investment and keeps the spread, while paying the customer a smaller monthly profit. The secondary and onward profit legs (for both the organization and the customer) come from innovations and partnership models, such as value-added services and revenue-sharing deals.</div></div>
+
+<div class="qa"><p class="q">Q2. Explain the two guiding questions of the course and write a strong answer to each for a hypothetical product, "a 30-day savings product for rickshaw drivers".</p>
+<div class="a">A. The two questions are "What product are you building?" and "How do you know if your product is good?" They are the course's spine: the first forces a clear definition, the second forces evidence. <strong>What am I building?</strong> A mobile savings-and-investment product for rickshaw drivers (daily wage earners) in Pakistan, where a driver deposits small amounts that must stay invested for 30 days to earn a monthly profit, with a simple Basic tier (30-day lock, low minimum, basic education) and higher tiers with longer locks and better terms. The organization re-invests the pooled deposits for an annual return and pays drivers a monthly profit, keeping the spread. <strong>How do I know it is good?</strong> By evidence, not opinion: high onboarding completion (drivers actually finish KYC), strong 30-day and 90-day cohort retention (they keep their money in and come back), low churn, an NPS well above zero, CLTV comfortably above CAC, and a value-proposition match showing the product relieves a real pain (no safe place to save irregular income) and creates a real gain (a monthly return plus a growing credit profile). If those metrics are healthy and the value proposition is validated, the product is good.</div></div>
+
+<div class="qa"><p class="q">Q3. List the 9 parts of the required product tear-down and, using Wage Boost, give a one-line illustration of each.</p>
+<div class="a">A. (1) <strong>Background &amp; Opportunity Hypothesis:</strong> daily earners lack banking access; we bet there is demand for quick-return micro-lending and investment. (2) <strong>Problem Statement:</strong> financial exclusion, untailored products, and high rates block economic mobility for daily earners. (3) <strong>Assumptions:</strong> users have smartphones and internet, accept a minimum investment, understand short-term products, and want quick returns. (4) <strong>Product Definition &amp; Eligibility:</strong> four variants (Basic 30 days, Intermediate 60 days, Advanced 4 months, Elite 6 months). (5) <strong>Services with benefits:</strong> simplified micro-loans, quick-return investments, partner deals, education, small-business ecosystem. (6) <strong>Target Audience and segments:</strong> daily earners, street vendors and small traders, gig workers, small business owners. (7) <strong>Value Proposition Canvas:</strong> reduces financial stress, saves time vs banks, easy interface for non-tech users, new economic opportunity. (8) <strong>Financials:</strong> per-cohort cost, pricing, and profitability tables per variant. (9) <strong>Scale Plans:</strong> a scale-up plan (with a CVM plan to follow), plus ATL (TikTok, in-app ads, SMS) and BTL (retailers, Akhuwat) acquisition.</div></div>
+
+<h4>Numeric scenario questions (the design-lab model)</h4>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N1 (invested per subscriber and growth).</strong> Year 2 Invested Amount is 64,926,182 over the same Cohort of 34,493. Compute the invested per subscriber for Year 2, and the year-on-year growth versus the Year 1 figure of 1,651.72. Show arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>Invested per sub (Y2) = Invested Amount / Cohort
+                      = 64,926,182 / 34,493
+                      = 1,882.30
+
+Year-on-year growth   = (1,882.30 / 1,651.72) - 1
+                      = 1.1396 - 1
+                      = 0.1396 = +13.96%</pre></div>
+Year 2 invested per subscriber is 1,882.30, a 13.96% increase over Year 1's 1,651.72.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N2 (organization's monthly per-sub earnings on each leg).</strong> Using Year 1 invested-per-sub = 1,651.72, the org re-investment rate 13.5%, and the customer-profit cost rate 9%, compute the organization's monthly share per subscriber, the cost of the customer's monthly profit per subscriber, and the resulting spread. Show arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>Org monthly share per sub = 0.135 x 1,651.72 / 12
+                          = 222.98 / 12
+                          = 18.58
+
+Cost of customer profit per sub = 0.09 x 1,651.72 / 12
+                                = 148.65 / 12
+                                = 12.39
+
+Spread (org margin on re-investment leg) = 18.58 - 12.39
+                                         = 6.19</pre></div>
+The organization earns 18.58 per subscriber per month and pays out 12.39, keeping a spread of about 6.19 per subscriber on the re-investment leg (before other legs and costs).</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N3 (customer's total monthly earning).</strong> For Year 2, invested-per-sub = 1,882.30. Other-legs rate = 11% of invested-per-sub, platform keeps 15% (customer keeps 85%), and the customer's monthly profit = 17.25. Compute what the customer earns in Year 2 and its growth over Year 1 (166.82). Show arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>Other legs (Y2)           = 0.11 x 1,882.30 = 207.05
+After platform charge 85% = 207.05 x 0.85   = 176.00
+Customer monthly profit   = 17.25 (given)
+
+What customer earns (Y2)  = 176.00 + 17.25 = 193.25
+
+Growth over Year 1        = (193.25 / 166.82) - 1
+                          = 1.1584 - 1
+                          = 0.1584 = +15.84%</pre></div>
+The customer earns 193.25 per month in Year 2, up 15.84% from 166.82 in Year 1.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N4 (organization's final earnings after shareholders).</strong> The organization earns 1,096,014 per month (Year 1, after monthly costs). Shareholders take 18%. Compute the shareholder amount and the organization's FINAL monthly earnings, and the per-subscriber final figure (Cohort 34,493). Show arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>Shareholder amount = 1,096,014 x 0.18 = 197,283
+
+Final earnings     = 1,096,014 - 197,283 = 898,731  (about 898,732)
+
+Final per sub      = 898,732 / 34,493 = 26.06</pre></div>
+Shareholders take about 197,283, leaving the organization a final monthly earning of about 898,732, or roughly 26.06 per subscriber per month.</div>
+</div>
+
+</section>

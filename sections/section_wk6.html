@@ -1,0 +1,682 @@
+<section>
+  <h2 id="wk6">AI &amp; Growth Engineering <span class="badge in">WEEK 6</span></h2>
+
+  <div class="concept">
+    <h3>What this week is really about</h3>
+    <p>The lecture title is "Bridging the Gap" and the opening line reframes the whole week as moving "from minding the gap to closing the gap." The "gap" is the distance between the value a customer could give a business and the value the business is actually capturing today. Growth Engineering is the disciplined, data-driven, experiment-driven practice of closing that gap. This week ties together three big ideas:</p>
+    <ul>
+      <li><strong>CVM (Customer Value Management)</strong> as the operating philosophy for growth.</li>
+      <li><strong>Experimentation and hypothesis testing</strong> as the way we prove growth actions actually work.</li>
+      <li><strong>The AI Paradigms Stack</strong> as the toolbox that powers modern, contextual, real-time growth (with the hard warning that bad data ruins all of it: GIGO).</li>
+    </ul>
+    <p>Read the four pillars below in order. Everything connects: CVM tells you <em>what</em> to do, segmentation tells you <em>to whom</em>, experiments tell you <em>whether it worked</em>, and the AI stack tells you <em>with which tool</em>.</p>
+  </div>
+
+  <h2 id="wk6-cvm">1. CVM: Customer Value Management</h2>
+
+  <div class="concept">
+    <h3>Definition and the core mindset shift</h3>
+    <p>The lecture states it plainly: "When we talk about Growth, we talk about CVM." CVM is the lens through which the entire week views growth.</p>
+    <ul>
+      <li><strong>CLV (Customer Lifetime Value)</strong> first, because it sits at the center of the definition. The companion metrics sheet defines it as "predicts the total revenue a business can expect from a single customer account throughout their relationship." It is the total value a customer brings over their entire time with you, not just one purchase. (The metrics sheet writes it CLTV; the lecture writes CLV. Same thing.)</li>
+      <li><strong>CVM (Customer Value Management)</strong> is then "a strategic, data-driven operating approach that maximizes a business's profitability by focusing on increasing the lifetime value (CLV) of existing customers rather than just acquiring new ones."</li>
+    </ul>
+    <p>The key mindset shift for the exam: CVM is about growing the value of customers you <em>already have</em>, not only chasing new ones. Acquisition is expensive; deepening existing relationships is where durable profit lives.</p>
+  </div>
+
+  <div class="callout"><strong>Key term. CVM (Customer Value Management).</strong> A strategic, data-driven operating approach that maximizes a business's profitability by focusing on increasing the lifetime value (CLV) of existing customers rather than just acquiring new ones.</div>
+
+  <div class="callout"><strong>Key term. CLV (Customer Lifetime Value).</strong> The total revenue a business can expect from a single customer across the whole relationship. CVM exists to push this number up.</div>
+
+  <div class="concept">
+    <h3>The four questions CVM asks about every customer</h3>
+    <p>The lecture says CVM is about understanding "not just who someone is but where they are, what they are doing, and what they are likely to do next." Memorize these four as a set:</p>
+    <ul>
+      <li><strong>WHO</strong> someone is (identity, demographics).</li>
+      <li><strong>WHERE</strong> they are (location, context, channel, device).</li>
+      <li><strong>WHAT they are doing</strong> (current behavior, current activity).</li>
+      <li><strong>WHAT they are likely to do NEXT</strong> (prediction, propensity, the next-best action).</li>
+    </ul>
+    <p>It is then "about combining the right information about a customer and the context to deliver the right services and communication at the precise moment it offers the most value." That phrase, "the right thing at the right moment," is the heart of contextual marketing and it reappears in the Data Mix section as acting "in the moment."</p>
+  </div>
+
+  <div class="concept">
+    <h3>The 5 Market Imperatives</h3>
+    <p>The lecture says organizations must use modern CVM frameworks to "preserve value around 5 market imperatives." Learn all five by name. A simple memory hook: <em>Mobile, Big-data, CX, Disruptor, AI</em>.</p>
+    <ul>
+      <li><strong>Embrace the mobile mind shift.</strong> Customers expect to do anything, anywhere, instantly, on their phone. Design for that expectation.</li>
+      <li><strong>Turn big data into business insights.</strong> Raw data is worthless; the imperative is converting volume into decisions.</li>
+      <li><strong>Transform the customer experience (CX).</strong> Compete on experience, not just product.</li>
+      <li><strong>Become a digital disruptor.</strong> Use digital channels and models to change the game rather than defend the old one.</li>
+      <li><strong>Embrace, welcome, and practice AI.</strong> AI is treated as a market imperative, not a nice-to-have. This is the bridge into the AI stack later in the week.</li>
+    </ul>
+  </div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> Do not confuse the "four questions" (who / where / what they do / what next) with the "5 market imperatives" (mobile mind shift, big data to insights, transform CX, digital disruptor, embrace AI). They are two different lists from two different parts of the CVM slide. Examiners love to mix items between the two.</div>
+
+  <h2 id="wk6-cac-clv">2. The CAC vs CLV Balance</h2>
+
+  <div class="concept">
+    <h3>When to keep investing, and when you are doomed</h3>
+    <p>The lecture's rule: "A well-balanced business model means the organization continues investing as long as customer acquisition cost stays less than the Customer Lifetime Value (while still figuring out the means to keep the delta in check)."</p>
+    <ul>
+      <li><strong>CAC (Customer Acquisition Cost)</strong> is defined in the metrics sheet as "the total cost involved in acquiring a new customer." It is what you spend to win one customer (ads, sales, onboarding, incentives).</li>
+      <li><strong>The healthy condition is CAC &lt; CLV.</strong> If a customer is worth more over their lifetime than it cost to acquire them, every new customer adds value, so you keep investing.</li>
+      <li><strong>The "delta"</strong> is the gap between CLV and CAC (CLV minus CAC). You want this delta positive and you must "keep it in check," meaning watch it so it does not silently shrink.</li>
+      <li><strong>The danger zone is CAC &gt; CLV.</strong> The lecture labels this state bluntly: "Company is spending more to acquire new customers than their lifetime value, then arrow, Start-up Demise!" Spending more to win a customer than they will ever return is a guaranteed slow death.</li>
+      <li><strong>k = the tenure of the customer</strong> with the product/organization. Tenure means how long the customer stays. Longer tenure raises CLV (more time to earn revenue from them), which widens the healthy delta. So retention directly improves the CAC vs CLV balance, which loops straight back to CVM's focus on existing customers.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><strong>Key term. CAC (Customer Acquisition Cost).</strong> The total cost involved in acquiring a new customer. Growth is sustainable only while CAC &lt; CLV.</div>
+
+  <div class="callout"><strong>Key term. k (customer tenure).</strong> How long a customer stays with the product or organization. Higher tenure raises CLV and widens the healthy CLV-minus-CAC delta.</div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> The phrase to recall on demand is "Start-up Demise," and it is triggered by <em>CAC &gt; CLV</em> (acquisition cost exceeds lifetime value). If you flip the inequality you flip the meaning. Healthy = CAC below CLV. Demise = CAC above CLV.</div>
+
+  <h2 id="wk6-datamix">3. The Data Mix</h2>
+
+  <div class="concept">
+    <h3>Acting "in the moment": real-time context</h3>
+    <p>The lecture frames the Data Mix around relevance in the moment: "You can incorporate real-time to make the experience relevant in the moment. Where are they? What device are they on? Is the item that they want in stock? Did it recently drop in price?" The headline takeaway is also stated directly: "the entire effort and context is the function of data available at hand." In plain terms, your ability to be contextual is capped by the data you actually have.</p>
+  </div>
+
+  <div class="concept">
+    <h3>The four data sources: WHO / WHEN / WHAT / WHY</h3>
+    <p>These four answer four different questions. Learn each source <em>and</em> the question it answers.</p>
+    <table class="cmp">
+      <thead><tr><th>Source</th><th>Question it answers</th><th>Lecture detail to remember</th></tr></thead>
+      <tbody>
+        <tr><td><strong>WHO</strong> = Demographics</td><td>Who someone is</td><td>"Still reigns king as the only available data targeting across media channels." Demographic data is the most universally usable for targeting.</td></tr>
+        <tr><td><strong>WHEN</strong> = In-market timing</td><td>When someone is in the market to buy</td><td>"With the decline of the 3rd party cookie, it is becoming just as challenging to target when someone is in market digitally." The hard part is timing.</td></tr>
+        <tr><td><strong>WHAT</strong> = Transaction data</td><td>What someone has bought</td><td>"Your customer transaction data shows you what someone has bought from you in the past." This is your own first-party purchase history.</td></tr>
+        <tr><td><strong>WHY</strong> = Surveys</td><td>Why someone buys</td><td>"To date, surveys are the only data to help you understand why someone buys." Motivation is hard to infer; you have to ask.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout"><strong>Key term. Third-party cookie.</strong> A small tracking file set by a domain other than the one you are visiting, historically used to follow users across the web and infer when they are "in market." Its decline is exactly why answering WHEN is getting harder, per the lecture.</div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> Match each letter to the right source: WHO = demographics, WHEN = in-market timing (hurt by the third-party cookie decline), WHAT = transaction data, WHY = surveys. A classic trick is to attach "surveys" to WHAT or "transactions" to WHY. Surveys = WHY (motivation); transactions = WHAT (past purchases).</div>
+
+  <h2 id="wk6-growth-types">4. Promotional vs Emotional Growth</h2>
+
+  <div class="concept">
+    <h3>Two types of persuasion</h3>
+    <p>The lecture contrasts two growth types:</p>
+    <ul>
+      <li><strong>The Promotional Type.</strong> "Optimized for short term impact." Think discounts, coupons, limited-time offers. It spikes behavior now but the loyalty fades when the deal ends.</li>
+      <li><strong>The Emotional Type.</strong> Described as "mass-marketed and expensive." It builds feeling and identity around the brand. It is costlier and broader, but it creates attachment.</li>
+    </ul>
+    <p>The punchline the lecture wants you to remember: "Sustainable growth requires more emotional growth than rational or promotional persuasion. Engage customers emotionally and they will have stronger loyalty and value to your brand." So for <em>durable</em> growth, weight your mix toward emotional persuasion over promotional.</p>
+  </div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> Promotional growth is the one "optimized for short term impact." Sustainable growth needs <em>more emotional than promotional</em> persuasion. Do not say discounts drive long-term loyalty; the lecture says the opposite. Emotional attachment, not promotions, produces lasting value.</div>
+
+  <h2 id="wk6-segmentation">5. Segmentation</h2>
+
+  <div class="concept">
+    <h3>WHAT it is, WHY we do it, HOW we do it</h3>
+    <p>The lecture introduces segmentation with the question "Better understanding the customers, the first logical step?" and organizes it as WHAT / WHY / HOW.</p>
+    <ul>
+      <li><strong>WHAT (the definition).</strong> "Classifying customers into groups of similar life stages, lifestyles, behaviors or preferences." The slide literally asks "What is it called?" and the answer is <em>segmentation</em>.</li>
+      <li><strong>WHY (the reasons).</strong> "Trying to market the entire population is expensive and covered via ATL use cases." Limited, multiple segments are needed: for limited bandwidth, to manage the available BTL budget, to stay context specific, to stay value specific, and (the slide flags) for cost reasons (the "$$??" prompt). In short, you segment because you cannot afford to talk to everyone the same way and you want context-specific, value-specific targeting.</li>
+      <li><strong>HOW (the levels).</strong> Three altitudes of segmentation, described below.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>The three levels of segmentation (macro / strategic / micro)</h3>
+    <table class="cmp">
+      <thead><tr><th>Level</th><th>What it does (lecture wording)</th><th>Feel</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Macro</strong></td><td>"Grouping of customers basis demographics or basic KPIs"</td><td>Broad, coarse buckets.</td></tr>
+        <tr><td><strong>Strategic</strong></td><td>"Long term differentiation"</td><td>Big-picture, durable positioning.</td></tr>
+        <tr><td><strong>Micro</strong></td><td>"Tactical and actionable with immediate effect," using CLV, RFM, IBRO, Cohort, ML/DL driven (unsupervised)</td><td>Fine-grained, ready to act on now.</td></tr>
+      </tbody>
+    </table>
+    <p><strong>KPI (Key Performance Indicator)</strong> = a measurable value that shows how well something is performing (for example, monthly active users or revenue per user). Macro segmentation can lean on simple KPIs like these.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Micro-segmentation techniques (decode every acronym)</h3>
+    <p>The lecture lists these under micro-segmentation. Beginners must be able to expand each:</p>
+    <ul>
+      <li><strong>CLV (Customer Lifetime Value).</strong> Segment customers by how much total value they will bring. Group your highest-value customers together and treat them differently.</li>
+      <li><strong>RFM (Recency, Frequency, Monetary).</strong> A classic scoring method: how <em>recently</em> a customer bought, how <em>frequently</em> they buy, and how much <em>money</em> they spend. Each customer gets a score on the three, and you segment from those scores.</li>
+      <li><strong>IBRO.</strong> A behavior/value-based segmentation lens used alongside RFM and CLV. The lecture lists it as a micro-segmentation technique without expanding the letters, so treat it as a named technique in the same family (behavioral, actionable segmentation).</li>
+      <li><strong>Cohort.</strong> Grouping customers who share a common start point or event (for example, "everyone who signed up in March") and tracking that group over time. The metrics sheet uses cohorts for retention and onboarding analysis too.</li>
+      <li><strong>ML/DL driven (unsupervised).</strong> Using <strong>Machine Learning</strong> or <strong>Deep Learning</strong> in <em>unsupervised</em> mode, meaning the algorithm finds groupings in the data on its own without being told the labels in advance (clustering). The machine discovers the segments rather than you defining them.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><strong>Key term. ATL vs BTL.</strong> ATL (Above The Line) marketing is broad, mass-market advertising aimed at everyone (TV, radio, billboards); the lecture says marketing the entire population is "covered via ATL use cases." BTL (Below The Line) marketing is targeted, segment-specific activity (direct, personalized campaigns). You segment partly "to manage the available BTL budget," because targeted spend must be aimed carefully.</div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> "Unsupervised" is the load-bearing word for ML/DL segmentation. Unsupervised = the model discovers groups without predefined labels (clustering). If a question describes the algorithm being given the right answers to learn from, that is <em>supervised</em>, which is not what segmentation uses here. Also keep ATL (broad/mass) vs BTL (targeted) straight: the whole point of segmentation is to spend BTL budget wisely instead of blasting everyone via ATL.</div>
+
+  <h2 id="wk6-experiments">6. The Three Experiment Types</h2>
+
+  <div class="concept">
+    <h3>Why three different experiments exist</h3>
+    <p>The lecture says: "When targeted via CVM, differentiation between the types of experiments becomes vital to accurate assessment." Each experiment isolates a <em>different</em> effect. If you only run one, you only learn one thing. The big idea on the next slide: "The total value creation that an organization can benefit from is the difference between not doing any targeted marketing campaign, and running all three types of experiments." In other words, <strong>Total value = (doing nothing) compared against (running all three experiments).</strong> The "do nothing" baseline is your reference point.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Experiment 1: Target vs Control (isolates the COMMUNICATION effect)</h3>
+    <ul>
+      <li><strong>What it measures:</strong> "the communication effect," by comparing the response rate between two groups.</li>
+      <li><strong>Target Group:</strong> customers who <em>will</em> receive the communication.</li>
+      <li><strong>Control Group:</strong> customers who will <em>not</em> receive the communication.</li>
+      <li><strong>The catch:</strong> "In all campaigns we aim to have control groups and under ideal circumstances, it should be based on stratified sampling so that its comparison with target stays apple to apple." If the two groups are not similar, any difference might be due to the groups, not the message.</li>
+    </ul>
+    <p><strong>Stratified sampling</strong> = splitting customers into matched strata (layers) first (by age, value, region, etc.) and then drawing both groups so they mirror each other. This makes the comparison "apple to apple," so a difference in response can be attributed to the communication itself.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Experiment 2: A/B Test (finds the BEST communication)</h3>
+    <ul>
+      <li><strong>What it measures:</strong> "the best communication," by comparing the response rate between Target Group A (gets communication A) and Target Group B (gets communication B).</li>
+      <li><strong>The method:</strong> "First, all communications are tested against each other (all challengers) until the identification of the best one (champion). Later, we test our champion against new ones (champion vs challengers)."</li>
+      <li><strong>Champion vs challenger logic:</strong> the current best message is the <em>champion</em>; new candidate messages are <em>challengers</em>. You keep trying to dethrone the champion. If a challenger wins, it becomes the new champion.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>Experiment 3: Model Performance (isolates the MODELLING effect)</h3>
+    <ul>
+      <li><strong>What it measures:</strong> "the modelling effect," by comparing the response rate between a Random Group and a High Probability Group.</li>
+      <li><strong>Random Group:</strong> "will act as the control group to measure the modelling effect, and will be based on a simple random selection of customers."</li>
+      <li><strong>High Probability Group:</strong> "a selection of customers with high probability according to a propensity model, after the random group is chosen."</li>
+      <li><strong>The point:</strong> if the model-picked (high-propensity) group responds much better than a random group, the <em>model</em> is adding value. That extra lift is the modelling effect.</li>
+    </ul>
+    <p><strong>Propensity model</strong> = a model (usually Machine Learning) that scores each customer by their likelihood (propensity) to take an action, for example to buy or to respond. High-propensity customers are the ones the model predicts are most likely to convert.</p>
+  </div>
+
+  <table class="cmp">
+    <thead><tr><th>Experiment</th><th>Effect it isolates</th><th>The two groups compared</th><th>Signature concept</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Target vs Control</strong></td><td>Communication effect (did the message do anything at all?)</td><td>Target (gets message) vs Control (gets nothing)</td><td>Stratified sampling for apple-to-apple comparison</td></tr>
+      <tr><td><strong>A/B Test</strong></td><td>Which message is best (among messages that work)</td><td>Target A (message A) vs Target B (message B)</td><td>Champion vs challenger</td></tr>
+      <tr><td><strong>Model Performance</strong></td><td>Modelling effect (is the model better than chance?)</td><td>Random group vs High-probability group</td><td>Propensity model</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn"><strong>Exam trap.</strong> Keep the "control group" identities separate. In Target vs Control, the control gets <em>no communication</em>. In Model Performance, the control is the <em>random group</em> (it still may get a message; it just is not model-selected). Same word, different role. Also: Target vs Control answers "does the message work?", A/B answers "which message works best?", and Model Performance answers "is the targeting model worth it?" Total value comes from running all three versus doing nothing.</div>
+
+  <h2 id="wk6-hypothesis">7. Hypothesis Testing <span class="badge in">EXAM-FLAGGED</span></h2>
+
+  <div class="concept">
+    <h3>Why we test hypotheses at all</h3>
+    <p>The lecture asks "How can we trust the results?" and answers: "We are essentially running experiments where we are testing if we have been able to change the behavior (for example, cross-sell a product, customer downloads our mobile app) for a given group of customers with certain conditions (the communication)." Statistically, we are testing "whether or not a statement is true." This is how an experiment result turns into a trustworthy business decision instead of a lucky fluke.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Null vs Alternative hypothesis</h3>
+    <ul>
+      <li><strong>Null Hypothesis (often written H0):</strong> "Sending this communication does not change the response rate." The null is the boring, "nothing happened" assumption. We assume it until the data forces us to drop it.</li>
+      <li><strong>Alternative Hypothesis (often written H1):</strong> "Sending the communication does change the response rate." This is the claim that something real happened.</li>
+      <li><strong>The decision:</strong> "Based on the results, the null hypothesis can be accepted (nothing has changed), or rejected in favor of the alternative hypothesis (something has changed) if there is enough statistical significance."</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>The two flavors of the alternative: directional vs non-directional</h3>
+    <p>This is the part the lecture flags most carefully. The alternative hypothesis "has two flavors":</p>
+    <ul>
+      <li><strong>Directional (one-tailed):</strong> "Did this communication <em>increase</em> conversion? (not just change it). Only uplift counts!" You are testing for movement in <em>one specific direction</em> (up). A drop does not count as success.</li>
+      <li><strong>Non-directional (two-tailed):</strong> "Did this communication <em>change</em> conversion (up or down)? Uplift or drop both count!" You are testing for movement in <em>either</em> direction. Both an increase and a decrease are "a change."</li>
+    </ul>
+  </div>
+
+  <div class="callout"><strong>Key term. Statistical significance.</strong> Evidence strong enough that the observed result is very unlikely to be random chance. The lecture stresses: "Only with statistical significance will we be able to make decisions based on the results in our business strategy." No significance, no confident decision.</div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> Memorize the pairing exactly: <em>Directional = one-tailed = only uplift counts</em>. <em>Non-directional = two-tailed = up OR down both count</em>. The most common mistake is swapping "one-tailed" and "two-tailed," or saying a directional test counts a drop. It does not, a directional test only rewards movement in the chosen direction (uplift). Also remember: you <em>reject</em> the null (not the alternative) when you find significance.</div>
+
+  <h2 id="wk6-monetization">8. Data Monetization as a Product (B2B and B2B2C)</h2>
+
+  <div class="concept">
+    <h3>Selling data and insight as a product</h3>
+    <p>The lecture's title is "Data Monetization as a Product in B2B and B2B2C." First, decode the models:</p>
+    <ul>
+      <li><strong>B2B (Business to Business):</strong> one business sells to another business.</li>
+      <li><strong>B2B2C (Business to Business to Consumer):</strong> a business sells to another business, which then reaches the end consumer. The data provider sits behind a partner who owns the customer relationship.</li>
+    </ul>
+    <p>The idea: a company can turn its data and insights into a sellable product (a "B2B Proposition" and "Data Monetization") rather than only using data internally.</p>
+  </div>
+
+  <div class="concept">
+    <h3>The commercial-bank example</h3>
+    <p>The lecture uses a commercial bank that holds rich customer data and packages it into use-cases:</p>
+    <ul>
+      <li><strong>Data it holds:</strong> Socio-economic class (Elite/landlords, WC = White Collar, PS, Y, BC = Blue Collar) and geo-fencing (home location, work location). <em>Geo-fencing</em> means drawing a virtual boundary around a real-world location so you can tell whether a customer is at home, at work, etc.</li>
+      <li><strong>Use-case 1:</strong> identify "potential customers for credit card, personal and other loans" from that profile.</li>
+      <li><strong>Use-case 2:</strong> identify "new ATM machine locations based on location profiling in KLI" (a geography). Location data sold as siting intelligence.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>The telco pricing illustration (know the arithmetic)</h3>
+    <p>The lecture puts you "in a telco leadership role in the space of B2B data monetization" and asks how to nurture a "mutually profitable" partnership. A <strong>telco</strong> is a telecommunications company (mobile network operator). The pricing illustration is small enough to memorize and re-derive:</p>
+    <ul>
+      <li><strong>Addressable White-Collar base = 1,500,000.</strong> The total reachable pool of white-collar people.</li>
+      <li><strong>Prospect customers at 2% = 30,000.</strong> Only a fraction become real prospects: 1,500,000 x 0.02 = 30,000.</li>
+      <li><strong>Telco's share at $40 per sale per person = $1.2M.</strong> 30,000 x $40 = $1,200,000.</li>
+    </ul>
+    <p>The slide also notes the framing roles: the addressable base is "what you are allowed to offer in this scenario," while the use-cases and the partnership terms are "what you need to design." So in the exam, treat the base as a given and design the proposition around it.</p>
+    <table class="cmp">
+      <thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Addressable white-collar base</td><td>given</td><td>1,500,000</td></tr>
+        <tr><td>Prospects @ 2%</td><td>1,500,000 x 0.02</td><td>30,000</td></tr>
+        <tr><td>Telco revenue @ $40/sale</td><td>30,000 x $40</td><td>$1,200,000 ($1.2M)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> If the exam changes any input, recompute, do not recite "$1.2M" blindly. The chain is fixed: base x conversion% = prospects; prospects x price-per-sale = revenue. For the lecture numbers that is 1.5M x 2% = 30,000, then 30,000 x $40 = $1.2M.</div>
+
+  <h2 id="wk6-ai-stack">9. The AI Paradigms Stack <span class="badge in">HIGHEST PRIORITY</span></h2>
+
+  <div class="concept">
+    <h3>The one sentence that frames everything</h3>
+    <p>The lecture header: "AI to Business Value BUT as Fit-for-Purpose and NOT as One-Size-Fits-All." Then the thesis: "AI Is a Stack, Not a Single Tool. Not Better or Worse, Just Different Strengths. Applied AI, Generative AI, and Agentic AI are designed for different decisions, not to replace one another." And later, the line to quote in any answer on this topic: "GenAI Doesn't Replace ML or Applied AI, It Expands the AI Toolbox."</p>
+    <ul>
+      <li><strong>AI (Artificial Intelligence)</strong> = computer systems that perform tasks normally needing human intelligence.</li>
+      <li><strong>The mental model:</strong> AI is a <em>stack of five layers</em>. Each layer is best for a different kind of decision. Newer layers do not delete older ones; they add to the toolbox.</li>
+      <li><strong>Three "fit" labels</strong> group the layers by how much independence they have: <strong>AI Assistive</strong> (helps you decide), <strong>AI Adaptive</strong> (responds to language and intent), and <strong>AI Autonomous</strong> (acts on its own).</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>Layer 1: Expert Systems, "The Enforcer"</h3>
+    <ul>
+      <li><strong>What it is:</strong> "If X happens, Do Y." It applies known, hand-written rules with certainty.</li>
+      <li><strong>Why it works:</strong> "Zero ambiguity." The rule is explicit, so the output is exact and predictable.</li>
+      <li><strong>Examples:</strong> Compliance, Controls, Policy Enforcement.</li>
+      <li><strong>Risk:</strong> "Brittle when change is frequent." If the world keeps changing, the fixed rules break and someone must keep rewriting them.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>Layer 2: Machine Learning, "The Predictor" (AI Assistive)</h3>
+    <ul>
+      <li><strong>What it is:</strong> "If X happened, Y has a probability to happen." It predicts what is likely.</li>
+      <li><strong>Why it works:</strong> "Learns correlations and approximates causation." It finds patterns in past data and uses them to estimate future odds.</li>
+      <li><strong>Examples:</strong> Credit scoring, propensity modeling, churn, NBA (Next Best Action, the recommended next move for a customer).</li>
+      <li><strong>Risk:</strong> "Monitoring needed, degrades as data/environment changes." A model trained on yesterday's world slowly goes stale.</li>
+    </ul>
+  </div>
+
+  <div class="concept">
+    <h3>Layer 3: Deep Learning, "The Pattern Finder"</h3>
+    <ul>
+      <li><strong>What it is:</strong> "When X is not clearly defined, it discovers patterns." It finds structure we did not explicitly program.</li>
+      <li><strong>Why it works:</strong> "Learns representations automatically at scale." Using neural networks, it builds its own internal features from raw data.</li>
+      <li><strong>Examples:</strong> Fraud and gaming detection, image processing.</li>
+      <li><strong>Risk:</strong> "Opaque decisions, explainability challenges, hard to govern." It is a "black box," you may not be able to explain <em>why</em> it decided something.</li>
+    </ul>
+    <p><strong>Deep Learning (DL)</strong> is a sub-field of Machine Learning that uses many-layered neural networks. The lecture's "Right Fit" slide groups "DL, NN, Robotics" together (NN = Neural Networks).</p>
+  </div>
+
+  <div class="concept">
+    <h3>Layer 4: Generative AI, "The Creator" (AI Adaptive)</h3>
+    <ul>
+      <li><strong>What it is:</strong> "Given intent, generate X that never existed before." It produces new content.</li>
+      <li><strong>Why it works:</strong> "Understands language, context, and semantics." It grasps meaning, not just patterns of numbers.</li>
+      <li><strong>Examples:</strong> Conversation, summarization, reasoning, creativity.</li>
+      <li><strong>Risk:</strong> "Hallucinations, inconsistency, needs oversight." It can confidently make things up, so a human must check it.</li>
+    </ul>
+    <p><strong>Generative AI (GenAI)</strong> = AI that creates new content (text, images, code) from learned knowledge. <strong>Hallucination</strong> = when a generative model produces a confident but false or made-up answer.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Layer 5: Agentic AI, "The Orchestrator" (AI Autonomous)</h3>
+    <ul>
+      <li><strong>What it is:</strong> It "plans, decides, and takes action autonomously." It does not just answer, it acts.</li>
+      <li><strong>Why it works:</strong> A "combo of reasoning, tools, memory, feedbacks." It can think, call tools, remember context, and learn from results across multiple steps.</li>
+      <li><strong>Examples:</strong> End-to-end workflows, multi-step operations, auto-response.</li>
+      <li><strong>Risk:</strong> "Mistakes faster automated, hard to control without guardrails." Because it acts on its own, a wrong decision is executed at speed, so guardrails are essential.</li>
+    </ul>
+    <p><strong>Agentic AI</strong> = AI that autonomously plans and executes multi-step tasks using reasoning plus tools plus memory plus feedback. A <strong>guardrail</strong> is a built-in limit or safety check that constrains what the system is allowed to do.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Grouping: what is "Applied AI"?</h3>
+    <p>The first three layers are predictive/assistive and are grouped as <strong>Applied AI</strong>: Expert Systems + Machine Learning + Deep Learning. The two newer layers, Generative AI and Agentic AI, are the adaptive and autonomous frontiers. This is exactly why the lecture insists GenAI "expands the toolbox" rather than replacing ML or Applied AI: they sit at different layers of the same stack and serve different decisions.</p>
+  </div>
+
+  <div class="concept">
+    <h3>The master COMPARE TABLE (memorize this)</h3>
+    <table class="cmp">
+      <thead><tr><th>Paradigm</th><th>What it is</th><th>Why it works</th><th>Example</th><th>Risk</th><th>Fit label</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Expert Systems</strong><br>(The Enforcer)</td>
+          <td>If X happens, do Y (known rules, certainty)</td>
+          <td>Zero ambiguity</td>
+          <td>Compliance, controls, policy enforcement</td>
+          <td>Brittle when change is frequent</td>
+          <td>Applied AI</td>
+        </tr>
+        <tr>
+          <td><strong>Machine Learning</strong><br>(The Predictor)</td>
+          <td>If X happened, Y has a probability</td>
+          <td>Learns correlations, approximates causation</td>
+          <td>Credit scoring, propensity, churn, NBA</td>
+          <td>Needs monitoring, degrades as data changes</td>
+          <td>Applied AI / AI Assistive</td>
+        </tr>
+        <tr>
+          <td><strong>Deep Learning</strong><br>(The Pattern Finder)</td>
+          <td>Discovers patterns not explicitly defined</td>
+          <td>Learns representations automatically at scale</td>
+          <td>Fraud and gaming detection, image processing</td>
+          <td>Opaque, explainability and governance challenges</td>
+          <td>Applied AI</td>
+        </tr>
+        <tr>
+          <td><strong>Generative AI</strong><br>(The Creator)</td>
+          <td>Given intent, generates new content</td>
+          <td>Understands language, context, semantics</td>
+          <td>Conversation, summarization, reasoning, creativity</td>
+          <td>Hallucinations, inconsistency, needs oversight</td>
+          <td>AI Adaptive</td>
+        </tr>
+        <tr>
+          <td><strong>Agentic AI</strong><br>(The Orchestrator)</td>
+          <td>Plans, decides, acts autonomously</td>
+          <td>Reasoning + tools + memory + feedback</td>
+          <td>End-to-end workflows, multi-step ops, auto-response</td>
+          <td>Mistakes automated faster, hard to control without guardrails</td>
+          <td>AI Autonomous</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="concept">
+    <h3>The Right Fit Predicament: the right AI for the right problem</h3>
+    <p>The lecture closes the stack with "The Right Fit Predicament (Right AI for the Right Problem)" and the note: "Not sure how, where and which AI can help? Many questions need to be asked." The discipline is to <em>match the problem to the layer</em>:</p>
+    <ul>
+      <li>Fixed, must-be-exact rule (compliance, a policy)? Use an <strong>Expert System</strong>.</li>
+      <li>Predict a likelihood from history (will this customer churn? what is their credit risk?)? Use <strong>Machine Learning</strong>.</li>
+      <li>Spot hidden patterns in messy/raw signals (fraud, images)? Use <strong>Deep Learning</strong>.</li>
+      <li>Create or understand natural language content (summaries, conversation)? Use <strong>Generative AI</strong>.</li>
+      <li>Run a multi-step job end-to-end with little supervision? Use <strong>Agentic AI</strong> (with guardrails).</li>
+    </ul>
+    <p>The lecture's recap diagram lists all the pieces side by side (Expert Systems, ML, DL/NN/Robotics, GenAI, Agentic AI) precisely to show they coexist. "Fit-for-purpose, not one-size-fits-all."</p>
+  </div>
+
+  <div class="callout warn"><strong>Exam trap (the one you got wrong last time).</strong> Do NOT say newer AI replaces older AI. The lecture's exact stance: "Applied AI, Generative AI, and Agentic AI are designed for different decisions, not to replace one another," and "GenAI doesn't replace ML or Applied AI, it expands the toolbox." So the right answer to "which is best?" is "none, they are fit-for-purpose for different decisions." Also lock the nicknames to the layers: Enforcer = Expert Systems, Predictor = ML, Pattern Finder = DL, Creator = GenAI, Orchestrator = Agentic. And remember the risk that is unique to Agentic AI: it automates <em>mistakes faster</em>, which is why guardrails are mandatory.</div>
+
+  <h2 id="wk6-gigo">10. GIGO: Garbage In, Garbage Out</h2>
+
+  <div class="concept">
+    <h3>The brutally true law of Data and AI</h3>
+    <p>The lecture's closing law: "GIGO (Garbage IN to Garbage OUT). AI doesn't forgive dysfunction. It amplifies it. It scales what already exists, good or bad." Read the consequences exactly as stated:</p>
+    <ul>
+      <li>"If your data is messy, AI scales the mess."</li>
+      <li>"If your processes are unclear, AI accelerates confusion."</li>
+      <li>"If your metrics are wrong, AI optimizes in the wrong direction."</li>
+      <li>"If the foundations are broken, AI makes things worse, faster."</li>
+    </ul>
+    <p>And the memorable contrast: "AI doesn't reward intention. It rewards integrity. Not the integrity of your brand values. The integrity of your data." A fancy "AI Centre of Excellence" or a great slide deck will not save you, "It just does what it's told."</p>
+  </div>
+
+  <div class="callout"><strong>Key term. GIGO (Garbage In, Garbage Out).</strong> If you feed a system bad inputs (messy data, wrong metrics, broken processes), you get bad outputs, and AI makes it worse by <em>scaling</em> and <em>accelerating</em> the problem rather than fixing it.</div>
+
+  <div class="concept">
+    <h3>Guardrails and human oversight are not optional</h3>
+    <p>The final two slides drive the safety message home: "The guardrails are not optional. Autonomy without control == Risk." And: "While AI is a facilitator and encouraged to be utilized and benefited from, the human oversight does and will continue to hold a critical role." The closing promise: "when applied responsibly, with defined guardrails and human oversight, AI can drive measurable and sustainable transformation." This connects directly to Agentic AI's risk (automated mistakes) and to CVM's "embrace AI" imperative: embrace it, but with data integrity, guardrails, and a human in the loop.</p>
+  </div>
+
+  <div class="callout warn"><strong>Exam trap.</strong> The equation to quote is "Autonomy without control == Risk." GIGO is not about model quality, the lecture is explicit that "no model, no matter how advanced, will fix things" if the data is shaky. The fix is integrity of data plus guardrails plus human oversight, not a bigger model.</div>
+
+</section>
+
+<section>
+  <h2 id="wk6-exam">Likely Exam Questions (Week 6)</h2>
+
+  <div class="concept">
+    <h3>Multiple-choice questions</h3>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">1. According to the lecture, CVM (Customer Value Management) focuses primarily on:</p>
+    <ol class="opts" type="A">
+      <li>Acquiring as many brand-new customers as possible</li>
+      <li>Increasing the Customer Lifetime Value (CLV) of existing customers rather than just acquiring new ones</li>
+      <li>Cutting customer support costs</li>
+      <li>Maximizing the number of advertising channels used</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture defines CVM as a strategic, data-driven approach that maximizes profitability by increasing the CLV of existing customers rather than just acquiring new ones. Acquisition-only thinking (A) is exactly what CVM moves away from.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">2. A company finds that its Customer Acquisition Cost (CAC) is now higher than its Customer Lifetime Value (CLV). Per the lecture, this state is called:</p>
+    <ol class="opts" type="A">
+      <li>A well-balanced business model</li>
+      <li>The "do nothing" scenario</li>
+      <li>Start-up Demise</li>
+      <li>The mobile mind shift</li>
+    </ol>
+    <p class="ans">Answer: C. The lecture labels "spending more to acquire new customers than their lifetime value" as Start-up Demise. The healthy condition is the reverse: keep investing only while CAC &lt; CLV.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">3. In the Data Mix, which source answers WHY someone buys?</p>
+    <ol class="opts" type="A">
+      <li>Demographics</li>
+      <li>Transaction data</li>
+      <li>Third-party cookies</li>
+      <li>Surveys</li>
+    </ol>
+    <p class="ans">Answer: D. The lecture states "to date, surveys are the only data to help you understand why someone buys." Demographics answer WHO, transaction data answers WHAT, and the third-party cookie relates to WHEN (in-market timing).</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">4. The lecture says sustainable growth requires:</p>
+    <ol class="opts" type="A">
+      <li>More promotional persuasion than emotional persuasion</li>
+      <li>More emotional growth than rational or promotional persuasion</li>
+      <li>Only short-term discounting</li>
+      <li>Avoiding all mass marketing</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture says "sustainable growth requires more emotional growth than rational or promotional persuasion," because emotionally engaged customers have stronger loyalty and value. Promotional growth is "optimized for short term impact" only.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">5. Which set lists the micro-segmentation techniques named in the lecture?</p>
+    <ol class="opts" type="A">
+      <li>CAC, MRR, ARR, NPS</li>
+      <li>CLV, RFM, IBRO, Cohort, ML/DL (unsupervised)</li>
+      <li>ATL, BTL, KYC, KPI</li>
+      <li>A/B, Target, Control, Champion</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture lists CLV, RFM, IBRO, Cohort, and ML/DL driven (unsupervised) under micro segmentation (tactical and actionable). The ML/DL here is unsupervised, meaning it discovers groups without predefined labels.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">6. In a Target vs Control experiment, the control group should ideally be built using stratified sampling so that:</p>
+    <ol class="opts" type="A">
+      <li>The target group is always larger</li>
+      <li>The comparison between control and target stays "apple to apple"</li>
+      <li>The model can pick the highest-propensity customers</li>
+      <li>Only uplift is counted</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture says the control should ideally be based on stratified sampling so its comparison with the target stays apple to apple. This ensures any difference in response is due to the communication, not to differences between the groups.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">7. Which experiment measures the "modelling effect" by comparing a random group to a high-probability group?</p>
+    <ol class="opts" type="A">
+      <li>Target vs Control</li>
+      <li>A/B Test</li>
+      <li>Model Performance</li>
+      <li>Champion vs Challenger</li>
+    </ol>
+    <p class="ans">Answer: C. Model Performance compares a Random Group (acting as the control) against a High Probability Group selected by a propensity model. If the model-selected group responds better, the model is adding value (the modelling effect). Target vs Control measures the communication effect; A/B finds the best message.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">8. A directional (one-tailed) alternative hypothesis in the lecture means:</p>
+    <ol class="opts" type="A">
+      <li>Any change counts, whether conversion goes up or down</li>
+      <li>Only an increase (uplift) in conversion counts</li>
+      <li>The null hypothesis is automatically rejected</li>
+      <li>The result is never statistically significant</li>
+    </ol>
+    <p class="ans">Answer: B. Directional (one-tailed) asks "did this communication increase conversion? (not just change it). Only uplift counts." Option A describes the non-directional (two-tailed) test, where up or down both count.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">9. In the telco data-monetization pricing illustration, an addressable white-collar base of 1,500,000 with 2% prospects at $40 per sale yields telco revenue of:</p>
+    <ol class="opts" type="A">
+      <li>$300,000</li>
+      <li>$1.2 million</li>
+      <li>$30 million</li>
+      <li>$60,000</li>
+    </ol>
+    <p class="ans">Answer: B. 1,500,000 x 2% = 30,000 prospects; 30,000 x $40 = $1,200,000 ($1.2M). The lecture gives exactly these figures.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">10. Which statement best matches the lecture's framing of the AI Paradigms Stack?</p>
+    <ol class="opts" type="A">
+      <li>Agentic AI is strictly better than all other paradigms and replaces them</li>
+      <li>Generative AI replaces Machine Learning and Applied AI</li>
+      <li>AI is a stack of different strengths; the paradigms are fit-for-purpose for different decisions and GenAI expands the toolbox rather than replacing ML or Applied AI</li>
+      <li>Expert Systems are obsolete and should never be used</li>
+    </ol>
+    <p class="ans">Answer: C. The lecture insists AI is "a stack, not a single tool, not better or worse, just different strengths," and that GenAI "expands the AI toolbox" rather than replacing ML or Applied AI. Options A, B, and D all assume replacement, which the lecture explicitly rejects.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">11. In the AI stack, which paradigm is nicknamed "The Pattern Finder" and is used for fraud detection and image processing?</p>
+    <ol class="opts" type="A">
+      <li>Expert Systems</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>Agentic AI</li>
+    </ol>
+    <p class="ans">Answer: C. Deep Learning is "The Pattern Finder," which "discovers what we did not explicitly define," with examples of fraud and gaming detection and image processing, and a risk of opaque, hard-to-govern decisions. Expert Systems is "The Enforcer," ML is "The Predictor," Agentic is "The Orchestrator."</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">12. According to the GIGO law in the lecture, what does AI do to a business with messy data and wrong metrics?</p>
+    <ol class="opts" type="A">
+      <li>It quietly fixes the data because the model is advanced</li>
+      <li>It amplifies and scales the dysfunction, optimizing in the wrong direction, faster</li>
+      <li>It pauses until a human cleans the data</li>
+      <li>It rewards the company's intentions and mission statement</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture: "AI doesn't forgive dysfunction, it amplifies it." Messy data gets scaled, wrong metrics get optimized in the wrong direction, and broken foundations get "worse, faster." AI rewards the integrity of your data, not your intentions, and no model will "fix" shaky foundations.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">13. Which AI paradigm's defining risk is that "mistakes are automated faster" and is therefore impossible to run safely without guardrails?</p>
+    <ol class="opts" type="A">
+      <li>Expert Systems</li>
+      <li>Generative AI</li>
+      <li>Agentic AI</li>
+      <li>Machine Learning</li>
+    </ol>
+    <p class="ans">Answer: C. Agentic AI ("The Orchestrator") plans, decides, and acts autonomously, so its risk is that "mistakes are automated faster, hard to control without guardrails." This is why the lecture states "autonomy without control == Risk." GenAI's signature risk is hallucination; Expert Systems' is brittleness; ML's is degradation over time.</p>
+  </div>
+
+  <div class="mcq">
+    <p class="stem">14. In the A/B test, the term "champion" refers to:</p>
+    <ol class="opts" type="A">
+      <li>The group that receives no communication</li>
+      <li>The current best-performing communication that new challengers are tested against</li>
+      <li>The customer with the highest CLV</li>
+      <li>The random control group</li>
+    </ol>
+    <p class="ans">Answer: B. The lecture says all communications are first tested as challengers until the best one (the champion) is identified, after which the champion is tested against new challengers (champion vs challengers). A no-communication group is the control in Target vs Control, not the A/B champion.</p>
+  </div>
+
+  <div class="concept">
+    <h3>Long-answer questions</h3>
+  </div>
+
+  <div class="qa">
+    <p class="q">Q1. Compare Applied AI vs Generative AI vs Agentic AI. Define each, give the lecture's nickname and an example for each layer inside them, and explain the lecture's core claim about how they relate.</p>
+    <div class="a">
+      <p>A. The lecture frames AI as a <strong>stack, not a single tool</strong>: "not better or worse, just different strengths," and the paradigms are "designed for different decisions, not to replace one another."</p>
+      <p><strong>Applied AI</strong> is the assistive/predictive group made of three layers. (1) <strong>Expert Systems, "The Enforcer"</strong>: applies known rules with certainty ("if X then Y"), zero ambiguity, used for compliance, controls, and policy enforcement; its risk is being brittle when change is frequent. (2) <strong>Machine Learning, "The Predictor"</strong> (labeled AI Assistive): "if X happened, Y has a probability," it learns correlations and approximates causation, used for credit scoring, propensity, churn, and NBA (Next Best Action); its risk is needing monitoring and degrading as data changes. (3) <strong>Deep Learning, "The Pattern Finder"</strong>: discovers patterns not explicitly defined and learns representations at scale, used for fraud and gaming detection and image processing; its risk is opacity and weak explainability.</p>
+      <p><strong>Generative AI, "The Creator"</strong> (labeled AI Adaptive): given intent, it generates new content that never existed before, because it understands language, context, and semantics; examples are conversation, summarization, reasoning, and creativity; its risk is hallucinations and inconsistency, so it needs oversight.</p>
+      <p><strong>Agentic AI, "The Orchestrator"</strong> (labeled AI Autonomous): it plans, decides, and acts autonomously by combining reasoning, tools, memory, and feedback; examples are end-to-end workflows, multi-step operations, and auto-response; its risk is that mistakes are automated faster and it is hard to control without guardrails.</p>
+      <p>The core claim to state explicitly: <strong>GenAI does not replace ML or Applied AI; it expands the toolbox.</strong> The right approach is fit-for-purpose: pick the layer that matches the decision (a fixed rule needs an Expert System, a likelihood needs ML, hidden patterns need DL, content/language needs GenAI, autonomous multi-step work needs Agentic AI with guardrails).</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <p class="q">Q2. Explain the three experiment types in CVM (Target vs Control, A/B test, Model Performance), the distinct effect each one isolates, and why the lecture says total value comes from running all three.</p>
+    <div class="a">
+      <p>A. The lecture says differentiating experiment types is "vital to accurate assessment" because each isolates a different effect.</p>
+      <p><strong>Target vs Control</strong> measures the <em>communication effect</em>. A Target Group receives the communication and a Control Group does not; comparing their response rates shows whether the message itself changed behavior. Ideally the control is built with <strong>stratified sampling</strong> so the comparison with target is "apple to apple," meaning the two groups are matched and any difference is due to the message, not to group differences.</p>
+      <p><strong>A/B Test</strong> finds the <em>best communication</em>. Target Group A gets message A and Target Group B gets message B. First all messages are tested as challengers until the best (the champion) is found; then the champion is tested against new challengers. This answers "which message works best?" rather than "does a message work at all?"</p>
+      <p><strong>Model Performance</strong> measures the <em>modelling effect</em>. A Random Group (a simple random selection acting as the control) is compared with a High Probability Group selected by a propensity model. If the model-selected group responds more strongly, the targeting model itself is adding value.</p>
+      <p>Finally, the lecture states "the total value creation an organization can benefit from is the difference between not doing any targeted marketing campaign, and running all three types of experiments." The "do nothing" baseline is the reference point; running all three (proving the message works, choosing the best message, and proving the model beats random) captures the full value, because each experiment unlocks a separate slice of lift.</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <p class="q">Q3. Explain directional (one-tailed) vs non-directional (two-tailed) alternative hypotheses, the role of the null hypothesis, and why statistical significance matters for business decisions.</p>
+    <div class="a">
+      <p>A. When we run a CVM experiment, we are testing whether a communication changed behavior (for example, getting customers to cross-sell or download the app). In statistical terms we test whether a statement is true.</p>
+      <p>The <strong>Null Hypothesis</strong> says "sending this communication does not change the response rate," that is, nothing happened. We assume it by default. The <strong>Alternative Hypothesis</strong> says "sending the communication does change the response rate," that is, something happened.</p>
+      <p>The alternative has two flavors. <strong>Directional (one-tailed)</strong> asks "did this communication <em>increase</em> conversion?" Only uplift counts; a decrease is not treated as success. <strong>Non-directional (two-tailed)</strong> asks "did this communication <em>change</em> conversion (up or down)?" Both an increase and a decrease count as a change.</p>
+      <p>Based on the results, the null is either accepted (nothing changed) or rejected in favor of the alternative (something changed) <strong>if there is enough statistical significance</strong>, meaning the result is unlikely to be random chance. The lecture stresses that "only with statistical significance will we be able to make decisions based on the results in our business strategy." Without significance, an apparent uplift could be noise, so it cannot safely drive a business decision.</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <p class="q">Q4. Define CVM and explain how it connects to the CAC vs CLV balance and the 5 market imperatives. Why does the lecture say "when we talk about Growth, we talk about CVM"?</p>
+    <div class="a">
+      <p>A. <strong>CVM (Customer Value Management)</strong> is a strategic, data-driven operating approach that maximizes profitability by increasing the <strong>CLV (Customer Lifetime Value)</strong> of existing customers rather than just acquiring new ones. It is about understanding not only who a customer is, but where they are, what they are doing, and what they are likely to do next, and then delivering the right service and communication at the precise moment it offers the most value.</p>
+      <p>It connects to the <strong>CAC vs CLV balance</strong> because CVM's focus on existing customers directly lifts CLV and lengthens tenure (k = customer tenure). A business should keep investing only while <strong>CAC &lt; CLV</strong>; if CAC exceeds CLV the result is "Start-up Demise." By deepening existing relationships, CVM widens the healthy delta (CLV minus CAC) and keeps the model balanced.</p>
+      <p>It connects to the <strong>5 market imperatives</strong> because the lecture says organizations must use modern CVM frameworks to preserve value around them: embrace the mobile mind shift, turn big data into business insights, transform the customer experience (CX), become a digital disruptor, and embrace and practice AI. These are the strategic moves that let a company actually capture lifetime value at scale.</p>
+      <p>The lecture equates growth with CVM because durable growth is not won by endless acquisition; it is won by maximizing the value of the customers you already have, in context, at the right moment, supported by data and AI. That is precisely what CVM operationalizes.</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <p class="q">Q5. Explain the GIGO law and the lecture's stance on guardrails and human oversight. Why does the lecture say "no model, no matter how advanced, will fix things"?</p>
+    <div class="a">
+      <p>A. <strong>GIGO (Garbage In, Garbage Out)</strong> is the lecture's "brutally true law of Data and AI": "AI doesn't forgive dysfunction, it amplifies it. It scales what already exists, good or bad." Concretely: messy data gets scaled into a bigger mess, unclear processes get accelerated into more confusion, and wrong metrics cause AI to optimize in the wrong direction. If the foundations are broken, AI makes things "worse, faster."</p>
+      <p>The lecture stresses that AI "rewards integrity, not intention," specifically the integrity of your <em>data</em>, not your brand values, mission statement, or "AI Centre of Excellence." Because AI "just does what it's told," a more powerful model cannot rescue bad inputs; it will simply execute the dysfunction at greater scale. That is why "no model, no matter how advanced, will fix things" when the data and processes are shaky.</p>
+      <p>The conclusion is a safety mandate: "guardrails are not optional. Autonomy without control == Risk." This ties to Agentic AI, whose risk is automating mistakes faster. The lecture closes that AI is a facilitator and human oversight will continue to hold a critical role: "when applied responsibly, with defined guardrails and human oversight, AI can drive measurable and sustainable transformation." So the fix is clean data, clear processes, correct metrics, guardrails, and a human in the loop, not a bigger model.</p>
+    </div>
+  </div>
+
+  <div class="concept">
+    <h3>Scenario questions</h3>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-q"><strong>Scenario 1 (which AI paradigm fits and why?).</strong> A digital bank must enforce a strict regulatory rule: any single transaction above PKR 1,000,000 from a non-corporate account must be blocked and flagged for review, with zero exceptions and full auditability. Which AI paradigm fits best, and why? What is the main risk to watch?</div>
+    <div class="sc-a"><strong>Model answer.</strong> This fits an <strong>Expert System ("The Enforcer")</strong>. The requirement is a known, explicit rule applied with certainty: "if transaction &gt; PKR 1,000,000 and account is non-corporate, then block and flag." The lecture says Expert Systems work because of "zero ambiguity," which is exactly what a hard compliance control needs (predictable, auditable, no probabilistic guessing). Machine Learning would be wrong here because it outputs probabilities, and a regulator wants a deterministic block, not a "likely should block." The main risk per the lecture is that Expert Systems are "brittle when change is frequent": if thresholds or regulations change often, the rules must be constantly rewritten, so the bank needs a clear process to update them.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-q"><strong>Scenario 2 (which AI paradigm fits and why?).</strong> A fintech wants to predict, for each existing customer, the probability that they will churn (stop using the app) in the next 90 days, so the retention team can prioritize who to contact. Which AI paradigm fits best, and why? Name the ongoing operational risk.</div>
+    <div class="sc-a"><strong>Model answer.</strong> This fits <strong>Machine Learning ("The Predictor," AI Assistive)</strong>. The task is "if X happened, Y has a probability to happen," exactly the lecture's definition, and churn is one of its named examples (alongside credit scoring, propensity, and NBA). ML learns correlations from historical behavior and outputs a probability of churn per customer, which the team can rank. It also feeds straight into the Model Performance experiment: a high-propensity (high-churn-risk) group can be compared against a random group to prove the model adds value. The ongoing risk the lecture flags is that ML "needs monitoring and degrades as data and environment change," so the churn model must be retrained and watched as customer behavior shifts, otherwise its predictions go stale.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-q"><strong>Scenario 3 (which AI paradigm fits and why?).</strong> A payments company wants a system that, on its own, handles an end-to-end customer dispute: read the complaint, check transaction records, decide if a refund is warranted, issue the refund, and send a resolution message, all with minimal human intervention. Which AI paradigm fits, why, and what guardrail concern must the design address?</div>
+    <div class="sc-a"><strong>Model answer.</strong> This fits <strong>Agentic AI ("The Orchestrator," AI Autonomous)</strong>. The lecture describes Agentic AI as a system that "plans, decides, and takes action autonomously" using a "combo of reasoning, tools, memory, and feedback," with examples being "end-to-end workflows, multi-step ops, and auto-response," which is exactly this dispute pipeline (multi-step, tool-using, acting without a human at each step). Plain GenAI alone would only draft text; it would not call the records system, decide, and execute the refund. The guardrail concern is the lecture's signature Agentic risk: "mistakes are automated faster, hard to control without guardrails," summed up as "autonomy without control == Risk." So the design must include guardrails such as refund limits, mandatory human review above a threshold, and audit logs, with human oversight retained as the lecture insists.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-q"><strong>Scenario 4 (experiments).</strong> A marketing manager ran a single campaign: she sent a new push notification to a list of high-value customers picked by her data-science model, saw a 12% response rate, and declared the campaign and the model a success. Using the lecture's three experiment types, explain what is wrong with her conclusion and how she should have designed the test.</div>
+    <div class="sc-a"><strong>Model answer.</strong> Her conclusion conflates effects that the lecture says must be isolated separately. A bare 12% response with no comparison group proves nothing, because there is no baseline ("do nothing") to compare against. (1) She needs a <strong>Target vs Control</strong> test to measure the <em>communication effect</em>: a control group that receives no push, ideally chosen by stratified sampling so the comparison is apple to apple. Only then can she attribute the lift to the message. (2) To claim the <em>message itself</em> is good, she needs an <strong>A/B test</strong> comparing this notification (and other challengers) to find the champion, rather than assuming her one message is best. (3) To claim the <em>model</em> is good, she needs a <strong>Model Performance</strong> test: compare her high-probability (model-picked) group against a random group; if the model group beats random, the model is adding value (the modelling effect). The lecture notes total value comes from running all three versus doing nothing, and that any "success" claim must rest on statistical significance, not a single uncompared number.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-q"><strong>Scenario 5 (hypothesis testing).</strong> A product team tests whether a redesigned onboarding screen changes signup conversion. Leadership only cares about whether conversion went <em>up</em>, because they will roll out the new screen only if it improves results. Frame this as a hypothesis test: state the null and alternative, say whether it is directional or non-directional and why, and explain the role of statistical significance.</div>
+    <div class="sc-a"><strong>Model answer.</strong> <strong>Null hypothesis (H0):</strong> the redesigned onboarding screen does not change signup conversion. <strong>Alternative hypothesis (H1):</strong> the redesigned screen changes signup conversion. Because leadership only cares about an <em>increase</em> (they will roll out only if conversion improves), this is a <strong>directional (one-tailed)</strong> test: "did this change <em>increase</em> conversion?", where only uplift counts and a drop would not be treated as success. (If they cared about any movement up or down, it would be non-directional / two-tailed.) The team then checks <strong>statistical significance</strong>: only if the observed uplift is unlikely to be random chance can they reject the null in favor of the alternative and confidently decide to roll out. Without significance, an apparent improvement could be noise, and the lecture is explicit that only with statistical significance can results drive a real business decision.</div>
+  </div>
+
+</section>

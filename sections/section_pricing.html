@@ -1,0 +1,386 @@
+<section><h2 id="pricing">Pricing Strategies &amp; the Pricing Game <span class="badge in">IN SCOPE</span></h2>
+
+<p>Pricing is how you decide what to charge for your product. It is one of the highest-leverage decisions a Product Manager (PM, the person who decides what a product does and how it goes to market) can make, because a change in price flows straight to profit without needing you to build anything new. This section has two halves. <strong>Part A</strong> walks through the nine pricing strategies from the reading, one by one. <strong>Part B</strong> explains the "Pricing Games" Excel model from scratch and works a full numeric solution, because a quantitative pricing question is very likely on the exam.</p>
+
+<div class="callout"><strong>Key term. Marginal cost.</strong> The cost of producing one more unit of your product. For a physical good (a coffee, a car) the marginal cost is real: you pay for materials and labour each time. For a <em>digital</em> product (software, an app, a streaming title) the marginal cost is close to zero, because copying a file costs almost nothing. The reading hammers this point repeatedly: because copying is virtually free, digital products are easy to scale, distribute, and maintain, so their costs grow slower than their revenue. This single fact decides which pricing strategies make sense for software.</p></div>
+
+<div class="callout"><strong>Key term. Perceived value.</strong> What the customer believes the product is worth to them, which can be far higher (or lower) than what it cost you to make. Several strategies below try to charge based on perceived value rather than cost. This is where the big profit lives for digital products.</div>
+
+</section>
+
+<section><h3 id="pricing-partA">Part A. The Nine Pricing Strategies</h3>
+
+<p>The reading opens with one framing note: <em>some of these strategies can be combined</em> (Apple, for example, uses Premium and Value-Based together; Tesla uses Value-Based and Penetration together). Read each strategy below as a tool in a toolbox, not as a mutually exclusive choice. For each strategy you get a one-line definition, when to use it, the real example from the reading, and how it relates to digital products.</p>
+
+<div class="concept"><h3>1. Cost-Plus Pricing</h3>
+<p><strong>Definition (one line).</strong> Set the selling price by taking your total cost and adding a fixed amount or percentage on top (your markup).</p>
+<p><strong>When to use it.</strong> When you have real, tangible per-unit costs you can measure. Common in physical products, retail, and manufacturing.</p>
+<p><strong>Reading example.</strong> Consulting firms like McKinsey, Deloitte, and Accenture charge based on the hourly rates of their consultants. This is sometimes called "time and material" (you bill for the time spent plus the materials used).</p>
+<p><strong>Digital relevance.</strong> Weak. Because the marginal cost of a digital product is near zero, "cost plus a markup" would price the product almost at zero, which throws away most of the value you could capture. The reading explicitly says low marginal cost makes cost-plus pricing less relevant for digital products.</p></div>
+
+<div class="concept"><h3>2. Competitive Pricing</h3>
+<p><strong>Definition (one line).</strong> Set your price mainly by looking at what competitors charge for a similar product.</p>
+<p><strong>When to use it.</strong> In a crowded market with near-identical products, as a quick reference point. For digital products the lower marginal cost gives you more room to flex your price up or down against rivals.</p>
+<p><strong>Reading example / warning.</strong> The reading does not name a brand here; instead it gives a warning. Competing on price in a digital space is often a terrible idea because it drives every competitor down to extremely low margins. This race to the bottom is called the <strong>red ocean</strong> (a sea turned red by everyone bloodying each other on price). The better move is to compete on <em>uniqueness</em>: solve a specific customer problem better than anyone, give a superior user experience, or offer frictionless onboarding (a sign-up so smooth there is no friction stopping the user).</p>
+<p><strong>Digital relevance.</strong> Dangerous if used naively. Because digital products are easy to copy and undercut, pure price competition collapses margins for everyone. Differentiate instead.</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> If a question asks "why is competitive (price-matching) pricing especially dangerous for a digital product?", the answer is the <strong>red ocean</strong>: near-zero marginal cost means rivals can keep cutting price toward zero, so everyone ends up on razor-thin margins. The reading's prescribed alternative is to compete on uniqueness (better problem-solving, UX, onboarding), not on price.</div>
+
+<div class="concept"><h3>3. Penetration Pricing</h3>
+<p><strong>Definition (one line).</strong> Enter a market with a deliberately low price to grab customers and market share fast, then raise the price later once you are established.</p>
+<p><strong>When to use it.</strong> When launching a new product into a market that already has competitors, and you need to win users and build loyalty quickly.</p>
+<p><strong>Reading examples.</strong> <em>Netflix</em> launched streaming at a low price to pull in subscribers, then gradually raised prices once it had a large base. <em>Uber</em> entered markets worldwide with heavy discounts to pull riders away from taxis, then reduced the promotions over time.</p>
+<p><strong>Digital relevance.</strong> Strong fit. Near-zero marginal cost means the company can afford to serve many low-paying or free users early without large per-user losses, which makes "go cheap to grow, monetize later" practical.</p></div>
+
+<div class="concept"><h3>4. Dynamic Pricing (surge / demand pricing)</h3>
+<p><strong>Definition (one line).</strong> Set flexible prices that move up and down with current demand, also called surge pricing or demand pricing.</p>
+<p><strong>When to use it.</strong> When you have limited "inventory" (a fixed number of seats, rooms, or slots) that you want to sell at the highest price the market will bear. Common in travel, entertainment, and conferences.</p>
+<p><strong>Reading examples.</strong> <em>Booking.com</em> (hotel rooms) and <em>American Airlines</em> (flight seats). Prices rise as the date nears or demand climbs.</p>
+<p><strong>Digital relevance.</strong> Weak. Digital products usually do not have a limited inventory (you can sell unlimited copies), so the scarcity that makes dynamic pricing work is missing. The reading says dynamic pricing is less relevant for digital products.</p></div>
+
+<div class="concept"><h3>5. Price Discrimination (including Location-Based Pricing)</h3>
+<p><strong>Definition (one line).</strong> Charge different customers different prices for the same product, often based on the maximum each is willing to pay.</p>
+<p><strong>When to use it.</strong> When different groups of customers value the product differently or can afford different amounts, and you can separate them (by region, segment, or status). Location-based pricing is one named type: price by the buyer's country.</p>
+<p><strong>Reading example.</strong> <em>Justin Welsh</em> offers location-based discounts on his "Content Operating System", for example a 50% discount for Poland. He used a tool called <strong>ParityDeals</strong> to set this up. The reading notes it could not be tricked by popular VPNs (Virtual Private Networks, tools that hide your real location); the author tested it with AtlasVPN.</p>
+<p><strong>Digital relevance.</strong> Strong fit, and it pairs naturally with Value-Based Pricing. Because the marginal cost is near zero, selling the <em>same</em> file at a lower price in a poorer region still earns pure profit, while charging more in a richer region captures extra value. You lose almost nothing by serving both.</p></div>
+
+<div class="concept"><h3>6. Economy Pricing</h3>
+<p><strong>Definition (one line).</strong> Keep the price as low as possible by stripping out marketing and frills, targeting a large, very price-sensitive audience.</p>
+<p><strong>When to use it.</strong> When you serve a big mass market that cares mostly about price, and you have an efficient operation (great supply chain, economies of scale) that lets you stay profitable at low prices.</p>
+<p><strong>Reading examples.</strong> <em>Walmart</em> ("Everyday Low Prices", powered by an efficient supply chain and economies of scale). <em>IKEA</em> (efficient production and logistics, flat-pack furniture, customer self-service). <em>Southwest Airlines</em> (one aircraft type, the Boeing 737; no assigned seating, free meals, or first class; sells mostly direct from its website to avoid travel-agent commissions).</p>
+<p><strong>Key term. Economies of scale.</strong> The cost-per-unit drops as you produce more, because fixed costs are spread over more units and you get bulk efficiencies.</p>
+<p><strong>Digital relevance.</strong> Usually not the best fit. The reading notes it is easier to achieve product differentiation with digital products, so competing as the cheapest option is rarely the smartest play.</p></div>
+
+<div class="concept"><h3>7. Premium Pricing</h3>
+<p><strong>Definition (one line).</strong> Deliberately price higher than competitors to signal and cultivate a perception of superior quality. The opposite of Economy Pricing.</p>
+<p><strong>When to use it.</strong> When your brand, quality, design, or service genuinely stands above rivals and customers will pay extra for that status and experience.</p>
+<p><strong>Reading examples.</strong> Luxury brands like <em>Apple</em>, <em>Rolex</em>, and <em>Gucci</em>.</p>
+<p><strong>Caveat from the reading.</strong> Premium pricing can boost profitability, but it must be <em>justified</em> by delivering exceptional value, quality, customer service, and brand prestige. Charging more without backing it up will fail.</p>
+<p><strong>Digital relevance.</strong> Works well when paired with Value-Based Pricing (see Apple in strategy 9), because a strong brand lets you charge a premium on a product that costs almost nothing to copy.</p></div>
+
+<div class="concept"><h3>8. Loss Leader Strategy</h3>
+<p><strong>Definition (one line).</strong> Sell one product at a loss (below profit) on purpose, to attract customers or to sell other profitable products and services.</p>
+<p><strong>When to use it.</strong> When the first product locks the customer into an ecosystem or a stream of follow-on purchases that more than make up the loss.</p>
+<p><strong>Reading examples.</strong> <em>Amazon</em> sold Kindle e-readers at a loss, expecting to recover it through digital sales (eBooks, movies, music) and Prime memberships. <em>Gillette</em> sells razors cheaply but prices the replacement blades high, which customers must keep buying. This is the classic "razors-and-blades" model: give away the handle, profit on the refills.</p>
+<p><strong>Digital relevance.</strong> Very common in software as the "freemium" or hardware-plus-content model: hook users cheaply or free, then monetize ongoing digital purchases or subscriptions where the marginal cost is near zero.</p></div>
+
+<div class="concept"><h3>9. Value-Based Pricing (the "holy grail")</h3>
+<p><strong>Definition (one line).</strong> Set the price on the <em>perceived value</em> of the product to the customer, that is, what they are willing to pay for the benefit, not what it cost you to make.</p>
+<p><strong>When to use it.</strong> When you deeply understand your customers and the value they perceive, and you want to capture the largest possible share of that value. Especially powerful for software.</p>
+<p><strong>Why the reading loves it.</strong> Four stated advantages: (a) <em>Focuses on customer value</em>, charging what customers will pay rather than basing price on cost; (b) <em>Maximizes profitability</em>, capturing a larger portion of the value created, which is huge for software where marginal cost is virtually zero; (c) <em>Flexibility</em>, prices can differ by segment based on perceived value (the reading cites Microsoft's education offering); (d) <em>Customer-centricity</em>, it forces a deep understanding of customer needs, which leads to better products and experience.</p>
+<p><strong>Reading examples.</strong> <em>Apple</em> (combines Premium and Value-Based; strong brand and perceived value around quality, design, and user experience). <em>Tesla</em> (priced on perceived value: buyers purchase a high-end, environmentally friendly lifestyle and a future vision; note the nuance that Tesla is perceived as premium yet also uses Penetration Pricing to expand the EV market). <em>Diamonds</em> (value rests almost entirely on perceived value and scarcity; diamonds are valuable mainly because we believe they are).</p>
+<p><strong>Why it is the "holy grail".</strong> It is highly desirable but hard to achieve. It needs in-depth market research to learn how customers perceive value and a specific strategy to capture that value.</p>
+<p><strong>Digital relevance.</strong> The best fit of all. Because software has near-zero marginal cost, pricing on value (not cost) lets you capture far more profit than cost-plus ever could.</p></div>
+
+<div class="callout"><strong>Key term. Cost leader vs differentiator.</strong> Two broad ways to win. A <em>cost leader</em> competes by being the cheapest (Economy Pricing fits here). A <em>differentiator</em> competes by being uniquely better and charges accordingly (Premium and Value-Based fit here). The reading asks you to consciously pick which one is your primary strategy.</div>
+
+</section>
+
+<section><h3 id="pricing-combine">Which strategies combine, and the conclusion checklist</h3>
+
+<p><strong>Strategies that combine well (from the reading).</strong></p>
+<ul>
+<li><strong>Apple = Premium + Value-Based.</strong> A high price (premium) justified by perceived value in design, quality, and experience.</li>
+<li><strong>Tesla = Value-Based + Penetration.</strong> Priced on perceived value of a lifestyle and vision, while also lowering prices over time to grow the electric-vehicle market.</li>
+<li><strong>Price Discrimination / Location-Based + Value-Based.</strong> Charge each segment by the value it perceives (different prices, same product).</li>
+<li><strong>Loss Leader + ongoing monetization.</strong> Amazon Kindle at a loss, then profit on eBooks and Prime; Gillette razors cheap, blades expensive.</li>
+</ul>
+
+<div class="callout"><strong>Key term. The conclusion checklist (memorize this).</strong> The reading ends with six things you must do to choose a pricing strategy:
+<ol>
+<li>Understand your <strong>cost structure</strong> and how it might change as you grow.</li>
+<li>Understand what customers <strong>value</strong> (use market research, surveys, interviews).</li>
+<li>Understand what customers are trying to <strong>achieve</strong> (their "jobs", that is, the underlying task they hire your product to do).</li>
+<li>Select your <strong>primary strategy</strong>: cost leader vs differentiator.</li>
+<li>Be clear about your <strong>value proposition</strong> and what is unique about it.</li>
+<li>Analyze your <strong>competitors</strong>, including <em>substitute</em> products (different products that solve the same need).</li>
+</ol>
+And the closing rule: <em>pricing is not a set-it-and-forget-it decision</em>. Test different approaches, regularly analyze how customers respond, and be ready to adjust. Pricing is strategic and worth investing time to get right.</div>
+
+<table class="cmp">
+<thead>
+<tr><th>#</th><th>Strategy</th><th>One-line definition</th><th>When to use</th><th>Reading example</th><th>Digital-product fit</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Cost-Plus</td><td>Total cost plus a fixed markup</td><td>Tangible per-unit costs; retail, manufacturing</td><td>McKinsey, Deloitte, Accenture (time &amp; material)</td><td>Weak (near-zero marginal cost makes it almost meaningless)</td></tr>
+<tr><td>2</td><td>Competitive</td><td>Price by what rivals charge</td><td>Crowded, near-identical markets (use with care)</td><td>(No brand; "red ocean" warning, compete on uniqueness)</td><td>Dangerous (race to the bottom, thin margins)</td></tr>
+<tr><td>3</td><td>Penetration</td><td>Low price to win share fast, raise later</td><td>New entry into a market with competitors</td><td>Netflix, Uber</td><td>Strong (cheap to serve many users early)</td></tr>
+<tr><td>4</td><td>Dynamic (surge / demand)</td><td>Flexible price that moves with demand</td><td>Limited inventory you want sold at top price</td><td>Booking.com, American Airlines</td><td>Weak (no inventory scarcity)</td></tr>
+<tr><td>5</td><td>Price Discrimination (incl. Location-Based)</td><td>Different prices to different buyers for the same product</td><td>Buyers value or can afford different amounts; separable groups</td><td>Justin Welsh (ParityDeals), 50% off for Poland</td><td>Strong (same file, profit at every price)</td></tr>
+<tr><td>6</td><td>Economy</td><td>Lowest possible price, frills stripped out</td><td>Big, very price-sensitive mass market; efficient ops</td><td>Walmart, IKEA, Southwest Airlines</td><td>Usually weak (easier to differentiate instead)</td></tr>
+<tr><td>7</td><td>Premium</td><td>Price above rivals to signal superior quality</td><td>Genuine brand/quality edge customers pay extra for</td><td>Apple, Rolex, Gucci</td><td>Strong (with Value-Based; brand on a cheap-to-copy good)</td></tr>
+<tr><td>8</td><td>Loss Leader</td><td>Sell one item at a loss to profit elsewhere</td><td>First product locks in follow-on purchases</td><td>Amazon Kindle, Gillette (razors &amp; blades)</td><td>Strong (freemium / hardware-plus-content)</td></tr>
+<tr><td>9</td><td>Value-Based ("holy grail")</td><td>Price on perceived customer value, not cost</td><td>Deep customer understanding; want max value capture</td><td>Apple, Tesla, diamonds</td><td>Best fit (near-zero marginal cost, max profit)</td></tr>
+</tbody>
+</table>
+
+</section>
+
+<section><h3 id="pricing-partB">Part B. The "Pricing Games" Excel model (from scratch)</h3>
+
+<p>The exercise is a spreadsheet called <em>Pricing Games.xlsx</em>, sheet "A bit on the Pricing". It models a subscription business with four customer segments and asks you to tune prices to hit a revenue target. We build it up piece by piece so you can recreate or solve it by hand in the exam.</p>
+
+<div class="concept"><h3>The setup: four customer segments</h3>
+<p>The business has four segments of customers, labelled <strong>A, B, C, D</strong>. Think of them as four tiers (for example, big enterprise clients down to small individual users). Each segment has a number of customers and a subscription amount. Here is the raw data:</p>
+<table class="cmp">
+<thead>
+<tr><th>Segment</th><th>Number of Customers (col C)</th><th>Prod. Subscription Amt (col D)</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>100</td><td>25,000</td></tr>
+<tr><td>B</td><td>80</td><td>20,000</td></tr>
+<tr><td>C</td><td>70</td><td>10,000</td></tr>
+<tr><td>D</td><td>50</td><td>5,000</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>300</strong></td><td><strong>60,000</strong></td></tr>
+</tbody>
+</table>
+<p><strong>Number of Customers (column C)</strong> is how many paying customers are in that tier. They sum to 300 (cell C7 = SUM(C3:C6)).</p>
+<p><strong>Product Subscription Amount (column D)</strong> is the size of the subscription contract associated with that tier (a base amount the pricing rate is applied to). They sum to 60,000 (cell D7 = SUM(D3:D6)).</p></div>
+
+<div class="concept"><h3>V% (column E): each segment's share of the subscription base</h3>
+<p><strong>Formula:</strong> V% = D / D7 (each segment's subscription amount divided by the total subscription amount of 60,000). In Excel this is <code>=D3/$D$7</code>. The dollar signs ($) "lock" the reference to cell D7 so it does not move when you copy the formula down.</p>
+<table class="cmp">
+<thead><tr><th>Segment</th><th>D</th><th>V% = D / 60,000</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>25,000</td><td>0.4167 (41.67%)</td></tr>
+<tr><td>B</td><td>20,000</td><td>0.3333 (33.33%)</td></tr>
+<tr><td>C</td><td>10,000</td><td>0.1667 (16.67%)</td></tr>
+<tr><td>D</td><td>5,000</td><td>0.0833 (8.33%)</td></tr>
+</tbody>
+</table>
+<p><strong>Why V% matters.</strong> It tells you how much of the subscription "weight" each segment carries. A and B together are 75% of the base, so any price move on A or B moves the total far more than the same move on C or D. V% is your at-a-glance guide to <em>where the leverage is</em>.</p></div>
+
+<div class="concept"><h3>Current Pricing rate (column F) and Current Revenue (column G)</h3>
+<p><strong>Current Pricing (column F)</strong> is the rate currently charged for each segment (a fraction applied to the subscription amount, like a percentage fee). The four current rates are:</p>
+<ul>
+<li>A: 0.1164</li><li>B: 0.09</li><li>C: 0.075</li><li>D: 0.05</li>
+</ul>
+<p><strong>Current Revenue (column G)</strong> is the money each segment brings in today. The formula is:</p>
+<div class="calc"><pre>Current Revenue (G) = Number of Customers (C) x Subscription Amount (D) x Current Pricing rate (F)
+
+A: 100 x 25,000 x 0.1164 = 291,000
+B:  80 x 20,000 x 0.0900 = 144,000
+C:  70 x 10,000 x 0.0750 =  52,500
+D:  50 x  5,000 x 0.0500 =  12,500
+-----------------------------------------
+TOTAL current revenue (G7)         = 500,000</pre></div>
+<p>So the business currently earns <strong>500,000</strong> (cell G7 = SUM(G3:G6)). This is the number every target is measured against.</p></div>
+
+<div class="concept"><h3>The levers you control: New Pricing (I), p.p. (J), the orange 5% drop (L), New Revenue (M), Upside (N)</h3>
+<p>The right-hand side of the sheet is the "what if" zone. You change one input and watch revenue move.</p>
+<ul>
+<li><strong>New Pricing (column I)</strong> is the new rate you choose for each segment. This is the lever you tune. It plays the same role as column F, but it is the future price.</li>
+<li><strong>p.p. (column J)</strong> means "price-point change" = New Pricing minus Current Pricing = I minus F. In Excel <code>=I3-F3</code>. It simply shows how much you moved the rate up (positive) or down (negative) for each segment. <em>p.p. is read as "percentage points", the raw difference between two rates.</em></li>
+<li><strong>The orange rule (column K header).</strong> The sheet lets you mark a segment "orange". An orange segment has its <em>Subscription Amount cut by 5%</em>. The header reads "Apply Subscription Amt. drop by 5% for Orange segments". This models a discount or concession you give to win that segment's agreement to a price change.</li>
+<li><strong>New Subscription Amount (column L)</strong> = D x 0.95 if the segment is orange, else just D. In Excel an orange cell is <code>=D3*0.95</code> and a normal cell is <code>=D3</code>.</li>
+<li><strong>New Revenue / "New Pricing Sensitivity" (column M)</strong> = Number of Customers x New Subscription Amount x New Pricing = C x L x I. In Excel <code>=L3*I3*C3</code>. This is the future revenue for that segment.</li>
+<li><strong>Rev Upside (column N)</strong> = New Revenue minus Current Revenue = M minus G. In Excel <code>=M3-G3</code>. Positive means you gained money, negative means you lost it.</li>
+</ul>
+<p>At the bottom: L9 = L7 minus D7 ("sub. Amt. impact", the total change in subscription base), M9 = M7 / G7 minus 1 ("Rev change %", the percentage change in total revenue), and N9 = SUM(N3:N6) ("total rev. upside", the total money gained).</p></div>
+
+<div class="callout"><strong>Key term. Why p.p. and V% matter together.</strong> V% tells you <em>which</em> segment is worth touching (high V% = high leverage). p.p. tells you <em>how hard</em> you pushed the price there. The biggest revenue gains come from a meaningful positive p.p. applied to a high-V% segment (A, then B). A large p.p. on segment D barely moves the total because D is only 8.33% of the base.</div>
+
+<div class="concept"><h3>The current state of the sheet (before you solve it)</h3>
+<p>The spreadsheet ships with some values already typed into New Pricing (column I): A = 0.14, B = 0.09, C = 0.08, D = 0.05, and only A marked orange. Let us compute where that lands:</p>
+<div class="calc"><pre>A (orange): L = 25,000 x 0.95 = 23,750 ;  M = 100 x 23,750 x 0.14 = 332,500
+B (normal): L = 20,000           ;  M =  80 x 20,000 x 0.09 = 144,000
+C (normal): L = 10,000           ;  M =  70 x 10,000 x 0.08 =  56,000
+D (normal): L =  5,000           ;  M =  50 x  5,000 x 0.05 =  12,500
+-----------------------------------------------------------------------
+New total revenue (M7)                                       = 545,000
+
+Rev change % (M9) = 545,000 / 500,000 - 1 = 0.09 = +9.0%</pre></div>
+<p>So out of the box the sheet is only at <strong>+9%</strong> (545,000). The task is to push it to <strong>+20%</strong>. It is not yet at target, which is the whole point of the exercise.</p></div>
+
+<div class="concept"><h3>The task, stated clearly</h3>
+<p><strong>Task (cell B12).</strong> "Play with the new pricing (column I) in a way that earns you a 20% increase in the revenue." A 20% increase on 500,000 means reaching <strong>600,000</strong> in total new revenue (M7).</p>
+<p><strong>Condition (cell B13).</strong> "Only two segments can have orange boxes in column J." In other words, at most <strong>two</strong> of the four segments may take the 5% subscription drop. You cannot make all four orange.</p>
+<p><strong>Restated in plain English:</strong> choose New Pricing rates (column I) for A, B, C, D, and pick at most two segments to be orange, so that the four New Revenues add up to 600,000 (a +20% gain over 500,000).</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Making a segment "orange" <em>reduces</em> revenue, because it cuts the subscription amount by 5% (you now multiply by 0.95). So an orange segment only helps if the New Pricing increase on it is large enough to <em>more than compensate</em> for the 5% drop. Do not assume "orange" is a bonus. It is a cost you must out-price. This is exactly why the condition limits you to two orange segments: each one is a handicap you have to overcome with a bigger price rise.</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario (the main worked solution).</strong> Tune column I to reach a +20% total (600,000), using at most two orange segments. Show all arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong> Make <strong>A and B</strong> the two orange segments (they carry the most weight, V% of 41.67% and 33.33%, so they have the most leverage). Leave C and D exactly as they are today. Set New Pricing A = 0.16 and New Pricing B = 0.102.
+
+<div class="calc"><pre>STEP 1 - New Subscription Amounts (column L), 5% drop on the orange ones:
+   A (orange): L = 25,000 x 0.95 = 23,750
+   B (orange): L = 20,000 x 0.95 = 19,000
+   C (normal): L = 10,000
+   D (normal): L =  5,000
+
+STEP 2 - New Revenue per segment (M = C x L x I):
+   A: 100 x 23,750 x 0.160 = 380,000
+   B:  80 x 19,000 x 0.102 = 155,040
+   C:  70 x 10,000 x 0.075 =  52,500   (unchanged)
+   D:  50 x  5,000 x 0.050 =  12,500   (unchanged)
+
+STEP 3 - Add them up:
+   380,000 + 155,040 + 52,500 + 12,500 = 600,040
+
+STEP 4 - Revenue change %:
+   600,040 / 500,000 - 1 = 0.20008 = +20.0%</pre></div>
+
+<strong>Result: 600,040, which is +20.0% over 500,000. Target hit, and only two segments (A and B) are orange, so the condition is satisfied.</strong>
+
+<p><strong>Two important notes.</strong> (1) <em>The solution is not unique.</em> Many other price combinations also reach 600,000. For instance you could leave a segment un-orange and lift its price more, or split the increase differently across A and B. The grader is checking that you reach roughly +20% while obeying the two-orange limit, not that you found one exact answer. (2) <em>A is the highest-leverage segment</em> because it has the largest Number of Customers x Subscription Amount base (100 x 25,000 = 2,500,000), so each 0.01 you add to A's rate adds 25,000 of revenue (before the orange drop). A small nudge on A does more than a big push on D.</p>
+</div>
+</div>
+
+<div class="concept"><h3>How to think about it under time pressure</h3>
+<p>You need an extra 100,000 (to go from 500,000 to 600,000). The fastest path:</p>
+<ol>
+<li>Find the gap: target minus current = 600,000 minus 500,000 = 100,000 of new revenue needed.</li>
+<li>Attack the high-V% segments first (A, then B). Each 0.01 added to A's rate is worth about 100 x 25,000 x 0.01 = 25,000 (or 23,750 if A is orange).</li>
+<li>If you make a segment orange, remember you first lose 5% of its current contribution, so price up enough to cover that loss plus your share of the 100,000 gap.</li>
+<li>Check the two-orange limit and add up M7. Adjust one rate to land on 600,000.</li>
+</ol>
+</div>
+
+</section>
+
+<section><h3 id="pricing-exam">Likely exam questions</h3>
+
+<h4>Multiple-choice (answers and rationale)</h4>
+
+<div class="mcq"><p class="stem">1. A SaaS (Software as a Service, software delivered over the internet) startup wants to price for maximum profit, charging what each customer is willing to pay rather than basing price on cost. Which strategy is this?</p>
+<ol class="opts" type="A"><li>Cost-Plus Pricing</li><li>Economy Pricing</li><li>Value-Based Pricing</li><li>Competitive Pricing</li></ol>
+<p class="ans">Answer: C. Value-Based Pricing is defined as pricing on perceived value, and the reading calls it the "holy grail" and the best fit for near-zero-marginal-cost software because it maximizes the value you capture.</p></div>
+
+<div class="mcq"><p class="stem">2. Why does the reading say cost-plus pricing is "less relevant" for digital products?</p>
+<ol class="opts" type="A"><li>Digital products have no customers</li><li>Digital products have near-zero marginal cost, so adding a markup to a tiny cost throws away value</li><li>Cost-plus is illegal for software</li><li>Digital products cannot be copied</li></ol>
+<p class="ans">Answer: B. The marginal cost of copying a digital product is virtually zero, so "cost plus markup" would set the price near zero. The reading explicitly says low marginal cost makes cost-plus less relevant.</p></div>
+
+<div class="mcq"><p class="stem">3. Netflix launched cheap to win subscribers, then raised prices once it had a big base. Uber entered markets with deep discounts, then cut the promotions. Which strategy is this?</p>
+<ol class="opts" type="A"><li>Penetration Pricing</li><li>Premium Pricing</li><li>Dynamic Pricing</li><li>Loss Leader</li></ol>
+<p class="ans">Answer: A. Penetration Pricing sets a low entry price to grab market share fast, then raises it once established. Netflix and Uber are the reading's two named examples.</p></div>
+
+<div class="mcq"><p class="stem">4. Booking.com and American Airlines change prices based on current demand and limited inventory (rooms, seats). Which strategy is this, and why is it a poor fit for most digital products?</p>
+<ol class="opts" type="A"><li>Economy Pricing; digital products are too cheap</li><li>Dynamic (surge/demand) Pricing; digital products usually have no limited inventory</li><li>Value-Based Pricing; digital products have no value</li><li>Loss Leader; digital products are sold at a loss</li></ol>
+<p class="ans">Answer: B. Dynamic Pricing relies on scarce, limited inventory sold at the highest price. Digital products can be copied without limit, so that scarcity is missing and the reading calls it less relevant for them.</p></div>
+
+<div class="mcq"><p class="stem">5. Why is matching competitors' prices ("competitive pricing") especially dangerous for a digital product?</p>
+<ol class="opts" type="A"><li>It is too expensive to implement</li><li>It creates a "red ocean" where near-zero marginal cost lets everyone cut to thin margins</li><li>Competitors will sue you</li><li>It always raises prices too high</li></ol>
+<p class="ans">Answer: B. The reading warns that price competition in digital space drives all competitors to extremely low margins, the "red ocean". The recommended alternative is to compete on uniqueness (better problem-solving, superior UX, frictionless onboarding).</p></div>
+
+<div class="mcq"><p class="stem">6. Amazon selling Kindle e-readers at a loss to profit later on eBooks and Prime, and Gillette selling cheap razors but expensive blades, are both examples of which strategy?</p>
+<ol class="opts" type="A"><li>Penetration Pricing</li><li>Price Discrimination</li><li>Loss Leader Strategy</li><li>Economy Pricing</li></ol>
+<p class="ans">Answer: C. The Loss Leader Strategy sells one item at a loss to attract customers or drive profitable follow-on purchases. Kindle and the razors-and-blades model are the reading's examples.</p></div>
+
+<div class="mcq"><p class="stem">7. Justin Welsh offers a 50% discount for buyers in Poland on the same product, using ParityDeals. Which strategy (and which sub-type) is this?</p>
+<ol class="opts" type="A"><li>Dynamic Pricing; surge pricing</li><li>Price Discrimination; location-based pricing</li><li>Premium Pricing; luxury pricing</li><li>Cost-Plus Pricing; markup pricing</li></ol>
+<p class="ans">Answer: B. Charging different prices to different buyers for the same product is Price Discrimination; pricing by the buyer's country is the location-based sub-type. ParityDeals is the named tool.</p></div>
+
+<div class="mcq"><p class="stem">8. Walmart ("Everyday Low Prices"), IKEA (flat-pack, self-service), and Southwest Airlines (one aircraft type, no frills) all illustrate which strategy, and is it usually a good fit for digital products?</p>
+<ol class="opts" type="A"><li>Premium Pricing; yes</li><li>Economy Pricing; usually no, because it is easier to differentiate digital products</li><li>Value-Based Pricing; yes</li><li>Dynamic Pricing; no</li></ol>
+<p class="ans">Answer: B. These are Economy Pricing examples (lowest possible price via efficient operations). The reading says Economy Pricing is usually not the best fit for digital products because product differentiation is easier to achieve.</p></div>
+
+<div class="mcq"><p class="stem">9. Apple is described in the reading as combining which two strategies?</p>
+<ol class="opts" type="A"><li>Economy and Dynamic</li><li>Penetration and Loss Leader</li><li>Premium and Value-Based</li><li>Competitive and Cost-Plus</li></ol>
+<p class="ans">Answer: C. The reading states Apple combines Premium Pricing with Value-Based Pricing, charging a high price justified by perceived value in quality, design, and user experience.</p></div>
+
+<div class="mcq"><p class="stem">10. In the Pricing Games model, why does making a segment "orange" not automatically increase revenue?</p>
+<ol class="opts" type="A"><li>Orange segments are deleted from the model</li><li>Orange cuts the subscription amount by 5%, so the new price must rise enough to more than offset that loss</li><li>Orange doubles the number of customers</li><li>Orange sets the new pricing to zero</li></ol>
+<p class="ans">Answer: B. New Subscription Amount = D x 0.95 for orange segments, which lowers revenue. The price increase (New Pricing) must overcome the 5% drop for the segment to gain. This is the exercise's main trap.</p></div>
+
+<div class="mcq"><p class="stem">11. In the Pricing Games model, which single segment gives the most revenue per unit of price increase, and why?</p>
+<ol class="opts" type="A"><li>D, because it has the lowest price</li><li>C, because it is in the middle</li><li>A, because it has the largest Customers x Subscription Amount base (100 x 25,000) and the highest V%</li><li>They are all equal</li></ol>
+<p class="ans">Answer: C. Segment A has the largest base (2,500,000) and the highest V% (41.67%), so each 0.01 added to A's rate adds about 25,000 of revenue. A is the highest-leverage lever.</p></div>
+
+<h4>Long-answer questions</h4>
+
+<div class="qa"><p class="q">Q1. Explain why Value-Based Pricing is called the "holy grail", list its four advantages from the reading, and say why it fits digital products better than cost-plus.</p>
+<div class="a">A. It is called the holy grail because it is highly desirable but hard to achieve: it needs in-depth market research to understand how customers perceive value, plus a specific strategy to capture that value. Its four advantages are: (1) it focuses on customer value (charging what customers will pay, not what production cost); (2) it maximizes profitability by capturing a larger share of the value created, which is huge when marginal cost is near zero; (3) it gives flexibility, allowing different prices per segment based on perceived value (the reading cites Microsoft's education offering); and (4) it forces customer-centricity, a deep understanding of customer needs that leads to better products and experience. It beats cost-plus for digital products because cost-plus ties price to a near-zero cost (giving away most of the value), whereas value-based prices on the benefit delivered, letting software capture far more profit.</div></div>
+
+<div class="qa"><p class="q">Q2. The reading warns against competing on price for digital products. Explain the "red ocean" problem and describe the alternative the reading recommends.</p>
+<div class="a">A. Because digital products have near-zero marginal cost, any competitor can keep cutting price toward zero. If everyone competes on price, all of them end up operating on extremely low margins. This bloody race to the bottom is the "red ocean". The reading's recommended alternative is to compete on uniqueness instead of price: solve a specific customer's problem far better than anyone else, deliver a superior user experience, or provide frictionless onboarding. In short, differentiate rather than discount.</div></div>
+
+<div class="qa"><p class="q">Q3. Walk through the six-point conclusion checklist the reading gives for choosing a pricing strategy, and explain why "pricing is not set-and-forget".</p>
+<div class="a">A. The six points are: (1) understand your cost structure and how it changes as you grow; (2) understand what customers value, using market research, surveys, and interviews; (3) understand what customers are trying to achieve (their "jobs"); (4) select your primary strategy, cost leader versus differentiator; (5) be clear about your value proposition and what is unique; and (6) analyze competitors, including substitute products. Pricing is not set-and-forget because markets, competitors, costs, and customer perceptions all change. The reading says to test different approaches, regularly analyze how customers respond, and adjust when needed. Pricing is a strategic decision that greatly affects the business, so it is worth continually revisiting.</div></div>
+
+<div class="qa"><p class="q">Q4. Several strategies in the reading combine. Give three combinations the reading names and explain the logic of each.</p>
+<div class="a">A. (1) <strong>Apple = Premium + Value-Based.</strong> A high (premium) price signals quality, and it is justified by genuine perceived value in design, quality, and user experience. (2) <strong>Tesla = Value-Based + Penetration.</strong> Tesla prices on the perceived value of an eco-friendly, high-end lifestyle and a future vision, while also lowering prices over time (penetration) to expand the electric-vehicle market and make EVs more affordable. (3) <strong>Loss Leader + ongoing monetization</strong> (Amazon Kindle, Gillette): sell the first item cheap or at a loss, then profit on follow-on digital sales, memberships, or replacement blades. A fourth valid combination is Price Discrimination (location-based) with Value-Based, charging each region or segment by the value it perceives.</div></div>
+
+<h4>Numeric scenario questions (Pricing Games model)</h4>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N1.</strong> Compute the current revenue for segment B from scratch, and state its V%. Then state the total current revenue for all four segments.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>Current Revenue B = Customers x Subscription Amount x Current Pricing
+                  = 80 x 20,000 x 0.09
+                  = 144,000
+
+V% for B = Subscription Amount / Total Subscription Amount
+         = 20,000 / 60,000
+         = 0.3333  (33.33%)
+
+Total current revenue (all segments):
+   A 291,000 + B 144,000 + C 52,500 + D 12,500 = 500,000</pre></div>
+B brings in 144,000, is 33.33% of the subscription base, and the business total is 500,000.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N2.</strong> Suppose you may change <em>only</em> segment A (leave B, C, D exactly as today) and A is <em>not</em> orange (no 5% drop). Find the New Pricing rate for A that lifts total revenue by 20% (to 600,000). Show the arithmetic.</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>STEP 1 - Revenue from the unchanged segments (B, C, D):
+   144,000 + 52,500 + 12,500 = 209,000
+
+STEP 2 - Revenue A must produce to reach the 600,000 target:
+   600,000 - 209,000 = 391,000
+
+STEP 3 - A is NOT orange, so its base stays 25,000.
+   New Revenue A = Customers x Subscription Amount x New Pricing
+   391,000 = 100 x 25,000 x I_A
+   391,000 = 2,500,000 x I_A
+   I_A = 391,000 / 2,500,000 = 0.1564
+
+STEP 4 - The price-point change (p.p.):
+   p.p. = New Pricing - Current Pricing = 0.1564 - 0.1164 = 0.04</pre></div>
+Set A's New Pricing to <strong>0.1564</strong> (a p.p. increase of 0.04). That alone reaches 600,000, a +20% gain, with no orange segments used.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N3.</strong> Same as N2, but now segment A <em>is</em> orange (its subscription amount drops 5% to 23,750). What New Pricing for A reaches 600,000, and what does this show about the "orange" trap?</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>STEP 1 - Unchanged B, C, D still give 209,000, so A must still produce 391,000.
+
+STEP 2 - A is orange: New Subscription Amount = 25,000 x 0.95 = 23,750.
+   391,000 = 100 x 23,750 x I_A
+   391,000 = 2,375,000 x I_A
+   I_A = 391,000 / 2,375,000 = 0.16463 (about 0.1646)
+
+Compare: not orange needed I_A = 0.1564; orange needs I_A = 0.1646.</pre></div>
+Because the 5% drop shrank A's base, you now need a <em>higher</em> price (0.1646 vs 0.1564) to hit the same 600,000. This is the orange trap in numbers: making a segment orange costs you revenue, so the price rise must be larger to compensate.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N4.</strong> You set segment C's New Pricing to 0.10 and do not make it orange. Compute C's New Revenue and its Rev Upside (the gain over its current revenue).</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>C is not orange, so its base stays 10,000.
+New Revenue C = Customers x Subscription Amount x New Pricing
+              = 70 x 10,000 x 0.10
+              = 70,000
+
+Current Revenue C = 70 x 10,000 x 0.075 = 52,500
+
+Rev Upside = New Revenue - Current Revenue
+           = 70,000 - 52,500
+           = 17,500</pre></div>
+C's new revenue is 70,000, an upside of +17,500. Note that even a big jump on C (from 0.075 to 0.10) adds only 17,500, far less than a small move on A, because C's V% is just 16.67%. This reinforces that leverage lives in the high-V% segments.</div>
+</div>
+
+<div class="scenario">
+<div class="sc-q"><strong>Scenario N5.</strong> Verify the spreadsheet's shipped state. With New Pricing A=0.14 (A orange), B=0.09, C=0.08, D=0.05, compute the total new revenue and the revenue change percentage. Is it at the +20% target?</div>
+<div class="sc-a"><strong>Worked answer.</strong>
+<div class="calc"><pre>A (orange): 100 x (25,000 x 0.95 = 23,750) x 0.14 = 332,500
+B (normal):  80 x 20,000 x 0.09 = 144,000
+C (normal):  70 x 10,000 x 0.08 =  56,000
+D (normal):  50 x  5,000 x 0.05 =  12,500
+---------------------------------------------------
+Total new revenue            = 545,000
+
+Rev change % = 545,000 / 500,000 - 1 = 0.09 = +9.0%</pre></div>
+The shipped sheet sits at +9.0% (545,000), <strong>not</strong> at the +20% target. That gap (545,000 to 600,000) is exactly what the exercise asks you to close by tuning column I.</div>
+</div>
+
+</section>

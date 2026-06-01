@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI and Growth Engineering | Final Exam Study Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f1e6; --paper-card:#fffdf9; --paper-sink:#efe7d6;
+  --ink:#221f19; --ink-soft:#534c40; --ink-mute:#8b8374;
+  --rule:#e6ddca; --rule-2:#d6cab0;
+  --teal:#114c47; --teal-deep:#0a3a36; --teal-tint:#e7efed;
+  --ochre:#a9772e; --ochre-tint:#f4ead4; --ochre-bright:#d8a657;
+  --good:#37684a; --good-tint:#e7f0e9;
+  --warn:#a8442b; --warn-tint:#f6e7e0;
+  --ivory:#f6f1e6;
+  --radius:7px; --radius-sm:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Newsreader',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.72;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:17px}
+::selection{background:#cfe0dd;color:var(--teal-deep)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--paper-sink)}
+::-webkit-scrollbar-thumb{background:var(--rule-2);border:3px solid var(--paper-sink);border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:#c0b393}
+.app{display:grid;grid-template-columns:282px 1fr;min-height:100vh}
+
+/* SIDEBAR (table of contents) */
+.sidebar{background:var(--paper-sink);border-right:1px solid var(--rule-2);padding:30px 18px 40px;position:sticky;top:0;height:100vh;overflow-y:auto;font-family:'Inter',system-ui,sans-serif}
+.sidebar .brand{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:21px;color:var(--teal-deep);line-height:1.12;padding:0 8px}
+.sidebar .brand-rule{width:34px;height:2px;background:var(--ochre);margin:12px 8px 8px;border-radius:1px}
+.sidebar .brand-sub{font-size:10px;color:var(--ink-mute);padding:0 8px;margin-bottom:24px;text-transform:uppercase;letter-spacing:2px;font-weight:700}
+.sidebar h3{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.8px;color:var(--ochre);margin:22px 8px 7px;padding-bottom:6px;border-bottom:1px solid var(--rule-2)}
+.sidebar a{display:flex;gap:4px;padding:5px 9px;border-radius:5px;color:var(--ink-soft);text-decoration:none;font-size:13px;line-height:1.35;margin-bottom:1px;font-weight:500;border-left:2px solid transparent;transition:all .12s ease}
+.sidebar a:hover{background:var(--paper-card);color:var(--teal);border-left-color:var(--ochre)}
+.sidebar a .num{color:var(--ink-mute);display:inline-block;width:18px;flex:none;font-variant-numeric:tabular-nums;font-weight:600}
+
+/* MAIN */
+main{padding:60px 76px 140px;max-width:920px}
+main>section{margin-bottom:60px;scroll-margin-top:20px}
+.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--ochre);margin-bottom:12px}
+h1{font-family:'Newsreader',Georgia,serif;font-size:54px;font-weight:600;line-height:1.04;letter-spacing:-.02em;text-wrap:balance;margin-bottom:14px}
+h2{font-family:'Newsreader',Georgia,serif;font-size:29px;font-weight:600;color:var(--ink);margin:48px 0 18px;line-height:1.18;letter-spacing:-.01em;text-wrap:balance;scroll-margin-top:20px}
+h2::before{content:"";display:block;width:32px;height:2px;background:var(--ochre);margin-bottom:15px;border-radius:1px}
+section>h2:first-child{margin-top:0}
+h3{font-family:'Inter',system-ui,sans-serif;font-size:14.5px;font-weight:700;color:var(--teal);margin:0 0 9px;letter-spacing:.005em;display:flex;align-items:center;gap:8px}
+h3::before{content:"";width:6px;height:6px;background:var(--ochre);flex:none;border-radius:1px;transform:rotate(45deg)}
+p{margin:0 0 13px;text-wrap:pretty}
+ul,ol{margin:0 0 13px 24px}
+li{margin-bottom:6px}
+li::marker{color:var(--ochre)}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--rule-2)}
+a:hover{border-bottom-color:var(--teal)}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+
+/* COVER (editorial title page) */
+.cover{position:relative;background:var(--teal-deep);color:var(--ivory);border-radius:var(--radius);padding:54px 52px;margin-bottom:34px;overflow:hidden}
+.cover::after{content:"";position:absolute;inset:14px;border:1px solid rgba(246,241,230,.14);border-radius:3px;pointer-events:none}
+.cover .eyebrow{color:var(--ochre-bright);margin-bottom:18px}
+.cover h1{color:var(--ivory);font-size:58px;margin-bottom:0}
+.cover-rule{width:64px;height:3px;background:var(--ochre-bright);margin:22px 0 20px;border-radius:2px}
+.cover-lead{font-family:'Inter',sans-serif;font-size:16px;font-weight:400;line-height:1.6;color:rgba(246,241,230,.82);max-width:54ch}
+.cover-meta{display:grid;grid-template-columns:1fr 1fr;margin-top:30px;border-top:1px solid rgba(246,241,230,.18)}
+.cover-meta>div{padding:13px 0;border-bottom:1px solid rgba(246,241,230,.1)}
+.cover-meta>div:nth-child(odd){padding-right:24px}
+.cover-meta dt{font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--ochre-bright);margin-bottom:3px}
+.cover-meta dd{font-family:'Inter',sans-serif;font-size:14px;color:var(--ivory)}
+
+/* CONCEPT */
+.concept{background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius);padding:22px 26px;margin:0 0 16px}
+.concept h3{margin-bottom:11px}
+.concept p:last-child,.concept ul:last-child,.concept ol:last-child{margin-bottom:0}
+
+/* CALLOUT (margin note) */
+.callout{background:var(--teal-tint);border-left:3px solid var(--teal);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 18px;margin:0 0 16px;font-size:16px;line-height:1.62}
+.callout.warn{background:var(--warn-tint);border-left-color:var(--warn)}
+.callout strong{color:var(--teal-deep)}
+.callout.warn strong{color:var(--warn)}
+
+/* COMPARE TABLE */
+table.cmp{width:100%;border-collapse:collapse;margin:4px 0 18px;font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.5;background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden}
+table.cmp th{background:var(--teal);color:var(--ivory);text-align:left;padding:10px 13px;font-weight:600;font-size:11.5px;letter-spacing:.03em;vertical-align:top}
+table.cmp td{border-bottom:1px solid var(--rule);padding:10px 13px;vertical-align:top;color:var(--ink-soft)}
+table.cmp tr:nth-child(even) td{background:var(--paper-sink)}
+table.cmp tr:last-child td{border-bottom:none}
+table.cmp strong{color:var(--ink)}
+
+/* Q&A (long answer) */
+.qa{border:1px solid var(--rule);border-radius:var(--radius);padding:18px 22px;margin:0 0 14px;background:var(--paper-card)}
+.qa .q{font-weight:600;font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.5;color:var(--ink);margin-bottom:11px}
+.qa .a{font-size:16px;color:var(--ink-soft);border-top:1px solid var(--rule);padding-top:12px}
+.qa .a p:last-child{margin-bottom:0}
+
+/* MCQ (answer key) */
+.mcq{background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius);padding:16px 20px;margin:0 0 12px}
+.mcq .stem{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;line-height:1.5;color:var(--ink);margin-bottom:9px}
+.mcq ol.opts{font-family:'Inter',sans-serif;font-size:13.5px;margin:0 0 10px 22px;color:var(--ink-soft)}
+.mcq ol.opts li{margin-bottom:4px;padding-left:3px}
+.mcq .ans{font-family:'Inter',sans-serif;font-size:13px;line-height:1.55;color:var(--good);background:var(--good-tint);border-left:3px solid var(--good);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:9px 13px}
+
+/* SCENARIO */
+.scenario{background:var(--ochre-tint);border:1px solid #e7d6ad;border-radius:var(--radius);padding:18px 22px;margin:0 0 16px}
+.scenario .sc-q{font-size:16px;line-height:1.6;color:var(--ink);margin-bottom:11px}
+.scenario .sc-q strong{color:var(--ochre)}
+.scenario .sc-a{font-size:15.5px;color:var(--ink-soft);border-top:1px solid #e7d6ad;padding-top:12px}
+.scenario .sc-a p:last-child{margin-bottom:0}
+
+/* CALC */
+.calc{margin:2px 0 16px}
+.calc pre{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;background:var(--teal-deep);color:#cfe4e0;border-radius:var(--radius);padding:15px 18px;overflow-x:auto;white-space:pre-wrap}
+
+/* BADGES */
+.badge{display:inline-block;font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.1em;padding:3px 8px;border-radius:var(--radius-sm);vertical-align:middle;margin-left:9px;text-transform:uppercase;border:1px solid transparent}
+.badge.in{background:var(--good-tint);color:var(--good);border-color:#cadfce}
+.badge.fuel{background:var(--ochre-tint);color:var(--ochre);border-color:#e7d6ad}
+.badge.warn{background:var(--warn-tint);color:var(--warn);border-color:#eccdc2}
+.badge.new{background:var(--teal-tint);color:var(--teal);border-color:#c8ddd9}
+
+/* BOX (plan / rules) */
+.box{background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius);padding:20px 24px;margin:0 0 16px}
+.box h3{margin-bottom:11px}
+.box ol,.box ul{margin-bottom:0}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.pill{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;background:var(--paper-card);border:1px solid var(--rule-2);color:var(--ink-soft)}
+
+/* GALLERY */
+.gallery-deck{margin:0 0 30px}
+.gallery-deck h3{font-size:15px;margin-bottom:12px}
+.gallery-deck .deck-count{font-family:'Inter',sans-serif;font-size:11px;color:var(--ink-mute);font-weight:600;letter-spacing:.04em}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:13px}
+.gallery-grid a{display:block;border:1px solid var(--rule);border-radius:var(--radius-sm);overflow:hidden;background:var(--paper-card);text-decoration:none;transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease}
+.gallery-grid a:hover{transform:translateY(-3px);border-color:var(--ochre);box-shadow:0 8px 22px rgba(34,31,25,.12)}
+.gallery-grid img{display:block;width:100%;height:auto}
+.gallery-grid .cap{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--ink-mute);padding:5px 9px;border-top:1px solid var(--rule);letter-spacing:.03em}
+
+/* mobile */
+#menu-btn{display:none}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:fixed;top:0;left:0;width:82%;max-width:312px;transform:translateX(-100%);transition:transform .2s ease;z-index:50;box-shadow:0 12px 40px rgba(34,31,25,.2)}
+  .sidebar.open{transform:translateX(0)}
+  main{padding:66px 24px 110px}
+  h1{font-size:38px}
+  .cover{padding:38px 28px}
+  .cover h1{font-size:40px}
+  .cover-meta{grid-template-columns:1fr}
+  .cover-meta>div:nth-child(odd){padding-right:0}
+  #menu-btn{display:flex;position:fixed;top:13px;left:13px;z-index:60;background:var(--teal);color:var(--ivory);border:none;border-radius:8px;width:42px;height:42px;font-size:19px;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(34,31,25,.18)}
+}
+@media print{.sidebar,#menu-btn{display:none}.app{grid-template-columns:1fr}main{max-width:none;padding:0}.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<button id="menu-btn" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+<div class="app">
+<nav class="sidebar">
+  <div class="brand">AI &amp; Growth Engineering</div>
+  <div class="brand-rule"></div>
+  <div class="brand-sub">Final Exam Study Book</div>
+
+  <h3>Start here</h3>
+  <a href="#home"><span class="num">0</span>Cover</a>
+  <a href="#howto"><span class="num">i</span>How to use this book</a>
+  <a href="#plan"><span class="num">ii</span>Your study plan</a>
+  <a href="#rules"><span class="num">iii</span>Exam-day rules</a>
+
+  <h3>The predicted paper</h3>
+  <a href="#paper"><span class="num">P</span>Predicted final (3 hours)</a>
+  <a href="#paperA"><span class="num">A</span>Section A: MCQs</a>
+  <a href="#paperB"><span class="num">B</span>Section B: Long answers</a>
+  <a href="#paperC"><span class="num">C</span>Section C: Scenarios</a>
+
+  <h3>Concepts</h3>
+  <a href="#wk6"><span class="num">1</span>AI &amp; Growth Engineering</a>
+  <a href="#wk7"><span class="num">2</span>Digital Products</a>
+  <a href="#pricing"><span class="num">3</span>Pricing &amp; Pricing Games</a>
+  <a href="#nba"><span class="num">4</span>Next Best Action</a>
+  <a href="#funnel"><span class="num">5</span>Base Exclusion Funnel</a>
+  <a href="#metrics"><span class="num">6</span>Product Metrics</a>
+  <a href="#gamification"><span class="num">7</span>Gamification (FLYG)</a>
+  <a href="#designlab"><span class="num">8</span>Design Your Own Product</a>
+
+  <h3>Reference</h3>
+  <a href="#gallery"><span class="num">G</span>Slide gallery</a>
+  <a href="#cheatsheet"><span class="num">C</span>One-page cheatsheet</a>
+</nav>
+<main>
+
+<section id="home">
+  <div class="cover">
+    <div class="eyebrow">Final exam revision</div>
+    <h1>AI &amp; Growth<br>Engineering</h1>
+    <div class="cover-rule"></div>
+    <p class="cover-lead">A complete study book: the predicted paper, every concept explained from scratch, the numeric labs worked out, and the full slide gallery.</p>
+    <dl class="cover-meta">
+      <div><dt>Exam</dt><dd>3 hours, comprehensive</dd></div>
+      <div><dt>Sessional 2 was</dt><dd>30 marks, 2 questions, 1 hour</dd></div>
+      <div><dt>Instructor</dt><dd>Ammar Karim</dd></div>
+      <div><dt>Built from</dt><dd>7 decks and readings, 4 Excel labs</dd></div>
+    </dl>
+  </div>
+  <div class="callout"><strong>How this book was built.</strong> Every concept is grounded in your own course material: Week 6 (AI and Growth Engineering), Week 7 (Digital Products), the Nine Pricing Strategies reading, the Product Metrics reading, the Next Best Action telco case, the Gamification (FLYG) case, and the four Excel labs (Designing Your Own Products, Pricing Games, Base Exclusion Funnel, and the 158,039-row funnel dataset). Numeric answers were verified in code, not guessed.</div>
+  <div class="callout warn"><strong>The two sessional-2 questions you got stuck on are solved in full.</strong> "Two types of AI" is the AI Paradigms stack: Applied AI vs Generative AI vs Agentic AI (see AI and Growth Engineering). "MVP vs something" is MVP/Basic vs Augmented product (see Digital Products). Both are front and center because this instructor reuses compare/contrast questions.</div>
+</section>
+
+<section id="howto">
+  <div class="eyebrow">Orientation</div>
+  <h2>How to use this book</h2>
+  <div class="concept">
+    <h3>Read in three passes</h3>
+    <ul>
+      <li><strong>Pass 1, the predicted paper.</strong> Start at <a href="#paper">The Predicted Final</a>. It is the highest-yield page: the questions most likely to appear, with short answers and pointers to the full working.</li>
+      <li><strong>Pass 2, the concept sections.</strong> Each topic explains the idea from scratch, then ends with its own bank of MCQs, long answers, and scenarios. Do not skip the <em>Exam trap</em> callouts; they target the exact mistakes students make.</li>
+      <li><strong>Pass 3, the numeric labs.</strong> The Pricing Game, the Base Exclusion Funnel, and the Design-Your-Own-Product model are the parts most likely to carry heavy marks. Practice re-deriving the arithmetic with the slide closed.</li>
+    </ul>
+  </div>
+  <div class="callout"><strong>Legend.</strong> <span class="badge in">IN SCOPE</span> lecture or reading content. <span class="badge fuel">CONCEPT FUEL</span> background that supports an answer. Green answer boxes hold MCQ keys. Gold boxes are scenario or numeric questions with worked solutions. Dark boxes show step-by-step arithmetic.</div>
+</section>
+
+<section id="plan">
+  <div class="eyebrow">Triage</div>
+  <h2>Your study plan</h2>
+  <div class="box">
+    <h3>If you have 3 to 4 hours left</h3>
+    <ol>
+      <li><strong>The AI Paradigms stack</strong> (Applied vs Generative vs Agentic). Learn the five layers, their nicknames, examples, and risks. This is the single most reusable answer.</li>
+      <li><strong>MVP vs Augmented</strong> and the <strong>8-step product design process.</strong></li>
+      <li><strong>The three numeric labs:</strong> the Pricing Game (+20% revenue), the Base Exclusion Funnel (bell-curve trim, slide-back, fraud), and the Design-Your-Own-Product model.</li>
+      <li><strong>The Predicted Paper</strong> Sections A, B, and C end to end.</li>
+    </ol>
+  </div>
+  <div class="box">
+    <h3>If you have a full day</h3>
+    <p>Do the above, then work every topic section in order and attempt each question bank with the answers hidden. Pay special attention to the <strong>9 pricing strategies</strong>, the <strong>three CVM experiments</strong> (Target/Control, A/B, Model Performance), <strong>hypothesis flavors</strong> (directional vs non-directional), the <strong>NBA four-tier framework</strong>, and the <strong>product metrics</strong> formulas (stickiness, CLTV, ARPU vs ARPAU, churn).</p>
+  </div>
+  <div class="box">
+    <h3>If you have a week</h3>
+    <p>Build the muscle memory: re-create the Pricing Game and Funnel arithmetic from a blank sheet, write a full product teardown for an app you use, and rehearse the two guiding questions ("What product are you building?" and "How do you know if your product is good?") against every case in the book.</p>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="eyebrow">Tactics</div>
+  <h2>Exam-day rules that win marks</h2>
+  <div class="concept">
+    <ul>
+      <li><strong>Budget the 3 hours.</strong> If marks are visible, spend roughly one minute per mark. Reserve 20 minutes at the end to check arithmetic on the numeric questions.</li>
+      <li><strong>Name the framework.</strong> Examiners reward the vocabulary: say "CVM", "Applied vs Generative vs Agentic AI", "Target vs Control", "directional (one-tailed)", "MVP vs Augmented", "penetration pricing", "NBA four-tier", "stickiness = DAU/MAU". Naming shows you know the source.</li>
+      <li><strong>Show every step in numeric questions.</strong> For the Pricing Game and the Funnel, write the formula, substitute the numbers, then compute. Partial credit lives in the steps.</li>
+      <li><strong>Define acronyms on first use.</strong> CAC, CLV, MVP, ARPU, NBA, KPI, ATL/BTL. One clause is enough.</li>
+      <li><strong>For "which AI" or "which pricing" scenarios, justify the fit.</strong> State the choice, then give the one reason from the course (for example "Expert System because the rule is fixed and needs zero ambiguity").</li>
+      <li><strong>Close every product answer with the two guiding questions:</strong> what are you building, and how do you know it is good (which metric proves it).</li>
+      <li><strong>Do not claim newer AI replaces older AI.</strong> The course line is "fit-for-purpose, GenAI expands the toolbox." This is a known trap.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="paper">
+  <div class="eyebrow">Highest yield</div>
+  <h2>The Predicted Final Paper <span class="badge new">3 hours</span></h2>
+  <div class="callout"><strong>How the format is predicted.</strong> Sessional 2 was 30 marks, 2 questions, in 1 hour (about 15 marks per question, essay and compare style, including a "two types of AI" question and an "MVP vs" question). A 3-hour final scales that up. The most defensible structure is three parts: <strong>Section A</strong> objective MCQs (about 20 marks), <strong>Section B</strong> conceptual long answers and compare/contrast (about 40 marks), and <strong>Section C</strong> applied scenarios and numeric labs (about 40 marks). The questions below are the highest-probability items. Full working for each lives in the linked topic section.</div>
+
+  <h2 id="paperA">Section A: The 12 most likely MCQs</h2>
+  <div class="mcq"><p class="stem">1. CVM (Customer Value Management) is primarily about:</p><ol class="opts" type="A"><li>Acquiring as many new customers as possible</li><li>Increasing the lifetime value of existing customers</li><li>Cutting support costs</li><li>Maximizing ad channels</li></ol><p class="ans">Answer: B. CVM maximizes profitability by raising the CLV of customers you already have, not just acquisition.</p></div>
+  <div class="mcq"><p class="stem">2. A company finds CAC is now greater than CLV. The course calls this:</p><ol class="opts" type="A"><li>A balanced model</li><li>The do-nothing scenario</li><li>Start-up Demise</li><li>The mobile mind shift</li></ol><p class="ans">Answer: C. Spending more to acquire a customer than they are worth over their lifetime is "Start-up Demise". Healthy is CAC &lt; CLV.</p></div>
+  <div class="mcq"><p class="stem">3. "GenAI does not replace ML or Applied AI, it expands the toolbox" supports which idea?</p><ol class="opts" type="A"><li>Agentic AI is always best</li><li>AI is a stack of fit-for-purpose layers, not one tool</li><li>Expert systems are obsolete</li><li>Deep Learning replaces ML</li></ol><p class="ans">Answer: B. AI is a stack; each paradigm fits a different decision. This is the most reused exam line.</p></div>
+  <div class="mcq"><p class="stem">4. Which AI layer is "The Predictor", used for credit scoring, churn, and NBA?</p><ol class="opts" type="A"><li>Expert Systems</li><li>Machine Learning</li><li>Generative AI</li><li>Agentic AI</li></ol><p class="ans">Answer: B. Machine Learning predicts a probability ("if X happened, Y has a probability"). Its risk is degrading as data changes.</p></div>
+  <div class="mcq"><p class="stem">5. A directional (one-tailed) alternative hypothesis means:</p><ol class="opts" type="A"><li>Any change counts, up or down</li><li>Only an increase (uplift) counts</li><li>The null is auto-rejected</li><li>Significance is impossible</li></ol><p class="ans">Answer: B. Directional asks "did it increase?"; only uplift counts. Non-directional (two-tailed) counts up or down.</p></div>
+  <div class="mcq"><p class="stem">6. MVP/Basic versus Augmented product. The Augmented product is:</p><ol class="opts" type="A"><li>The minimum offering for the core benefit</li><li>Features that go beyond the customer's minimum expectations</li><li>The cheapest version</li><li>A prototype with bugs</li></ol><p class="ans">Answer: B. MVP/Basic delivers the core benefit at minimum; Augmented adds features beyond minimum expectations.</p></div>
+  <div class="mcq"><p class="stem">7. Selling a product below cost to pull in customers and profit on follow-on sales is:</p><ol class="opts" type="A"><li>Penetration pricing</li><li>Economy pricing</li><li>Loss leader strategy</li><li>Premium pricing</li></ol><p class="ans">Answer: C. Loss leader (Amazon Kindle, Gillette razors). Penetration is a low launch price you later raise.</p></div>
+  <div class="mcq"><p class="stem">8. For digital products with near-zero marginal cost, the "holy grail" pricing is:</p><ol class="opts" type="A"><li>Cost-plus</li><li>Competitive</li><li>Value-based</li><li>Dynamic</li></ol><p class="ans">Answer: C. Value-based pricing captures perceived value; ideal where marginal cost is near zero. Cost-plus and dynamic are "less relevant" for digital.</p></div>
+  <div class="mcq"><p class="stem">9. Stickiness ratio is defined as:</p><ol class="opts" type="A"><li>MAU divided by DAU</li><li>DAU divided by MAU</li><li>Churn divided by retention</li><li>ARPU divided by CAC</li></ol><p class="ans">Answer: B. Stickiness = DAU/MAU, how often monthly users return on a daily basis.</p></div>
+  <div class="mcq"><p class="stem">10. In Next Best Action, the golden principle is right offer, right customer, right time, and:</p><ol class="opts" type="A"><li>Right price</li><li>Right channel</li><li>Right region</li><li>Right product</li></ol><p class="ans">Answer: B. "Right offer to the right customer at the right time through the right channel."</p></div>
+  <div class="mcq"><p class="stem">11. In the Base Exclusion Funnel, "slide back" rescues customers who:</p><ol class="opts" type="A"><li>Are flagged as fraud</li><li>Have the lowest scores</li><li>Sit in the top 3 model deciles despite being in a score tail</li><li>Never transacted</li></ol><p class="ans">Answer: C. Slide-back rescues high-propensity customers (top 3 deciles) who were excluded by the score limits.</p></div>
+  <div class="mcq"><p class="stem">12. The Target vs Control experiment isolates the:</p><ol class="opts" type="A"><li>Modelling effect</li><li>Communication effect</li><li>Best message</li><li>Price elasticity</li></ol><p class="ans">Answer: B. Target (gets the message) vs Control (gets none) measures whether the communication itself changed behavior.</p></div>
+
+  <h2 id="paperB">Section B: The 6 most likely long answers</h2>
+  <div class="qa"><p class="q">B1. Compare Applied AI, Generative AI, and Agentic AI. Define each, give an example decision for each, and state how they relate. (This is the "two types of AI" sessional question, expanded.)</p><div class="a">Applied AI is the predictive and assistive group: Expert Systems (rules, certainty, compliance), Machine Learning (probabilities, churn and credit scoring), and Deep Learning (pattern discovery, fraud and images). Generative AI creates new content from intent (summaries, conversation), with hallucination risk. Agentic AI plans and acts autonomously across multi-step workflows, with the risk of automating mistakes fast, so it needs guardrails. The relationship: AI is a stack, fit-for-purpose, and GenAI expands the toolbox rather than replacing ML or Applied AI. See <a href="#wk6">AI and Growth Engineering</a> for the full table and worked scenarios.</div></div>
+  <div class="qa"><p class="q">B2. Differentiate MVP/Basic versus Augmented product, with a fintech example. Where does the core benefit sit? (The "MVP vs" sessional question.)</p><div class="a">The core benefit sits at the center (the fundamental reason the customer uses the product, for example "move money safely"). MVP/Basic is the minimum offering that delivers that core benefit. Augmented adds features beyond minimum expectations (rewards, analytics, advisory). Fintech example: a wallet MVP is send, receive, and check balance; the augmented wallet adds bill split, cashback, budgeting, and a credit score. See <a href="#wk7">Digital Products</a>.</div></div>
+  <div class="qa"><p class="q">B3. List and explain the 8-step product design process in order.</p><div class="a">1 Idea Generation, 2 Idea Screening, 3 Concept Development and Testing, 4 Marketing Strategy and Business Analysis, 5 Product Prototype Development, 6 Iterative Testing, 7 Commercialization, 8 Breakeven and projections. Full explanation in <a href="#wk7">Digital Products</a>.</div></div>
+  <div class="qa"><p class="q">B4. Outline the 9 pricing strategies and explain why competitive pricing is risky for digital products while value-based is the holy grail.</p><div class="a">Cost-plus, Competitive, Penetration, Dynamic, Price Discrimination, Economy, Premium, Loss Leader, Value-based. Competitive pricing drags digital players into a "red ocean" of low margins; better to compete on uniqueness. Value-based captures perceived value and suits near-zero marginal cost. See <a href="#pricing">Pricing</a>.</div></div>
+  <div class="qa"><p class="q">B5. Explain the Next Best Action four-tier framework and its golden principle.</p><div class="a">Understand the customer (strategic plus tactical segmentation, propensity scores), Decide the most relevant offer (micro-segments, three prioritized offers, dormancy 0 to 150 days), Place and pitch on channel (inbound and outbound), and Adaptive learning and self-healing (decline scores fed back). Principle: right offer, right customer, right time, right channel. See <a href="#nba">Next Best Action</a>.</div></div>
+  <div class="qa"><p class="q">B6. Explain null versus alternative hypothesis and directional versus non-directional tests, and link them to the three CVM experiments.</p><div class="a">Null = the communication does not change the response rate; Alternative = it does. Directional (one-tailed) counts only uplift; non-directional (two-tailed) counts any change. You reject the null only with statistical significance. The experiments produce the data: Target vs Control (communication effect), A/B (best message), Model Performance (modelling effect). See <a href="#wk6">AI and Growth Engineering</a>.</div></div>
+
+  <h2 id="paperC">Section C: The 4 most likely scenarios and numeric questions</h2>
+  <div class="scenario"><div class="sc-q"><strong>C1. Pricing Game.</strong> Four segments A, B, C, D have current revenues 291,000, 144,000, 52,500, and 12,500 (total 500,000). Orange segments take a 5% subscription-amount cut. Only two segments may be orange. Raise total revenue by 20%.</div><div class="sc-a"><strong>Worked answer.</strong> Make A and B orange, set new pricing A = 0.16 and B = 0.102: A gives 100 x 23,750 x 0.16 = 380,000; B gives 80 x 19,000 x 0.102 = 155,040; C and D unchanged at 52,500 and 12,500. Total = 600,040, which is +20.0%. Full method and the "5% cut reduces revenue, so the price rise must over-compensate" trap are in <a href="#pricing">Pricing</a>.</div></div>
+  <div class="scenario"><div class="sc-q"><strong>C2. Base Exclusion Funnel.</strong> The Combined Score has mean 170.85, standard deviation 103.12, and ranges 1 to 368. Compute the mu plus/minus 2 sigma band, say whether it excludes anyone, then state the retained percentage at each funnel stage.</div><div class="sc-a"><strong>Worked answer.</strong> mu +/- 2 sigma = 170.85 +/- 206.25 = [-35.4, 377.1], which is wider than the actual range [1, 368], so it excludes nobody. The exercise therefore uses practical limits near 20 and 350. Retained: 90.42% after score trim, 93.31% after slide-back, 89.11% after removing fraud. Full reasoning in <a href="#funnel">Base Exclusion Funnel</a>.</div></div>
+  <div class="scenario"><div class="sc-q"><strong>C3. Design-Your-Own-Product model.</strong> A Basic cohort of 34,493 subscribers invests 56,972,810 in Year 1. Compute invested per subscriber and the organization's monthly re-investment share per subscriber at 13.5%.</div><div class="sc-a"><strong>Worked answer.</strong> Invested per subscriber = 56,972,810 / 34,493 = 1,651.72. Organization monthly share per sub = 13.5% x 1,651.72 / 12 = 18.58. Full line-by-line model and the two guiding questions are in <a href="#designlab">Design Your Own Product</a>.</div></div>
+  <div class="scenario"><div class="sc-q"><strong>C4. Which AI plus design the action.</strong> A digital bank must block every transaction above PKR 1,000,000 from non-corporate accounts with zero exceptions, and separately wants to predict which customers will churn next quarter. Pick the AI paradigm for each and justify.</div><div class="sc-a"><strong>Worked answer.</strong> The hard block is an Expert System (fixed rule, zero ambiguity, auditable; a probability is not acceptable for compliance). Churn prediction is Machine Learning (a probability learned from history; monitor it because it degrades). See the scenario bank in <a href="#wk6">AI and Growth Engineering</a>.</div></div>
+</section>

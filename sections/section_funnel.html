@@ -1,0 +1,280 @@
+<section><h2 id="nba">Next Best Action <span class="badge in">IN SCOPE</span></h2>
+
+<p>This section explains <strong>Next Best Action</strong> from scratch, using the telco (telecommunications, the mobile-phone-network industry) case study from the in-class reading handout. You do not need any prior knowledge. By the end you should be able to define NBA, draw its four-tier architecture, define every technical term it uses, and recite the documented business results. The exercise in the very next section (the Base Exclusion Funnel) is the data-cleaning step that happens <em>before</em> an NBA campaign, so learn NBA first and the funnel will make far more sense.</p>
+
+<div class="callout"><strong>Key term. NBA (Next Best Action).</strong> A customer-centric marketing paradigm (a way of thinking that puts the individual customer at the centre) that picks a series of highly targeted, prioritized actions for one customer or a group of customers. These actions are usually more than one, ranked by priority, and can be offers, services, or propositions (a proposition is a packaged value offer, for example "double your data for 30 days"). The customers are selected using a sophisticated mechanism that weighs two sides against each other: on one side the customer's demographics, profile, behavior, interests and needs, and on the other side the company's business objectives, policies and regulations.</div>
+
+<div class="concept"><h3>The one sentence to memorize: the golden marketing principle</h3>
+<p>NBA is built on the <strong>golden marketing principle</strong>: deliver the <strong>"right offer to the right customer at the right time and through the right channel."</strong> Notice the four "rights." Each one maps loosely to a tier of the architecture below: the right customer (Tier 1, understanding), the right offer (Tier 2, deciding), the right channel and right time (Tier 3, placing and pitching), and a feedback loop that keeps all four correct over time (Tier 4, adaptive learning). If you can write this sentence and name the four tiers, you have the spine of the whole topic.</p></div>
+
+<div class="callout"><strong>Why telcos needed this (the case-study motivation).</strong> The reading argues the cellular industry must reinvent itself, especially in South Asia. Voice services (ordinary phone calls), once the largest revenue contributor, were facing margin dilution (shrinking profit per rupee of sales) to below 50 percent, while 3G (third-generation mobile data) was set to push data services into the "driving seat." Fierce competition made customer retention (keeping existing customers from leaving) the biggest challenge. The prepaid base (customers who pay in advance, as opposed to monthly contract customers) is highly dynamic, so by the time slow analytics turned into a tactical response the market had already shifted. The fix is to become truly customer-centric and act proactively through micro-segmentation. That is the NBA promise.</p></div>
+
+<h3 id="nba-arch">The four-tier NBA architecture</h3>
+
+<p>The reading lays out NBA as a four-tier approach. Read the tiers as a pipeline (output of one feeds the next), with the fourth tier looping back to the first.</p>
+
+<div class="concept"><h3>Tier 1. Understanding the customer</h3>
+<p>The goal is to know each subscriber (a subscriber is one mobile customer) as well as possible. Four ingredients are mixed together:</p>
+<ul>
+<li><strong>Strategic segmentation.</strong> Divide the entire subscriber base into broad lifecycle groups: <em>new sales</em> (just joined), <em>growing</em> (usage rising), <em>mature</em> (settled, steady usage), <em>declining</em> (usage falling, at risk of leaving), and <em>reactivated</em> (had left or gone quiet, now active again). These groups are based on lifecycle stage and certain conditions. This is the "big-picture" cut of the base.</li>
+<li><strong>Tactical segments.</strong> On top of the strategic groups, many finer segments are created using <em>unsupervised clustering</em> (defined below) on behavior and usage, built from a number of parameters or variables. Each tactical segment has a unique profile, different from every other tactical segment.</li>
+<li><strong>Propensity / prediction scores.</strong> Numeric scores from prediction models that estimate how likely (how "propense") a customer is to do something in the future, for example take an offer, churn (leave), or buy data. Defined in detail below.</li>
+<li><strong>Social parameters.</strong> The customer's social influence and social segment (for example, are they a hub that influences many others) add another dimension to the decision. Customer profiling is described as a continuously evolving process, so new dimensions keep getting added.</li>
+</ul></div>
+
+<div class="concept"><h3>Tier 2. Deciding the most relevant offer</h3>
+<p>Now bring all of Tier 1's results together into a single view of each customer. Then apply <em>supervised clustering</em> using thresholds, conditions and ranges (decided after significant R and D, that is research and development) to break customers into smaller, more targeted groups called <strong>micro-segments</strong>.</p>
+<ul>
+<li><strong>The dormancy reference of 0 to 150 days.</strong> Dormancy means how long a subscriber has been inactive (not using the service). The standard industry practice is to take the "90-day active base" (only count customers active within the last 90 days). The reading deliberately widens this to <strong>0 to 150 days</strong>, because a customer who has been quiet for 91 to 150 days still has vital chances of becoming active again. Keeping these subscribers in scope means there are offers ready for such potential reactivations. This is a memorable, examable detail: <em>0 to 150 days, not the standard 90, so that 91-to-150-day subscribers can be reactivated.</em></li>
+<li><strong>Pick a prioritized set of three offers.</strong> Once micro-segments are finalized, the micro-segmentation decides a set of <strong>three offers</strong> that best suit the general and specific characteristics and needs of each micro-segment, along with their priority order.</li>
+</ul></div>
+
+<div class="concept"><h3>Tier 3. Placing and pitching the offer on channels</h3>
+<p>"Pitching" means presenting the offer to the customer. A "channel" is a route through which you reach the customer, and a "touch point" is any moment of contact. Offers are placed on all channels so they can be pitched at every touch point. The reading stresses that besides <strong>inbound</strong> channels (the customer contacts the company), the <strong>outbound</strong> channel (the company reaches out to the customer) is now encouraged. The listed channels are:</p>
+<ul>
+<li>Contact Centers (phone support lines)</li>
+<li>Service Centers (physical branches)</li>
+<li>Outbound (the company proactively calls or messages the customer)</li>
+<li>New Acquisition Activation (offers presented when a new customer is being signed up)</li>
+<li>Service APP (a self-service mobile app, listed as "to be explored")</li>
+<li>Other digital channels</li>
+</ul></div>
+
+<div class="concept"><h3>Tier 4. Adaptive learning and self-healing</h3>
+<p>This is the feedback loop that makes NBA "powerful and resilient." It is based on analysing <strong>offer takers</strong> (customers who accepted an offer) versus <strong>non-offer takers / decliners</strong> (customers who refused).</p>
+<ul>
+<li>Offer decliners are marked, filtered, and given a <strong>decline score</strong> (a number capturing how and how often they reject offers).</li>
+<li>The decline score feeds back into the adaptive learning. The <strong>self-healing</strong> module filters decliners out while calculating the NBA offer set <em>iteratively</em> (repeatedly, refining each round), so the system stops wasting the same rejected offer on the same person.</li>
+<li>The customer's rejection record for a given month is carried forward and taken into account when identifying the best offers for the next month.</li>
+</ul>
+<p>This closing of the loop lets the system learn and incorporate changes as it gets ready for the next set of offers, which the reading frames as change management.</p></div>
+
+<h3 id="nba-terms">The technical terms, defined plainly</h3>
+
+<div class="callout"><strong>Key term. Strategic vs tactical segmentation.</strong> <em>Strategic</em> segmentation is the broad, slow-changing, lifecycle cut of the base (new / growing / mature / declining / reactivated). <em>Tactical</em> segmentation is the fine-grained, fast-changing cut built on behavior and usage that sits on top of the strategic groups. Memory hook: strategic = the big lifecycle buckets, tactical = the small behavior-driven micro-cuts used for the next move.</div>
+
+<div class="callout"><strong>Key term. Unsupervised vs supervised clustering.</strong> "Clustering" means grouping similar customers together. <em>Unsupervised</em> clustering has no pre-set answer or label; the algorithm finds natural groupings in the data on its own (used to discover tactical segments). <em>Supervised</em> clustering uses known thresholds, conditions, and ranges that humans set after research, to deliberately split customers into defined groups (used to form micro-segments). Memory hook: unsupervised = "find groups for me," supervised = "split them by my rules."</div>
+
+<div class="callout"><strong>Key term. Propensity score.</strong> A number (often 0 to 1, or a percentage) from a prediction model that says how likely a customer is to take a particular action in the future (accept an offer, churn, upgrade). Higher propensity means more likely. In the funnel exercise next door, the <em>Model Decile</em> column is a propensity-based ranking, and the top deciles are the highest-propensity customers.</div>
+
+<div class="callout"><strong>Key term. Micro-segment.</strong> A small, tightly defined group of customers who share specific characteristics and needs, produced by supervised clustering with thresholds and ranges. Each micro-segment gets its own prioritized set of three offers. Micro-segments are smaller and more targeted than tactical segments.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Do not confuse the two segmentation pairs. There are two different "strategic vs tactical" and "supervised vs unsupervised" axes. Tactical segments are built with <em>unsupervised</em> clustering (discover groups), while micro-segments are built with <em>supervised</em> clustering (split by rules). A classic trick question swaps these. Also remember the dormancy number is <strong>150</strong> days (not 90) and the offer set is <strong>three</strong> offers.</div>
+
+<h3 id="nba-results">The documented results (memorize these five)</h3>
+
+<p>The case study reports five concrete accomplishments after running NBA. These are favourite exam fill-in-the-blank items, so learn the exact numbers.</p>
+
+<table class="cmp">
+<tr><th>Metric</th><th>Before NBA</th><th>After NBA</th><th>Change</th></tr>
+<tr><td>Products offered to customers</td><td>2 products</td><td>18 products</td><td>Grew from 2 to 18 (more than doubled, more uptake options)</td></tr>
+<tr><td>Customers pitched (vs former month)</td><td>baseline</td><td>+19%</td><td>19% more customers pitched after channel KPIs were revised upwards</td></tr>
+<tr><td>Successful offer activations</td><td>11%</td><td>19%</td><td>Activation rate rose from 11% to 19%</td></tr>
+<tr><td>Activity level a month later</td><td>baseline (non-takers)</td><td>+10%</td><td>Offer takers were 10% more active a month later than non-takers</td></tr>
+<tr><td>ARPU (Average Revenue Per User)</td><td>baseline (non-takers)</td><td>+13%</td><td>Offer takers showed 13% higher ARPU (13% incremental)</td></tr>
+</table>
+
+<div class="callout"><strong>Key term. ARPU (Average Revenue Per User).</strong> The average money a company earns per customer over a period (total revenue divided by number of users). It is the headline health metric for a telco. Offer takers showing 13% higher ARPU means the people who accepted NBA offers were worth 13% more in revenue than those who did not, which is the strongest single argument that NBA paid off.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Watch the two "19%" figures, they are different things. One is "19% more customers pitched" (a growth in how many people were approached). The other is "activations rose from 11% to 19%" (the success rate of the pitches). And the "10% more active" and "13% higher ARPU" both compare offer takers <em>against non-takers a month later</em>, not against their own past.</div>
+
+<h3 id="nba-exam">Likely exam questions</h3>
+
+<div class="qa"><p class="q">Q. Define Next Best Action and state the golden marketing principle.</p><div class="a">A. NBA (Next Best Action) is a customer-centric marketing paradigm that selects a series of highly targeted, prioritized actions (offers, services, or propositions) for an individual customer or group. Customers are chosen by weighing their demographics, profile, behavior, interests and needs against the company's business objectives, policies and regulations. The golden marketing principle is to deliver the "right offer to the right customer at the right time and through the right channel."</div></div>
+
+<div class="qa"><p class="q">Q. Why did the telco set the dormancy reference at 0 to 150 days instead of the standard 90?</p><div class="a">A. The standard practice counts only the 90-day active base. The telco widened the window to 0 to 150 days because subscribers inactive for 91 to 150 days still have vital chances of reactivating. Keeping them in scope means offers are ready for those potential reactivations rather than writing those customers off prematurely.</div></div>
+
+<div class="qa"><p class="q">Q. What is "self-healing" in the NBA framework and how does it use the decline score?</p><div class="a">A. Self-healing is the Tier 4 mechanism that makes NBA resilient. Customers who decline offers are marked, filtered, and given a decline score. The self-healing module uses that score to filter decliners out while it recalculates the NBA offer set iteratively, so the system stops re-pitching offers that were rejected. The rejection record from one month is also carried into the next month's offer selection.</div></div>
+
+<div class="mcq"><p class="stem">1. Which clustering type is used to create tactical behavior-and-usage segments?</p><ol class="opts" type="A"><li>Supervised clustering with fixed thresholds</li><li>Unsupervised clustering</li><li>Strategic lifecycle bucketing</li><li>Decile ranking by propensity</li></ol><p class="ans">Answer: B. Tactical segments are discovered with unsupervised clustering on behavior and usage. (Supervised clustering with thresholds is used later, for micro-segments.)</p></div>
+
+<div class="mcq"><p class="stem">2. The strategic segmentation divides the base into which five lifecycle groups?</p><ol class="opts" type="A"><li>New sales, growing, mature, declining, reactivated</li><li>Prepaid, postpaid, roaming, dormant, fraud</li><li>Bronze, silver, gold, platinum, diamond</li><li>Acquire, activate, retain, refer, revenue</li></ol><p class="ans">Answer: A. The reading lists new sales, growing, mature, declining and reactivated, based on lifecycle and conditions.</p></div>
+
+<div class="mcq"><p class="stem">3. After NBA, the rate of successful offer activations moved from:</p><ol class="opts" type="A"><li>2% to 18%</li><li>11% to 19%</li><li>13% to 19%</li><li>19% to 30%</li></ol><p class="ans">Answer: B. Activations rose from 11% to 19%. (2 to 18 is products offered; 13% is the ARPU uplift.)</p></div>
+
+<div class="mcq"><p class="stem">4. A propensity score primarily measures:</p><ol class="opts" type="A"><li>How much revenue a customer generated last year</li><li>How likely a customer is to take a future action</li><li>How many social connections a customer has</li><li>How long a customer has been dormant</li></ol><p class="ans">Answer: B. Propensity is a model-based estimate of the likelihood of a future action, such as accepting an offer or churning.</p></div>
+
+<div class="mcq"><p class="stem">5. How many offers form the prioritized set decided per micro-segment?</p><ol class="opts" type="A"><li>One</li><li>Two</li><li>Three</li><li>Five</li></ol><p class="ans">Answer: C. A prioritized set of three offers is chosen for each micro-segment.</p></div>
+
+<div class="mcq"><p class="stem">6. Which of the following is an OUTBOUND-style channel emphasised by the new NBA approach?</p><ol class="opts" type="A"><li>Customer walking into a service center</li><li>Customer calling the contact center</li><li>The company proactively calling or messaging the customer</li><li>The customer searching the website unprompted</li></ol><p class="ans">Answer: C. Outbound means the company reaches out to the customer. Options A, B and D are inbound (customer-initiated).</p></div>
+
+<div class="mcq"><p class="stem">7. "Offer takers were 10% more active a month later" is a comparison against:</p><ol class="opts" type="A"><li>Their own activity the previous year</li><li>Non-offer takers a month later</li><li>The industry average</li><li>Fraud-flagged accounts</li></ol><p class="ans">Answer: B. The 10% activity uplift compares offer-taking subscribers against non-offer-taking subscribers a month later.</p></div>
+
+<div class="qa"><p class="q">Q. (Long answer) Describe the full four-tier NBA architecture and explain how Tier 4 closes the loop back to Tier 1.</p><div class="a">A. <strong>Tier 1, Understanding the customer:</strong> build a deep view of each subscriber by mixing strategic segmentation (lifecycle buckets: new sales, growing, mature, declining, reactivated), tactical segments (unsupervised clustering on behavior and usage, each with a unique profile), propensity/prediction scores (future-behavior likelihoods), and social parameters (influence and social segment). <strong>Tier 2, Deciding the most relevant offer:</strong> combine Tier 1 results into a single customer view, then apply supervised clustering with thresholds, conditions and ranges to form micro-segments, using a 0-to-150-day dormancy reference so 91-to-150-day subscribers can still be reactivated, and pick a prioritized set of three offers per micro-segment. <strong>Tier 3, Placing and pitching offers on channels:</strong> push the offers to all channels (contact centers, service centers, outbound, new-acquisition activation, service app, other digital channels), now emphasising outbound as well as inbound, so offers are pitched at every touch point at the right time. <strong>Tier 4, Adaptive learning and self-healing:</strong> analyse offer takers versus decliners, give decliners a decline score, and let the self-healing module filter them out iteratively while carrying each month's rejection record into the next month. This feedback updates the customer understanding and scoring that Tier 1 relies on, so the next cycle starts with sharper segments and propensities. That is how Tier 4 loops back to Tier 1, continuously improving the "four rights" of the golden principle.</div></div>
+
+</section>
+
+<section><h2 id="funnel">The Base Exclusion Funnel <span class="badge in">IN SCOPE</span></h2>
+
+<p>This is the hardest Excel exercise in the course, so it is explained here in full, assuming zero prior knowledge of statistics. The Base Exclusion Funnel is a <strong>base-cleaning</strong> exercise: before a telco runs an NBA campaign (the topic above), it must <em>clean its subscriber base</em>, meaning remove bad rows (statistical outliers) and bad actors (fraud), while protecting its most valuable customers. The output is a trustworthy, high-value "Final Base" to aim offers at. We will define every term, walk the method step by step, do the arithmetic, and then explain a subtle statistical lesson that the exercise is secretly teaching.</p>
+
+<div class="callout"><strong>Key term. Base.</strong> In telco language, the "base" is simply the full set of subscribers (customers). "Base cleaning" or "base exclusion" means filtering that set down to the subscribers you actually want to keep for a campaign. A "funnel" is a step-by-step narrowing: you start with everyone at the wide top and end with a smaller, cleaner group at the narrow bottom.</div>
+
+<h3 id="funnel-data">The dataset (Base Funnal Analysis Data)</h3>
+
+<p>There are <strong>158,039 subscribers</strong>, one per row. (The raw file has 158,040 data rows because one row is a duplicate header artifact; the official base used in every calculation is 158,039.) Each row has these columns:</p>
+<ul>
+<li><strong>ID</strong> and <strong>Device ID</strong>: identifiers for the subscriber and their handset.</li>
+<li><strong>Vol KPI1</strong> and <strong>Vol KPI2</strong>: two <em>Volume</em> KPIs. A KPI (Key Performance Indicator) is a measured number that tracks performance. "Volume" here means an amount, for example data volume or spend.</li>
+<li><strong>Freq KPI1</strong> and <strong>Freq KPI2</strong>: two <em>Frequency</em> KPIs (how often something happens, for example number of recharges or calls).</li>
+<li><strong>A score (0 to about 100) for each of those four KPIs</strong>: <em>Vol KPI1 score, Vol KPI2 score, Freq KPI1 score, Freq KPI2 score.</em> Each raw KPI is converted to a 0-to-100-ish score so the four very differently-sized KPIs can be added together fairly. (Scoring puts everything on a common scale; this is called normalisation.)</li>
+<li><strong>Gaming Acc Flag</strong>: a fraud flag. <strong>1 means the account is a fraud / gaming account</strong> (an account abusing the system, for example to farm incentives); 0 means clean.</li>
+<li><strong>Combined Score</strong>: the sum of the four KPI scores. Since each score tops out near 100, the Combined Score theoretically ranges 0 to 400. This single number summarises how valuable/engaged a subscriber is.</li>
+<li><strong>Model Decile</strong>: the propensity model's ranking, from 1 to 10. A "decile" splits the base into ten equal tenths. Here the decile expresses the propensity model's ordering of value/likelihood, and the <em>top three deciles</em> are treated as the most valuable subscribers.</li>
+<li>Four <strong>flag columns to be computed</strong> (these start empty and you fill them): <strong>Qualify, Slide back, Retained Base, Final Base.</strong> A "flag" is a binary 1/0 marker.</li>
+</ul>
+
+<div class="callout"><strong>Key term. KPI (Key Performance Indicator).</strong> A single measured number used to judge performance. This exercise has four (two Volume, two Frequency). Each is scored to roughly 0 to 100 and the four scores are summed into the Combined Score, which is the variable the whole funnel acts on.</div>
+
+<h3 id="funnel-stats">The computed statistics on the Combined Score</h3>
+
+<p>The exercise computes four summary statistics on the Combined Score column. Use these exact numbers; the whole method depends on them.</p>
+
+<table class="cmp">
+<tr><th>Statistic</th><th>Symbol</th><th>Value</th><th>Plain meaning</th></tr>
+<tr><td>Mean</td><td>mu</td><td>170.85</td><td>The average Combined Score across all 158,039 subscribers.</td></tr>
+<tr><td>Standard deviation</td><td>sigma</td><td>103.12</td><td>How spread out the scores are around the mean. Bigger sigma = more spread.</td></tr>
+<tr><td>Minimum</td><td>min</td><td>1</td><td>The lowest actual Combined Score in the data.</td></tr>
+<tr><td>Maximum</td><td>max</td><td>368</td><td>The highest actual Combined Score in the data.</td></tr>
+</table>
+
+<div class="callout"><strong>Key term. Mean (mu) and standard deviation (sigma).</strong> The <em>mean</em> (written with the Greek letter mu) is the simple average: add every score and divide by the count. The <em>standard deviation</em> (written with the Greek letter sigma) measures spread: a small sigma means most scores hug the mean, a large sigma means scores are widely scattered. Here mu = 170.85 and sigma = 103.12, so the typical score is about 171 and scores swing widely around it.</div>
+
+<h3 id="funnel-bell">Step a. The bell-curve / empirical-rule idea</h3>
+
+<div class="concept"><h3>What the empirical rule says</h3>
+<p>Many natural quantities follow a <strong>normal distribution</strong>, a symmetric bell-shaped curve. For a normal distribution the <strong>empirical rule</strong> (also called the 68-95-99.7 rule) states:</p>
+<ul>
+<li>About <strong>68%</strong> of values lie within <strong>mu plus or minus 1 sigma</strong>.</li>
+<li>About <strong>95%</strong> of values lie within <strong>mu plus or minus 2 sigma</strong>.</li>
+<li>About <strong>99.7%</strong> of values lie within <strong>mu plus or minus 3 sigma</strong>.</li>
+</ul>
+<p>The intent of the exercise is to keep the "middle 95 percent" of subscribers (the normal, typical customers) and exclude the extreme roughly 5 percent of outliers, split across the two tails (the very low scorers and the very high scorers). An <strong>outlier</strong> is a value far from the rest. The instruction sheet literally says: "apply Bell Curve Ref (mu plus/minus 2 sigma) to retain 95% of the base."</p></div>
+
+<div class="callout"><strong>Key term. Tail, Head, outlier.</strong> On a bell curve the two thin ends are the <em>tails</em>. The <strong>Tail</strong> (low end) holds the smallest scores; the <strong>Head</strong> (high end) holds the largest scores. Excluding outliers means cutting off subscribers in these extreme ends. In the funnel summary, "Head" counts high-score subs removed and "Tail" counts low-score subs removed.</div>
+
+<h3 id="funnel-trap">Step b. The crucial teaching nuance (read this twice)</h3>
+
+<div class="callout warn"><strong>Exam trap (the heart of this exercise).</strong> Compute the literal mu plus/minus 2 sigma band first: 2 sigma = 2 times 103.12 = 206.24 (the exercise rounds to 206.25). So the band is 170.85 plus/minus 206.25, which is roughly [-35, 377]. But the <em>actual</em> Combined Score only ranges from 1 to 368. The band [-35, 377] is WIDER than the data range [1, 368], so a literal mu plus/minus 2 sigma rule would exclude NOBODY (every real score already sits inside [-35, 377]). Because this score is so spread out (sigma is large relative to the range), the textbook rule is useless here as written. The lesson: <strong>always sanity-check a statistical rule against the actual data range before trusting it.</strong></div>
+
+<div class="calc"><pre>Literal empirical-rule band, mu +/- 2 sigma:
+  mu      = 170.85
+  sigma   = 103.12
+  2*sigma = 2 x 103.12 = 206.24  (rounded to 206.25 in the sheet)
+
+  Lower edge = 170.85 - 206.25 = -35.40  -> round to about -35
+  Upper edge = 170.85 + 206.25 = 377.10  -> round to about 377
+
+  Band = [-35, 377]
+  Actual data range = [min, max] = [1, 368]
+
+  Is the band wider than the data?  -35 < 1  AND  377 > 368  ->  YES.
+  Therefore mu +/- 2 sigma would exclude 0 subscribers.  The rule fails here.</pre></div>
+
+<div class="concept"><h3>What the exercise does instead: practical score limits</h3>
+<p>Because the statistical band catches nobody, the exercise switches to <strong>practical score limits</strong> that actually trim the extreme tails of the real data:</p>
+<ul>
+<li><strong>Lower limit of Score, about 20.</strong> Subscribers scoring at or below roughly 20 are too low (barely engaged, likely junk rows) and are excluded from the Tail.</li>
+<li><strong>Upper limit of Score, about 350.</strong> Subscribers scoring at or above roughly 350 are extreme high outliers and are excluded from the Head.</li>
+</ul>
+<p>So the retained band becomes 20 &lt; score &lt; 350, chosen by judgment to clip the tails, not by the blind mu plus/minus 2 sigma formula. This is the bridge from the textbook to the real data.</p></div>
+
+<h3 id="funnel-flags">Step c. The four binary flags (1 = yes, 0 = no)</h3>
+
+<p>Each subscriber row gets four computed flags. Compute them in this order, because later flags depend on earlier ones.</p>
+
+<div class="concept"><h3>Flag 1: Qualify</h3>
+<p><strong>Qualify = 1 if the score is greater than the lower limit AND less than the upper limit</strong>, that is <strong>20 &lt; score &lt; 350</strong>. Otherwise Qualify = 0. In words: did this subscriber land in the retained middle band (not in either tail)? In Excel this is an AND condition, for example <code>=IF(AND(Score&gt;20, Score&lt;350), 1, 0)</code>.</p></div>
+
+<div class="concept"><h3>Flag 2: Slide back</h3>
+<p><strong>Slide back = 1 if the customer is in the top three Model Deciles</strong> (the three deciles the propensity model ranks most valuable). Otherwise 0. "Sliding back" means <em>rescuing</em> a high-potential customer back into the base even if their Combined Score put them in a tail and failed Qualify. The business logic: the propensity model thinks this person is very valuable, so do not throw them away over a single score. In Excel, for example <code>=IF(Decile&gt;=8, 1, 0)</code> if the top three deciles are 8, 9, 10 (the exact decile numbering depends on how the model orders them; the rule is simply "top 3 deciles").</p></div>
+
+<div class="concept"><h3>Flag 3: Retained Base</h3>
+<p><strong>Retained Base = 1 if (Qualify + Slide back) is non-zero</strong>, that is if the subscriber qualified OR was slid back (or both). Otherwise 0. This is a logical OR expressed as a sum: if either flag is 1, the total is at least 1, so the subscriber is kept. In Excel, for example <code>=IF((Qualify+SlideBack)&gt;0, 1, 0)</code>.</p></div>
+
+<div class="concept"><h3>Flag 4: Final Base</h3>
+<p><strong>Final Base = Retained Base, but only if the customer is NOT a fraudster.</strong> So Final Base = 1 only when Retained Base = 1 AND Gaming Acc Flag = 0. If the subscriber is fraud (Gaming flag = 1), Final Base = 0 no matter what. In Excel, for example <code>=IF(AND(Retained=1, Gaming=0), 1, 0)</code>. Fraud is removed LAST, on purpose (explained below).</p></div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Retained Base uses OR (Qualify OR Slide back), implemented as "sum is non-zero," NOT AND. A common mistake is to require both. The whole point of slide-back is to rescue customers who FAILED Qualify, so requiring both would defeat it. And Final Base ANDs in "not fraud," so a high-value non-fraud customer who was slid back can still reach the Final Base, while a fraudster is dropped even if they qualified.</div>
+
+<h3 id="funnel-solved">Step d. The solved funnel (official answer key)</h3>
+
+<p>The funnel has three stages. Stage 1 applies the score limits. Stage 2 adds the slide-back rescues. Stage 3 removes fraud. Here are the exact official numbers and percentages (percentages are out of the total base of 158,039).</p>
+
+<table class="cmp">
+<tr><th>Stage</th><th>Head (high outliers excl.)</th><th>Tail (low outliers excl.)</th><th>Retained Subs</th><th>Excluded Subs</th></tr>
+<tr><td><strong>Total base</strong></td><td colspan="4" style="text-align:center">158,039 subscribers (100%)</td></tr>
+<tr><td><strong>1. Combined Score exclusion</strong></td><td>5,659 (3.58%)</td><td>9,487 (6.00%)</td><td><strong>142,893 (90.42%)</strong></td><td>15,146 (9.58%)</td></tr>
+<tr><td><strong>2. After sliding back</strong></td><td>(reduced)</td><td>(reduced)</td><td><strong>147,467 (93.31%)</strong></td><td>10,572 (6.69%)</td></tr>
+<tr><td><strong>3. After tackling gaming</strong></td><td>(final)</td><td>(final)</td><td><strong>140,827 (89.11%)</strong></td><td>17,212 (10.89%)</td></tr>
+</table>
+
+<div class="calc"><pre>STAGE 1 - Combined Score exclusion (apply 20 < score < 350)
+  Head excluded (score too high) = 5,659    5,659 / 158,039 = 0.0358 = 3.58%
+  Tail excluded (score too low)  = 9,487    9,487 / 158,039 = 0.0600 = 6.00%
+  Total excluded                 = 5,659 + 9,487 = 15,146
+                                   15,146 / 158,039 = 0.0958 = 9.58%
+  Retained                       = 158,039 - 15,146 = 142,893
+                                   142,893 / 158,039 = 0.9042 = 90.42%
+  Check: 90.42% + 9.58% = 100%  OK
+
+STAGE 2 - After sliding back (rescue excluded subs in the top 3 deciles)
+  Slid back (rescued) = about 4,574 subscribers
+  Retained = 142,893 + 4,574 = 147,467
+             147,467 / 158,039 = 0.9331 = 93.31%
+  Excluded = 158,039 - 147,467 = 10,572
+             10,572 / 158,039 = 0.0669 = 6.69%
+  (equivalently 15,146 - 4,574 = 10,572 still excluded)
+  Check: 93.31% + 6.69% = 100%  OK
+
+STAGE 3 - After tackling gaming (remove fraud / gaming-flagged subs)
+  Total gaming-flagged in base = 6,898
+  Of the 147,467 retained, the fraudsters among them are removed:
+     147,467 - 140,827 = 6,640 retained subs were fraud and got dropped
+     (the other 6,898 - 6,640 = 258 fraudsters had already been excluded earlier)
+  Final Retained = 140,827
+                   140,827 / 158,039 = 0.8911 = 89.11%
+  Final Excluded = 158,039 - 140,827 = 17,212
+                   17,212 / 158,039 = 0.1089 = 10.89%
+  Check: 89.11% + 10.89% = 100%  OK</pre></div>
+
+<div class="qa"><p class="q">Q. Why is the retained figure 90.42% and not exactly 95%?</p><div class="a">A. Because the Combined Score is NOT a clean, symmetric normal distribution. It is left-heavy (skewed), so the two tails are not equal. The low tail removed 6.00% but the high tail removed only 3.58%, totalling 9.58% excluded and leaving 90.42%. A perfectly normal distribution with a symmetric mu plus/minus 2 sigma cut would leave about 95% with roughly 2.5% in each tail. The real data is lopsided, so the kept fraction (90.42%) and the tail split (6.00% vs 3.58%) both differ from the textbook ideal. This is the same lesson as Step b: the data is not the textbook bell curve.</div></div>
+
+<div class="qa"><p class="q">Q. Why does retention RISE after slide-back and then FALL after gaming removal?</p><div class="a">A. <strong>Rise (Stage 1 to Stage 2, 90.42% up to 93.31%):</strong> slide-back is a rescue. It <em>adds</em> roughly 4,574 high-propensity subscribers (top three deciles) back into the retained set even though their score had excluded them. Adding people back can only increase retention. <strong>Fall (Stage 2 to Stage 3, 93.31% down to 89.11%):</strong> gaming removal is a subtraction. It <em>removes</em> the fraud-flagged subscribers, about 6,640 of whom were sitting in the retained set, so retention drops. In short: a rescue adds (retention up), a fraud purge subtracts (retention down).</div></div>
+
+<h3 id="funnel-why-last">Step e. Business purpose, and why fraud is removed last</h3>
+
+<div class="concept"><h3>What this funnel is for</h3>
+<p>This funnel <strong>cleans a subscriber base before an NBA campaign</strong> (the topic in the first section). It does three jobs in sequence: (1) remove statistical outliers using practical score limits, (2) protect high-propensity customers by sliding the valuable ones back in, and (3) strip out fraud / gaming accounts. The result is a Final Base that is trustworthy (no fraud) and high-value (outliers gone, but valuable customers preserved), so the NBA offers are aimed at the right people. This connects directly to NBA's golden principle of the "right customer."</p></div>
+
+<div class="callout"><strong>Why fraud removal is applied LAST.</strong> Fraud is an absolute disqualifier: a gaming account must never receive an offer, regardless of its score or decile. By cleaning for score outliers first, then rescuing genuine high-value customers, and only THEN removing fraud, the funnel guarantees that no fraudster slips through on the strength of a good score or a top decile. If fraud were removed first, a fraudster could in principle be slid back in on a high decile later; doing it last makes the fraud filter the final, overriding gate. It also keeps the accounting clean: you can see how many of the already-retained subscribers turned out to be fraud (here 6,640 of the 147,467).</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Final Base is not simply "Retained minus all 6,898 fraudsters." Only the fraudsters who were still in the retained set get subtracted (6,640 of them), because the other 258 fraud accounts had already been excluded by the score limits. So 147,467 minus 6,640 equals 140,827, not 147,467 minus 6,898. Watch this if asked to derive the final count.</div>
+
+<h3 id="funnel-exam">Likely exam questions</h3>
+
+<div class="scenario"><div class="sc-q"><strong>Scenario.</strong> You are given mu = 170.85 and sigma = 103.12 for the Combined Score. Compute the mu plus/minus 2 sigma band and explain whether it excludes anyone in this dataset (actual range 1 to 368).</div><div class="sc-a"><strong>Worked answer.</strong> 2 sigma = 2 times 103.12 = 206.24 (round to 206.25). Lower edge = 170.85 minus 206.25 = -35.40, about -35. Upper edge = 170.85 plus 206.25 = 377.10, about 377. So the band is about [-35, 377]. The actual data only spans [1, 368]. Since -35 is below the real minimum (1) and 377 is above the real maximum (368), every real score already sits inside the band, so the literal mu plus/minus 2 sigma rule excludes ZERO subscribers. That is why the exercise abandons the formula and uses practical score limits (lower about 20, upper about 350) instead. Lesson: sanity-check a statistical rule against the real data range.</div></div>
+
+<div class="scenario"><div class="sc-q"><strong>Scenario.</strong> Compute the retained percentage at each of the three funnel stages, given a total base of 158,039 and retained counts of 142,893 (Stage 1), 147,467 (Stage 2) and 140,827 (Stage 3).</div><div class="sc-a"><strong>Worked answer.</strong> Stage 1: 142,893 / 158,039 = 0.9042 = 90.42%. Stage 2: 147,467 / 158,039 = 0.9331 = 93.31%. Stage 3: 140,827 / 158,039 = 0.8911 = 89.11%. So retention goes 90.42% then up to 93.31% (slide-back rescues add subscribers) then down to 89.11% (fraud removal subtracts subscribers). Excluded percentages are the complements: 9.58%, 6.69%, 10.89%.</div></div>
+
+<div class="scenario"><div class="sc-q"><strong>Scenario.</strong> Explain the slide-back rule and show with the numbers why it raises retention.</div><div class="sc-a"><strong>Worked answer.</strong> Slide-back sets Slide back = 1 for any subscriber in the top three Model Deciles (the propensity model's most valuable tenths), which rescues them into the Retained Base even if their Combined Score had failed Qualify (put them in a tail). Because Retained Base = 1 when Qualify OR Slide back is 1, these rescued subscribers are added back. Numerically, about 4,574 previously excluded subscribers sit in the top three deciles, so retained rises from 142,893 to 142,893 plus 4,574 = 147,467, that is from 90.42% to 93.31%. Adding rescued subscribers can only increase the retained count, hence retention rises.</div></div>
+
+<div class="scenario"><div class="sc-q"><strong>Scenario.</strong> Explain why fraud removal is applied last in the funnel, and compute the Final Base given 147,467 retained after slide-back and 6,898 total gaming-flagged accounts.</div><div class="sc-a"><strong>Worked answer.</strong> Fraud is removed last because it is an absolute, overriding disqualifier: a gaming account must never get an offer regardless of score or decile. Applying it last guarantees no fraudster is slid back in on a strong decile, and keeps the fraud gate as the final filter. Computation: not all 6,898 fraudsters are in the retained set; some were already excluded by the score limits. The ones removed are those still retained: 147,467 minus 140,827 = 6,640 retained fraudsters dropped. The remaining 6,898 minus 6,640 = 258 fraudsters had already been excluded earlier. Final Base = 147,467 minus 6,640 = 140,827, which is 140,827 / 158,039 = 89.11%.</div></div>
+
+<div class="qa"><p class="q">Q. (Long answer) Describe the entire Base Exclusion Funnel from the dataset to the Final Base, defining each flag and each stage, and state the business purpose.</p><div class="a">A. <strong>Dataset:</strong> 158,039 subscribers, each with two Volume KPIs and two Frequency KPIs, a 0-to-100 score for each of the four KPIs, a Gaming Acc Flag (1 = fraud), a Combined Score (sum of the four scores, theoretical range 0 to 400), and a Model Decile (1 to 10 propensity ranking). <strong>Statistics on Combined Score:</strong> mu = 170.85, sigma = 103.12, min = 1, max = 368. <strong>Method:</strong> the empirical rule suggests keeping the middle 95% via mu plus/minus 2 sigma, but that band ([-35, 377]) is wider than the data ([1, 368]) and would exclude nobody, so practical score limits are used: lower about 20, upper about 350. <strong>Flags:</strong> Qualify = 1 if 20 &lt; score &lt; 350; Slide back = 1 if in the top three deciles; Retained Base = 1 if Qualify plus Slide back is non-zero (kept if qualify OR slid back); Final Base = Retained only if Gaming flag = 0 (not fraud). <strong>Three stages:</strong> Stage 1 (Combined Score exclusion) removes 5,659 head (3.58%) and 9,487 tail (6.00%), retaining 142,893 (90.42%); Stage 2 (slide-back) rescues about 4,574 top-decile subscribers, raising retained to 147,467 (93.31%); Stage 3 (tackle gaming) removes the 6,640 fraud accounts still retained, leaving Final Retained 140,827 (89.11%). <strong>Business purpose:</strong> clean the base before an NBA campaign by removing statistical outliers and fraud while protecting high-propensity customers, so offers target a trustworthy, high-value base, which directly serves NBA's "right customer" principle.</div></div>
+
+<div class="mcq"><p class="stem">8. In this dataset, what does the literal mu plus/minus 2 sigma band turn out to be, and what does it exclude?</p><ol class="opts" type="A"><li>About [20, 350]; it excludes roughly 5%</li><li>About [-35, 377]; it excludes nobody because it is wider than the data range</li><li>About [1, 368]; it excludes exactly the min and max</li><li>About [68, 273]; it excludes about 32%</li></ol><p class="ans">Answer: B. 2 sigma = 206.25, so 170.85 plus/minus 206.25 gives about [-35, 377], which is wider than the actual [1, 368], so it excludes nobody. That is why practical limits (about 20 and 350) are used.</p></div>
+
+<div class="mcq"><p class="stem">9. The Retained Base flag is set to 1 when:</p><ol class="opts" type="A"><li>Qualify = 1 AND Slide back = 1</li><li>Qualify + Slide back is non-zero (Qualify OR Slide back)</li><li>The customer is not a fraudster</li><li>The score is above the upper limit</li></ol><p class="ans">Answer: B. Retained Base = 1 if the sum of Qualify and Slide back is non-zero, that is qualify OR slid back. (Option C describes Final Base, not Retained Base.)</p></div>
+
+<div class="mcq"><p class="stem">10. Why is the Stage 1 retained figure 90.42% rather than the textbook 95%?</p><ol class="opts" type="A"><li>An arithmetic error in the answer key</li><li>The score distribution is skewed (left-heavy), so the tails are unequal: 6.00% low vs 3.58% high</li><li>The limits were set at mu plus/minus 1 sigma instead of 2 sigma</li><li>Fraud accounts were already removed in Stage 1</li></ol><p class="ans">Answer: B. The Combined Score is not a clean symmetric normal, so the low tail (6.00%) and high tail (3.58%) are unequal, giving 9.58% excluded and 90.42% retained instead of a symmetric 95%.</p></div>
+
+<div class="mcq"><p class="stem">11. The slide-back rule rescues subscribers who are in the:</p><ol class="opts" type="A"><li>Bottom three model deciles</li><li>Top three model deciles</li><li>Middle four model deciles</li><li>Fraud-flagged group</li></ol><p class="ans">Answer: B. Slide back = 1 for the top three model deciles (the highest-propensity subscribers), rescuing them even if their Combined Score failed Qualify.</p></div>
+
+<div class="mcq"><p class="stem">12. From Stage 2 (147,467 retained) to Stage 3 (140,827 retained), retention falls because:</p><ol class="opts" type="A"><li>More outliers were found</li><li>The fraud / gaming-flagged subscribers still in the retained set (6,640) were removed</li><li>The score limits were tightened</li><li>The total base shrank below 158,039</li></ol><p class="ans">Answer: B. Gaming removal subtracts the 6,640 retained fraud accounts (147,467 minus 6,640 = 140,827), so retention drops to 89.11%.</p></div>
+
+<div class="mcq"><p class="stem">13. The Final Base count of 140,827 is obtained by subtracting from 147,467:</p><ol class="opts" type="A"><li>All 6,898 gaming-flagged accounts</li><li>Only the 6,640 gaming-flagged accounts that were still retained</li><li>The 4,574 slid-back subscribers</li><li>The 15,146 Stage-1 exclusions</li></ol><p class="ans">Answer: B. Only the 6,640 fraudsters still in the retained set are removed; the other 258 fraud accounts were already excluded by the score limits. 147,467 minus 6,640 = 140,827.</p></div>
+
+<div class="mcq"><p class="stem">14. The Combined Score is defined as:</p><ol class="opts" type="A"><li>The average of the two Volume KPIs</li><li>The sum of the four KPI scores (theoretical range 0 to 400)</li><li>The Model Decile times 40</li><li>The Gaming flag times 100</li></ol><p class="ans">Answer: B. Combined Score = sum of the four KPI scores (two Volume, two Frequency), each near 0 to 100, so the theoretical range is 0 to 400.</p></div>
+
+</section>
