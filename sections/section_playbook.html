@@ -1,0 +1,159 @@
+<section>
+  <div class="eyebrow">Attack guide</div>
+  <h2 id="playbook">Numeric Labs Playbook <span class="badge new">how to tackle the Excel questions</span></h2>
+  <div class="callout"><strong>Read this if the numbers scare you.</strong> The three Excel labs (the Pricing Game, the Base Exclusion Funnel, and the Design-Your-Own-Product model) look intimidating, but each one is really just a couple of formulas applied in order. Each card below is an attack plan: how to <em>recognize</em> the question, the exact <em>steps</em>, the <em>formula</em>, a <em>worked</em> example, and the <em>trap</em> to dodge, with a rough time budget. The deep teaching is in the topic sections; this is the card you run in the exam.</div>
+
+  <div class="pb-intro">
+    <h3>The routine for any numeric question</h3>
+    <ol class="pb-flow">
+      <li><strong>Read it twice and underline the target.</strong> What single number (or list) are they actually asking for?</li>
+      <li><strong>Write the formula first, before any numbers.</strong> The formula on the page earns marks even if the arithmetic slips later.</li>
+      <li><strong>Substitute the given numbers</strong> into the formula, showing the substitution.</li>
+      <li><strong>Compute carefully.</strong> Watch decimals, percentages (13.5% is 0.135), and per year vs per month (divide by 12).</li>
+      <li><strong>Sanity-check the size, then leave your working visible.</strong> Partial credit lives in the steps, never write a bare final number.</li>
+    </ol>
+  </div>
+
+  <div class="pb-lab" id="playbook-pricing">
+    <div class="pb-head">
+      <div class="pb-num">01</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Pricing Game</div>
+        <a class="pb-deeper" href="#pricing">Full teaching: Pricing</a>
+      </div>
+      <div class="pb-time">about 10 to 12 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Pricing Games worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>A table of customer <strong>segments</strong> (A, B, C, D) with columns for number of customers, a subscription amount, a pricing rate, and a revenue column, plus a task like "increase total revenue by 20%" and a constraint like "only two segments may change".</p>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Compute the current total</strong> by adding Customers x SubAmount x Pricing for every segment. This is your baseline.</li>
+        <li><strong>Compute the target.</strong> For +20%, target = current x 1.20. Note the gap to close.</li>
+        <li><strong>Spot the lever:</strong> the segment with the biggest Customers x SubAmount moves the most money (here, segment A).</li>
+        <li><strong>Raise the pricing rate</strong> on your chosen segments (respect the "max two" rule). New revenue = Customers x (cut subscription if orange, else normal) x new pricing.</li>
+        <li><strong>Add the new total and adjust</strong> until it reaches or just passes the target.</li>
+      </ol>
+    </div>
+    <div class="pb-block formula">
+      <div class="pb-label">Formula</div>
+      <div class="pb-formula">Segment revenue = Customers x Subscription Amount x Pricing rate. Total = the sum across segments. An "orange" segment has its subscription amount cut by 5% (multiply it by 0.95).</div>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>Lift 500,000 to 600,000 (+20%), only 2 segments may change.
+
+Make A and B "orange" (5% subscription cut), raise their prices:
+  A: 100 x (25,000 x 0.95 = 23,750) x 0.16  = 380,000
+  B:  80 x (20,000 x 0.95 = 19,000) x 0.102 = 155,040
+  C (unchanged): 70 x 10,000 x 0.075 = 52,500
+  D (unchanged): 50 x  5,000 x 0.05  = 12,500
+                                TOTAL = 600,040   ->  +20.0%</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Making a segment orange cuts its subscription amount by 5%, which <em>lowers</em> revenue. So the price increase on an orange segment must more than cancel out that 5% loss. Never make a segment orange unless you raise its price enough to come out ahead.</div>
+    </div>
+  </div>
+
+  <div class="pb-lab" id="playbook-funnel">
+    <div class="pb-head">
+      <div class="pb-num">02</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Base Exclusion Funnel</div>
+        <a class="pb-deeper" href="#funnel">Full teaching: Base Exclusion Funnel</a>
+      </div>
+      <div class="pb-time">about 12 to 15 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Base Exclusion Funnel worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>Talk of a <strong>score</strong> (roughly 0 to 400), a <strong>bell curve</strong> or normal distribution, <strong>mu and sigma</strong>, "retain 95%", <strong>deciles</strong>, "slide back", a <strong>fraud or gaming flag</strong>, and a funnel summary with Head / Tail / Retained / Excluded.</p>
+    </div>
+    <div class="pb-block idea">
+      <div class="pb-label">Idea</div>
+      <ul>
+        <li><strong>mu</strong> is the average score; <strong>sigma</strong> is how spread out the scores are.</li>
+        <li>A bell curve says about <strong>95% of values sit within mu plus or minus 2 sigma</strong>, so "keep the middle 95%" means cut the two extreme tails.</li>
+        <li>Four flags per customer: <strong>Qualify</strong> (score inside the limits), <strong>Slide back</strong> (top 3 model deciles, so rescue), <strong>Retained</strong> (Qualify OR Slide back), <strong>Final</strong> (Retained AND not a fraudster).</li>
+      </ul>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Get mu and sigma</strong> (given, or compute the mean and standard deviation).</li>
+        <li><strong>Build the band:</strong> Lower = mu minus 2 sigma, Upper = mu plus 2 sigma.</li>
+        <li><strong>Sanity-check the band against the real min and max.</strong> If it is wider than the data range, mu plus or minus 2 sigma excludes nobody, so use the practical limits the question gives (here near 20 and 350).</li>
+        <li><strong>Apply the four flags</strong> in order: Qualify, then Slide back, then Retained, then Final.</li>
+        <li><strong>Read the funnel left to right:</strong> Total, then after the score trim, then after slide-back (retained goes UP), then after fraud removal (retained goes DOWN).</li>
+      </ol>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>This dataset: mu = 170.85, sigma = 103.12, scores 1 to 368.
+Band = 170.85 +/- (2 x 103.12) = [-35.4, 377.1]   wider than 1..368, cuts NOBODY.
+So the lab uses practical limits: Lower = 20, Upper = 350.
+
+Classify 3 customers (Lower 20, Upper 350, top deciles = 1,2,3):
+  X  score 360, decile 2, fraud 0 -> Qualify? 360>350 NO. Slide back? decile 2 YES
+                                  -> Retained YES, clean -> FINAL = KEEP (rescued)
+  Y  score 12,  decile 7, fraud 0 -> Qualify? 12<20 NO. Slide back? NO
+                                  -> Retained NO -> EXCLUDED
+  Z  score 300, decile 1, fraud 1 -> Qualify? 20<300<350 YES -> Retained YES
+                                  -> fraud=1 -> FINAL = REMOVED (fraud beats all)
+
+Whole base: Retained 90.42% -> 93.31% (slide-back) -> 89.11% (after fraud).</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Do not blindly trust mu plus or minus 2 sigma, check it against the actual min and max first. Keep the direction straight: slide-back <em>raises</em> retention (it rescues high-value customers), fraud removal <em>lowers</em> it, and fraud is removed <strong>last</strong> so a fraudster never sneaks through on a good score. (Retained is 90.42% not 95% because the scores are lopsided, so the tails are not symmetric.)</div>
+    </div>
+  </div>
+
+  <div class="pb-lab" id="playbook-model">
+    <div class="pb-head">
+      <div class="pb-num">03</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Design-Your-Own-Product Model</div>
+        <a class="pb-deeper" href="#designlab">Full teaching: Design Your Own Product</a>
+      </div>
+      <div class="pb-time">about 8 to 10 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Designing Your Own Products worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>An investment product for daily wage earners, with a <strong>cohort</strong> size, an <strong>invested amount</strong>, "per subscriber" figures, an organization share %, a customer monthly profit %, platform charges, and Basic / Intermediate / Advance variants.</p>
+    </div>
+    <div class="pb-block formula">
+      <div class="pb-label">Formula</div>
+      <div class="pb-formula">Work the chain top to bottom: (1) Invested per subscriber = Invested Amount divided by Cohort size. (2) Org monthly share per sub = (org %) x (per-sub invested) divided by 12. (3) Customer monthly profit per sub = (profit %) x (per-sub invested) divided by 12. (4) Other-legs revenue per sub = (other-legs %) x (per-sub invested). (5) After the 15% platform charge, keep 85% (x 0.85). (6) What the customer earns = other legs after charge PLUS customer monthly profit.</div>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Find which number they want</strong> and locate its line in the chain above.</li>
+        <li><strong>Work down the chain</strong> only as far as you need; each line feeds the next.</li>
+        <li><strong>Convert annual rates to monthly</strong> by dividing by 12 whenever a monthly figure is asked.</li>
+      </ol>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>Basic cohort: 34,493 subscribers, Year 1 invested = 56,972,810.
+
+Invested per subscriber = 56,972,810 / 34,493 = 1,651.72
+Org monthly share at 13.5%  = 0.135 x 1,651.72 / 12 = 18.58 per sub
+Customer monthly profit 9%  = 0.09  x 1,651.72 / 12 = 12.39 per sub</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Two classics: forgetting to <strong>divide annual rates by 12</strong> for a monthly figure, and confusing <strong>what the customer earns</strong> with <strong>what the organization earns</strong> (different formulas, so re-read which is asked). Variant rule: Basic to Intermediate to Advance, the customer count roughly halves while the margin split shifts.</div>
+    </div>
+    <div class="pb-block remember">
+      <div class="pb-label">Remember</div>
+      <p>Close every product answer with the two guiding questions: <strong>"What product am I building?"</strong> and <strong>"How do I know it is good?"</strong> (name the metric that proves it). Examiners look for this.</p>
+    </div>
+  </div>
+</section>

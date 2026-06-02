@@ -138,6 +138,57 @@ table.cmp strong{color:var(--ink)}
 .gallery-grid img{display:block;width:100%;height:auto}
 .gallery-grid .cap{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--ink-mute);padding:5px 9px;border-top:1px solid var(--rule);letter-spacing:.03em}
 
+/* PLAYBOOK (attack cards) */
+.pb-intro{background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius);padding:20px 24px;margin:0 0 24px}
+.pb-intro h3{margin-bottom:13px}
+.pb-flow{list-style:none;margin:0;padding:0;counter-reset:pbf}
+.pb-flow li{position:relative;padding-left:36px;margin-bottom:10px;counter-increment:pbf}
+.pb-flow li:last-child{margin-bottom:0}
+.pb-flow li::before{content:counter(pbf);position:absolute;left:0;top:0;width:23px;height:23px;background:var(--ochre);color:#fff;border-radius:50%;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center}
+
+.pb-lab{background:var(--paper-card);border:1px solid var(--rule);border-radius:var(--radius-lg);padding:4px 28px 24px;margin:0 0 22px;scroll-margin-top:20px;box-shadow:var(--shadow-sm,0 1px 2px rgba(34,31,25,.04))}
+.pb-head{display:flex;align-items:center;gap:16px;padding:18px 0 13px;border-bottom:2px solid var(--rule-2);margin-bottom:4px}
+.pb-num{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:36px;line-height:1;color:var(--ochre);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.pb-titlewrap{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pb-title{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:23px;line-height:1.08;color:var(--ink)}
+.pb-deeper{font-family:'Inter',sans-serif;font-size:12px;color:var(--teal);border:none;width:fit-content}
+.pb-deeper:hover{text-decoration:underline}
+.pb-time{margin-left:auto;align-self:center;font-family:'Inter',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.05em;color:var(--ochre);background:var(--ochre-tint);border:1px solid #e7d6ad;border-radius:20px;padding:5px 13px;white-space:nowrap}
+
+.pb-block{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:15px 0;border-top:1px solid var(--rule)}
+.pb-label{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);padding-top:3px}
+.pb-block.trap .pb-label{color:var(--warn)}
+.pb-block.formula .pb-label,.pb-block.remember .pb-label{color:var(--ochre)}
+.pb-block.worked .pb-label{color:var(--ink-mute)}
+.pb-block>p{margin:0}
+.pb-block>p+p{margin-top:8px}
+.pb-block>ul{margin:0 0 0 18px}
+.pb-block>ul li{margin-bottom:6px}
+
+.pb-steps{list-style:none;margin:0;padding:0;counter-reset:pbs}
+.pb-steps li{position:relative;padding-left:31px;margin-bottom:10px;counter-increment:pbs}
+.pb-steps li:last-child{margin-bottom:0}
+.pb-steps li::before{content:counter(pbs);position:absolute;left:0;top:1px;width:21px;height:21px;background:var(--teal);color:#fff;border-radius:50%;font-family:'Inter',sans-serif;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center}
+
+.pb-formula{background:var(--teal-tint);border-left:3px solid var(--teal);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:11px 15px;font-size:15px;line-height:1.6}
+.pb-trap{background:var(--warn-tint);border-left:3px solid var(--warn);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:11px 15px;font-size:15px;line-height:1.6}
+.pb-block .calc{margin:0}
+.pb-sheet{display:block;border:1px solid var(--rule);border-radius:var(--radius-sm);overflow:hidden;background:#fff;line-height:0}
+.pb-sheet img{display:block;width:100%;height:auto}
+.pb-sheet:hover{border-color:var(--ochre)}
+.worksheet{margin:4px 0 18px}
+.worksheet a{display:block;border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;background:#fff;line-height:0}
+.worksheet a:hover{border-color:var(--ochre)}
+.worksheet img{display:block;width:100%;height:auto}
+.worksheet figcaption{font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-mute);padding:8px 2px 0;line-height:1.45}
+@media(max-width:900px){
+  .pb-block{grid-template-columns:1fr;gap:6px;padding:13px 0}
+  .pb-label{padding-top:0}
+  .pb-lab{padding:4px 18px 18px}
+  .pb-head{flex-wrap:wrap}
+  .pb-time{margin-left:0}
+}
+
 /* mobile */
 #menu-btn{display:none}
 @media(max-width:900px){
@@ -174,6 +225,7 @@ table.cmp strong{color:var(--ink)}
   <a href="#paperA"><span class="num">A</span>Section A: MCQs</a>
   <a href="#paperB"><span class="num">B</span>Section B: Long answers</a>
   <a href="#paperC"><span class="num">C</span>Section C: Scenarios</a>
+  <a href="#playbook"><span class="num">N</span>Numeric labs playbook</a>
 
   <h3>Concepts</h3>
   <a href="#wk6"><span class="num">1</span>AI &amp; Growth Engineering</a>
@@ -292,6 +344,166 @@ table.cmp strong{color:var(--ink)}
   <div class="scenario"><div class="sc-q"><strong>C2. Base Exclusion Funnel.</strong> The Combined Score has mean 170.85, standard deviation 103.12, and ranges 1 to 368. Compute the mu plus/minus 2 sigma band, say whether it excludes anyone, then state the retained percentage at each funnel stage.</div><div class="sc-a"><strong>Worked answer.</strong> mu +/- 2 sigma = 170.85 +/- 206.25 = [-35.4, 377.1], which is wider than the actual range [1, 368], so it excludes nobody. The exercise therefore uses practical limits near 20 and 350. Retained: 90.42% after score trim, 93.31% after slide-back, 89.11% after removing fraud. Full reasoning in <a href="#funnel">Base Exclusion Funnel</a>.</div></div>
   <div class="scenario"><div class="sc-q"><strong>C3. Design-Your-Own-Product model.</strong> A Basic cohort of 34,493 subscribers invests 56,972,810 in Year 1. Compute invested per subscriber and the organization's monthly re-investment share per subscriber at 13.5%.</div><div class="sc-a"><strong>Worked answer.</strong> Invested per subscriber = 56,972,810 / 34,493 = 1,651.72. Organization monthly share per sub = 13.5% x 1,651.72 / 12 = 18.58. Full line-by-line model and the two guiding questions are in <a href="#designlab">Design Your Own Product</a>.</div></div>
   <div class="scenario"><div class="sc-q"><strong>C4. Which AI plus design the action.</strong> A digital bank must block every transaction above PKR 1,000,000 from non-corporate accounts with zero exceptions, and separately wants to predict which customers will churn next quarter. Pick the AI paradigm for each and justify.</div><div class="sc-a"><strong>Worked answer.</strong> The hard block is an Expert System (fixed rule, zero ambiguity, auditable; a probability is not acceptable for compliance). Churn prediction is Machine Learning (a probability learned from history; monitor it because it degrades). See the scenario bank in <a href="#wk6">AI and Growth Engineering</a>.</div></div>
+</section>
+
+<section>
+  <div class="eyebrow">Attack guide</div>
+  <h2 id="playbook">Numeric Labs Playbook <span class="badge new">how to tackle the Excel questions</span></h2>
+  <div class="callout"><strong>Read this if the numbers scare you.</strong> The three Excel labs (the Pricing Game, the Base Exclusion Funnel, and the Design-Your-Own-Product model) look intimidating, but each one is really just a couple of formulas applied in order. Each card below is an attack plan: how to <em>recognize</em> the question, the exact <em>steps</em>, the <em>formula</em>, a <em>worked</em> example, and the <em>trap</em> to dodge, with a rough time budget. The deep teaching is in the topic sections; this is the card you run in the exam.</div>
+
+  <div class="pb-intro">
+    <h3>The routine for any numeric question</h3>
+    <ol class="pb-flow">
+      <li><strong>Read it twice and underline the target.</strong> What single number (or list) are they actually asking for?</li>
+      <li><strong>Write the formula first, before any numbers.</strong> The formula on the page earns marks even if the arithmetic slips later.</li>
+      <li><strong>Substitute the given numbers</strong> into the formula, showing the substitution.</li>
+      <li><strong>Compute carefully.</strong> Watch decimals, percentages (13.5% is 0.135), and per year vs per month (divide by 12).</li>
+      <li><strong>Sanity-check the size, then leave your working visible.</strong> Partial credit lives in the steps, never write a bare final number.</li>
+    </ol>
+  </div>
+
+  <div class="pb-lab" id="playbook-pricing">
+    <div class="pb-head">
+      <div class="pb-num">01</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Pricing Game</div>
+        <a class="pb-deeper" href="#pricing">Full teaching: Pricing</a>
+      </div>
+      <div class="pb-time">about 10 to 12 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Pricing Games worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>A table of customer <strong>segments</strong> (A, B, C, D) with columns for number of customers, a subscription amount, a pricing rate, and a revenue column, plus a task like "increase total revenue by 20%" and a constraint like "only two segments may change".</p>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Compute the current total</strong> by adding Customers x SubAmount x Pricing for every segment. This is your baseline.</li>
+        <li><strong>Compute the target.</strong> For +20%, target = current x 1.20. Note the gap to close.</li>
+        <li><strong>Spot the lever:</strong> the segment with the biggest Customers x SubAmount moves the most money (here, segment A).</li>
+        <li><strong>Raise the pricing rate</strong> on your chosen segments (respect the "max two" rule). New revenue = Customers x (cut subscription if orange, else normal) x new pricing.</li>
+        <li><strong>Add the new total and adjust</strong> until it reaches or just passes the target.</li>
+      </ol>
+    </div>
+    <div class="pb-block formula">
+      <div class="pb-label">Formula</div>
+      <div class="pb-formula">Segment revenue = Customers x Subscription Amount x Pricing rate. Total = the sum across segments. An "orange" segment has its subscription amount cut by 5% (multiply it by 0.95).</div>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>Lift 500,000 to 600,000 (+20%), only 2 segments may change.
+
+Make A and B "orange" (5% subscription cut), raise their prices:
+  A: 100 x (25,000 x 0.95 = 23,750) x 0.16  = 380,000
+  B:  80 x (20,000 x 0.95 = 19,000) x 0.102 = 155,040
+  C (unchanged): 70 x 10,000 x 0.075 = 52,500
+  D (unchanged): 50 x  5,000 x 0.05  = 12,500
+                                TOTAL = 600,040   ->  +20.0%</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Making a segment orange cuts its subscription amount by 5%, which <em>lowers</em> revenue. So the price increase on an orange segment must more than cancel out that 5% loss. Never make a segment orange unless you raise its price enough to come out ahead.</div>
+    </div>
+  </div>
+
+  <div class="pb-lab" id="playbook-funnel">
+    <div class="pb-head">
+      <div class="pb-num">02</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Base Exclusion Funnel</div>
+        <a class="pb-deeper" href="#funnel">Full teaching: Base Exclusion Funnel</a>
+      </div>
+      <div class="pb-time">about 12 to 15 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Base Exclusion Funnel worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>Talk of a <strong>score</strong> (roughly 0 to 400), a <strong>bell curve</strong> or normal distribution, <strong>mu and sigma</strong>, "retain 95%", <strong>deciles</strong>, "slide back", a <strong>fraud or gaming flag</strong>, and a funnel summary with Head / Tail / Retained / Excluded.</p>
+    </div>
+    <div class="pb-block idea">
+      <div class="pb-label">Idea</div>
+      <ul>
+        <li><strong>mu</strong> is the average score; <strong>sigma</strong> is how spread out the scores are.</li>
+        <li>A bell curve says about <strong>95% of values sit within mu plus or minus 2 sigma</strong>, so "keep the middle 95%" means cut the two extreme tails.</li>
+        <li>Four flags per customer: <strong>Qualify</strong> (score inside the limits), <strong>Slide back</strong> (top 3 model deciles, so rescue), <strong>Retained</strong> (Qualify OR Slide back), <strong>Final</strong> (Retained AND not a fraudster).</li>
+      </ul>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Get mu and sigma</strong> (given, or compute the mean and standard deviation).</li>
+        <li><strong>Build the band:</strong> Lower = mu minus 2 sigma, Upper = mu plus 2 sigma.</li>
+        <li><strong>Sanity-check the band against the real min and max.</strong> If it is wider than the data range, mu plus or minus 2 sigma excludes nobody, so use the practical limits the question gives (here near 20 and 350).</li>
+        <li><strong>Apply the four flags</strong> in order: Qualify, then Slide back, then Retained, then Final.</li>
+        <li><strong>Read the funnel left to right:</strong> Total, then after the score trim, then after slide-back (retained goes UP), then after fraud removal (retained goes DOWN).</li>
+      </ol>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>This dataset: mu = 170.85, sigma = 103.12, scores 1 to 368.
+Band = 170.85 +/- (2 x 103.12) = [-35.4, 377.1]   wider than 1..368, cuts NOBODY.
+So the lab uses practical limits: Lower = 20, Upper = 350.
+
+Classify 3 customers (Lower 20, Upper 350, top deciles = 1,2,3):
+  X  score 360, decile 2, fraud 0 -> Qualify? 360>350 NO. Slide back? decile 2 YES
+                                  -> Retained YES, clean -> FINAL = KEEP (rescued)
+  Y  score 12,  decile 7, fraud 0 -> Qualify? 12<20 NO. Slide back? NO
+                                  -> Retained NO -> EXCLUDED
+  Z  score 300, decile 1, fraud 1 -> Qualify? 20<300<350 YES -> Retained YES
+                                  -> fraud=1 -> FINAL = REMOVED (fraud beats all)
+
+Whole base: Retained 90.42% -> 93.31% (slide-back) -> 89.11% (after fraud).</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Do not blindly trust mu plus or minus 2 sigma, check it against the actual min and max first. Keep the direction straight: slide-back <em>raises</em> retention (it rescues high-value customers), fraud removal <em>lowers</em> it, and fraud is removed <strong>last</strong> so a fraudster never sneaks through on a good score. (Retained is 90.42% not 95% because the scores are lopsided, so the tails are not symmetric.)</div>
+    </div>
+  </div>
+
+  <div class="pb-lab" id="playbook-model">
+    <div class="pb-head">
+      <div class="pb-num">03</div>
+      <div class="pb-titlewrap">
+        <div class="pb-title">The Design-Your-Own-Product Model</div>
+        <a class="pb-deeper" href="#designlab">Full teaching: Design Your Own Product</a>
+      </div>
+      <div class="pb-time">about 8 to 10 min</div>
+    </div>
+    <div class="pb-block sheet"><div class="pb-label">The sheet</div><a class="pb-sheet" href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Designing Your Own Products worksheet"></a></div>
+    <div class="pb-block recognize">
+      <div class="pb-label">Recognize</div>
+      <p>An investment product for daily wage earners, with a <strong>cohort</strong> size, an <strong>invested amount</strong>, "per subscriber" figures, an organization share %, a customer monthly profit %, platform charges, and Basic / Intermediate / Advance variants.</p>
+    </div>
+    <div class="pb-block formula">
+      <div class="pb-label">Formula</div>
+      <div class="pb-formula">Work the chain top to bottom: (1) Invested per subscriber = Invested Amount divided by Cohort size. (2) Org monthly share per sub = (org %) x (per-sub invested) divided by 12. (3) Customer monthly profit per sub = (profit %) x (per-sub invested) divided by 12. (4) Other-legs revenue per sub = (other-legs %) x (per-sub invested). (5) After the 15% platform charge, keep 85% (x 0.85). (6) What the customer earns = other legs after charge PLUS customer monthly profit.</div>
+    </div>
+    <div class="pb-block attack">
+      <div class="pb-label">Attack</div>
+      <ol class="pb-steps">
+        <li><strong>Find which number they want</strong> and locate its line in the chain above.</li>
+        <li><strong>Work down the chain</strong> only as far as you need; each line feeds the next.</li>
+        <li><strong>Convert annual rates to monthly</strong> by dividing by 12 whenever a monthly figure is asked.</li>
+      </ol>
+    </div>
+    <div class="pb-block worked">
+      <div class="pb-label">Worked</div>
+      <div class="calc"><pre>Basic cohort: 34,493 subscribers, Year 1 invested = 56,972,810.
+
+Invested per subscriber = 56,972,810 / 34,493 = 1,651.72
+Org monthly share at 13.5%  = 0.135 x 1,651.72 / 12 = 18.58 per sub
+Customer monthly profit 9%  = 0.09  x 1,651.72 / 12 = 12.39 per sub</pre></div>
+    </div>
+    <div class="pb-block trap">
+      <div class="pb-label">Trap</div>
+      <div class="pb-trap">Two classics: forgetting to <strong>divide annual rates by 12</strong> for a monthly figure, and confusing <strong>what the customer earns</strong> with <strong>what the organization earns</strong> (different formulas, so re-read which is asked). Variant rule: Basic to Intermediate to Advance, the customer count roughly halves while the margin split shifts.</div>
+    </div>
+    <div class="pb-block remember">
+      <div class="pb-label">Remember</div>
+      <p>Close every product answer with the two guiding questions: <strong>"What product am I building?"</strong> and <strong>"How do I know it is good?"</strong> (name the metric that proves it). Examiners look for this.</p>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -1664,6 +1876,7 @@ And the closing rule: <em>pricing is not a set-it-and-forget-it decision</em>. T
 </section>
 
 <section><h3 id="pricing-partB">Part B. The "Pricing Games" Excel model (from scratch)</h3>
+<figure class="worksheet"><a href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Pricing Games worksheet"></a><figcaption>The actual <em>Pricing Games.xlsx</em> worksheet (rendered from the real data). Click to enlarge. We rebuild and solve it step by step below.</figcaption></figure>
 
 <p>The exercise is a spreadsheet called <em>Pricing Games.xlsx</em>, sheet "A bit on the Pricing". It models a subscription business with four customer segments and asks you to tune prices to hit a revenue target. We build it up piece by piece so you can recreate or solve it by hand in the exam.</p>
 
@@ -2039,6 +2252,8 @@ The shipped sheet sits at +9.0% (545,000), <strong>not</strong> at the +20% targ
 </section>
 
 <section><h2 id="funnel">The Base Exclusion Funnel <span class="badge in">IN SCOPE</span></h2>
+<figure class="worksheet"><a href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Base Exclusion Funnel worksheet"></a><figcaption>The <em>Base Exclusion Funnel.xlsx</em> worksheet: the instructions, the score conditions, and the solved funnel summary. Click to enlarge.</figcaption></figure>
+<figure class="worksheet"><a href="slides/excel/funnel_data_sample.png" target="_blank"><img loading="lazy" src="slides/excel/funnel_data_sample.png" alt="Funnel data sample"></a><figcaption>A sample of the 158,040-row <em>Base Funnal Analysis Data.xlsx</em> that feeds the funnel (one row per subscriber). Click to enlarge.</figcaption></figure>
 
 <p>This is the hardest Excel exercise in the course, so it is explained here in full, assuming zero prior knowledge of statistics. The Base Exclusion Funnel is a <strong>base-cleaning</strong> exercise: before a telco runs an NBA campaign (the topic above), it must <em>clean its subscriber base</em>, meaning remove bad rows (statistical outliers) and bad actors (fraud), while protecting its most valuable customers. The output is a trustworthy, high-value "Final Base" to aim offers at. We will define every term, walk the method step by step, do the arithmetic, and then explain a subtle statistical lesson that the exercise is secretly teaching.</p>
 
@@ -2714,6 +2929,7 @@ A complete answer names the family, the sub-type, and a specific investigative q
 </section>
 
 <section><h2 id="designlab">Design-Your-Own-Products Lab + the Wage Boost Sample <span class="badge in">IN SCOPE</span></h2>
+<figure class="worksheet"><a href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Designing Your Own Products worksheet"></a><figcaption>The <em>Designing Your Own Products.xlsx</em> worksheet: the lab brief and the Basic-tier profitability model. Click to enlarge.</figcaption></figure>
 
 <p>This is the running project of the course. Across several weeks you design your own financial product, building it up piece by piece using the frameworks taught in class. This section explains the lab brief, the two questions that run through everything, the 9-part tear-down you must deliver, the full financial model worked line by line (a likely numeric exam question), and the provided sample answer called Wage Boost.</p>
 
@@ -3014,126 +3230,132 @@ Shareholders take about 197,283, leaving the organization a final monthly earnin
 
 <section id="gallery">
 <h2>Slide gallery <span class="badge new">all decks, scope-tagged</span></h2>
-<div class="callout">Every page of every deck and reading, rendered for quick visual revision. Click any slide to open it full size in a new tab.</div>
-<div class="gallery-deck"><h3>Week 6: AI &amp; Growth Engineering <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">18 slides</span></h3><div class="gallery-grid">
-<a href="slides/week6_ai_growth/slide_01.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_01.png" alt="Week 6: AI &amp; Growth Engineering slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/week6_ai_growth/slide_02.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_02.png" alt="Week 6: AI &amp; Growth Engineering slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/week6_ai_growth/slide_03.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_03.png" alt="Week 6: AI &amp; Growth Engineering slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/week6_ai_growth/slide_04.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_04.png" alt="Week 6: AI &amp; Growth Engineering slide 4"><div class="cap">Slide 4</div></a>
-<a href="slides/week6_ai_growth/slide_05.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_05.png" alt="Week 6: AI &amp; Growth Engineering slide 5"><div class="cap">Slide 5</div></a>
-<a href="slides/week6_ai_growth/slide_06.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_06.png" alt="Week 6: AI &amp; Growth Engineering slide 6"><div class="cap">Slide 6</div></a>
-<a href="slides/week6_ai_growth/slide_07.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_07.png" alt="Week 6: AI &amp; Growth Engineering slide 7"><div class="cap">Slide 7</div></a>
-<a href="slides/week6_ai_growth/slide_08.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_08.png" alt="Week 6: AI &amp; Growth Engineering slide 8"><div class="cap">Slide 8</div></a>
-<a href="slides/week6_ai_growth/slide_09.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_09.png" alt="Week 6: AI &amp; Growth Engineering slide 9"><div class="cap">Slide 9</div></a>
-<a href="slides/week6_ai_growth/slide_10.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_10.png" alt="Week 6: AI &amp; Growth Engineering slide 10"><div class="cap">Slide 10</div></a>
-<a href="slides/week6_ai_growth/slide_11.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_11.png" alt="Week 6: AI &amp; Growth Engineering slide 11"><div class="cap">Slide 11</div></a>
-<a href="slides/week6_ai_growth/slide_12.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_12.png" alt="Week 6: AI &amp; Growth Engineering slide 12"><div class="cap">Slide 12</div></a>
-<a href="slides/week6_ai_growth/slide_13.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_13.png" alt="Week 6: AI &amp; Growth Engineering slide 13"><div class="cap">Slide 13</div></a>
-<a href="slides/week6_ai_growth/slide_14.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_14.png" alt="Week 6: AI &amp; Growth Engineering slide 14"><div class="cap">Slide 14</div></a>
-<a href="slides/week6_ai_growth/slide_15.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_15.png" alt="Week 6: AI &amp; Growth Engineering slide 15"><div class="cap">Slide 15</div></a>
-<a href="slides/week6_ai_growth/slide_16.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_16.png" alt="Week 6: AI &amp; Growth Engineering slide 16"><div class="cap">Slide 16</div></a>
-<a href="slides/week6_ai_growth/slide_17.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_17.png" alt="Week 6: AI &amp; Growth Engineering slide 17"><div class="cap">Slide 17</div></a>
-<a href="slides/week6_ai_growth/slide_18.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_18.png" alt="Week 6: AI &amp; Growth Engineering slide 18"><div class="cap">Slide 18</div></a>
+<div class="callout">Every page of every deck and reading, plus the Excel worksheets, rendered for quick visual revision. Click any image to open it full size in a new tab.</div>
+<div class="gallery-deck"><h3>Excel Labs: the actual worksheets <span class="badge fuel">WORKSHEETS</span> <span class="deck-count">4 worksheets</span></h3><div class="gallery-grid">
+<a href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Excel Labs: the actual worksheets Base Exclusion Funnel"><div class="cap">Base Exclusion Funnel</div></a>
+<a href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Excel Labs: the actual worksheets Design Your Own Products"><div class="cap">Design Your Own Products</div></a>
+<a href="slides/excel/funnel_data_sample.png" target="_blank"><img loading="lazy" src="slides/excel/funnel_data_sample.png" alt="Excel Labs: the actual worksheets Funnel Data Sample"><div class="cap">Funnel Data Sample</div></a>
+<a href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Excel Labs: the actual worksheets Pricing Games"><div class="cap">Pricing Games</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Week 7: Digital Products <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">20 slides</span></h3><div class="gallery-grid">
-<a href="slides/week7_digital_products/slide_01.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_01.png" alt="Week 7: Digital Products slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/week7_digital_products/slide_02.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_02.png" alt="Week 7: Digital Products slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/week7_digital_products/slide_03.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_03.png" alt="Week 7: Digital Products slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/week7_digital_products/slide_04.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_04.png" alt="Week 7: Digital Products slide 4"><div class="cap">Slide 4</div></a>
-<a href="slides/week7_digital_products/slide_05.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_05.png" alt="Week 7: Digital Products slide 5"><div class="cap">Slide 5</div></a>
-<a href="slides/week7_digital_products/slide_06.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_06.png" alt="Week 7: Digital Products slide 6"><div class="cap">Slide 6</div></a>
-<a href="slides/week7_digital_products/slide_07.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_07.png" alt="Week 7: Digital Products slide 7"><div class="cap">Slide 7</div></a>
-<a href="slides/week7_digital_products/slide_08.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_08.png" alt="Week 7: Digital Products slide 8"><div class="cap">Slide 8</div></a>
-<a href="slides/week7_digital_products/slide_09.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_09.png" alt="Week 7: Digital Products slide 9"><div class="cap">Slide 9</div></a>
-<a href="slides/week7_digital_products/slide_10.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_10.png" alt="Week 7: Digital Products slide 10"><div class="cap">Slide 10</div></a>
-<a href="slides/week7_digital_products/slide_11.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_11.png" alt="Week 7: Digital Products slide 11"><div class="cap">Slide 11</div></a>
-<a href="slides/week7_digital_products/slide_12.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_12.png" alt="Week 7: Digital Products slide 12"><div class="cap">Slide 12</div></a>
-<a href="slides/week7_digital_products/slide_13.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_13.png" alt="Week 7: Digital Products slide 13"><div class="cap">Slide 13</div></a>
-<a href="slides/week7_digital_products/slide_14.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_14.png" alt="Week 7: Digital Products slide 14"><div class="cap">Slide 14</div></a>
-<a href="slides/week7_digital_products/slide_15.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_15.png" alt="Week 7: Digital Products slide 15"><div class="cap">Slide 15</div></a>
-<a href="slides/week7_digital_products/slide_16.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_16.png" alt="Week 7: Digital Products slide 16"><div class="cap">Slide 16</div></a>
-<a href="slides/week7_digital_products/slide_17.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_17.png" alt="Week 7: Digital Products slide 17"><div class="cap">Slide 17</div></a>
-<a href="slides/week7_digital_products/slide_18.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_18.png" alt="Week 7: Digital Products slide 18"><div class="cap">Slide 18</div></a>
-<a href="slides/week7_digital_products/slide_19.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_19.png" alt="Week 7: Digital Products slide 19"><div class="cap">Slide 19</div></a>
-<a href="slides/week7_digital_products/slide_20.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_20.png" alt="Week 7: Digital Products slide 20"><div class="cap">Slide 20</div></a>
+<div class="gallery-deck"><h3>Week 6: AI &amp; Growth Engineering <span class="badge in">IN SCOPE</span> <span class="deck-count">18 slides</span></h3><div class="gallery-grid">
+<a href="slides/week6_ai_growth/slide_01.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_01.png" alt="Week 6: AI &amp; Growth Engineering Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/week6_ai_growth/slide_02.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_02.png" alt="Week 6: AI &amp; Growth Engineering Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/week6_ai_growth/slide_03.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_03.png" alt="Week 6: AI &amp; Growth Engineering Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/week6_ai_growth/slide_04.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_04.png" alt="Week 6: AI &amp; Growth Engineering Slide 4"><div class="cap">Slide 4</div></a>
+<a href="slides/week6_ai_growth/slide_05.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_05.png" alt="Week 6: AI &amp; Growth Engineering Slide 5"><div class="cap">Slide 5</div></a>
+<a href="slides/week6_ai_growth/slide_06.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_06.png" alt="Week 6: AI &amp; Growth Engineering Slide 6"><div class="cap">Slide 6</div></a>
+<a href="slides/week6_ai_growth/slide_07.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_07.png" alt="Week 6: AI &amp; Growth Engineering Slide 7"><div class="cap">Slide 7</div></a>
+<a href="slides/week6_ai_growth/slide_08.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_08.png" alt="Week 6: AI &amp; Growth Engineering Slide 8"><div class="cap">Slide 8</div></a>
+<a href="slides/week6_ai_growth/slide_09.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_09.png" alt="Week 6: AI &amp; Growth Engineering Slide 9"><div class="cap">Slide 9</div></a>
+<a href="slides/week6_ai_growth/slide_10.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_10.png" alt="Week 6: AI &amp; Growth Engineering Slide 10"><div class="cap">Slide 10</div></a>
+<a href="slides/week6_ai_growth/slide_11.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_11.png" alt="Week 6: AI &amp; Growth Engineering Slide 11"><div class="cap">Slide 11</div></a>
+<a href="slides/week6_ai_growth/slide_12.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_12.png" alt="Week 6: AI &amp; Growth Engineering Slide 12"><div class="cap">Slide 12</div></a>
+<a href="slides/week6_ai_growth/slide_13.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_13.png" alt="Week 6: AI &amp; Growth Engineering Slide 13"><div class="cap">Slide 13</div></a>
+<a href="slides/week6_ai_growth/slide_14.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_14.png" alt="Week 6: AI &amp; Growth Engineering Slide 14"><div class="cap">Slide 14</div></a>
+<a href="slides/week6_ai_growth/slide_15.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_15.png" alt="Week 6: AI &amp; Growth Engineering Slide 15"><div class="cap">Slide 15</div></a>
+<a href="slides/week6_ai_growth/slide_16.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_16.png" alt="Week 6: AI &amp; Growth Engineering Slide 16"><div class="cap">Slide 16</div></a>
+<a href="slides/week6_ai_growth/slide_17.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_17.png" alt="Week 6: AI &amp; Growth Engineering Slide 17"><div class="cap">Slide 17</div></a>
+<a href="slides/week6_ai_growth/slide_18.png" target="_blank"><img loading="lazy" src="slides/week6_ai_growth/slide_18.png" alt="Week 6: AI &amp; Growth Engineering Slide 18"><div class="cap">Slide 18</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Reading: Nine Pricing Strategies <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">10 slides</span></h3><div class="gallery-grid">
-<a href="slides/pricing_strategies/slide_01.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_01.png" alt="Reading: Nine Pricing Strategies slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/pricing_strategies/slide_02.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_02.png" alt="Reading: Nine Pricing Strategies slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/pricing_strategies/slide_03.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_03.png" alt="Reading: Nine Pricing Strategies slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/pricing_strategies/slide_04.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_04.png" alt="Reading: Nine Pricing Strategies slide 4"><div class="cap">Slide 4</div></a>
-<a href="slides/pricing_strategies/slide_05.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_05.png" alt="Reading: Nine Pricing Strategies slide 5"><div class="cap">Slide 5</div></a>
-<a href="slides/pricing_strategies/slide_06.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_06.png" alt="Reading: Nine Pricing Strategies slide 6"><div class="cap">Slide 6</div></a>
-<a href="slides/pricing_strategies/slide_07.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_07.png" alt="Reading: Nine Pricing Strategies slide 7"><div class="cap">Slide 7</div></a>
-<a href="slides/pricing_strategies/slide_08.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_08.png" alt="Reading: Nine Pricing Strategies slide 8"><div class="cap">Slide 8</div></a>
-<a href="slides/pricing_strategies/slide_09.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_09.png" alt="Reading: Nine Pricing Strategies slide 9"><div class="cap">Slide 9</div></a>
-<a href="slides/pricing_strategies/slide_10.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_10.png" alt="Reading: Nine Pricing Strategies slide 10"><div class="cap">Slide 10</div></a>
+<div class="gallery-deck"><h3>Week 7: Digital Products <span class="badge in">IN SCOPE</span> <span class="deck-count">20 slides</span></h3><div class="gallery-grid">
+<a href="slides/week7_digital_products/slide_01.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_01.png" alt="Week 7: Digital Products Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/week7_digital_products/slide_02.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_02.png" alt="Week 7: Digital Products Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/week7_digital_products/slide_03.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_03.png" alt="Week 7: Digital Products Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/week7_digital_products/slide_04.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_04.png" alt="Week 7: Digital Products Slide 4"><div class="cap">Slide 4</div></a>
+<a href="slides/week7_digital_products/slide_05.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_05.png" alt="Week 7: Digital Products Slide 5"><div class="cap">Slide 5</div></a>
+<a href="slides/week7_digital_products/slide_06.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_06.png" alt="Week 7: Digital Products Slide 6"><div class="cap">Slide 6</div></a>
+<a href="slides/week7_digital_products/slide_07.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_07.png" alt="Week 7: Digital Products Slide 7"><div class="cap">Slide 7</div></a>
+<a href="slides/week7_digital_products/slide_08.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_08.png" alt="Week 7: Digital Products Slide 8"><div class="cap">Slide 8</div></a>
+<a href="slides/week7_digital_products/slide_09.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_09.png" alt="Week 7: Digital Products Slide 9"><div class="cap">Slide 9</div></a>
+<a href="slides/week7_digital_products/slide_10.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_10.png" alt="Week 7: Digital Products Slide 10"><div class="cap">Slide 10</div></a>
+<a href="slides/week7_digital_products/slide_11.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_11.png" alt="Week 7: Digital Products Slide 11"><div class="cap">Slide 11</div></a>
+<a href="slides/week7_digital_products/slide_12.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_12.png" alt="Week 7: Digital Products Slide 12"><div class="cap">Slide 12</div></a>
+<a href="slides/week7_digital_products/slide_13.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_13.png" alt="Week 7: Digital Products Slide 13"><div class="cap">Slide 13</div></a>
+<a href="slides/week7_digital_products/slide_14.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_14.png" alt="Week 7: Digital Products Slide 14"><div class="cap">Slide 14</div></a>
+<a href="slides/week7_digital_products/slide_15.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_15.png" alt="Week 7: Digital Products Slide 15"><div class="cap">Slide 15</div></a>
+<a href="slides/week7_digital_products/slide_16.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_16.png" alt="Week 7: Digital Products Slide 16"><div class="cap">Slide 16</div></a>
+<a href="slides/week7_digital_products/slide_17.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_17.png" alt="Week 7: Digital Products Slide 17"><div class="cap">Slide 17</div></a>
+<a href="slides/week7_digital_products/slide_18.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_18.png" alt="Week 7: Digital Products Slide 18"><div class="cap">Slide 18</div></a>
+<a href="slides/week7_digital_products/slide_19.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_19.png" alt="Week 7: Digital Products Slide 19"><div class="cap">Slide 19</div></a>
+<a href="slides/week7_digital_products/slide_20.png" target="_blank"><img loading="lazy" src="slides/week7_digital_products/slide_20.png" alt="Week 7: Digital Products Slide 20"><div class="cap">Slide 20</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Reading: Product Metrics <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">2 slides</span></h3><div class="gallery-grid">
-<a href="slides/product_metrics/slide_01.png" target="_blank"><img loading="lazy" src="slides/product_metrics/slide_01.png" alt="Reading: Product Metrics slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/product_metrics/slide_02.png" target="_blank"><img loading="lazy" src="slides/product_metrics/slide_02.png" alt="Reading: Product Metrics slide 2"><div class="cap">Slide 2</div></a>
+<div class="gallery-deck"><h3>Reading: Nine Pricing Strategies <span class="badge in">IN SCOPE</span> <span class="deck-count">10 slides</span></h3><div class="gallery-grid">
+<a href="slides/pricing_strategies/slide_01.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_01.png" alt="Reading: Nine Pricing Strategies Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/pricing_strategies/slide_02.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_02.png" alt="Reading: Nine Pricing Strategies Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/pricing_strategies/slide_03.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_03.png" alt="Reading: Nine Pricing Strategies Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/pricing_strategies/slide_04.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_04.png" alt="Reading: Nine Pricing Strategies Slide 4"><div class="cap">Slide 4</div></a>
+<a href="slides/pricing_strategies/slide_05.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_05.png" alt="Reading: Nine Pricing Strategies Slide 5"><div class="cap">Slide 5</div></a>
+<a href="slides/pricing_strategies/slide_06.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_06.png" alt="Reading: Nine Pricing Strategies Slide 6"><div class="cap">Slide 6</div></a>
+<a href="slides/pricing_strategies/slide_07.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_07.png" alt="Reading: Nine Pricing Strategies Slide 7"><div class="cap">Slide 7</div></a>
+<a href="slides/pricing_strategies/slide_08.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_08.png" alt="Reading: Nine Pricing Strategies Slide 8"><div class="cap">Slide 8</div></a>
+<a href="slides/pricing_strategies/slide_09.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_09.png" alt="Reading: Nine Pricing Strategies Slide 9"><div class="cap">Slide 9</div></a>
+<a href="slides/pricing_strategies/slide_10.png" target="_blank"><img loading="lazy" src="slides/pricing_strategies/slide_10.png" alt="Reading: Nine Pricing Strategies Slide 10"><div class="cap">Slide 10</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Reading: Next Best Action (Telco Case) <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">4 slides</span></h3><div class="gallery-grid">
-<a href="slides/next_best_action/slide_01.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_01.png" alt="Reading: Next Best Action (Telco Case) slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/next_best_action/slide_02.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_02.png" alt="Reading: Next Best Action (Telco Case) slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/next_best_action/slide_03.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_03.png" alt="Reading: Next Best Action (Telco Case) slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/next_best_action/slide_04.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_04.png" alt="Reading: Next Best Action (Telco Case) slide 4"><div class="cap">Slide 4</div></a>
+<div class="gallery-deck"><h3>Reading: Product Metrics <span class="badge in">IN SCOPE</span> <span class="deck-count">2 slides</span></h3><div class="gallery-grid">
+<a href="slides/product_metrics/slide_01.png" target="_blank"><img loading="lazy" src="slides/product_metrics/slide_01.png" alt="Reading: Product Metrics Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/product_metrics/slide_02.png" target="_blank"><img loading="lazy" src="slides/product_metrics/slide_02.png" alt="Reading: Product Metrics Slide 2"><div class="cap">Slide 2</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Case: Gamification (FLYG) <span class="badge in">IN SCOPE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">32 slides</span></h3><div class="gallery-grid">
-<a href="slides/gamification/slide_01.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_01.png" alt="Case: Gamification (FLYG) slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/gamification/slide_02.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_02.png" alt="Case: Gamification (FLYG) slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/gamification/slide_03.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_03.png" alt="Case: Gamification (FLYG) slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/gamification/slide_04.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_04.png" alt="Case: Gamification (FLYG) slide 4"><div class="cap">Slide 4</div></a>
-<a href="slides/gamification/slide_05.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_05.png" alt="Case: Gamification (FLYG) slide 5"><div class="cap">Slide 5</div></a>
-<a href="slides/gamification/slide_06.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_06.png" alt="Case: Gamification (FLYG) slide 6"><div class="cap">Slide 6</div></a>
-<a href="slides/gamification/slide_07.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_07.png" alt="Case: Gamification (FLYG) slide 7"><div class="cap">Slide 7</div></a>
-<a href="slides/gamification/slide_08.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_08.png" alt="Case: Gamification (FLYG) slide 8"><div class="cap">Slide 8</div></a>
-<a href="slides/gamification/slide_09.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_09.png" alt="Case: Gamification (FLYG) slide 9"><div class="cap">Slide 9</div></a>
-<a href="slides/gamification/slide_10.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_10.png" alt="Case: Gamification (FLYG) slide 10"><div class="cap">Slide 10</div></a>
-<a href="slides/gamification/slide_11.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_11.png" alt="Case: Gamification (FLYG) slide 11"><div class="cap">Slide 11</div></a>
-<a href="slides/gamification/slide_12.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_12.png" alt="Case: Gamification (FLYG) slide 12"><div class="cap">Slide 12</div></a>
-<a href="slides/gamification/slide_13.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_13.png" alt="Case: Gamification (FLYG) slide 13"><div class="cap">Slide 13</div></a>
-<a href="slides/gamification/slide_14.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_14.png" alt="Case: Gamification (FLYG) slide 14"><div class="cap">Slide 14</div></a>
-<a href="slides/gamification/slide_15.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_15.png" alt="Case: Gamification (FLYG) slide 15"><div class="cap">Slide 15</div></a>
-<a href="slides/gamification/slide_16.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_16.png" alt="Case: Gamification (FLYG) slide 16"><div class="cap">Slide 16</div></a>
-<a href="slides/gamification/slide_17.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_17.png" alt="Case: Gamification (FLYG) slide 17"><div class="cap">Slide 17</div></a>
-<a href="slides/gamification/slide_18.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_18.png" alt="Case: Gamification (FLYG) slide 18"><div class="cap">Slide 18</div></a>
-<a href="slides/gamification/slide_19.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_19.png" alt="Case: Gamification (FLYG) slide 19"><div class="cap">Slide 19</div></a>
-<a href="slides/gamification/slide_20.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_20.png" alt="Case: Gamification (FLYG) slide 20"><div class="cap">Slide 20</div></a>
-<a href="slides/gamification/slide_21.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_21.png" alt="Case: Gamification (FLYG) slide 21"><div class="cap">Slide 21</div></a>
-<a href="slides/gamification/slide_22.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_22.png" alt="Case: Gamification (FLYG) slide 22"><div class="cap">Slide 22</div></a>
-<a href="slides/gamification/slide_23.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_23.png" alt="Case: Gamification (FLYG) slide 23"><div class="cap">Slide 23</div></a>
-<a href="slides/gamification/slide_24.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_24.png" alt="Case: Gamification (FLYG) slide 24"><div class="cap">Slide 24</div></a>
-<a href="slides/gamification/slide_25.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_25.png" alt="Case: Gamification (FLYG) slide 25"><div class="cap">Slide 25</div></a>
-<a href="slides/gamification/slide_26.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_26.png" alt="Case: Gamification (FLYG) slide 26"><div class="cap">Slide 26</div></a>
-<a href="slides/gamification/slide_27.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_27.png" alt="Case: Gamification (FLYG) slide 27"><div class="cap">Slide 27</div></a>
-<a href="slides/gamification/slide_28.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_28.png" alt="Case: Gamification (FLYG) slide 28"><div class="cap">Slide 28</div></a>
-<a href="slides/gamification/slide_29.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_29.png" alt="Case: Gamification (FLYG) slide 29"><div class="cap">Slide 29</div></a>
-<a href="slides/gamification/slide_30.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_30.png" alt="Case: Gamification (FLYG) slide 30"><div class="cap">Slide 30</div></a>
-<a href="slides/gamification/slide_31.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_31.png" alt="Case: Gamification (FLYG) slide 31"><div class="cap">Slide 31</div></a>
-<a href="slides/gamification/slide_32.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_32.png" alt="Case: Gamification (FLYG) slide 32"><div class="cap">Slide 32</div></a>
+<div class="gallery-deck"><h3>Reading: Next Best Action (Telco Case) <span class="badge in">IN SCOPE</span> <span class="deck-count">4 slides</span></h3><div class="gallery-grid">
+<a href="slides/next_best_action/slide_01.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_01.png" alt="Reading: Next Best Action (Telco Case) Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/next_best_action/slide_02.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_02.png" alt="Reading: Next Best Action (Telco Case) Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/next_best_action/slide_03.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_03.png" alt="Reading: Next Best Action (Telco Case) Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/next_best_action/slide_04.png" target="_blank"><img loading="lazy" src="slides/next_best_action/slide_04.png" alt="Reading: Next Best Action (Telco Case) Slide 4"><div class="cap">Slide 4</div></a>
 </div></div>
-<div class="gallery-deck"><h3>Sample Project: Wage Boost (direction only) <span class="badge fuel">REFERENCE</span> <span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">20 slides</span></h3><div class="gallery-grid">
-<a href="slides/sample_project/slide_01.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_01.png" alt="Sample Project: Wage Boost (direction only) slide 1"><div class="cap">Slide 1</div></a>
-<a href="slides/sample_project/slide_02.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_02.png" alt="Sample Project: Wage Boost (direction only) slide 2"><div class="cap">Slide 2</div></a>
-<a href="slides/sample_project/slide_03.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_03.png" alt="Sample Project: Wage Boost (direction only) slide 3"><div class="cap">Slide 3</div></a>
-<a href="slides/sample_project/slide_04.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_04.png" alt="Sample Project: Wage Boost (direction only) slide 4"><div class="cap">Slide 4</div></a>
-<a href="slides/sample_project/slide_05.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_05.png" alt="Sample Project: Wage Boost (direction only) slide 5"><div class="cap">Slide 5</div></a>
-<a href="slides/sample_project/slide_06.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_06.png" alt="Sample Project: Wage Boost (direction only) slide 6"><div class="cap">Slide 6</div></a>
-<a href="slides/sample_project/slide_07.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_07.png" alt="Sample Project: Wage Boost (direction only) slide 7"><div class="cap">Slide 7</div></a>
-<a href="slides/sample_project/slide_08.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_08.png" alt="Sample Project: Wage Boost (direction only) slide 8"><div class="cap">Slide 8</div></a>
-<a href="slides/sample_project/slide_09.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_09.png" alt="Sample Project: Wage Boost (direction only) slide 9"><div class="cap">Slide 9</div></a>
-<a href="slides/sample_project/slide_10.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_10.png" alt="Sample Project: Wage Boost (direction only) slide 10"><div class="cap">Slide 10</div></a>
-<a href="slides/sample_project/slide_11.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_11.png" alt="Sample Project: Wage Boost (direction only) slide 11"><div class="cap">Slide 11</div></a>
-<a href="slides/sample_project/slide_12.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_12.png" alt="Sample Project: Wage Boost (direction only) slide 12"><div class="cap">Slide 12</div></a>
-<a href="slides/sample_project/slide_13.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_13.png" alt="Sample Project: Wage Boost (direction only) slide 13"><div class="cap">Slide 13</div></a>
-<a href="slides/sample_project/slide_14.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_14.png" alt="Sample Project: Wage Boost (direction only) slide 14"><div class="cap">Slide 14</div></a>
-<a href="slides/sample_project/slide_15.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_15.png" alt="Sample Project: Wage Boost (direction only) slide 15"><div class="cap">Slide 15</div></a>
-<a href="slides/sample_project/slide_16.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_16.png" alt="Sample Project: Wage Boost (direction only) slide 16"><div class="cap">Slide 16</div></a>
-<a href="slides/sample_project/slide_17.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_17.png" alt="Sample Project: Wage Boost (direction only) slide 17"><div class="cap">Slide 17</div></a>
-<a href="slides/sample_project/slide_18.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_18.png" alt="Sample Project: Wage Boost (direction only) slide 18"><div class="cap">Slide 18</div></a>
-<a href="slides/sample_project/slide_19.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_19.png" alt="Sample Project: Wage Boost (direction only) slide 19"><div class="cap">Slide 19</div></a>
-<a href="slides/sample_project/slide_20.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_20.png" alt="Sample Project: Wage Boost (direction only) slide 20"><div class="cap">Slide 20</div></a>
+<div class="gallery-deck"><h3>Case: Gamification (FLYG) <span class="badge in">IN SCOPE</span> <span class="deck-count">32 slides</span></h3><div class="gallery-grid">
+<a href="slides/gamification/slide_01.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_01.png" alt="Case: Gamification (FLYG) Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/gamification/slide_02.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_02.png" alt="Case: Gamification (FLYG) Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/gamification/slide_03.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_03.png" alt="Case: Gamification (FLYG) Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/gamification/slide_04.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_04.png" alt="Case: Gamification (FLYG) Slide 4"><div class="cap">Slide 4</div></a>
+<a href="slides/gamification/slide_05.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_05.png" alt="Case: Gamification (FLYG) Slide 5"><div class="cap">Slide 5</div></a>
+<a href="slides/gamification/slide_06.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_06.png" alt="Case: Gamification (FLYG) Slide 6"><div class="cap">Slide 6</div></a>
+<a href="slides/gamification/slide_07.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_07.png" alt="Case: Gamification (FLYG) Slide 7"><div class="cap">Slide 7</div></a>
+<a href="slides/gamification/slide_08.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_08.png" alt="Case: Gamification (FLYG) Slide 8"><div class="cap">Slide 8</div></a>
+<a href="slides/gamification/slide_09.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_09.png" alt="Case: Gamification (FLYG) Slide 9"><div class="cap">Slide 9</div></a>
+<a href="slides/gamification/slide_10.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_10.png" alt="Case: Gamification (FLYG) Slide 10"><div class="cap">Slide 10</div></a>
+<a href="slides/gamification/slide_11.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_11.png" alt="Case: Gamification (FLYG) Slide 11"><div class="cap">Slide 11</div></a>
+<a href="slides/gamification/slide_12.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_12.png" alt="Case: Gamification (FLYG) Slide 12"><div class="cap">Slide 12</div></a>
+<a href="slides/gamification/slide_13.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_13.png" alt="Case: Gamification (FLYG) Slide 13"><div class="cap">Slide 13</div></a>
+<a href="slides/gamification/slide_14.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_14.png" alt="Case: Gamification (FLYG) Slide 14"><div class="cap">Slide 14</div></a>
+<a href="slides/gamification/slide_15.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_15.png" alt="Case: Gamification (FLYG) Slide 15"><div class="cap">Slide 15</div></a>
+<a href="slides/gamification/slide_16.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_16.png" alt="Case: Gamification (FLYG) Slide 16"><div class="cap">Slide 16</div></a>
+<a href="slides/gamification/slide_17.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_17.png" alt="Case: Gamification (FLYG) Slide 17"><div class="cap">Slide 17</div></a>
+<a href="slides/gamification/slide_18.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_18.png" alt="Case: Gamification (FLYG) Slide 18"><div class="cap">Slide 18</div></a>
+<a href="slides/gamification/slide_19.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_19.png" alt="Case: Gamification (FLYG) Slide 19"><div class="cap">Slide 19</div></a>
+<a href="slides/gamification/slide_20.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_20.png" alt="Case: Gamification (FLYG) Slide 20"><div class="cap">Slide 20</div></a>
+<a href="slides/gamification/slide_21.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_21.png" alt="Case: Gamification (FLYG) Slide 21"><div class="cap">Slide 21</div></a>
+<a href="slides/gamification/slide_22.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_22.png" alt="Case: Gamification (FLYG) Slide 22"><div class="cap">Slide 22</div></a>
+<a href="slides/gamification/slide_23.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_23.png" alt="Case: Gamification (FLYG) Slide 23"><div class="cap">Slide 23</div></a>
+<a href="slides/gamification/slide_24.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_24.png" alt="Case: Gamification (FLYG) Slide 24"><div class="cap">Slide 24</div></a>
+<a href="slides/gamification/slide_25.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_25.png" alt="Case: Gamification (FLYG) Slide 25"><div class="cap">Slide 25</div></a>
+<a href="slides/gamification/slide_26.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_26.png" alt="Case: Gamification (FLYG) Slide 26"><div class="cap">Slide 26</div></a>
+<a href="slides/gamification/slide_27.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_27.png" alt="Case: Gamification (FLYG) Slide 27"><div class="cap">Slide 27</div></a>
+<a href="slides/gamification/slide_28.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_28.png" alt="Case: Gamification (FLYG) Slide 28"><div class="cap">Slide 28</div></a>
+<a href="slides/gamification/slide_29.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_29.png" alt="Case: Gamification (FLYG) Slide 29"><div class="cap">Slide 29</div></a>
+<a href="slides/gamification/slide_30.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_30.png" alt="Case: Gamification (FLYG) Slide 30"><div class="cap">Slide 30</div></a>
+<a href="slides/gamification/slide_31.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_31.png" alt="Case: Gamification (FLYG) Slide 31"><div class="cap">Slide 31</div></a>
+<a href="slides/gamification/slide_32.png" target="_blank"><img loading="lazy" src="slides/gamification/slide_32.png" alt="Case: Gamification (FLYG) Slide 32"><div class="cap">Slide 32</div></a>
+</div></div>
+<div class="gallery-deck"><h3>Sample Project: Wage Boost (direction only) <span class="badge fuel">REFERENCE</span> <span class="deck-count">20 slides</span></h3><div class="gallery-grid">
+<a href="slides/sample_project/slide_01.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_01.png" alt="Sample Project: Wage Boost (direction only) Slide 1"><div class="cap">Slide 1</div></a>
+<a href="slides/sample_project/slide_02.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_02.png" alt="Sample Project: Wage Boost (direction only) Slide 2"><div class="cap">Slide 2</div></a>
+<a href="slides/sample_project/slide_03.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_03.png" alt="Sample Project: Wage Boost (direction only) Slide 3"><div class="cap">Slide 3</div></a>
+<a href="slides/sample_project/slide_04.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_04.png" alt="Sample Project: Wage Boost (direction only) Slide 4"><div class="cap">Slide 4</div></a>
+<a href="slides/sample_project/slide_05.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_05.png" alt="Sample Project: Wage Boost (direction only) Slide 5"><div class="cap">Slide 5</div></a>
+<a href="slides/sample_project/slide_06.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_06.png" alt="Sample Project: Wage Boost (direction only) Slide 6"><div class="cap">Slide 6</div></a>
+<a href="slides/sample_project/slide_07.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_07.png" alt="Sample Project: Wage Boost (direction only) Slide 7"><div class="cap">Slide 7</div></a>
+<a href="slides/sample_project/slide_08.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_08.png" alt="Sample Project: Wage Boost (direction only) Slide 8"><div class="cap">Slide 8</div></a>
+<a href="slides/sample_project/slide_09.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_09.png" alt="Sample Project: Wage Boost (direction only) Slide 9"><div class="cap">Slide 9</div></a>
+<a href="slides/sample_project/slide_10.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_10.png" alt="Sample Project: Wage Boost (direction only) Slide 10"><div class="cap">Slide 10</div></a>
+<a href="slides/sample_project/slide_11.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_11.png" alt="Sample Project: Wage Boost (direction only) Slide 11"><div class="cap">Slide 11</div></a>
+<a href="slides/sample_project/slide_12.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_12.png" alt="Sample Project: Wage Boost (direction only) Slide 12"><div class="cap">Slide 12</div></a>
+<a href="slides/sample_project/slide_13.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_13.png" alt="Sample Project: Wage Boost (direction only) Slide 13"><div class="cap">Slide 13</div></a>
+<a href="slides/sample_project/slide_14.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_14.png" alt="Sample Project: Wage Boost (direction only) Slide 14"><div class="cap">Slide 14</div></a>
+<a href="slides/sample_project/slide_15.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_15.png" alt="Sample Project: Wage Boost (direction only) Slide 15"><div class="cap">Slide 15</div></a>
+<a href="slides/sample_project/slide_16.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_16.png" alt="Sample Project: Wage Boost (direction only) Slide 16"><div class="cap">Slide 16</div></a>
+<a href="slides/sample_project/slide_17.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_17.png" alt="Sample Project: Wage Boost (direction only) Slide 17"><div class="cap">Slide 17</div></a>
+<a href="slides/sample_project/slide_18.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_18.png" alt="Sample Project: Wage Boost (direction only) Slide 18"><div class="cap">Slide 18</div></a>
+<a href="slides/sample_project/slide_19.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_19.png" alt="Sample Project: Wage Boost (direction only) Slide 19"><div class="cap">Slide 19</div></a>
+<a href="slides/sample_project/slide_20.png" target="_blank"><img loading="lazy" src="slides/sample_project/slide_20.png" alt="Sample Project: Wage Boost (direction only) Slide 20"><div class="cap">Slide 20</div></a>
 </div></div>
 </section>
 <section id="cheatsheet">

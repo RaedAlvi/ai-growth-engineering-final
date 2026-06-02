@@ -10,6 +10,7 @@ def read(p):
 
 
 order = [
+    "sections/section_playbook.html",
     "sections/section_wk6.html",
     "sections/section_wk7.html",
     "sections/section_pricing.html",
@@ -22,6 +23,7 @@ for o in order:
     parts.append(read(o))
 
 decks = [
+    ("excel", "Excel Labs: the actual worksheets", "fuel"),
     ("week6_ai_growth", "Week 6: AI &amp; Growth Engineering", "in"),
     ("week7_digital_products", "Week 7: Digital Products", "in"),
     ("pricing_strategies", "Reading: Nine Pricing Strategies", "in"),
@@ -33,7 +35,7 @@ decks = [
 
 g = ['<section id="gallery">',
      '<h2>Slide gallery <span class="badge new">all decks, scope-tagged</span></h2>',
-     '<div class="callout">Every page of every deck and reading, rendered for quick visual revision. Click any slide to open it full size in a new tab.</div>']
+     '<div class="callout">Every page of every deck and reading, plus the Excel worksheets, rendered for quick visual revision. Click any image to open it full size in a new tab.</div>']
 total = 0
 for slug, title, badge in decks:
     d = os.path.join(SLIDES, slug)
@@ -41,19 +43,23 @@ for slug, title, badge in decks:
         continue
     imgs = sorted(f for f in os.listdir(d) if f.endswith(".png"))
     total += len(imgs)
-    label = "IN SCOPE" if badge == "in" else "REFERENCE"
+    label = "IN SCOPE" if badge == "in" else ("WORKSHEETS" if slug == "excel" else "REFERENCE")
+    noun = "worksheets" if slug == "excel" else "slides"
     g.append(f'<div class="gallery-deck"><h3>{title} <span class="badge {badge}">{label}</span> '
-             f'<span style="font-family:Inter;font-size:12px;color:var(--ink-mute);font-weight:600">{len(imgs)} slides</span></h3>'
+             f'<span class="deck-count">{len(imgs)} {noun}</span></h3>'
              f'<div class="gallery-grid">')
     for im in imgs:
         rel = f"slides/{slug}/{im}"
-        n = im.replace("slide_", "").replace(".png", "")
-        try:
-            num = str(int(n))
-        except ValueError:
-            num = n
+        base = im[:-4]
+        if base.startswith("slide_"):
+            try:
+                cap = "Slide " + str(int(base.split("_")[1]))
+            except ValueError:
+                cap = base
+        else:
+            cap = base.replace("_", " ").replace("-", " ").title()
         g.append(f'<a href="{rel}" target="_blank"><img loading="lazy" src="{rel}" '
-                 f'alt="{title} slide {num}"><div class="cap">Slide {num}</div></a>')
+                 f'alt="{title} {cap}"><div class="cap">{cap}</div></a>')
     g.append('</div></div>')
 g.append('</section>')
 parts.append("\n".join(g))
@@ -64,4 +70,4 @@ out = os.path.join(ROOT, "index.html")
 with open(out, "w", encoding="utf-8") as f:
     f.write("\n".join(parts))
 
-print(f"Built index.html: {os.path.getsize(out):,} bytes, {total} slides in gallery")
+print(f"Built index.html: {os.path.getsize(out):,} bytes, {total} images in gallery")
