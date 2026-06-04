@@ -3,76 +3,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   body{margin:0;padding:30px;background:#cdd2d8;font-family:'Inter',Arial,sans-serif}
-  .sheet{display:inline-block;background:#fff;border:1px solid #b7bdc4;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,20,.14);padding:0;margin:0 0 40px;overflow:hidden}
+  .sheet{display:inline-block;background:#fff;border:1px solid #b7bdc4;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,20,.14);margin:0 0 40px;overflow:hidden;vertical-align:top}
   .tab{background:#107c41;color:#fff;font-size:12px;font-weight:600;padding:7px 16px;letter-spacing:.02em}
   .pad{padding:18px 22px}
-  .xl{border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#222}
-  .xl td,.xl th{border:1px solid #cdcdcd;padding:4px 9px;white-space:nowrap;vertical-align:top}
-  .xl thead th{background:#eef0f2;color:#666;font-weight:600;text-align:center;font-family:'Inter',sans-serif}
-  .rownum{background:#eef0f2;color:#9aa0a6;text-align:center;font-weight:600;width:30px;font-family:'Inter',sans-serif}
+  .xl{border-collapse:collapse;font-family:'Segoe UI',Arial,Helvetica,sans-serif;font-size:12px;color:#222}
+  .xl td,.xl th{border:1px solid #c4c4c4;padding:4px 9px;white-space:nowrap;vertical-align:middle;height:22px}
+  .xl thead th{background:#eef0f2;color:#666;font-weight:600;text-align:center;font-size:11px}
+  .rownum{background:#eef0f2;color:#9aa0a6;text-align:center;font-weight:600;width:26px;font-size:11px}
+  .colhdr td{background:#f4f1e8;font-weight:700;color:#1a3a36;text-align:center;white-space:normal;line-height:1.25}
   .lbl{text-align:left}
   .num{text-align:right;font-variant-numeric:tabular-nums}
-  .colhdr td{background:#f4f1e8;font-weight:700;color:#1a3a36}
-  .orange{background:#ffd6a8}
-  .tot td,td.tot{background:#f2efe6;font-weight:700}
-  .note{font-style:italic;color:#555}
-  .instr{font-size:12.5px;color:#333;max-width:760px;line-height:1.5}
+  .orange{background:#ffc000;font-weight:700}
+  .green{background:#e2efda}
+  .neg{color:#c00000}
+  .red{color:#c00000}
+  .tot td,td.tot{font-weight:700;border-top:2px solid #888}
+  .note{font-weight:700;color:#1a3a36;text-align:center;white-space:normal;line-height:1.3;background:#fff;width:150px}
+  .secthdr{background:#e2efda;font-weight:700;color:#234;font-size:13px;padding:7px 12px;border:1px solid #c4c4c4;margin:0}
+  .instr{font-size:12px;color:#333;max-width:720px;line-height:1.5;margin:10px 0}
   .instr b{color:#107c41}
-  .instr li{margin-bottom:4px}
-  .secttl{font-weight:700;color:#1a3a36;font-size:12.5px;margin:14px 0 6px}
-  .task{background:#fff6e6;border:1px solid #e7c98c;border-radius:5px;padding:8px 12px;font-size:12.5px;margin-top:12px;max-width:760px}
-  h4{margin:0 0 8px;font-size:13px;color:#1a3a36}
+  .caption{font-size:11px;color:#777;margin-top:8px;max-width:760px}
+  .task{background:#fff6e6;border:1px solid #e7c98c;border-radius:5px;padding:8px 12px;font-size:12px;margin-top:14px;max-width:780px}
+  h4{margin:14px 0 4px;font-size:12px;color:#234}
 </style></head><body>
 
-<!-- ========== PRICING GAMES ========== -->
+<!-- ========== PRICING GAMES (faithful, one wide table) ========== -->
 <div class="sheet" id="sheet-pricing">
-  <div class="tab">Pricing Games.xlsx &mdash; A bit on the Pricing</div>
+  <div class="tab">Pricing Games.xlsx &mdash; "A bit on the Pricing"</div>
   <div class="pad">
     <table class="xl">
-      <thead><tr><th></th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>I</th><th>J</th><th>L</th><th>M</th><th>N</th></tr></thead>
+      <thead><tr><th></th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th></tr></thead>
       <tbody>
-        <tr class="colhdr"><td class="rownum">2</td><td>Segments</td><td>Number of Customers</td><td>Prod. Subscription Amt</td><td>V%</td><td>Current Pricing</td><td>Current Revenue</td><td>New Pricing</td><td>p.p.</td><td>New Subscription Amt</td><td>New Pricing Sensitivity</td><td>Rev Upside</td></tr>
-        <tr><td class="rownum">3</td><td class="lbl">A</td><td class="num">100</td><td class="num">25,000</td><td class="num">41.7%</td><td class="num">0.1164</td><td class="num">291,000</td><td class="num orange">0.14</td><td class="num">0.0236</td><td class="num orange">23,750</td><td class="num">332,500</td><td class="num">41,500</td></tr>
-        <tr><td class="rownum">4</td><td class="lbl">B</td><td class="num">80</td><td class="num">20,000</td><td class="num">33.3%</td><td class="num">0.09</td><td class="num">144,000</td><td class="num">0.09</td><td class="num">0</td><td class="num">20,000</td><td class="num">144,000</td><td class="num">0</td></tr>
-        <tr><td class="rownum">5</td><td class="lbl">C</td><td class="num">70</td><td class="num">10,000</td><td class="num">16.7%</td><td class="num">0.075</td><td class="num">52,500</td><td class="num orange">0.08</td><td class="num">0.005</td><td class="num">10,000</td><td class="num">56,000</td><td class="num">3,500</td></tr>
-        <tr><td class="rownum">6</td><td class="lbl">D</td><td class="num">50</td><td class="num">5,000</td><td class="num">8.3%</td><td class="num">0.05</td><td class="num">12,500</td><td class="num">0.05</td><td class="num">0</td><td class="num">5,000</td><td class="num">12,500</td><td class="num">0</td></tr>
+        <tr class="colhdr"><td class="rownum">2</td><td>Segments</td><td>Number of Customers</td><td>Prod. Subscription Amt</td><td>V%</td><td>Current Pricing</td><td>Current Revenue</td><td>New Pricing</td><td>p.p.</td><td class="note" rowspan="5">Apply Subscription Amt. drop by 5% for Orange segments</td><td>New Subscription Amt</td><td>New Pricing Sensitivity</td><td>Rev Upside</td></tr>
+        <tr><td class="rownum">3</td><td class="lbl">A</td><td class="num">100</td><td class="num">25,000</td><td class="num">41.7%</td><td class="num">11.6%</td><td class="num">291,000</td><td class="num">14.0%</td><td class="num orange">2.4%</td><td class="num">23,750</td><td class="num">332,500</td><td class="num">41,500</td></tr>
+        <tr><td class="rownum">4</td><td class="lbl">B</td><td class="num">80</td><td class="num">20,000</td><td class="num">33.3%</td><td class="num">9.0%</td><td class="num">144,000</td><td class="num">9.0%</td><td class="num">0.0%</td><td class="num">20,000</td><td class="num">144,000</td><td class="num">0</td></tr>
+        <tr><td class="rownum">5</td><td class="lbl">C</td><td class="num">70</td><td class="num">10,000</td><td class="num">16.7%</td><td class="num">7.5%</td><td class="num">52,500</td><td class="num">8.0%</td><td class="num">0.5%</td><td class="num">10,000</td><td class="num">56,000</td><td class="num">3,500</td></tr>
+        <tr><td class="rownum">6</td><td class="lbl">D</td><td class="num">50</td><td class="num">5,000</td><td class="num">8.3%</td><td class="num">5.0%</td><td class="num">12,500</td><td class="num">5.0%</td><td class="num">0.0%</td><td class="num">5,000</td><td class="num">12,500</td><td class="num">0</td></tr>
         <tr class="tot"><td class="rownum">7</td><td></td><td class="num">300</td><td class="num">60,000</td><td></td><td></td><td class="num">500,000</td><td></td><td></td><td class="num">58,750</td><td class="num">545,000</td><td></td></tr>
-        <tr><td class="rownum">9</td><td colspan="7" class="lbl note">sub. Amt. impact / Rev change % / total rev. upside &rarr;</td><td></td><td class="num">-1,250</td><td class="num">+9.0%</td><td class="num">45,000</td></tr>
+      </tbody>
+    </table>
+    <table class="xl" style="margin-top:16px">
+      <tbody>
+        <tr><td class="num green neg">(1,250)</td><td class="num green">9.0%</td><td class="num green">45,000</td></tr>
+        <tr><td class="lbl">sub. Amt. impact</td><td class="lbl">Rev change %</td><td class="lbl">total rev. upside</td></tr>
       </tbody>
     </table>
     <div class="task"><b>Task:</b> Play with the new pricing (column I) in a way that earns you a 20% increase in the revenue. &nbsp; <b>Condition:</b> Only two segments can have orange boxes in column J.</div>
-    <div style="font-size:11.5px;color:#777;margin-top:8px">Orange cells = the "play" applied so far (A and C re-priced, A given the 5% subscription cut). Current total of 545,000 is only +9%, not yet the +20% target.</div>
-  </div>
-</div>
-
-<!-- ========== BASE EXCLUSION FUNNEL ========== -->
-<div class="sheet" id="sheet-funnel">
-  <div class="tab">Base Exclusion Funnel.xlsx &mdash; Sheet1</div>
-  <div class="pad">
-    <div class="secttl">Instructions</div>
-    <ol class="instr">
-      <li>From the Score (theoretically 0 to 400), pick the min and max. Apply <b>Bell Curve Ref (mu +/- 2 sigma)</b> to retain 95% of the base, to identify the threshold.</li>
-      <li>Apply the threshold on the practical max and min to get the upper and lower limits of score; keep the base within them.</li>
-      <li>Then <b>slide back</b> excluded subs showing up in the top three deciles of the model.</li>
-      <li>Remove subs involved in <b>fraud</b> (gaming). Then fill the two summary tables.</li>
-    </ol>
-    <div class="secttl">Table 1: Conditions</div>
-    <table class="xl"><tbody>
-      <tr><td class="lbl">Min</td><td class="num">1</td><td class="lbl">Max</td><td class="num">368</td></tr>
-      <tr><td class="lbl">Lower limit of Score</td><td class="num">20</td><td class="lbl">Upper limit of Score</td><td class="num">350</td></tr>
-    </tbody></table>
-    <div class="secttl">Table 2: The Funnel Summary (solved)</div>
-    <table class="xl">
-      <thead>
-        <tr><th rowspan="2"></th><th rowspan="2">Total Base</th><th colspan="4">Combined Score</th><th colspan="4">After Sliding back</th><th colspan="4">After Tackling Gaming</th></tr>
-        <tr><th>Head</th><th>Tail</th><th>Retained</th><th>Excluded</th><th>Head'</th><th>Tail'</th><th>Retained</th><th>Excluded</th><th>Head'</th><th>Tail'</th><th>Retained</th><th>Excluded</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="lbl colhdr" style="background:#f4f1e8;font-weight:700">%</td><td class="num">100%</td><td class="num">3.58%</td><td class="num">6.00%</td><td class="num">90.42%</td><td class="num">9.58%</td><td class="num">2.48%</td><td class="num">4.21%</td><td class="num">93.31%</td><td class="num">6.69%</td><td class="num">2.53%</td><td class="num">4.23%</td><td class="num">89.11%</td><td class="num">10.89%</td></tr>
-        <tr><td class="lbl colhdr" style="background:#f4f1e8;font-weight:700">Count</td><td class="num">158,039</td><td class="num">5,659</td><td class="num">9,487</td><td class="num">142,893</td><td class="num">15,146</td><td class="num">3,924</td><td class="num">6,648</td><td class="num">147,467</td><td class="num">10,572</td><td class="num">4,003</td><td class="num">6,680</td><td class="num">140,827</td><td class="num">17,212</td></tr>
-      </tbody>
-    </table>
-    <div style="font-size:11.5px;color:#777;margin-top:8px">Retained climbs 90.42% &rarr; 93.31% after slide-back (rescues), then drops to 89.11% after fraud removal.</div>
+    <div class="caption">The single orange cell is J3 (segment A's p.p. = 2.4%), the one "played" change so far. Current total is 545,000, a +9.0% lift, not yet the +20% target.</div>
   </div>
 </div>
 
@@ -80,7 +57,7 @@
 <div class="sheet" id="sheet-design">
   <div class="tab">Designing Your Own Products.xlsx &mdash; Sheet1</div>
   <div class="pad">
-    <div class="secttl">Product Design Lab Instructions</div>
+    <div class="secthdr">Product Design Lab Instructions</div>
     <ol class="instr">
       <li>Think of the Pakistani financial services market and the dynamics of the country.</li>
       <li>For financial inclusion of daily wagers, design an investment-based product (investment to stay 30 days to be eligible).</li>
@@ -88,35 +65,68 @@
       <li>Primary profitability leg: re-investment of the invested amount by your organization (annual profit to org; customer profit monthly).</li>
       <li>Secondary profits via innovation and partnership models.</li>
     </ol>
-    <div class="secttl">Profitability Illustration (Basic)</div>
-    <table class="xl">
-      <thead><tr><th></th><th>Year 1</th><th>Year 2</th></tr></thead>
+    <div class="secthdr">Profitability Illustration</div>
+    <table class="xl" style="margin-top:10px">
+      <thead><tr><th></th><th></th><th>Year 1</th><th>Year 2</th></tr></thead>
       <tbody>
-        <tr><td class="lbl">Cohort</td><td class="num">34,493</td><td class="num">34,493</td></tr>
+        <tr><td rowspan="13" style="font-weight:700;text-align:center;background:#f4f1e8;width:46px">Basic</td><td class="lbl">Cohort</td><td class="num">34,493</td><td class="num">34,493</td></tr>
         <tr><td class="lbl">Invested Amount</td><td class="num">56,972,810</td><td class="num">64,926,182</td></tr>
         <tr><td class="lbl">Invested per subscriber</td><td class="num">1,651.72</td><td class="num">1,882.30</td></tr>
-        <tr><td class="lbl">Org Monthly Share from Re-investment</td><td class="num">13.5%</td><td class="num">15.5%</td></tr>
-        <tr><td class="lbl">&nbsp;&nbsp;per sub</td><td class="num">18.58</td><td class="num">24.31</td></tr>
-        <tr><td class="lbl">Cost of Customer's Monthly Profit</td><td class="num">9.0%</td><td class="num">11.0%</td></tr>
-        <tr><td class="lbl">&nbsp;&nbsp;per sub</td><td class="num">12.39</td><td class="num">17.25</td></tr>
-        <tr><td class="lbl">Customer's Monthly Rev from Other Legs (11%)</td><td class="num">181.69</td><td class="num">207.05</td></tr>
+        <tr><td class="lbl red">Organization's Monthly Share from Re-investment</td><td class="num">13.5%</td><td class="num">15.5%</td></tr>
+        <tr><td class="lbl">&nbsp;&nbsp;Per sub.</td><td class="num">18.58</td><td class="num">24.31</td></tr>
+        <tr><td class="lbl red">Cost of Customer's Monthly Profit</td><td class="num">9.0%</td><td class="num">11.0%</td></tr>
+        <tr><td class="lbl">&nbsp;&nbsp;Per sub.</td><td class="num">12.39</td><td class="num">17.25</td></tr>
+        <tr><td class="lbl red">Customer's Monthly Rev from Other Legs (11%)</td><td class="num">181.69</td><td class="num">207.05</td></tr>
         <tr><td class="lbl">Minus platform usage charges (15%)</td><td class="num">154.44</td><td class="num">176.00</td></tr>
-        <tr class="tot"><td class="lbl">What customer earns</td><td class="num">166.82</td><td class="num">193.25</td></tr>
-        <tr><td class="lbl">What org earns (after monthly costs)</td><td class="num">1,096,014</td><td class="num">1,288,460</td></tr>
+        <tr><td class="lbl red" style="font-weight:700">What customer earns</td><td class="num" style="font-weight:700">166.82</td><td class="num" style="font-weight:700">193.25</td></tr>
+        <tr><td class="lbl red">What the organization earns (after monthly costs)</td><td class="num">1,096,014</td><td class="num">1,288,460</td></tr>
         <tr><td class="lbl">Shareholder's %</td><td class="num">18%</td><td class="num">21%</td></tr>
-        <tr class="tot"><td class="lbl">Organization's Final earnings</td><td class="num">898,732</td><td class="num">1,017,883</td></tr>
+        <tr><td class="lbl red" style="font-weight:700">Organization's Final earnings</td><td class="num" style="font-weight:700">898,732</td><td class="num" style="font-weight:700">1,017,883</td></tr>
       </tbody>
     </table>
-    <div class="task"><b>At each step ask:</b> 1. What product are you building? &nbsp; 2. How do you know if your product is good?</div>
+    <div class="caption red" style="color:#c00000"><b>Note:</b> As you move up from Basic to Intermediate to Advance, the number of customers shrinks (by about half each step) and the organization-vs-customer margin trade-off shifts.</div>
+    <div class="task"><b>At each step ask:</b> 1. What product are you building? &nbsp; 2. How do you know if your product is good? &nbsp;|&nbsp; <b>Tear-down:</b> Background and Opportunity Hypothesis, Problem Statement, Assumptions, Product Definition and Eligibility, Services Offered, Target Audience, Value Proposition Canvas, Financials, Scale Plans.</div>
   </div>
 </div>
 
-<!-- ========== FUNNEL DATA (SAMPLE) ========== -->
+<!-- ========== BASE EXCLUSION FUNNEL (completed answer) ========== -->
+<div class="sheet" id="sheet-funnel">
+  <div class="tab">Base Exclusion Funnel.xlsx &mdash; Sheet1 (completed)</div>
+  <div class="pad">
+    <div class="secthdr">Instructions</div>
+    <ol class="instr">
+      <li>From the Score (theoretically 0 to 400), pick the min and max. Apply <b>Bell Curve Ref (mu +/- 2 sigma)</b> to retain 95% of the base, to identify the threshold.</li>
+      <li>Apply the threshold on the practical max and min to get the upper and lower limits of score; keep the base within them.</li>
+      <li>Then <b>slide back</b> excluded subs in the top three model deciles. Remove <b>fraud</b> (gaming) subs. Fill the two summary tables.</li>
+    </ol>
+    <h4>Data Flags (binary)</h4>
+    <div class="instr" style="margin-top:2px">Qualify = 1 if lower limit &lt; score &lt; upper limit. Slide back = 1 if in top 3 model deciles. Retained = 1 if (Qualify + Slide back) is non-zero. Final = Retained and not a fraudster.</div>
+    <h4>Table 1: Conditions</h4>
+    <table class="xl"><tbody>
+      <tr><td class="lbl">Min</td><td class="num">1</td><td class="lbl">Max</td><td class="num">368</td></tr>
+      <tr><td class="lbl">Lower limit of Score</td><td class="num">20</td><td class="lbl">Upper limit of Score</td><td class="num">350</td></tr>
+    </tbody></table>
+    <h4>Table 2: The Funnel Summary</h4>
+    <table class="xl">
+      <thead>
+        <tr><th rowspan="2"></th><th rowspan="2">Total Base</th><th colspan="4">Combined Score</th><th colspan="2">After Sliding back</th><th colspan="2">After Gaming</th></tr>
+        <tr><th>Head</th><th>Tail</th><th>Retained</th><th>Excluded</th><th>Retained</th><th>Excluded</th><th>Retained</th><th>Excluded</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lbl colhdr" style="text-align:left;font-weight:700">%</td><td class="num">100%</td><td class="num">3.58%</td><td class="num">6.00%</td><td class="num">90.42%</td><td class="num">9.58%</td><td class="num">93.31%</td><td class="num">6.69%</td><td class="num">89.11%</td><td class="num">10.89%</td></tr>
+        <tr><td class="lbl colhdr" style="text-align:left;font-weight:700">Count</td><td class="num">158,039</td><td class="num">5,659</td><td class="num">9,487</td><td class="num">142,893</td><td class="num">15,146</td><td class="num">147,467</td><td class="num">10,572</td><td class="num">140,827</td><td class="num">17,212</td></tr>
+      </tbody>
+    </table>
+    <div class="caption">Shown completed (the blank template in the file is filled in here). Retained climbs 90.42% to 93.31% after slide-back, then drops to 89.11% after fraud removal.</div>
+  </div>
+</div>
+
+<!-- ========== FUNNEL DATA SAMPLE ========== -->
 <div class="sheet" id="sheet-data">
   <div class="tab">Base Funnal Analysis Data.xlsx &mdash; Sheet1 (sample of 158,040 rows)</div>
   <div class="pad">
     <table class="xl">
-      <thead><tr><th>ID</th><th>Device ID</th><th>Vol KPI1</th><th>Vol KPI2</th><th>Freq KPI1</th><th>Freq KPI2</th><th>V1 score</th><th>V2 score</th><th>F1 score</th><th>F2 score</th><th>Gaming Flag</th><th>Combined Score</th><th>Model Decile</th></tr></thead>
+      <thead><tr><th>ID</th><th>Device ID</th><th>Vol KPI1</th><th>Vol KPI2</th><th>Freq KPI1</th><th>Freq KPI2</th><th>V1 sc</th><th>V2 sc</th><th>F1 sc</th><th>F2 sc</th><th>Gaming</th><th>Combined Score</th><th>Decile</th></tr></thead>
       <tbody>
         <tr><td>119222</td><td>9B9148</td><td class="num">2,838,817</td><td class="num">2,789,424</td><td class="num">491</td><td class="num">4,870</td><td class="num">93</td><td class="num">90</td><td class="num">93</td><td class="num">92</td><td class="num">0</td><td class="num">368</td><td class="num">1</td></tr>
         <tr><td>10E73D</td><td>9C19F7</td><td class="num">19,954,077</td><td class="num">20,623,860</td><td class="num">7,639</td><td class="num">486</td><td class="num">93</td><td class="num">90</td><td class="num">93</td><td class="num">92</td><td class="num">0</td><td class="num">368</td><td class="num">4</td></tr>
@@ -128,10 +138,10 @@
         <tr><td>FCC71</td><td>99AD1E</td><td class="num">3,250,082</td><td class="num">3,167,869</td><td class="num">4,063</td><td class="num">126</td><td class="num">93</td><td class="num">90</td><td class="num">93</td><td class="num">86</td><td class="num">0</td><td class="num">362</td><td class="num">8</td></tr>
         <tr><td>FF3F4</td><td>9C45D1</td><td class="num">580,962</td><td class="num">564,249</td><td class="num">2,802</td><td class="num">92</td><td class="num">89</td><td class="num">86</td><td class="num">93</td><td class="num">83</td><td class="num">0</td><td class="num">351</td><td class="num">6</td></tr>
         <tr><td>100AAF</td><td>99B212</td><td class="num">636,935</td><td class="num">626,760</td><td class="num">1,985</td><td class="num">77</td><td class="num">90</td><td class="num">87</td><td class="num">93</td><td class="num">80</td><td class="num">0</td><td class="num">350</td><td class="num">7</td></tr>
-        <tr><td colspan="13" class="note" style="text-align:center;background:#fafafa">. . . 158,040 rows total . . .</td></tr>
+        <tr><td colspan="13" style="text-align:center;color:#888;background:#fafafa;font-style:italic">. . . 158,040 rows total . . .</td></tr>
       </tbody>
     </table>
-    <div style="font-size:11.5px;color:#777;margin-top:8px">Each row is one subscriber. The Combined Score (column L) is the sum of the four KPI scores; the funnel trims, slides back by Model Decile, and removes Gaming Flag = 1.</div>
+    <div class="caption">One row per subscriber. Combined Score (column L) is the sum of the four KPI scores. The funnel trims by score, slides back by Model Decile, and removes Gaming Flag = 1 (highlighted).</div>
   </div>
 </div>
 

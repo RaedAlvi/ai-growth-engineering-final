@@ -11,7 +11,7 @@ const sheets = [
 
 (async () => {
   const browser = await chromium.launch();
-  const page = await browser.newPage({ viewport: { width: 1500, height: 1000 }, deviceScaleFactor: 2 });
+  const page = await browser.newPage({ viewport: { width: 1500, height: 1000 }, deviceScaleFactor: 1.3 });
   await page.goto(SRC, { waitUntil: 'networkidle' });
   await page.waitForTimeout(400); // let webfont settle
   for (const [id, fname] of sheets) {
