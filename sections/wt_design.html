@@ -1,0 +1,96 @@
+<h3 id="wt-design">2. Designing Your Own Products.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Designing Your Own Products worksheet"></a><figcaption>The actual Designing Your Own Products.xlsx, Sheet1. Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> A single sheet (Sheet1) with two pieces. At the top is a box called "Product Design Lab Instructions" with 5 numbered lines telling you what kind of product to invent. Below it is a "Profitability Illustration" table for one product tier called "Basic", with two columns (Year 1 and Year 2). Inside that table, only a few cells are filled in for you (the numbers you are GIVEN): the Cohort, the Invested Amount, and a handful of percentage rates. Every other line in the table is blank because it is meant to be a formula that you build. The 5 instructions are: (1) think about the Pakistani financial services market and the dynamics of the country; (2) for the financial inclusion of daily wage earners, design an investment-based product where the money must stay invested for 30 days to be eligible; (3) design 3 different options named Basic, Intermediate, and Advance, each with different eligibility; (4) the main way you make money is by re-investing the customer's invested amount, where your organization earns an annual profit and the customer earns a monthly profit; (5) extra profit comes from innovation and partnership models.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Fill in the blank lines of the Basic table by following one formula chain (start from "invested per subscriber" and walk down to "Organization's Final earnings"), and then write up the qualitative half (the 9-part product tear-down plus two reflection questions). On the number side you are aiming to land on Organization's Final earnings of 898,732 in Year 1.</div>
+
+<div class="concept"><h3>Step 1. Read the 5 instructions and lock the brief in your head</h3>
+<p>Before touching any number, read the instruction box once. Translate it into one plain sentence so you know what you are building: "I am designing a 3-tier investment product (Basic, then Intermediate, then Advance) for daily wage earners in Pakistan, where the customer's money has to stay invested for 30 days to qualify, my organization makes money by re-investing that pooled money, and each higher tier has tighter eligibility." That is the whole brief. The three tiers matter because the sheet only fully works one tier for you (Basic); Intermediate and Advance are yours to design by the same logic. Do not start typing formulas yet. This step is just making sure you know what the table is even about.</p></div>
+
+<div class="concept"><h3>Step 2. Look at the table and split GIVEN from COMPUTED</h3>
+<p>Click into the Profitability Illustration table and go line by line. Some cells already have a value typed in (those are GIVEN, your inputs). Some cells are empty (those are COMPUTED, you build a formula). The trick to never getting lost is to label each line in your head as one or the other before you calculate anything. The GIVEN inputs are: the Cohort, the two Invested Amounts, and the percentage rates (the organization's monthly share rate, the customer's monthly profit rate, the other-legs rate, the platform charge, the monthly cost rate, and the shareholder's percentage). Everything with the words "per sub" in its label, plus every line that says "earns" or "earnings", is COMPUTED. The table below is the map.</p>
+<table class="cmp"><thead><tr><th>GIVEN (already typed in for you)</th><th>COMPUTED (you build the formula)</th></tr></thead><tbody>
+<tr><td>Cohort = 34,493</td><td>Invested per subscriber</td></tr>
+<tr><td>Invested Amt: Y1 = 56,972,810; Y2 = 64,926,182</td><td>Organization's share per sub per month</td></tr>
+<tr><td>Org monthly share rate: Y1 = 13.5%; Y2 = 15.5%</td><td>Customer's profit per sub per month</td></tr>
+<tr><td>Customer monthly profit rate: Y1 = 9%; Y2 = 11%</td><td>Other-legs revenue per sub (and after the 15% charge)</td></tr>
+<tr><td>Other-legs rate = 11% (both years)</td><td>What the customer earns</td></tr>
+<tr><td>Platform charge = 15%; monthly cost = 5% (Y1), 2% (Y2)</td><td>What the organization earns</td></tr>
+<tr><td>Shareholder's %: Y1 = 18%; Y2 = 21%</td><td>Organization's Final earnings</td></tr>
+</tbody></table></div>
+
+<div class="concept"><h3>Step 3. Compute invested per subscriber (the first blank cell)</h3>
+<p>This is the foundation that every later line leans on, so do it first. The Cohort is how many customers signed up. The Invested Amt is the total pile of money they all put in together. To get what one single customer (one subscriber) put in, you divide the total pile by the number of people. In Excel you click the empty "invested per subscriber" cell for Year 1 and type a formula that divides the Year 1 Invested Amt cell by the Cohort cell. The Cohort sits in cell C14, so you lock it with dollar signs ($C$14) so it does not slide when you drag the formula across to Year 2.</p>
+<div class="calc"><pre>Excel cell (Year 1): =D14/$C$14
+
+Year 1 = 56,972,810 / 34,493 = 1,651.72
+Year 2 = 64,926,182 / 34,493 = 1,882.30</pre></div></div>
+
+<div class="concept"><h3>Step 4. Walk the monthly chain (divide annual rates by 12)</h3>
+<p>The organization earns an ANNUAL profit on the re-invested money, but the table reports things per MONTH, so you must convert. The rule is simple: a monthly figure is the annual figure divided by 12. Take the organization's monthly share rate (13.5% in Year 1) times the invested per subscriber, then divide by 12, to get what the organization makes from one subscriber in one month. Do the same with the customer's monthly profit rate (9% in Year 1) to get what one subscriber is paid each month. Notice both lines use the same shape: rate times invested-per-sub, divided by 12.</p>
+<div class="calc"><pre>Organization's share per sub per month
+Year 1 = 0.135 x 1,651.72 / 12 = 18.58
+Year 2 = 0.155 x 1,882.30 / 12 = 24.31
+
+Customer's profit per sub per month
+Year 1 = 0.09 x 1,651.72 / 12 = 12.39
+Year 2 = 0.11 x 1,882.30 / 12 = 17.25</pre></div></div>
+
+<div class="concept"><h3>Step 5. Compute the other-legs revenue, then take off the 15% platform charge</h3>
+<p>"Other legs" is the extra money the product makes per subscriber beyond the core re-investment (think partnerships and innovation, instruction 5). Its rate is 11% and, unlike Step 4, this one is NOT divided by 12; it is just the rate times the invested per subscriber. After you have that number, the platform takes a 15% usage charge, so the customer keeps the remaining 85%. To keep 85% of a number you multiply it by 0.85. Build both pieces.</p>
+<div class="calc"><pre>Other-legs revenue per sub = 0.11 x (invested per sub)
+Year 1 = 0.11 x 1,651.72 = 181.69
+Year 2 = 0.11 x 1,882.30 = 207.05
+
+After the 15% charge (keep 85%) = value x 0.85
+Year 1 = 181.69 x 0.85 = 154.44
+Year 2 = 207.05 x 0.85 = 176.00</pre></div></div>
+
+<div class="concept"><h3>Step 6. Compute "What the customer earns"</h3>
+<p>Now add the two things the customer actually pockets: the other-legs money they keep after the 15% charge (from Step 5) plus the customer's own monthly profit per sub (from Step 4). That sum is "what the customer earns" per month. This is the customer's side of the deal, and it is a simple addition of two numbers you already have.</p>
+<div class="calc"><pre>What the customer earns = (other legs after charge) + (customer monthly profit per sub)
+Year 1 = 154.44 + 12.39 = 166.82
+Year 2 = 176.00 + 17.25 = 193.25
+(year over year growth about +15.8%)</pre></div></div>
+
+<div class="concept"><h3>Step 7. Compute "What the organization earns", then take out the shareholder cut</h3>
+<p>This is the longest line, so go slowly. The organization's gross is built from two gaps: (a) the gap between the organization's share per sub and the customer's profit per sub, plus (b) the gap between the full other-legs per sub and the other-legs left after the charge (that gap is the 15% the platform kept). Add those two gaps, multiply by the whole Cohort to scale from one subscriber up to everyone, then multiply by (1 minus the monthly cost rate) to subtract running costs. The monthly cost is 5% in Year 1, so you multiply by 0.95 (and by 0.98 in Year 2, because its cost is 2%). That gives "what the organization earns". Then the shareholders take their percentage (18% in Year 1), and what is left after handing them their slice is the Organization's Final earnings.</p>
+<div class="calc"><pre>What the organization earns
+= (((org share per sub) - (customer profit per sub))
+   + ((other legs per sub) - (other legs after charge)))
+   x Cohort x (1 - monthly cost rate)
+
+Year 1 = (((18.58 - 12.39) + (181.69 - 154.44)) x 34,493) x 0.95 = 1,096,014
+Year 2 = 1,288,460
+
+Shareholder's absolute amount = (what org earns) x shareholder %
+Year 1 = 1,096,014 x 0.18 = 197,283
+
+Organization's Final earnings = (what org earns) - (shareholder's amount)
+Year 1 = 1,096,014 - 197,283 = 898,732
+Year 2 = 1,017,883            (growth about +13.3%)
+Final earnings per subscriber, Year 1 = 898,732 / 34,493 = 26.06</pre></div></div>
+
+<div class="concept"><h3>Step 8. Do the qualitative half (the write-up and the two questions)</h3>
+<p>The numbers are only half the lab. The sheet also asks you to write up your designed product as a structured document and to always answer two reflection questions. Use the 9-part structure in the block just below as your section headings, then close by naming what you are building and the single metric that proves it is good. One more thing the sheet flags for context: as you move up the tiers from Basic to Intermediate to Advance, the number of customers shrinks (roughly half at each step) and the margin trade-off between the organization and the customer shifts, so the same formula chain will produce different numbers for the higher tiers.</p></div>
+
+<div class="concept"><h3>The written product tear-down (9 parts)</h3>
+<p>The sheet lists a 9-part structure to write up for the product you designed. Use these as your headings, in order:</p>
+<table class="cmp"><thead><tr><th>#</th><th>Section</th><th>What goes in it</th></tr></thead><tbody>
+<tr><td>1</td><td>Background and Opportunity Hypothesis</td><td>The market context and your bet on why a gap exists.</td></tr>
+<tr><td>2</td><td>Problem Statement</td><td>The specific problem daily wage earners face.</td></tr>
+<tr><td>3</td><td>Assumptions</td><td>What you are taking as true to make the plan work.</td></tr>
+<tr><td>4</td><td>Product Definition and Eligibility</td><td>Define the product and the eligibility rules for Basic, Intermediate, and Advance.</td></tr>
+<tr><td>5</td><td>Services Offered</td><td>The services the product provides, each with its benefit.</td></tr>
+<tr><td>6</td><td>Target Audience</td><td>Who you serve, broken into segments.</td></tr>
+<tr><td>7</td><td>Value Proposition Canvas</td><td>The customer journeys that map need to value.</td></tr>
+<tr><td>8</td><td>Financials</td><td>Cost, pricing and profitability (the table you just built above).</td></tr>
+<tr><td>9</td><td>Scale Plans</td><td>An initial growth plan, followed by a CVM (Customer Value Management) plan.</td></tr>
+</tbody></table>
+<p>The sheet ends with two reflection questions you must always answer: <strong>1. What product are you building?</strong> and <strong>2. How do you know if your product is good?</strong> For the second one you do not give a vague answer; you name the metric that proves it (for example the Organization's Final earnings per subscriber, 26.06 in Year 1, or the year over year growth in what the customer earns, about +15.8%).</p></div>
+
+<div class="callout"><strong>How you know you are done.</strong> The number half is finished when every blank line in the Basic table is filled by a formula (not a typed-in constant) and the chain lands on the GIVEN-consistent answers: invested per sub 1,651.72, what the customer earns 166.82, what the organization earns 1,096,014, and Organization's Final earnings 898,732 for Year 1 (with Year 2 producing 193.25, 1,288,460, and 1,017,883). The written half is finished when you have all 9 tear-down sections drafted and have answered both reflection questions, including naming the metric that proves the product is good.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> The number-one beginner mistake is forgetting to divide the annual rates by 12 when a line is "per month". The organization earns annually but the customer is paid monthly, so the org-share-per-sub and customer-profit-per-sub lines BOTH carry a "/ 12", while the other-legs line (11%) does NOT, because it is not a monthly figure. The second trap is mixing up "what the customer earns" with "what the organization earns": they are completely different formulas (the customer line is a simple two-number sum; the organization line scales by the whole Cohort and then strips out monthly cost and the shareholder cut). Always re-read which of the two the question is asking for before you answer.</div>

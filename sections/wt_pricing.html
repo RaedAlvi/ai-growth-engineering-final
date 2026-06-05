@@ -1,0 +1,45 @@
+<h3 id="wt-pricing">1. Pricing Games.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Pricing Games worksheet"></a><figcaption>The actual Pricing Games.xlsx, sheet "A bit on the Pricing". Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> Open the file and click the tab at the bottom named "A bit on the Pricing". You see a small table with four customer segments labelled A, B, C, D down the rows. The left side is already filled in for you and you must not change it: column C is the Number of Customers (100, 80, 70, 50), column D is the Prod. Subscription Amt (25,000 / 20,000 / 10,000 / 5,000), column E is "V%" which is just each D divided by the total of D, column F is the Current Pricing rate (0.1164, 0.09, 0.075, 0.05), and column G is the Current Revenue, computed as Customers times Subscription Amt times Pricing (C times D times F). Add column G down and you get 500,000 in cell G7. That 500,000 is where today stands. The right side (columns I through N) is your "what if" playground. The file even ships half-played, with some numbers already typed into New Pricing (column I), but it only reaches +9%, so the work is not finished.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Read cell B12: "Play with the new pricing (column I) in a way that earns you a 20% increase in the revenue." A 20% increase on today's 500,000 means the new total in cell M7 must reach 600,000. You must do this while obeying cell B13: only two of the four segments may have orange boxes in column J.</div>
+
+<div class="concept"><h3>Step 1. Open it, read the Task and Condition, turn the goal into a plain number</h3><p>Do not touch anything yet. First read the two sentences written near the bottom of the sheet. Cell B12 is the Task: get a 20% increase in revenue by changing column I (New Pricing). Cell B13 is the Condition: at most two segments may be orange in column J. The single most useful thing you can do right now is translate "20% increase" into an actual target figure, because you cannot aim at a percentage, you can only aim at a number. Today's revenue is 500,000, so add 20% of it.</p><div class="calc"><pre>Target revenue = 500,000 + (20% of 500,000)
+              = 500,000 + 100,000
+              = 600,000   <-- this is the number M7 must hit</pre></div></div>
+
+<div class="concept"><h3>Step 2. Confirm where you start: rebuild today's revenue (G7 = 500,000)</h3><p>Before you change a price, prove to yourself that today equals 500,000, so you know exactly how far you have to travel. Column G is just Customers times Subscription Amt times Pricing, segment by segment (C times D times F). Add the four results and you should land on 500,000 in cell G7. If your four numbers do not add to 500,000, you misread a cell, so fix that before going on.</p><div class="calc"><pre>A: 100 x 25,000 x 0.1164 = 291,000
+B:  80 x 20,000 x 0.09   = 144,000
+C:  70 x 10,000 x 0.075  =  52,500
+D:  50 x  5,000 x 0.05   =  12,500
+                  G7 sum = 500,000  (today's baseline)</pre></div></div>
+
+<div class="concept"><h3>Step 3. Find the lever: which segment moves the most money?</h3><p>You do not have to nudge all four prices. Find the one or two segments where a small price change creates the biggest swing in revenue, and push only those. Look at column E (V%) or, the same idea, multiply each segment's Customers by its Subscription Amt to get its "weight". Segment A is by far the heaviest, then B. So a tiny rise on A is worth far more than a big rise on D. Concretely, every 0.01 you add to A's rate is worth about 25,000 of revenue (100 customers times 25,000 subscription times 0.01), while the same 0.01 on D is worth only 2,500. Lean on A and B.</p><div class="calc"><pre>Weight = Customers x Subscription Amt
+A: 100 x 25,000 = 2,500,000  (biggest, V% 41.67%)
+B:  80 x 20,000 = 1,600,000  (second,  V% 33.33%)
+C:  70 x 10,000 =   700,000  (V% 16.67%)
+D:  50 x  5,000 =   250,000  (V%  8.33%)
+
+Value of +0.01 on A's rate = 100 x 25,000 x 0.01 = 25,000
+Value of +0.01 on D's rate =  50 x  5,000 x 0.01 =  2,500</pre></div></div>
+
+<div class="concept"><h3>Step 4. Choose at most two segments, and decide about the orange boxes</h3><p>The Condition (B13) lets at most two segments turn orange in column J. Pick the two heaviest, A and B, and leave C and D exactly as they are today. Now understand the orange trap before you commit. Column K says "Apply Subscription Amt. drop by 5% for Orange segments". Making a segment orange multiplies its Subscription Amt by 0.95 in column L, which on its own lowers that segment's revenue. So orange is only worth it if you also raise that segment's price by enough to more than win back the 5% you gave away. We will make A and B orange and raise both prices to pay for it.</p><div class="calc"><pre>Orange = Subscription Amt is multiplied by 0.95 in column L
+A orange: New Sub Amt L = 25,000 x 0.95 = 23,750
+B orange: New Sub Amt L = 20,000 x 0.95 = 19,000
+C, D normal: New Sub Amt L stays = 10,000 and 5,000
+Oranges used = 2  (A and B), which obeys B13's limit of two</pre></div></div>
+
+<div class="concept"><h3>Step 5. Type the new prices into column I and compute each New Revenue (column M)</h3><p>Now act. Click cell I3 (segment A's New Pricing) and type 0.16. Click cell I4 (segment B) and type 0.102. Leave I5 and I6 (C and D) at today's rates, 0.075 and 0.05. Column M then works out each segment's New Revenue as Customers times New Subscription Amt times New Pricing (C times L times I), where L already carries the 0.95 drop for the orange A and B. Here are the four New Revenue numbers.</p><div class="calc"><pre>A (orange): 100 x 23,750 x 0.16   = 380,000
+B (orange):  80 x 19,000 x 0.102  = 155,040
+C (normal):  70 x 10,000 x 0.075  =  52,500
+D (normal):  50 x  5,000 x 0.05   =  12,500</pre></div></div>
+
+<div class="concept"><h3>Step 6. Add up M7 and check the Rev change %, then fine-tune to land on +20%</h3><p>Add the four New Revenue numbers to get the new total in cell M7, then read the Rev change in cell M9, which is just M7 divided by 500,000 minus 1. If it reads under 20%, nudge A's price up a hair; if it overshoots, nudge it down. With A at 0.16 and B at 0.102 the total comes to 600,040, which is +20.0%, so you are there. Last, glance at column J and count the orange boxes: exactly two (A and B). Both the Task and the Condition are satisfied.</p><div class="calc"><pre>M7 = 380,000 + 155,040 + 52,500 + 12,500 = 600,040
+Rev change = 600,040 / 500,000 - 1 = 0.20008 = +20.0%
+Orange boxes in column J = 2 (A, B)  ->  within the limit</pre></div></div>
+
+<div class="callout"><strong>How you know you are done.</strong> Cell M7 reads about 600,000 (here 600,040), the Rev change in cell M9 reads about +20%, and column J shows exactly two orange boxes. That is the win: the Task (+20%) and the Condition (two oranges max) both hold at the same time. The answer is not unique, the grader just wants roughly +20% while never breaking the two-orange limit. A neat zero-orange alternative is to leave every segment normal and raise only A to 0.1564: then A = 100 x 25,000 x 0.1564 = 391,000, and B + C + D stay at 144,000 + 52,500 + 12,500 = 209,000, for a total of exactly 600,000 (+20%, no oranges used at all).</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Turning a segment orange does not add revenue by itself, it subtracts it, because the 5% Subscription drop (the times 0.95 in column L) lowers that segment's New Revenue. Orange is only worth using when you raise that segment's New Pricing by enough to more than cover the 5% you gave up. And do not get greedy with oranges: column J may hold at most two (cell B13). If three or four boxes go orange, you have failed the Condition even if you somehow reached 600,000.</div>

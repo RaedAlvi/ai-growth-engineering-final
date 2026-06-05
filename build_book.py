@@ -21,6 +21,24 @@ order = [
 parts = [read("front.html")]
 for o in order:
     parts.append(read(o))
+    if o == "sections/section_playbook.html":
+        # Assemble the step-by-step Excel walkthroughs right after the playbook.
+        wt = [
+            '<section>',
+            '<div class="eyebrow">Start here for the spreadsheets</div>',
+            '<h2 id="excel-walkthroughs">Excel Labs: solve each one step by step '
+            '<span class="badge new">from a blank sheet</span></h2>',
+            '<div class="callout">These are the three graded Excel files, each solved from the very '
+            'first click. If the spreadsheets scare you, start here. Every walkthrough opens with what '
+            'you are handed (the blank sheet), turns the goal into a plain number, then numbers every '
+            'move from Step 1 to the answer. The deeper concept teaching lives in the Pricing, Base '
+            'Exclusion Funnel, and Design-Your-Own-Products sections; this is the do-it-now recipe.</div>',
+            read("sections/wt_pricing.html"),
+            read("sections/wt_design.html"),
+            read("sections/wt_funnel.html"),
+            '</section>',
+        ]
+        parts.append("\n".join(wt))
 
 decks = [
     ("excel", "Excel Labs: the actual worksheets", "fuel"),

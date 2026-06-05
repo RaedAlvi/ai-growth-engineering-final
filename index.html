@@ -226,6 +226,7 @@ table.cmp strong{color:var(--ink)}
   <a href="#paperB"><span class="num">B</span>Section B: Long answers</a>
   <a href="#paperC"><span class="num">C</span>Section C: Scenarios</a>
   <a href="#playbook"><span class="num">N</span>Numeric labs playbook</a>
+  <a href="#excel-walkthroughs"><span class="num">E</span>Excel labs, step by step</a>
 
   <h3>Concepts</h3>
   <a href="#wk6"><span class="num">1</span>AI &amp; Growth Engineering</a>
@@ -506,6 +507,237 @@ Customer monthly profit 9%  = 0.09  x 1,651.72 / 12 = 12.39 per sub</pre></div>
   </div>
 </section>
 
+<section>
+<div class="eyebrow">Start here for the spreadsheets</div>
+<h2 id="excel-walkthroughs">Excel Labs: solve each one step by step <span class="badge new">from a blank sheet</span></h2>
+<div class="callout">These are the three graded Excel files, each solved from the very first click. If the spreadsheets scare you, start here. Every walkthrough opens with what you are handed (the blank sheet), turns the goal into a plain number, then numbers every move from Step 1 to the answer. The deeper concept teaching lives in the Pricing, Base Exclusion Funnel, and Design-Your-Own-Products sections; this is the do-it-now recipe.</div>
+<h3 id="wt-pricing">1. Pricing Games.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/pricing_games.png" target="_blank"><img loading="lazy" src="slides/excel/pricing_games.png" alt="Pricing Games worksheet"></a><figcaption>The actual Pricing Games.xlsx, sheet "A bit on the Pricing". Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> Open the file and click the tab at the bottom named "A bit on the Pricing". You see a small table with four customer segments labelled A, B, C, D down the rows. The left side is already filled in for you and you must not change it: column C is the Number of Customers (100, 80, 70, 50), column D is the Prod. Subscription Amt (25,000 / 20,000 / 10,000 / 5,000), column E is "V%" which is just each D divided by the total of D, column F is the Current Pricing rate (0.1164, 0.09, 0.075, 0.05), and column G is the Current Revenue, computed as Customers times Subscription Amt times Pricing (C times D times F). Add column G down and you get 500,000 in cell G7. That 500,000 is where today stands. The right side (columns I through N) is your "what if" playground. The file even ships half-played, with some numbers already typed into New Pricing (column I), but it only reaches +9%, so the work is not finished.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Read cell B12: "Play with the new pricing (column I) in a way that earns you a 20% increase in the revenue." A 20% increase on today's 500,000 means the new total in cell M7 must reach 600,000. You must do this while obeying cell B13: only two of the four segments may have orange boxes in column J.</div>
+
+<div class="concept"><h3>Step 1. Open it, read the Task and Condition, turn the goal into a plain number</h3><p>Do not touch anything yet. First read the two sentences written near the bottom of the sheet. Cell B12 is the Task: get a 20% increase in revenue by changing column I (New Pricing). Cell B13 is the Condition: at most two segments may be orange in column J. The single most useful thing you can do right now is translate "20% increase" into an actual target figure, because you cannot aim at a percentage, you can only aim at a number. Today's revenue is 500,000, so add 20% of it.</p><div class="calc"><pre>Target revenue = 500,000 + (20% of 500,000)
+              = 500,000 + 100,000
+              = 600,000   <-- this is the number M7 must hit</pre></div></div>
+
+<div class="concept"><h3>Step 2. Confirm where you start: rebuild today's revenue (G7 = 500,000)</h3><p>Before you change a price, prove to yourself that today equals 500,000, so you know exactly how far you have to travel. Column G is just Customers times Subscription Amt times Pricing, segment by segment (C times D times F). Add the four results and you should land on 500,000 in cell G7. If your four numbers do not add to 500,000, you misread a cell, so fix that before going on.</p><div class="calc"><pre>A: 100 x 25,000 x 0.1164 = 291,000
+B:  80 x 20,000 x 0.09   = 144,000
+C:  70 x 10,000 x 0.075  =  52,500
+D:  50 x  5,000 x 0.05   =  12,500
+                  G7 sum = 500,000  (today's baseline)</pre></div></div>
+
+<div class="concept"><h3>Step 3. Find the lever: which segment moves the most money?</h3><p>You do not have to nudge all four prices. Find the one or two segments where a small price change creates the biggest swing in revenue, and push only those. Look at column E (V%) or, the same idea, multiply each segment's Customers by its Subscription Amt to get its "weight". Segment A is by far the heaviest, then B. So a tiny rise on A is worth far more than a big rise on D. Concretely, every 0.01 you add to A's rate is worth about 25,000 of revenue (100 customers times 25,000 subscription times 0.01), while the same 0.01 on D is worth only 2,500. Lean on A and B.</p><div class="calc"><pre>Weight = Customers x Subscription Amt
+A: 100 x 25,000 = 2,500,000  (biggest, V% 41.67%)
+B:  80 x 20,000 = 1,600,000  (second,  V% 33.33%)
+C:  70 x 10,000 =   700,000  (V% 16.67%)
+D:  50 x  5,000 =   250,000  (V%  8.33%)
+
+Value of +0.01 on A's rate = 100 x 25,000 x 0.01 = 25,000
+Value of +0.01 on D's rate =  50 x  5,000 x 0.01 =  2,500</pre></div></div>
+
+<div class="concept"><h3>Step 4. Choose at most two segments, and decide about the orange boxes</h3><p>The Condition (B13) lets at most two segments turn orange in column J. Pick the two heaviest, A and B, and leave C and D exactly as they are today. Now understand the orange trap before you commit. Column K says "Apply Subscription Amt. drop by 5% for Orange segments". Making a segment orange multiplies its Subscription Amt by 0.95 in column L, which on its own lowers that segment's revenue. So orange is only worth it if you also raise that segment's price by enough to more than win back the 5% you gave away. We will make A and B orange and raise both prices to pay for it.</p><div class="calc"><pre>Orange = Subscription Amt is multiplied by 0.95 in column L
+A orange: New Sub Amt L = 25,000 x 0.95 = 23,750
+B orange: New Sub Amt L = 20,000 x 0.95 = 19,000
+C, D normal: New Sub Amt L stays = 10,000 and 5,000
+Oranges used = 2  (A and B), which obeys B13's limit of two</pre></div></div>
+
+<div class="concept"><h3>Step 5. Type the new prices into column I and compute each New Revenue (column M)</h3><p>Now act. Click cell I3 (segment A's New Pricing) and type 0.16. Click cell I4 (segment B) and type 0.102. Leave I5 and I6 (C and D) at today's rates, 0.075 and 0.05. Column M then works out each segment's New Revenue as Customers times New Subscription Amt times New Pricing (C times L times I), where L already carries the 0.95 drop for the orange A and B. Here are the four New Revenue numbers.</p><div class="calc"><pre>A (orange): 100 x 23,750 x 0.16   = 380,000
+B (orange):  80 x 19,000 x 0.102  = 155,040
+C (normal):  70 x 10,000 x 0.075  =  52,500
+D (normal):  50 x  5,000 x 0.05   =  12,500</pre></div></div>
+
+<div class="concept"><h3>Step 6. Add up M7 and check the Rev change %, then fine-tune to land on +20%</h3><p>Add the four New Revenue numbers to get the new total in cell M7, then read the Rev change in cell M9, which is just M7 divided by 500,000 minus 1. If it reads under 20%, nudge A's price up a hair; if it overshoots, nudge it down. With A at 0.16 and B at 0.102 the total comes to 600,040, which is +20.0%, so you are there. Last, glance at column J and count the orange boxes: exactly two (A and B). Both the Task and the Condition are satisfied.</p><div class="calc"><pre>M7 = 380,000 + 155,040 + 52,500 + 12,500 = 600,040
+Rev change = 600,040 / 500,000 - 1 = 0.20008 = +20.0%
+Orange boxes in column J = 2 (A, B)  ->  within the limit</pre></div></div>
+
+<div class="callout"><strong>How you know you are done.</strong> Cell M7 reads about 600,000 (here 600,040), the Rev change in cell M9 reads about +20%, and column J shows exactly two orange boxes. That is the win: the Task (+20%) and the Condition (two oranges max) both hold at the same time. The answer is not unique, the grader just wants roughly +20% while never breaking the two-orange limit. A neat zero-orange alternative is to leave every segment normal and raise only A to 0.1564: then A = 100 x 25,000 x 0.1564 = 391,000, and B + C + D stay at 144,000 + 52,500 + 12,500 = 209,000, for a total of exactly 600,000 (+20%, no oranges used at all).</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Turning a segment orange does not add revenue by itself, it subtracts it, because the 5% Subscription drop (the times 0.95 in column L) lowers that segment's New Revenue. Orange is only worth using when you raise that segment's New Pricing by enough to more than cover the 5% you gave up. And do not get greedy with oranges: column J may hold at most two (cell B13). If three or four boxes go orange, you have failed the Condition even if you somehow reached 600,000.</div>
+
+<h3 id="wt-design">2. Designing Your Own Products.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/design_your_own_products.png" target="_blank"><img loading="lazy" src="slides/excel/design_your_own_products.png" alt="Designing Your Own Products worksheet"></a><figcaption>The actual Designing Your Own Products.xlsx, Sheet1. Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> A single sheet (Sheet1) with two pieces. At the top is a box called "Product Design Lab Instructions" with 5 numbered lines telling you what kind of product to invent. Below it is a "Profitability Illustration" table for one product tier called "Basic", with two columns (Year 1 and Year 2). Inside that table, only a few cells are filled in for you (the numbers you are GIVEN): the Cohort, the Invested Amount, and a handful of percentage rates. Every other line in the table is blank because it is meant to be a formula that you build. The 5 instructions are: (1) think about the Pakistani financial services market and the dynamics of the country; (2) for the financial inclusion of daily wage earners, design an investment-based product where the money must stay invested for 30 days to be eligible; (3) design 3 different options named Basic, Intermediate, and Advance, each with different eligibility; (4) the main way you make money is by re-investing the customer's invested amount, where your organization earns an annual profit and the customer earns a monthly profit; (5) extra profit comes from innovation and partnership models.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Fill in the blank lines of the Basic table by following one formula chain (start from "invested per subscriber" and walk down to "Organization's Final earnings"), and then write up the qualitative half (the 9-part product tear-down plus two reflection questions). On the number side you are aiming to land on Organization's Final earnings of 898,732 in Year 1.</div>
+
+<div class="concept"><h3>Step 1. Read the 5 instructions and lock the brief in your head</h3>
+<p>Before touching any number, read the instruction box once. Translate it into one plain sentence so you know what you are building: "I am designing a 3-tier investment product (Basic, then Intermediate, then Advance) for daily wage earners in Pakistan, where the customer's money has to stay invested for 30 days to qualify, my organization makes money by re-investing that pooled money, and each higher tier has tighter eligibility." That is the whole brief. The three tiers matter because the sheet only fully works one tier for you (Basic); Intermediate and Advance are yours to design by the same logic. Do not start typing formulas yet. This step is just making sure you know what the table is even about.</p></div>
+
+<div class="concept"><h3>Step 2. Look at the table and split GIVEN from COMPUTED</h3>
+<p>Click into the Profitability Illustration table and go line by line. Some cells already have a value typed in (those are GIVEN, your inputs). Some cells are empty (those are COMPUTED, you build a formula). The trick to never getting lost is to label each line in your head as one or the other before you calculate anything. The GIVEN inputs are: the Cohort, the two Invested Amounts, and the percentage rates (the organization's monthly share rate, the customer's monthly profit rate, the other-legs rate, the platform charge, the monthly cost rate, and the shareholder's percentage). Everything with the words "per sub" in its label, plus every line that says "earns" or "earnings", is COMPUTED. The table below is the map.</p>
+<table class="cmp"><thead><tr><th>GIVEN (already typed in for you)</th><th>COMPUTED (you build the formula)</th></tr></thead><tbody>
+<tr><td>Cohort = 34,493</td><td>Invested per subscriber</td></tr>
+<tr><td>Invested Amt: Y1 = 56,972,810; Y2 = 64,926,182</td><td>Organization's share per sub per month</td></tr>
+<tr><td>Org monthly share rate: Y1 = 13.5%; Y2 = 15.5%</td><td>Customer's profit per sub per month</td></tr>
+<tr><td>Customer monthly profit rate: Y1 = 9%; Y2 = 11%</td><td>Other-legs revenue per sub (and after the 15% charge)</td></tr>
+<tr><td>Other-legs rate = 11% (both years)</td><td>What the customer earns</td></tr>
+<tr><td>Platform charge = 15%; monthly cost = 5% (Y1), 2% (Y2)</td><td>What the organization earns</td></tr>
+<tr><td>Shareholder's %: Y1 = 18%; Y2 = 21%</td><td>Organization's Final earnings</td></tr>
+</tbody></table></div>
+
+<div class="concept"><h3>Step 3. Compute invested per subscriber (the first blank cell)</h3>
+<p>This is the foundation that every later line leans on, so do it first. The Cohort is how many customers signed up. The Invested Amt is the total pile of money they all put in together. To get what one single customer (one subscriber) put in, you divide the total pile by the number of people. In Excel you click the empty "invested per subscriber" cell for Year 1 and type a formula that divides the Year 1 Invested Amt cell by the Cohort cell. The Cohort sits in cell C14, so you lock it with dollar signs ($C$14) so it does not slide when you drag the formula across to Year 2.</p>
+<div class="calc"><pre>Excel cell (Year 1): =D14/$C$14
+
+Year 1 = 56,972,810 / 34,493 = 1,651.72
+Year 2 = 64,926,182 / 34,493 = 1,882.30</pre></div></div>
+
+<div class="concept"><h3>Step 4. Walk the monthly chain (divide annual rates by 12)</h3>
+<p>The organization earns an ANNUAL profit on the re-invested money, but the table reports things per MONTH, so you must convert. The rule is simple: a monthly figure is the annual figure divided by 12. Take the organization's monthly share rate (13.5% in Year 1) times the invested per subscriber, then divide by 12, to get what the organization makes from one subscriber in one month. Do the same with the customer's monthly profit rate (9% in Year 1) to get what one subscriber is paid each month. Notice both lines use the same shape: rate times invested-per-sub, divided by 12.</p>
+<div class="calc"><pre>Organization's share per sub per month
+Year 1 = 0.135 x 1,651.72 / 12 = 18.58
+Year 2 = 0.155 x 1,882.30 / 12 = 24.31
+
+Customer's profit per sub per month
+Year 1 = 0.09 x 1,651.72 / 12 = 12.39
+Year 2 = 0.11 x 1,882.30 / 12 = 17.25</pre></div></div>
+
+<div class="concept"><h3>Step 5. Compute the other-legs revenue, then take off the 15% platform charge</h3>
+<p>"Other legs" is the extra money the product makes per subscriber beyond the core re-investment (think partnerships and innovation, instruction 5). Its rate is 11% and, unlike Step 4, this one is NOT divided by 12; it is just the rate times the invested per subscriber. After you have that number, the platform takes a 15% usage charge, so the customer keeps the remaining 85%. To keep 85% of a number you multiply it by 0.85. Build both pieces.</p>
+<div class="calc"><pre>Other-legs revenue per sub = 0.11 x (invested per sub)
+Year 1 = 0.11 x 1,651.72 = 181.69
+Year 2 = 0.11 x 1,882.30 = 207.05
+
+After the 15% charge (keep 85%) = value x 0.85
+Year 1 = 181.69 x 0.85 = 154.44
+Year 2 = 207.05 x 0.85 = 176.00</pre></div></div>
+
+<div class="concept"><h3>Step 6. Compute "What the customer earns"</h3>
+<p>Now add the two things the customer actually pockets: the other-legs money they keep after the 15% charge (from Step 5) plus the customer's own monthly profit per sub (from Step 4). That sum is "what the customer earns" per month. This is the customer's side of the deal, and it is a simple addition of two numbers you already have.</p>
+<div class="calc"><pre>What the customer earns = (other legs after charge) + (customer monthly profit per sub)
+Year 1 = 154.44 + 12.39 = 166.82
+Year 2 = 176.00 + 17.25 = 193.25
+(year over year growth about +15.8%)</pre></div></div>
+
+<div class="concept"><h3>Step 7. Compute "What the organization earns", then take out the shareholder cut</h3>
+<p>This is the longest line, so go slowly. The organization's gross is built from two gaps: (a) the gap between the organization's share per sub and the customer's profit per sub, plus (b) the gap between the full other-legs per sub and the other-legs left after the charge (that gap is the 15% the platform kept). Add those two gaps, multiply by the whole Cohort to scale from one subscriber up to everyone, then multiply by (1 minus the monthly cost rate) to subtract running costs. The monthly cost is 5% in Year 1, so you multiply by 0.95 (and by 0.98 in Year 2, because its cost is 2%). That gives "what the organization earns". Then the shareholders take their percentage (18% in Year 1), and what is left after handing them their slice is the Organization's Final earnings.</p>
+<div class="calc"><pre>What the organization earns
+= (((org share per sub) - (customer profit per sub))
+   + ((other legs per sub) - (other legs after charge)))
+   x Cohort x (1 - monthly cost rate)
+
+Year 1 = (((18.58 - 12.39) + (181.69 - 154.44)) x 34,493) x 0.95 = 1,096,014
+Year 2 = 1,288,460
+
+Shareholder's absolute amount = (what org earns) x shareholder %
+Year 1 = 1,096,014 x 0.18 = 197,283
+
+Organization's Final earnings = (what org earns) - (shareholder's amount)
+Year 1 = 1,096,014 - 197,283 = 898,732
+Year 2 = 1,017,883            (growth about +13.3%)
+Final earnings per subscriber, Year 1 = 898,732 / 34,493 = 26.06</pre></div></div>
+
+<div class="concept"><h3>Step 8. Do the qualitative half (the write-up and the two questions)</h3>
+<p>The numbers are only half the lab. The sheet also asks you to write up your designed product as a structured document and to always answer two reflection questions. Use the 9-part structure in the block just below as your section headings, then close by naming what you are building and the single metric that proves it is good. One more thing the sheet flags for context: as you move up the tiers from Basic to Intermediate to Advance, the number of customers shrinks (roughly half at each step) and the margin trade-off between the organization and the customer shifts, so the same formula chain will produce different numbers for the higher tiers.</p></div>
+
+<div class="concept"><h3>The written product tear-down (9 parts)</h3>
+<p>The sheet lists a 9-part structure to write up for the product you designed. Use these as your headings, in order:</p>
+<table class="cmp"><thead><tr><th>#</th><th>Section</th><th>What goes in it</th></tr></thead><tbody>
+<tr><td>1</td><td>Background and Opportunity Hypothesis</td><td>The market context and your bet on why a gap exists.</td></tr>
+<tr><td>2</td><td>Problem Statement</td><td>The specific problem daily wage earners face.</td></tr>
+<tr><td>3</td><td>Assumptions</td><td>What you are taking as true to make the plan work.</td></tr>
+<tr><td>4</td><td>Product Definition and Eligibility</td><td>Define the product and the eligibility rules for Basic, Intermediate, and Advance.</td></tr>
+<tr><td>5</td><td>Services Offered</td><td>The services the product provides, each with its benefit.</td></tr>
+<tr><td>6</td><td>Target Audience</td><td>Who you serve, broken into segments.</td></tr>
+<tr><td>7</td><td>Value Proposition Canvas</td><td>The customer journeys that map need to value.</td></tr>
+<tr><td>8</td><td>Financials</td><td>Cost, pricing and profitability (the table you just built above).</td></tr>
+<tr><td>9</td><td>Scale Plans</td><td>An initial growth plan, followed by a CVM (Customer Value Management) plan.</td></tr>
+</tbody></table>
+<p>The sheet ends with two reflection questions you must always answer: <strong>1. What product are you building?</strong> and <strong>2. How do you know if your product is good?</strong> For the second one you do not give a vague answer; you name the metric that proves it (for example the Organization's Final earnings per subscriber, 26.06 in Year 1, or the year over year growth in what the customer earns, about +15.8%).</p></div>
+
+<div class="callout"><strong>How you know you are done.</strong> The number half is finished when every blank line in the Basic table is filled by a formula (not a typed-in constant) and the chain lands on the GIVEN-consistent answers: invested per sub 1,651.72, what the customer earns 166.82, what the organization earns 1,096,014, and Organization's Final earnings 898,732 for Year 1 (with Year 2 producing 193.25, 1,288,460, and 1,017,883). The written half is finished when you have all 9 tear-down sections drafted and have answered both reflection questions, including naming the metric that proves the product is good.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> The number-one beginner mistake is forgetting to divide the annual rates by 12 when a line is "per month". The organization earns annually but the customer is paid monthly, so the org-share-per-sub and customer-profit-per-sub lines BOTH carry a "/ 12", while the other-legs line (11%) does NOT, because it is not a monthly figure. The second trap is mixing up "what the customer earns" with "what the organization earns": they are completely different formulas (the customer line is a simple two-number sum; the organization line scales by the whole Cohort and then strips out monthly cost and the shareholder cut). Always re-read which of the two the question is asking for before you answer.</div>
+
+<h3 id="wt-funnel">3. Base Exclusion Funnel.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Base Exclusion Funnel worksheet"></a><figcaption>The Base Exclusion Funnel.xlsx exercise sheet: instructions, the conditions table, and the funnel summary. Click to enlarge.</figcaption></figure>
+
+<figure class="worksheet"><a href="slides/excel/funnel_data_sample.png" target="_blank"><img loading="lazy" src="slides/excel/funnel_data_sample.png" alt="Funnel data sample"></a><figcaption>A sample of the 158,039-row Base Funnal Analysis Data.xlsx that feeds the funnel, one row per subscriber. Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> You get two Excel files. The first, <em>Base Funnal Analysis Data.xlsx</em>, is the raw data: 158,039 subscribers, one per row. Each row carries an ID, a Device ID, four raw measurements (Vol KPI1, Vol KPI2, Freq KPI1, Freq KPI2), a 0 to about 100 score for each of those four (V1 sc, V2 sc, F1 sc, F2 sc), a <strong>Gaming Acc Flag</strong> (1 means a fraud or gaming account, 0 means a clean real account), a <strong>Combined Score</strong> (the four KPI scores added together, theoretical range 0 to 400), and a <strong>Model Decile</strong> (a value rank from 1 to 10). The second file, <em>Base Exclusion Funnel.xlsx</em>, is mostly empty: it has the instructions, a small <strong>Conditions table (Table 1)</strong> with blank cells, and a <strong>Funnel Summary (Table 2)</strong> with blank cells. Nothing is filled in yet. You do the filling.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Decide, for every one of the 158,039 subscribers, whether they stay in the marketing base or get dropped, by applying three rules in order (a score band, a rescue for high-value subscribers, and a fraud removal), then count the survivors at each stage so the Funnel Summary reads 90.42% retained, then 93.31%, then 89.11%.</div>
+
+<p>Before the steps, three words you will keep seeing. A <strong>KPI (Key Performance Indicator)</strong> is just a number that measures something a marketer cares about, here volume and frequency of activity. A <strong>decile</strong> is one tenth of the base after you rank everyone from best to worst, so decile 1 is the top 10% and decile 10 is the bottom 10%; in this file the top three deciles (1, 2, 3) are flagged as the most valuable subscribers. <strong>Propensity</strong> means a model-estimated likelihood that someone will do a future action (like keep spending), so the Model Decile is the model's ranking of who is most worth keeping.</p>
+
+<div class="concept"><h3>Step 1. Open the data file and find the three columns that decide everything</h3>
+<p>Open <em>Base Funnal Analysis Data.xlsx</em>. Scroll once so you believe the shape: one subscriber per row, 158,039 rows, many columns. You do not need most columns. Out of all of them, only three actually drive the decision, so locate these and remember where they are:</p>
+<table class="cmp"><tr><th>Column</th><th>What it means in plain words</th><th>How you will use it</th></tr>
+<tr><td>Combined Score</td><td>The four KPI scores added up (0 to 400 in theory). High means a busy, engaged subscriber.</td><td>Rule 1: keep only scores inside a sensible band.</td></tr>
+<tr><td>Model Decile</td><td>The model's value rank, 1 (best) to 10 (worst). Top three (1, 2, 3) are the prized subscribers.</td><td>Rule 2: rescue anyone in the top three even if Rule 1 dropped them.</td></tr>
+<tr><td>Gaming Acc Flag</td><td>1 = fraud or gaming account, 0 = clean. A hard disqualifier.</td><td>Rule 3: remove every fraud account at the very end.</td></tr></table>
+<p>Everything below is built from just these three. The other columns (Device ID, the raw KPIs, the individual sc columns) are background; you can ignore them for the funnel.</p></div>
+
+<div class="concept"><h3>Step 2. Fill Table 1, the Conditions table</h3>
+<p>Table 1 needs four numbers that define the acceptable score band. Two of them are facts you read straight off the data, and two are the practical limits you set. To get the actual minimum and maximum of the Combined Score column, use Excel's MIN and MAX functions on that column.</p>
+<div class="calc"><pre>Min of Combined Score:  =MIN(ScoreColumn)   ->  1
+Max of Combined Score:  =MAX(ScoreColumn)   ->  368
+
+Lower limit of Score  =  20   (smallest score you will accept)
+Upper limit of Score  =  350  (largest score you will accept)</pre></div>
+<p>So Table 1 ends up as: Min = 1, Max = 368, Lower limit = 20, Upper limit = 350. The "Threshold" row on the sheet is just the working row where you reason your way to those limits; the limits 20 and 350 are the answers you carry forward. Why 20 and 350 and not the raw 1 and 368? Step 3 explains exactly that, because that reasoning is the real lesson of the exercise.</p></div>
+
+<div class="concept"><h3>Step 3. Sanity-check the textbook bell-curve rule, then see why you ignore it</h3>
+<p>A common statistics move is to cut off the extremes using the <strong>empirical rule</strong> of a bell curve. Plain-word definitions first: the <strong>mean</strong> (written as the Greek letter mu) is the simple average, add every value and divide by how many there are. The <strong>standard deviation</strong> (the Greek letter sigma) measures how spread out the values are: small sigma means everyone is bunched near the average, large sigma means they are scattered. The empirical rule says that for a nice bell-shaped spread, about 95% of all values sit within mu plus or minus 2 sigma, so the textbook says "exclude anything outside that band."</p>
+<p>For this Combined Score the sheet reports mu = 170.85 and sigma = 103.12 (and min = 1, max = 368). Plug those into the rule and look at what band it produces.</p>
+<div class="calc"><pre>2 x sigma  =  2 x 103.12  =  206.24      (the sheet rounds this to 206.25)
+
+Lower edge  =  mu - 2 sigma  =  170.85 - 206.25  =  about -35
+Upper edge  =  mu + 2 sigma  =  170.85 + 206.25  =  about 377
+
+So the "keep" band is about  -35 to 377.</pre></div>
+<p>Now sanity-check that band against the real data, which only runs from 1 to 368. A lower edge of -35 is below the smallest score that exists, and an upper edge of 377 is above the largest score that exists. The textbook band is <strong>wider than the data itself</strong>, so it would exclude <strong>nobody</strong>. A rule that drops zero subscribers is useless for a funnel. That is precisely why the exercise throws away the blind formula and uses practical, hand-set score limits instead: a lower limit of about 20 and an upper limit of about 350. The takeaway to write on your hand for the exam: <em>always check a statistical rule against the real range of your data before you trust it.</em></p></div>
+
+<div class="concept"><h3>Step 4. Compute the four flags for every row, in this exact order</h3>
+<p>Now you tag each subscriber with four 1-or-0 flags. Order matters: each flag can use the ones before it. Add four new columns and fill them top to bottom with these IF formulas (an IF formula says "if the test is true put 1, otherwise put 0").</p>
+<div class="calc"><pre>1) Qualify       = 1 if the score is strictly inside the band, else 0.
+   Test: lower limit < Combined Score < upper limit  (so 20 < score < 350)
+   Excel:  =IF(AND(score>20, score<350), 1, 0)
+
+2) Slide back    = 1 if the subscriber is in the top three Model Deciles, else 0.
+   This rescues a high-value subscriber even when Qualify failed.
+   Excel:  =IF(OR(decile=1, decile=2, decile=3), 1, 0)
+
+3) Retained Base = 1 if (Qualify + Slide back) is non-zero, i.e. Qualify OR Slide back.
+   Excel:  =IF((Qualify + SlideBack) > 0, 1, 0)
+
+4) Final Base    = Retained AND not a fraudster (keep only if Retained=1 and Gaming=0).
+   Excel:  =IF(AND(Retained=1, Gaming=0), 1, 0)</pre></div>
+<p>In words: Qualify is the score band. Slide back is the second chance for your best subscribers. Retained means you survived at least one of those two. Final is Retained minus the fraudsters. Fraud is checked dead last on purpose (see the exam trap at the bottom).</p></div>
+
+<div class="concept"><h3>Step 5. Count the flags to fill the Funnel Summary (Table 2)</h3>
+<p>To fill Table 2 you just count 1s in the flag columns. Two easy ways in Excel: <strong>SUM</strong> a whole flag column to total its 1s (=SUM(QualifyColumn)), or <strong>COUNTIFS</strong> to count rows that meet a condition (for example =COUNTIFS(ScoreColumn,"&gt;350") for the head, or =COUNTIFS(ScoreColumn,"&lt;20") for the tail). Every percentage in the funnel is that count divided by the total base of 158,039. Fill the three stages in order.</p>
+<table class="cmp"><tr><th>Stage</th><th>What it does</th><th>Counts (out of 158,039)</th></tr>
+<tr><td>Stage 1: Combined Score exclusion (apply 20 &lt; score &lt; 350)</td><td>Drop scores that are too high or too low.</td><td>Head excluded (too high) = 5,659 (3.58%); Tail excluded (too low) = 9,487 (6.00%); total Excluded = 15,146 (9.58%); <strong>Retained = 142,893 (90.42%)</strong>.</td></tr>
+<tr><td>Stage 2: After sliding back</td><td>Rescue the excluded subscribers who are in the top three deciles (about 4,574 of them) back into the base.</td><td><strong>Retained = 147,467 (93.31%)</strong>; Excluded = 10,572 (6.69%).</td></tr>
+<tr><td>Stage 3: After tackling gaming</td><td>Remove the fraud-flagged subscribers that are still in the retained set (6,640 of them).</td><td><strong>Retained = 140,827 (89.11%)</strong>; Excluded = 17,212 (10.89%).</td></tr></table>
+<p>One number that surprises people: only 6,640 fraud accounts are removed here, not the total fraud count. Some fraud accounts were already knocked out earlier by the score band, so at Stage 3 you only subtract the fraud still sitting in the retained pool: 147,467 - 6,640 = 140,827. And notice why the survivors at Stage 1 are 90.42%, not the textbook 95%: the Combined Score is skewed (left-heavy), so the two tails are not equal sizes. The low tail removes 6.00% while the high tail removes only 3.58%, adding to 9.58% excluded and leaving 90.42%.</p></div>
+
+<div class="concept"><h3>Step 6. Read the funnel left to right and confirm the three retained percentages</h3>
+<p>Last, walk the funnel and divide each retained count by the total base to recover each percentage. This is your proof that the flags were applied correctly.</p>
+<div class="calc"><pre>Stage 1 retained:  142,893 / 158,039  =  0.9042  =  90.42%
+Stage 2 retained:  147,467 / 158,039  =  0.9331  =  93.31%
+Stage 3 retained:  140,827 / 158,039  =  0.8911  =  89.11%</pre></div>
+<p>Watch the direction, because the exam loves to ask about it. Retention starts at 90.42%, then goes <strong>UP</strong> to 93.31% (slide-back adds rescued high-value subscribers), then comes <strong>DOWN</strong> to 89.11% (fraud removal subtracts subscribers). Up then down is the correct shape; if your numbers only ever fall, you forgot the slide-back rescue.</p></div>
+
+<p><strong>Three example subscribers, classified by hand</strong> (using lower limit = 20, upper limit = 350, top deciles = 1, 2, 3). Walk each one through the four flags to see the rules interact.</p>
+<table class="cmp"><tr><th>Subscriber</th><th>Score</th><th>Decile</th><th>Gaming</th><th>Qualify?</th><th>Slide back?</th><th>Retained?</th><th>Final verdict</th></tr>
+<tr><td>X</td><td>360</td><td>2</td><td>0</td><td>No (360 is not &lt; 350)</td><td>Yes (decile 2 is top three)</td><td>Yes</td><td><strong>KEEP</strong>, rescued by slide-back.</td></tr>
+<tr><td>Y</td><td>12</td><td>7</td><td>0</td><td>No (12 is not &gt; 20)</td><td>No (decile 7)</td><td>No</td><td><strong>EXCLUDED</strong>, failed both rules.</td></tr>
+<tr><td>Z</td><td>300</td><td>1</td><td>1</td><td>Yes (20 &lt; 300 &lt; 350)</td><td>Yes (decile 1)</td><td>Yes</td><td><strong>REMOVED</strong>, fraud overrides everything.</td></tr></table>
+<p>X shows the slide-back saving a strong subscriber whose score was just over the line. Y shows a plain drop, low score and low value, no second chance. Z is the important one: a perfectly qualifying, top-decile subscriber still gets removed because the Gaming flag is 1, proving fraud beats every other reason to keep someone.</p>
+
+<div class="callout"><strong>How you know you are done.</strong> Table 1 reads Min = 1, Max = 368, Lower limit = 20, Upper limit = 350. Every row has its four flags (Qualify, Slide back, Retained, Final). Table 2 reads Stage 1 Retained = 142,893 (90.42%) with Head 5,659 (3.58%) and Tail 9,487 (6.00%); Stage 2 Retained = 147,467 (93.31%); Stage 3 Retained = 140,827 (89.11%). The retention line goes 90.42% up to 93.31% down to 89.11%. If all of that matches, the funnel is solved.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Order is the trap. Fraud must be removed LAST, after the slide-back rescue, never before it. Fraud is an absolute disqualifier, so doing it last guarantees that no fraudster gets pulled back into the base on the strength of a top-three decile. Subscriber Z proves it: a clean decile-1 subscriber with a strong score is still removed because Gaming = 1. The second trap is trusting the bell-curve 95% blindly: here mu plus or minus 2 sigma gives about -35 to 377, which is wider than the real 1 to 368 range and excludes nobody, so the practical limits 20 and 350 are used instead. If you write 95% retained, or you remove fraud before the slide-back, you have fallen for the trap.</div>
+
+</section>
 <section>
   <h2 id="wk6">AI &amp; Growth Engineering <span class="badge in">WEEK 6</span></h2>
 

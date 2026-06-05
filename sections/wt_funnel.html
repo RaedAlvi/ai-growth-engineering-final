@@ -1,0 +1,82 @@
+<h3 id="wt-funnel">3. Base Exclusion Funnel.xlsx, solved from a blank sheet</h3>
+
+<figure class="worksheet"><a href="slides/excel/base_exclusion_funnel.png" target="_blank"><img loading="lazy" src="slides/excel/base_exclusion_funnel.png" alt="Base Exclusion Funnel worksheet"></a><figcaption>The Base Exclusion Funnel.xlsx exercise sheet: instructions, the conditions table, and the funnel summary. Click to enlarge.</figcaption></figure>
+
+<figure class="worksheet"><a href="slides/excel/funnel_data_sample.png" target="_blank"><img loading="lazy" src="slides/excel/funnel_data_sample.png" alt="Funnel data sample"></a><figcaption>A sample of the 158,039-row Base Funnal Analysis Data.xlsx that feeds the funnel, one row per subscriber. Click to enlarge.</figcaption></figure>
+
+<div class="callout"><strong>What you are handed (the start).</strong> You get two Excel files. The first, <em>Base Funnal Analysis Data.xlsx</em>, is the raw data: 158,039 subscribers, one per row. Each row carries an ID, a Device ID, four raw measurements (Vol KPI1, Vol KPI2, Freq KPI1, Freq KPI2), a 0 to about 100 score for each of those four (V1 sc, V2 sc, F1 sc, F2 sc), a <strong>Gaming Acc Flag</strong> (1 means a fraud or gaming account, 0 means a clean real account), a <strong>Combined Score</strong> (the four KPI scores added together, theoretical range 0 to 400), and a <strong>Model Decile</strong> (a value rank from 1 to 10). The second file, <em>Base Exclusion Funnel.xlsx</em>, is mostly empty: it has the instructions, a small <strong>Conditions table (Table 1)</strong> with blank cells, and a <strong>Funnel Summary (Table 2)</strong> with blank cells. Nothing is filled in yet. You do the filling.</div>
+
+<div class="callout"><strong>Your goal, in one sentence.</strong> Decide, for every one of the 158,039 subscribers, whether they stay in the marketing base or get dropped, by applying three rules in order (a score band, a rescue for high-value subscribers, and a fraud removal), then count the survivors at each stage so the Funnel Summary reads 90.42% retained, then 93.31%, then 89.11%.</div>
+
+<p>Before the steps, three words you will keep seeing. A <strong>KPI (Key Performance Indicator)</strong> is just a number that measures something a marketer cares about, here volume and frequency of activity. A <strong>decile</strong> is one tenth of the base after you rank everyone from best to worst, so decile 1 is the top 10% and decile 10 is the bottom 10%; in this file the top three deciles (1, 2, 3) are flagged as the most valuable subscribers. <strong>Propensity</strong> means a model-estimated likelihood that someone will do a future action (like keep spending), so the Model Decile is the model's ranking of who is most worth keeping.</p>
+
+<div class="concept"><h3>Step 1. Open the data file and find the three columns that decide everything</h3>
+<p>Open <em>Base Funnal Analysis Data.xlsx</em>. Scroll once so you believe the shape: one subscriber per row, 158,039 rows, many columns. You do not need most columns. Out of all of them, only three actually drive the decision, so locate these and remember where they are:</p>
+<table class="cmp"><tr><th>Column</th><th>What it means in plain words</th><th>How you will use it</th></tr>
+<tr><td>Combined Score</td><td>The four KPI scores added up (0 to 400 in theory). High means a busy, engaged subscriber.</td><td>Rule 1: keep only scores inside a sensible band.</td></tr>
+<tr><td>Model Decile</td><td>The model's value rank, 1 (best) to 10 (worst). Top three (1, 2, 3) are the prized subscribers.</td><td>Rule 2: rescue anyone in the top three even if Rule 1 dropped them.</td></tr>
+<tr><td>Gaming Acc Flag</td><td>1 = fraud or gaming account, 0 = clean. A hard disqualifier.</td><td>Rule 3: remove every fraud account at the very end.</td></tr></table>
+<p>Everything below is built from just these three. The other columns (Device ID, the raw KPIs, the individual sc columns) are background; you can ignore them for the funnel.</p></div>
+
+<div class="concept"><h3>Step 2. Fill Table 1, the Conditions table</h3>
+<p>Table 1 needs four numbers that define the acceptable score band. Two of them are facts you read straight off the data, and two are the practical limits you set. To get the actual minimum and maximum of the Combined Score column, use Excel's MIN and MAX functions on that column.</p>
+<div class="calc"><pre>Min of Combined Score:  =MIN(ScoreColumn)   ->  1
+Max of Combined Score:  =MAX(ScoreColumn)   ->  368
+
+Lower limit of Score  =  20   (smallest score you will accept)
+Upper limit of Score  =  350  (largest score you will accept)</pre></div>
+<p>So Table 1 ends up as: Min = 1, Max = 368, Lower limit = 20, Upper limit = 350. The "Threshold" row on the sheet is just the working row where you reason your way to those limits; the limits 20 and 350 are the answers you carry forward. Why 20 and 350 and not the raw 1 and 368? Step 3 explains exactly that, because that reasoning is the real lesson of the exercise.</p></div>
+
+<div class="concept"><h3>Step 3. Sanity-check the textbook bell-curve rule, then see why you ignore it</h3>
+<p>A common statistics move is to cut off the extremes using the <strong>empirical rule</strong> of a bell curve. Plain-word definitions first: the <strong>mean</strong> (written as the Greek letter mu) is the simple average, add every value and divide by how many there are. The <strong>standard deviation</strong> (the Greek letter sigma) measures how spread out the values are: small sigma means everyone is bunched near the average, large sigma means they are scattered. The empirical rule says that for a nice bell-shaped spread, about 95% of all values sit within mu plus or minus 2 sigma, so the textbook says "exclude anything outside that band."</p>
+<p>For this Combined Score the sheet reports mu = 170.85 and sigma = 103.12 (and min = 1, max = 368). Plug those into the rule and look at what band it produces.</p>
+<div class="calc"><pre>2 x sigma  =  2 x 103.12  =  206.24      (the sheet rounds this to 206.25)
+
+Lower edge  =  mu - 2 sigma  =  170.85 - 206.25  =  about -35
+Upper edge  =  mu + 2 sigma  =  170.85 + 206.25  =  about 377
+
+So the "keep" band is about  -35 to 377.</pre></div>
+<p>Now sanity-check that band against the real data, which only runs from 1 to 368. A lower edge of -35 is below the smallest score that exists, and an upper edge of 377 is above the largest score that exists. The textbook band is <strong>wider than the data itself</strong>, so it would exclude <strong>nobody</strong>. A rule that drops zero subscribers is useless for a funnel. That is precisely why the exercise throws away the blind formula and uses practical, hand-set score limits instead: a lower limit of about 20 and an upper limit of about 350. The takeaway to write on your hand for the exam: <em>always check a statistical rule against the real range of your data before you trust it.</em></p></div>
+
+<div class="concept"><h3>Step 4. Compute the four flags for every row, in this exact order</h3>
+<p>Now you tag each subscriber with four 1-or-0 flags. Order matters: each flag can use the ones before it. Add four new columns and fill them top to bottom with these IF formulas (an IF formula says "if the test is true put 1, otherwise put 0").</p>
+<div class="calc"><pre>1) Qualify       = 1 if the score is strictly inside the band, else 0.
+   Test: lower limit < Combined Score < upper limit  (so 20 < score < 350)
+   Excel:  =IF(AND(score>20, score<350), 1, 0)
+
+2) Slide back    = 1 if the subscriber is in the top three Model Deciles, else 0.
+   This rescues a high-value subscriber even when Qualify failed.
+   Excel:  =IF(OR(decile=1, decile=2, decile=3), 1, 0)
+
+3) Retained Base = 1 if (Qualify + Slide back) is non-zero, i.e. Qualify OR Slide back.
+   Excel:  =IF((Qualify + SlideBack) > 0, 1, 0)
+
+4) Final Base    = Retained AND not a fraudster (keep only if Retained=1 and Gaming=0).
+   Excel:  =IF(AND(Retained=1, Gaming=0), 1, 0)</pre></div>
+<p>In words: Qualify is the score band. Slide back is the second chance for your best subscribers. Retained means you survived at least one of those two. Final is Retained minus the fraudsters. Fraud is checked dead last on purpose (see the exam trap at the bottom).</p></div>
+
+<div class="concept"><h3>Step 5. Count the flags to fill the Funnel Summary (Table 2)</h3>
+<p>To fill Table 2 you just count 1s in the flag columns. Two easy ways in Excel: <strong>SUM</strong> a whole flag column to total its 1s (=SUM(QualifyColumn)), or <strong>COUNTIFS</strong> to count rows that meet a condition (for example =COUNTIFS(ScoreColumn,"&gt;350") for the head, or =COUNTIFS(ScoreColumn,"&lt;20") for the tail). Every percentage in the funnel is that count divided by the total base of 158,039. Fill the three stages in order.</p>
+<table class="cmp"><tr><th>Stage</th><th>What it does</th><th>Counts (out of 158,039)</th></tr>
+<tr><td>Stage 1: Combined Score exclusion (apply 20 &lt; score &lt; 350)</td><td>Drop scores that are too high or too low.</td><td>Head excluded (too high) = 5,659 (3.58%); Tail excluded (too low) = 9,487 (6.00%); total Excluded = 15,146 (9.58%); <strong>Retained = 142,893 (90.42%)</strong>.</td></tr>
+<tr><td>Stage 2: After sliding back</td><td>Rescue the excluded subscribers who are in the top three deciles (about 4,574 of them) back into the base.</td><td><strong>Retained = 147,467 (93.31%)</strong>; Excluded = 10,572 (6.69%).</td></tr>
+<tr><td>Stage 3: After tackling gaming</td><td>Remove the fraud-flagged subscribers that are still in the retained set (6,640 of them).</td><td><strong>Retained = 140,827 (89.11%)</strong>; Excluded = 17,212 (10.89%).</td></tr></table>
+<p>One number that surprises people: only 6,640 fraud accounts are removed here, not the total fraud count. Some fraud accounts were already knocked out earlier by the score band, so at Stage 3 you only subtract the fraud still sitting in the retained pool: 147,467 - 6,640 = 140,827. And notice why the survivors at Stage 1 are 90.42%, not the textbook 95%: the Combined Score is skewed (left-heavy), so the two tails are not equal sizes. The low tail removes 6.00% while the high tail removes only 3.58%, adding to 9.58% excluded and leaving 90.42%.</p></div>
+
+<div class="concept"><h3>Step 6. Read the funnel left to right and confirm the three retained percentages</h3>
+<p>Last, walk the funnel and divide each retained count by the total base to recover each percentage. This is your proof that the flags were applied correctly.</p>
+<div class="calc"><pre>Stage 1 retained:  142,893 / 158,039  =  0.9042  =  90.42%
+Stage 2 retained:  147,467 / 158,039  =  0.9331  =  93.31%
+Stage 3 retained:  140,827 / 158,039  =  0.8911  =  89.11%</pre></div>
+<p>Watch the direction, because the exam loves to ask about it. Retention starts at 90.42%, then goes <strong>UP</strong> to 93.31% (slide-back adds rescued high-value subscribers), then comes <strong>DOWN</strong> to 89.11% (fraud removal subtracts subscribers). Up then down is the correct shape; if your numbers only ever fall, you forgot the slide-back rescue.</p></div>
+
+<p><strong>Three example subscribers, classified by hand</strong> (using lower limit = 20, upper limit = 350, top deciles = 1, 2, 3). Walk each one through the four flags to see the rules interact.</p>
+<table class="cmp"><tr><th>Subscriber</th><th>Score</th><th>Decile</th><th>Gaming</th><th>Qualify?</th><th>Slide back?</th><th>Retained?</th><th>Final verdict</th></tr>
+<tr><td>X</td><td>360</td><td>2</td><td>0</td><td>No (360 is not &lt; 350)</td><td>Yes (decile 2 is top three)</td><td>Yes</td><td><strong>KEEP</strong>, rescued by slide-back.</td></tr>
+<tr><td>Y</td><td>12</td><td>7</td><td>0</td><td>No (12 is not &gt; 20)</td><td>No (decile 7)</td><td>No</td><td><strong>EXCLUDED</strong>, failed both rules.</td></tr>
+<tr><td>Z</td><td>300</td><td>1</td><td>1</td><td>Yes (20 &lt; 300 &lt; 350)</td><td>Yes (decile 1)</td><td>Yes</td><td><strong>REMOVED</strong>, fraud overrides everything.</td></tr></table>
+<p>X shows the slide-back saving a strong subscriber whose score was just over the line. Y shows a plain drop, low score and low value, no second chance. Z is the important one: a perfectly qualifying, top-decile subscriber still gets removed because the Gaming flag is 1, proving fraud beats every other reason to keep someone.</p>
+
+<div class="callout"><strong>How you know you are done.</strong> Table 1 reads Min = 1, Max = 368, Lower limit = 20, Upper limit = 350. Every row has its four flags (Qualify, Slide back, Retained, Final). Table 2 reads Stage 1 Retained = 142,893 (90.42%) with Head 5,659 (3.58%) and Tail 9,487 (6.00%); Stage 2 Retained = 147,467 (93.31%); Stage 3 Retained = 140,827 (89.11%). The retention line goes 90.42% up to 93.31% down to 89.11%. If all of that matches, the funnel is solved.</div>
+
+<div class="callout warn"><strong>Exam trap.</strong> Order is the trap. Fraud must be removed LAST, after the slide-back rescue, never before it. Fraud is an absolute disqualifier, so doing it last guarantees that no fraudster gets pulled back into the base on the strength of a top-three decile. Subscriber Z proves it: a clean decile-1 subscriber with a strong score is still removed because Gaming = 1. The second trap is trusting the bell-curve 95% blindly: here mu plus or minus 2 sigma gives about -35 to 377, which is wider than the real 1 to 368 range and excludes nobody, so the practical limits 20 and 350 are used instead. If you write 95% retained, or you remove fraud before the slide-back, you have fallen for the trap.</div>
